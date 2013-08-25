@@ -12,17 +12,9 @@ how the yearly rotations work.
 The site is written in normal HTML/CSS and uses [Bootstrap][2] 3 CSS/JS (and
 thus [jQuery][3]) with a couple of small CSS overrides.
 
-#### Images
-
-The only images being used are the GitHub octocat and the MTG set symbols.
-Before 15c1c3f1e3cfccdcadf7d033d352334a1280d814 set symbols were hotlinked to
-[Gatherer][4] (which can be argued as good or bad -- leveraging users' browser
-caches vs. stealing bandwidth), but they're now hosted locally so that the page
-doesn't endlessly spin its wheels whenever Gatherer is down (which is too
-often).
-
-Set images which are no longer being displayed on the page should be removed
-from the repository.
+The only images being used are the GitHub octocat and the MTG set symbols. Set
+images which are no longer being displayed on the page should be removed from
+the repository.
 
 ### Versioning
 

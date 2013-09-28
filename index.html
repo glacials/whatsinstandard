@@ -58,7 +58,15 @@
           </li>
           <span class="label label-success">Until Fall 2014</span>
         </ul>
-        <ul class="list-group gray">
+        <!-- When the screen width gets too small, the "Born of the Gods
+        releases February 7, 2014" label is too long to fit on one line with the
+        previous label, so it drops down to a new line. This is ugly, so to
+        prevent it we cut out the ", 2014" part when the screen gets too small
+        using Bootstrap 3's hidden-sm and visible-sm classes. These classes
+        currently only work dependably on block items though, and the label's
+        nearest block item ancestor is <ul>, so unfortunately we have to include
+        two separate copies of it to switch between. -->
+        <ul class="list-group gray hidden-sm">
           <li class="list-group-item">
             Theros
             <span class="badge"><img src="img/ths.jpg" /></span>
@@ -70,7 +78,25 @@
             Journey into Nyx
           </li>
           <span class="label label-success">Until Fall 2015</span>
-          <span class="label label-default">Born of the Gods releases February 7, 2014</span>
+          <span class="label label-default">
+            Born of the Gods releases February 7, 2014
+          </span>
+        </ul>
+        <ul class="list-group gray visible-sm">
+          <li class="list-group-item">
+            Theros
+            <span class="badge"><img src="img/ths.jpg" /></span>
+          </li>
+          <li class="list-group-item gray">
+            Born of the Gods
+          </li>
+          <li class="list-group-item gray">
+            Journey into Nyx
+          </li>
+          <span class="label label-success">Until Fall 2015</span>
+          <span class="label label-default">
+            Born of the Gods releases February 7
+          </span>
         </ul>
       </div>
       <div class="col-lg-7">

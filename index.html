@@ -22,7 +22,7 @@
       }
       /* Center set symbols on an imaginary vertical line */
       ul.list-group > li.list-group-item > span.badge {
-        margin-right: -30px;
+        margin-right: -15px;
         margin-top: -3px;
         width: 60px;
       }
@@ -30,12 +30,12 @@
   </head>
   <body>
     <div class="container">
-      <div class="col-lg-12">
+      <div class="col-sm-12">
         <div class="page-header">
           <h1>What's in Standard?</h1>
         </div>
       </div>
-      <div class="col-lg-5">
+      <div class="col-sm-5">
         <ul class="list-group">
           <li class="list-group-item">
             Return to Ravnica
@@ -66,7 +66,7 @@
         block items though, and our nearest block item ancestor is <ul>, so
         unfortunately we have to include two separate copies of it to switch
         between. -->
-        <ul class="list-group gray hidden-sm">
+        <ul class="list-group gray">
           <li class="list-group-item">
             Theros
             <span class="badge"><img src="img/ths.jpg" /></span>
@@ -77,29 +77,21 @@
           <li class="list-group-item gray">
             Journey into Nyx
           </li>
-          <span class="label label-success">Until Fall 2015</span>
-          <span class="label label-default">
-            Born of the Gods releases February 7, 2014
-          </span>
-        </ul>
-        <ul class="list-group gray visible-sm">
-          <li class="list-group-item">
-            Theros
-            <span class="badge"><img src="img/ths.jpg" /></span>
-          </li>
-          <li class="list-group-item gray">
-            Born of the Gods
-          </li>
-          <li class="list-group-item gray">
-            Journey into Nyx
-          </li>
-          <span class="label label-success">Until Fall 2015</span>
-          <span class="label label-default">
-            BotG releases February 7, 2014
-          </span>
+          <div class="hidden-xs hidden-sm">
+            <span class="label label-success">Until Fall 2015</span>
+            <span class="label label-default">
+              Born of the Gods releases February 7, 2014
+            </span>
+          </div>
+          <div class="visible-xs visible-sm">
+            <span class="label label-success">Until Fall 2015</span>
+            <span class="label label-default">
+              BotG releases February 7, 2014
+            </span>
+          </div>
         </ul>
       </div>
-      <div class="col-lg-7">
+      <div class="col-sm-7">
         <h2>What <em>is</em> Standard?</h2>
         <p>Depending on the time of year, Standard can contain anywhere from one
         to two core sets and from four to six block sets. Confused? Read on.</p>

@@ -22,8 +22,12 @@ the repository.
 don't want the site to look like it's from the 90s. But hey, if that's your
 thing I won't stop you.
 
-    npm install -g bower
-    bower install
+```bash
+git clone git@github.com:glacials/whatsinstandard
+cd whatsinstandard
+npm install -g bower # (if you don't already have it)
+bower install
+```
 
 You shouldn't need to serve the files from any sort of web server. Opening
 `index.html` in a browser should work just fine.

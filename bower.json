@@ -1,0 +1,19 @@
+{
+  "name": "whatsinstandard",
+  "version": "1",
+  "homepage": "http://whatsinstandard.com/",
+  "authors": [
+    "Ben Carlsson <qhiiyr@gmail.com>"
+  ],
+  "description": "a Magic: the Gathering format describer",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3"
+  }
+}

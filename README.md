@@ -44,6 +44,37 @@ named for the set (e.g. `return-to-ravnica`). Changes to `master` that happen
 while this branch exists should be merged into it liberally so that we can
 fast-forward `master` and `gh-pages` at 00:00 on release day.
 
+### API
+
+We've got an API. It's super slim and the output is written by hand but it
+works like a charm.
+
+#### http://whatsinstandard.com/api/1/sets
+
+This is the only API call we have. It returns an array of sets which looks
+something like this:
+
+```json
+[
+  {
+    "name": "Return to Ravnica",
+    "block": "Return to Ravnica",
+    "code": "RTR",
+    "symbol": "http://whatsinstandard.com/img/rtr.jpg",
+    "enter_date": "2012-10-05T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2014"
+  },
+  ...
+]
+```
+
+The array is guaranteed to contain to contain all sets currently in Standard,
+plus between one and three unreleased sets, depending on where we are in the
+rotation. If the next set to be released is a core set, that set will be the
+only unreleased set included in the results. If it is a block set, the entire
+containing block will be included.
+
 ### Contributing
 
 Pull requests are welcome. If you have a change specific to an upcoming set

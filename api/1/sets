@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Return to Ravnica",
+    "block": "Return to Ravnica",
+    "code": "RTR",
+    "symbol": "http://whatsinstandard.com/img/rtr.jpg",
+    "enter_date": "2012-10-05T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2014"
+  },
+  {
+    "name": "Gatecrash",
+    "block": "Return to Ravnica",
+    "code": "GTC",
+    "symbol": "http://whatsinstandard.com/img/gtc.jpg",
+    "enter_date": "2013-02-01T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2014"
+  },
+  {
+    "name": "Dragon's Maze",
+    "block": "Return to Ravnica",
+    "code": "DGM",
+    "symbol": "http://whatsinstandard.com/img/dgm.jpg",
+    "enter_date": "2013-05-03T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2014"
+  },
+  {
+    "name": "2014 Core Set",
+    "block": null,
+    "code": "M14",
+    "symbol": "http://whatsinstandard.com/img/m14.jpg",
+    "enter_date": "2013-07-19T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2014"
+  },
+  {
+    "name": "Theros",
+    "block": "Theros",
+    "code": "THS",
+    "symbol": "http://whatsinstandard.com/img/ths.jpg",
+    "enter_date": "2013-09-27T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2015"
+  },
+  {
+    "name": "Born of the Gods",
+    "block": "Theros",
+    "code": "BNG",
+    "symbol": null,
+    "enter_date": "2014-02-07T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2015"
+  },
+  {
+    "name": "Journey Into Nyx",
+    "block": "Theros",
+    "code": "JOU",
+    "symbol": null,
+    "enter_date": "2014-05-02T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2015"
+  }
+]

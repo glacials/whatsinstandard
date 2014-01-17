@@ -49,9 +49,9 @@ fast-forward `master` and `gh-pages` at 00:00 on release day.
 We've got an API. It's super slim and the output is written by hand but it
 works like a charm.
 
-#### http://whatsinstandard.com/api/1/sets
+#### http://whatsinstandard.com/api/1/sets.json
 
-This is the only API call we have. It returns an array of sets which looks
+This is the only API call we have. It returns a JSON array of sets which looks
 something like this:
 
 ```json

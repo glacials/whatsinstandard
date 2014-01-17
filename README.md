@@ -75,6 +75,11 @@ rotation. If the next set to be released is a core set, that set will be the
 only unreleased set included in the results. If it is a block set, the entire
 containing block will be included.
 
+`enter_date` and `exit_date` are the days that the set respectively enters and
+exits Standard. They can be `null` when they are not known with day-level
+precision. `rough_exit_date` will always hold the form `early 20xx`, `mid
+20xx1`, or `late 20xx`. It will never be `null`.
+
 ### Contributing
 
 Pull requests are welcome. If you have a change specific to an upcoming set

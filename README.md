@@ -69,9 +69,9 @@ something like this:
 ]
 ```
 
-The array is guaranteed to contain to contain all sets currently in Standard
-and no other sets (unlike the website, which shows between one and three
-upcoming sets grayed out).
+The array is guaranteed to contain all sets currently in Standard and no other
+sets (unlike the website, which shows between one and three upcoming sets
+grayed out).
 
 `enter_date` and `exit_date` represent when a set respectively enters and exits
 Standard. They can be `null` when they are not known with day-level precision.

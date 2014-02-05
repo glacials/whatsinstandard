@@ -49,7 +49,7 @@ fast-forward `master` and `gh-pages` at 00:00 on release day.
 We've got an API. It's super slim and the output is written by hand but it
 works like a charm.
 
-#### http://whatsinstandard.com/api/1/sets.json
+#### http://whatsinstandard.com/api/2/sets.json
 
 This is the only API call we have. It returns a JSON array of sets which looks
 something like this:
@@ -69,11 +69,9 @@ something like this:
 ]
 ```
 
-The array is guaranteed to contain to contain all sets currently in Standard,
-plus between one and three unreleased sets, depending on where we are in the
-rotation. If the next set to be released is a core set, that set will be the
-only unreleased set included in the results. If it is a block set, the entire
-containing block will be included.
+The array is guaranteed to contain all sets currently in Standard and no other
+sets (unlike the website, which shows between one and three upcoming sets
+grayed out).
 
 `enter_date` and `exit_date` represent when a set respectively enters and exits
 Standard. They can be `null` when they are not known with day-level precision.

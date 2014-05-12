@@ -27,83 +27,149 @@
         margin-top: -3px;
         width: 60px;
       }
+      ul.nav-pills {
+        margin-top: 48px;
+        margin-bottom: 12px;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="col-md-12">
-        <div class="page-header">
-          <h1>What's in Standard?</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="page-header">
+            <h1>What's in Standard?</h1>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#" data-decktype="Standard">Standard</a></li>
+            <li><a href="#" data-decktype="Extended">Extended</a></li>
+          </ul>
         </div>
       </div>
-      <div class="col-md-5">
-        <ul class="list-group">
-          <li class="list-group-item">
-            Return to Ravnica
-            <span class="badge"><img src="img/rtr.jpg" /></span>
-          </li>
-          <li class="list-group-item">
-            Gatecrash
-            <span class="badge"><img src="img/gtc.jpg" /></span>
-          </li>
-          <li class="list-group-item">
-            Dragon's Maze
-            <span class="badge"><img src="img/dgm.jpg" /></span>
-          </li>
-          <span class="label label-success">Until late 2014</span>
-        </ul>
-        <ul class="list-group">
-          <li class="list-group-item">
-            2014 Core Set
-            <span class="badge"><img src="img/m14.jpg" /></span>
-          </li>
-          <span class="label label-success">Until late 2014</span>
-        </ul>
-        <ul class="list-group">
-          <li class="list-group-item">
-            Theros
-            <span class="badge"><img src="img/ths.jpg" /></span>
-          </li>
-          <li class="list-group-item">
-            Born of the Gods
-            <span class="badge"><img src="img/bng.jpg" /></span>
-          </li>
-          <li class="list-group-item">
-            Journey into Nyx
-            <span class="badge"><img src="img/jou.jpg" /></span>
-          </li>
-          <span class="label label-primary">Until late 2015</span>
-        </ul>
-        <ul class="list-group">
-          <li class="list-group-item gray">
-            2015 Core Set
-          </li>
-          <span class="label label-default">
-            Releases July 18, 2014
-          </span>
-        </ul>
-      </div>
-      <div class="col-md-7">
-        <h2>What <em>is</em> Standard?</h2>
-        <p>Depending on the time of year, Standard can contain anywhere from one
-        to two core sets and from four to six block sets. Confused? Read on.</p>
-        <p><i>Wizards of the Coast</i> releases blocks (a block is a group of
-        three sets) and core sets alternatingly. Every time the first set in a
-        block gets released, the oldest block in Standard and the oldest core
-        set in Standard simultaneously drop out.</p>
-        <p>This means that Standard can only ever contain two blocks at once,
-        even if one of those blocks has only had one of its sets released.</p>
-        <p>This also means that core sets spend less time in Standard than any
-        other set, as they are the last to be released but they don't drop out
-        any later than their block set brethren.</p>
-        <p><small><i>Note: All previous prints of a card currently in Standard
-        are also considered to be in Standard. For example, if you own an Eighth
-        Edition
-        <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370802">Naturalize</a>,
-        you may use that print in a Standard deck.</i></small></p>
+      <div class="row">
+        <div class="col-md-5" data-releases="true">
+          <ul class="list-group">
+            <li class="list-group-item" data-decktypes="Extended">
+              Scars of Mirrodin
+              <span class="badge"><img src="img/som.gif" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Extended">
+              Mirrodin Besieged
+              <span class="badge"><img src="img/mbs.png" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Extended">
+              New Phyrexia
+              <span class="badge"><img src="img/nph.gif" /></span>
+            </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2014</span>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item" data-decktypes="Extended">
+              2012 Core Set
+              <span class="badge"><img src="img/m12.gif" /></span>
+            </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2014</span>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item" data-decktypes="Extended">
+              Innistrad
+              <span class="badge"><img src="img/isd.gif" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Extended">
+              Dark Ascension
+              <span class="badge"><img src="img/dka.gif" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Extended">
+              Avacyn Restored
+              <span class="badge"><img src="img/avr.gif" /></span>
+            </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2015</span>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item" data-decktypes="Extended">
+              2013 Core Set
+              <span class="badge"><img src="img/m13.gif" /></span>
+            </li>
+            <span class="label label-success" data-decktypes="Extended">Until late 2015</span>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item" data-decktypes="Standard Extended">
+              Return to Ravnica
+              <span class="badge"><img src="img/rtr.jpg" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Standard Extended">
+              Gatecrash
+              <span class="badge"><img src="img/gtc.jpg" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Standard Extended">
+              Dragon's Maze
+              <span class="badge"><img src="img/dgm.jpg" /></span>
+            </li>
+            <span class="label label-success" data-decktypes="Standard">Until late 2014</span>
+            <span class="label label-success" data-decktypes="Extended">Until late 2016</span>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item" data-decktypes="Standard Extended">
+              2014 Core Set
+              <span class="badge"><img src="img/m14.jpg" /></span>
+            </li>
+            <span class="label label-success" data-decktypes="Standard">Until late 2014</span>
+            <span class="label label-success" data-decktypes="Extended">Until late 2016</span>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item" data-decktypes="Standard Extended">
+              Theros
+              <span class="badge"><img src="img/ths.jpg" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Standard Extended">
+              Born of the Gods
+              <span class="badge"><img src="img/bng.jpg" /></span>
+            </li>
+            <li class="list-group-item" data-decktypes="Standard Extended">
+              Journey into Nyx
+              <span class="badge"><img src="img/jou.jpg" /></span>
+            </li>
+            <span class="label label-primary" data-decktypes="Standard">Until late 2015</span>
+            <span class="label label-primary" data-decktypes="Extended">Until late 2017</span>
+          </ul>
+          <ul class="list-group">
+            <li class="list-group-item gray" data-decktypes="Standard Extended">
+              2015 Core Set
+            </li>
+            <span class="label label-default" data-decktypes="Standard Extended">
+              Releases July 18, 2014
+            </span>
+          </ul>
+        </div>
+        <div class="col-md-7" data-description="Standard">
+          <h2>What <em>is</em> Standard?</h2>
+          <p>Depending on the time of year, Standard can contain anywhere from one
+          to two core sets and from four to six block sets. Confused? Read on.</p>
+          <p><i>Wizards of the Coast</i> releases blocks (a block is a group of
+          three sets) and core sets alternatingly. Every time the first set in a
+          block gets released, the oldest block in Standard and the oldest core
+          set in Standard simultaneously drop out.</p>
+          <p>This means that Standard can only ever contain two blocks at once,
+          even if one of those blocks has only had one of its sets released.</p>
+          <p>This also means that core sets spend less time in Standard than any
+          other set, as they are the last to be released but they don't drop out
+          any later than their block set brethren.</p>
+          <p><small><i>Note: All previous prints of a card currently in Standard
+          are also considered to be in Standard. For example, if you own an Eighth
+          Edition
+          <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370802">Naturalize</a>,
+          you may use that print in a Standard deck.</i></small></p>
+        </div>
+        <div class="col-md-7" data-description="Extended">
+          <h2>What <em>is</em> Extended?</h2>
+          <p>The Extended format, formerly known as Type 1.x, consists of the last four years of blocks and core sets. With each autumn set release, one year's worth of sets rotate out of the format. Any additional sets released between rotations are automatically added to this format's card pool.</p>
+          <p>On July 22, 2013, Wizards of the Coast announced that the Extended format will be retired, with the final sanctioned events occurring on October 8, 2013.</p>
+        </div>
       </div>
     </div>
-    <footer style="width: 100%; text-align: right; margin-top: 15px;">
+    <footer style="width: 100%; text-align: right; margin-top: 15px;" class="clearfix">
       <a target="_blank" href="https://github.com/glacials/whatsinstandard" style="position: relative; bottom: 15px; right: 15px;">
         <img src="img/github.png" />
       </a>
@@ -117,6 +183,39 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-2876079-7', 'whatsinstandard.com');
       ga('send', 'pageview');
+
+      $( document ).ready(function() {
+        $('ul.nav li a').click(function(e) {
+          var target = $(e.target).closest('a');
+          if (target) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            $('ul.nav li').removeClass("active");
+            target.parent().addClass("active");
+            var strThisType = String(target.attr("data-decktype"));
+            funcType(strThisType);
+          }
+        });
+        funcType($('ul.nav li a').first().attr('data-decktype'));
+      });
+
+      function funcType(argStrType){
+        console.log(argStrType);
+        $("title").html("What's in " + argStrType + "?");
+        $("div.page-header h1").html("What's in " + argStrType + "?");
+        $("div[data-releases] ul li[data-decktypes]").hide();
+        $("div[data-releases] ul li[data-decktypes~='" + argStrType + "']").show();
+        $("div[data-releases] ul span[data-decktypes]").hide();
+        $("div[data-releases] ul span[data-decktypes~='" + argStrType + "']").show();
+        $("div[data-releases] ul").each(function() {
+          //$(this).hide();
+          if ($(this).find('li:visible').length > 0){
+            $(this).show();
+          }
+        });
+        $('div[data-description]').hide();
+        $('div[data-description="' + argStrType + '"]').show();
+      }
     </script>
   </body>
 </html>

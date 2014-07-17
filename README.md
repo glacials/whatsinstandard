@@ -78,6 +78,12 @@ Standard. They can be `null` when they are not known with day-level precision.
 `rough_exit_date` will always hold the form `early 20xx`, `mid 20xx`, or `late
 20xx`. It will never be `null`.
 
+#### Versioning
+
+I only list the most recent version of the API above. All previous versions are deprecated gradually -- sets that fall
+out of Standard are removed from them properly, but newly-released sets are never added. So, all non-current API
+versions will eventually just return `[]`.
+
 ### Contributing
 
 Pull requests are welcome. If you have a change specific to an upcoming set

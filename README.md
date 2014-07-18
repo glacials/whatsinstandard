@@ -75,4 +75,4 @@ Otherwise use `master`.
 [2]: https://github.com/twbs/bootstrap
 [3]: https://github.com/jquery/jquery
 [4]: https://github.com/bower/bower
-[5]: https://github.com/glacials/whatsinstandard/blob/master/api/README.md
+[5]: https://github.com/glacials/whatsinstandard/blob/master/api

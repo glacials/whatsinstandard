@@ -34,9 +34,8 @@ Since we use Bower and we are hosted by GitHub, the `gh-pages` branch just refle
 happens. This way `master` retains separation from its dependencies (Bootstrap). `gh-pages` is the live site.
 
 When a set is nearing release, there should be an additional branch which contains the site as it will be when the next
-release happens, and it should be named for the set (e.g. `return-to-ravnica`). Changes to `master` that happen while
-this branch exists should be merged into it liberally so that we can fast-forward `master` and `gh-pages` at 00:00 on
-release day.
+release happens, and it should be named for the new set (e.g. `return-to-ravnica`). This branch should be in a state
+that allows `master` to be fast-forwarded when a merge happens at 00:00 on release day.
 
 ### API
 

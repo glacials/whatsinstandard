@@ -53,7 +53,7 @@ This is the only API call we have. It returns a JSON array of sets which looks s
     "code": "RTR",
     "symbol": "http://whatsinstandard.com/img/rtr.jpg",
     "enter_date": "2012-10-05T00:00:00.000Z",
-    "exit_date": null,
+    "exit_date": "2014-09-26T00:00:00.000Z",
     "rough_exit_date": "late 2014"
   },
   ...
@@ -63,15 +63,7 @@ This is the only API call we have. It returns a JSON array of sets which looks s
 The array is guaranteed to contain all sets currently in Standard and no other sets (unlike the website, which shows
 between one and three upcoming sets grayed out).
 
-`enter_date` and `exit_date` represent when a set respectively enters and exits Standard. They can be `null` when they
-are not known with day-level precision.  `rough_exit_date` will always hold the form `early 20xx`, `mid 20xx`, or `late
-20xx`. It will never be `null`.
-
-#### Versioning
-
-I only list the most recent version of the API above. All previous versions are deprecated gradually -- sets that fall
-out of Standard are removed from them properly, but newly-released sets are never added. So, all non-current API
-versions will eventually just return `[]`.
+For API details see [the baby API readme][5]!
 
 ### Contributing
 
@@ -83,3 +75,4 @@ Otherwise use `master`.
 [2]: https://github.com/twbs/bootstrap
 [3]: https://github.com/jquery/jquery
 [4]: https://github.com/bower/bower
+[5]: https://github.com/glacials/whatsinstandard/blob/master/api/README.md

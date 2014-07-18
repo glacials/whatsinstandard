@@ -48,7 +48,7 @@
     "name": "Born of the Gods",
     "block": "Theros",
     "code": "BNG",
-    "symbol": null,
+    "symbol": "http://whatsinstandard.com/img/bng.jpg",
     "enter_date": "2014-02-07T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2015"
@@ -57,7 +57,7 @@
     "name": "Journey into Nyx",
     "block": "Theros",
     "code": "JOU",
-    "symbol": null,
+    "symbol": "http://whatsinstandard.com/img/jou.jpg",
     "enter_date": "2014-05-02T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2015"

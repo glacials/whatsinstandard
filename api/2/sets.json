@@ -5,7 +5,7 @@
     "code": "RTR",
     "symbol": "http://whatsinstandard.com/img/rtr.jpg",
     "enter_date": "2012-10-05T00:00:00.000Z",
-    "exit_date": null,
+    "exit_date": "2014-09-26T00:00:00.000Z",
     "rough_exit_date": "late 2014"
   },
   {
@@ -14,7 +14,7 @@
     "code": "GTC",
     "symbol": "http://whatsinstandard.com/img/gtc.jpg",
     "enter_date": "2013-02-01T00:00:00.000Z",
-    "exit_date": null,
+    "exit_date": "2014-09-26T00:00:00.000Z",
     "rough_exit_date": "late 2014"
   },
   {
@@ -23,7 +23,7 @@
     "code": "DGM",
     "symbol": "http://whatsinstandard.com/img/dgm.jpg",
     "enter_date": "2013-05-03T00:00:00.000Z",
-    "exit_date": null,
+    "exit_date": "2014-09-26T00:00:00.000Z",
     "rough_exit_date": "late 2014"
   },
   {
@@ -32,7 +32,7 @@
     "code": "M14",
     "symbol": "http://whatsinstandard.com/img/m14.jpg",
     "enter_date": "2013-07-19T00:00:00.000Z",
-    "exit_date": null,
+    "exit_date": "2014-09-26T00:00:00.000Z",
     "rough_exit_date": "late 2014"
   },
   {
@@ -48,7 +48,7 @@
     "name": "Born of the Gods",
     "block": "Theros",
     "code": "BNG",
-    "symbol": null,
+    "symbol": "http://whatsinstandard.com/img/bng.jpg",
     "enter_date": "2014-02-07T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2015"
@@ -57,8 +57,17 @@
     "name": "Journey into Nyx",
     "block": "Theros",
     "code": "JOU",
-    "symbol": null,
+    "symbol": "http://whatsinstandard.com/img/jou.jpg",
     "enter_date": "2014-05-02T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2015"
+  },
+  {
+    "name": "2015 Core Set",
+    "block": null,
+    "code": "M15",
+    "symbol": "http://whatsinstandard.com/img/m15.jpg",
+    "enter_date": "2014-07-18T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2015"
   }

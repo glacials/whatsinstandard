@@ -6,9 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" href="bower_components/tipsy/src/stylesheets/tipsy.css" media="screen" />
     <style>
       body, h1, h2, h3, h4, h5, h6 {
         font-family: "Open Sans", sans-serif;
+      }
+      a.tip {
+        border-bottom: 1px dashed #ccc;
+        color: #333;
+        font-size: .7em;
+      }
+      a.tip:hover {
+        text-decoration: none;
       }
       .badge {
         background: none;
@@ -132,6 +141,38 @@
         For example, if you own an Eighth Edition
         <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370802">Naturalize</a>,
         you may use that print in a Standard deck.</i></small></p>
+        <h3>Upcoming changes to Standard</h3>
+        <p>
+          In late 2015, set release patterns will change in the following ways:
+          <ul>
+            <li>There will be no more core set releases.</li>
+            <li>Blocks will release twice as often as they do currently.</li>
+            <li>Block size will be reduced from three sets to two.</li>
+            <li>Blocks will fall out of Standard 6 months earlier than they do currently.</li>
+          </ul>
+        </p>
+        <p>
+          What this means for the Standard format:
+          <ul>
+            <li>Set release frequency will be unchanged (four per year).</li>
+            <li>
+              Sets will fall out of Standard twice as often, in groups half the size.
+              <a class="tip" title="Two sets every six months, changed from four every twelve.">(?)</a>
+            </li>
+            <li>
+              The average number of sets in Standard will drop by one.
+              <a class="tip" title="During a rotation period, Standard will contain five then six sets with evenly
+              distributed durations. Currently, it contains five, six, seven, then eight sets with evenly distributed
+              durations.">(?)</a>
+            </li>
+          </ul>
+        </p>
+        <p>In late 2016, the last of the sets released using the current pattern will drop out.</p>
+        <p>
+          For more information, see the very well written
+          <a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">official announcement article</a>,
+          which explains the changes and their intended effects.
+        </p>
       </div>
     </div>
     <footer style="width: 100%; text-align: right; margin-top: 15px;">
@@ -140,6 +181,7 @@
       </a>
     </footer>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -147,6 +189,8 @@
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-2876079-7', 'whatsinstandard.com');
       ga('send', 'pageview');
+
+      $(".tip").tipsy({gravity: 's'});
     </script>
   </body>
 </html>

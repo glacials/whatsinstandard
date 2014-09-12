@@ -26,15 +26,17 @@ This will return something like:
 But you can just [visit it yourself][1] to see everything. You'll get some JSON containing an array of Magic sets. Each
 set has some fields:
 
-| field             | null possible?                     | description                               |
-|:----------------- |:---------------------------------- |:----------------------------------------- |
-| `name`            | no                                 | human-readable name of the set            |
-| `block`           | null iff it's a core set           | human-readable name of the set's block    |
-| `code`            | no                                 | official three-character code of the set  |
-| `symbol`          | no                                 | URL to the official set image             |
-| `enter_date`      | no                                 | release date of the set                   |
-| `exit_date`       | null iff an exact date isn't known | date the set exits Standard, if known     |
-| `rough_exit_date` | no                                 | rough time of year the set exits Standard |
+| field             | type                                                           | description                               |
+|:----------------- |:-------------------------------------------------------------- |:----------------------------------------- |
+| `name`            | string                                                         | human-readable name of the set            |
+| `block`           | string, or `null` if a core set                                | human-readable name of the set's block    |
+| `code`            | string, matching regex `/[A-Z]{3}/`                            | official three-character code of the set  |
+| `symbol`          | string                                                         | URL to the official set image             |
+| `enter_date`      | string                                                         | release date of the set                   |
+| `exit_date`       | string, or `null` if not exactly known                         | date the set exits Standard, if known     |
+| `rough_exit_date` | string, matching regex <code>/(early&#124;late) 20\d\d/</code> | rough time of year the set exits Standard |
+
+The set array is guaranteed to be in order of release, from oldest set to newest.
 
 ### Versioning
 

@@ -41,20 +41,20 @@ that allows `master` to be fast-forwarded when a merge happens at 00:00 on relea
 
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
 
-#### [/api/2/sets.json][4]
+#### [/api/3/sets.json][4]
 
 This is the only API call we have. It returns a JSON array of sets which looks something like this:
 
 ```json
 [
   {
-    "name": "Return to Ravnica",
-    "block": "Return to Ravnica",
-    "code": "RTR",
-    "symbol": "http://whatsinstandard.com/img/rtr.jpg",
-    "enter_date": "2012-10-05T00:00:00.000Z",
-    "exit_date": "2014-09-26T00:00:00.000Z",
-    "rough_exit_date": "late 2014"
+    "name": "Theros",
+    "block": "Theros",
+    "code": "THS",
+    "symbol": "http://whatsinstandard.com/img/ths.jpg",
+    "enter_date": "2013-09-27T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2015"
   },
   ...
 ]
@@ -79,5 +79,5 @@ Otherwise use `master`.
 [1]: http://www.wizards.com/magic/magazine/article.aspx?x=judge/resources/sfrstandard
 [2]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
 [3]: https://github.com/bower/bower
-[4]: http://whatsinstandard.com/api/2/sets.json
+[4]: http://whatsinstandard.com/api/3/sets.json
 [5]: https://github.com/glacials/whatsinstandard/blob/master/api

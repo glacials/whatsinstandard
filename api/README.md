@@ -51,7 +51,7 @@ Valid `rough_exit_date` regex has changed from `/(early|late) 20\d\d/` to `/(ear
 the new Standard rotation style. Old API versions will continue to match their respective regexes, but with potentially
 less accuracy. See Wizards's [article on the change][2] for details.
 
-##### Version 2:
+##### Version 2
 Upcoming unreleased sets are no longer included in the sets array.
 
 [1]: http://whatsinstandard.com/api/3/sets.json

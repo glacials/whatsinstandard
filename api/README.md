@@ -26,15 +26,15 @@ This will return something like:
 But you can just [visit it yourself][1] to see everything. You'll get some JSON containing an array of Magic sets. Each
 set has some fields:
 
-| field             | type                                                                           | description                               |
-|:----------------- |:------------------------------------------------------------------------------ |:----------------------------------------- |
-| `name`            | string                                                                         | human-readable name of the set            |
-| `block`           | string, or `null` if a core set                                                | human-readable name of the set's block    |
-| `code`            | string, matching regex `/[A-Z]{3}/`                                            | official three-character code of the set  |
-| `symbol`          | string                                                                         | URL to the official set image             |
-| `enter_date`      | string                                                                         | release date of the set                   |
-| `exit_date`       | string, or `null` if not exactly known                                         | date the set exits Standard, if known     |
-| `rough_exit_date` | string, matching regex <code>/(early(\/mid)?&#124;(mid\/)?late) 20\d\d/</code> | rough time of year the set exits Standard |
+| field             | type                                                                | description                               |
+|:----------------- |:------------------------------------------------------------------- |:----------------------------------------- |
+| `name`            | string                                                              | human-readable name of the set            |
+| `block`           | string, or `null` if a core set                                     | human-readable name of the set's block    |
+| `code`            | string, matching regex `/[A-Z]{3}/`                                 | official three-character code of the set  |
+| `symbol`          | string                                                              | URL to the official set image             |
+| `enter_date`      | string                                                              | release date of the set                   |
+| `exit_date`       | string, or `null` if not exactly known                              | date the set exits Standard, if known     |
+| `rough_exit_date` | string, matching regex <code>/(early\/mid&#124;late) 20\d\d/</code> | rough time of year the set exits Standard |
 
 The sets array is guaranteed to be in order of release (aka `enter_date`), from oldest set to newest.
 
@@ -51,7 +51,7 @@ Valid `rough_exit_date` regex has changed from `/(early|late) 20\d\d/` to `/(ear
 the new Standard rotation style. Old API versions will continue to match their respective regexes, but with potentially
 less accuracy. See Wizards's [article on the change][2] for details.
 
-##### Version 2:
+##### Version 2
 Upcoming unreleased sets are no longer included in the sets array.
 
 [1]: http://whatsinstandard.com/api/3/sets.json

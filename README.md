@@ -65,11 +65,6 @@ between one and three upcoming sets grayed out).
 
 For API details see [the baby API readme][5]!
 
-### Images
-
-Set images are jpegs. This is dumb, but it's (for some reason) the format Wizards has them in. The ideal format here
-would be SVGs, but 
-
 ### Contributing
 
 Pull requests are welcome. If you have a change specific to an upcoming set release, pull request that branch directly.

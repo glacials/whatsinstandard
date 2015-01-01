@@ -12,12 +12,18 @@
         font-family: "Open Sans", sans-serif;
       }
       a.tip {
-        border-bottom: 1px dashed #ccc;
         color: #333;
-        font-size: .7em;
       }
       a.tip:hover {
         text-decoration: none;
+      }
+      a.tip:after {
+        border-bottom: 1px dashed #ccc;
+        content: "(?)";
+        color: #333;
+        font-size: .65em;
+        position: relative;
+        top: -.2em;
       }
       .badge {
         background: none;
@@ -56,6 +62,12 @@
       }
       span.badge > img {
         height: 21px;
+      }
+      hr {
+        border-top: dashed 1px #ccc;
+        color: #999;
+        font-size: .8em;
+        margin: 2em 0;
       }
     </style>
   </head>
@@ -123,51 +135,48 @@
       </div>
       <div class="col-md-7">
         <h2>What <em>is</em> Standard?</h2>
-        <p>Depending on the time of year, Standard can contain anywhere from one to two core sets and from four to six
-        block sets. Confused? Read on.</p>
-        <p><i>Wizards of the Coast</i> releases blocks (a block is a group of three sets) and core sets alternatingly.
-        Every time the first set in a block gets released, the oldest block in Standard and the oldest core set in
-        Standard simultaneously drop out.</p>
-        <p>This means that Standard can only ever contain two blocks at once, even if one of those blocks has only had
-        one of its sets released.</p>
-        <p>This also means that core sets spend less time in Standard than any other set, as they are the last to be
-        released but they don't drop out any later than their block set brethren.</p>
-        <p><small><i>Note: All previous prints of a card currently in Standard are also considered to be in Standard.
-        For example, if you own an Eighth Edition
-        <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=370802">Naturalize</a>,
-        you may use that print in a Standard deck.</i></small></p>
-        <h3>Upcoming changes to Standard</h3>
+        <p>Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
+        released and drop out about a year later.</p>
         <p>
-          In late 2015, set release patterns will change in the following ways:
+          A card is Standard if it has been printed or reprinted
+          <a class="tip" title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize are also considered Standard."></a>
+          into a set currently in Standard.
+        </p>
+        <p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
+        <h3>Rotation patterns</h3>
+        <p>
+        The set rotation pattern for Standard is currently in a two-year transitory phase between the previous set
+        release pattern and the
+        <a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">upcoming one</a>.
+          <h4>The new pattern's changes</h4>
           <ul>
             <li>There will be no more core set releases.</li>
-            <li>Blocks will release twice as often as they do currently.</li>
             <li>Block size will be reduced from three sets to two.</li>
-            <li>Blocks will fall out of Standard six months earlier than they do currently.</li>
+            <li>There will be a total of two blocks per year, up from one.</li>
+            <li>Blocks will stay in Standard for six months less than they do currently.</li>
           </ul>
-        </p>
-        <p>
-          What this means for the Standard format:
+          <h4>Effects on Standard</h4>
           <ul>
-            <li>Set release frequency will be unchanged (four per year).</li>
-            <li>
-              Sets will fall out of Standard twice as often, in groups half the size.
-              <a class="tip" title="Two sets every six months, changed from four every twelve.">(?)</a>
+            <li>Sets will release into Standard at the same rate (four per year).</li>
+            <li>Sets will fall out of Standard twice as often, in groups half the size.
+              <a class="tip" title="Two per six months, changed from four per twelve."></a>
             </li>
             <li>
               The average number of sets in Standard will drop by one.
               <a class="tip" title="During a rotation period, Standard will contain five then six sets with evenly
-              distributed durations. Currently, it contains five, six, seven, then eight sets with evenly distributed
-              durations.">(?)</a>
+              distributed durations. Previously it contained five, six, seven, then eight sets with evenly distributed
+              durations."></a>
             </li>
           </ul>
-        </p>
-        <p>In late 2016, the last of the sets released using the current pattern will drop out.</p>
-        <p>
-          For more information, see the very well written
-          <a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">official announcement article</a>,
-          which explains the changes and their intended effects.
-        </p>
+          <h4>The transitory phase</h4>
+          <p>
+          The <i>Theros</i> block and <i>2015 Core Set</i> will drop out together, as in the old rotation pattern.</p>
+          <p>
+            The <i>Khans of Tarkir</i> block and <i>2016 Core Set</i>, although released in the old style, will drop out
+            in the new; <i>Khans of Tarkir</i> and <i>Fate Reforged</i> will drop out together as if they were a two-set
+            block, followed by <i>Dragons of Tarkir</i> and <i>2016 Core Set</i> in the same fashion six months later.
+          </p>
+          <p>After that, all sets will be both released and dropped in the new style.</p>
       </div>
     </div>
     <footer style="width: 100%; text-align: right; margin-top: 15px;">

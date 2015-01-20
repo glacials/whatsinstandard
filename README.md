@@ -51,7 +51,7 @@ This is the only API call we have. It returns a JSON array of sets which looks s
     "name": "Theros",
     "block": "Theros",
     "code": "THS",
-    "symbol": "http://whatsinstandard.com/img/ths.jpg",
+    "symbol": "http://whatsinstandard.com/img/ths.svg",
     "enter_date": "2013-09-27T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2015"

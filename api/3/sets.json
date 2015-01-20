@@ -43,5 +43,14 @@
     "enter_date": "2014-09-26T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "early/mid 2016"
+  },
+  {
+    "name": "Fate Reforged",
+    "block": "Khans of Tarkir",
+    "code": "FRF",
+    "symbol": "http://whatsinstandard.com/img/frf.svg",
+    "enter_date": "2015-01-23T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "early/mid 2016"
   }
 ]

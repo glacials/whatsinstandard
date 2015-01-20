@@ -8,10 +8,10 @@ yearly rotations work.
 
 ### Images
 
-The only images used are the GitHub octocat and the MTG set symbols. Where possible these are SVGs, but often the most
-recent set symbol isn't yet available in SVG (check [Robert's mtgimage.com][2]). In this situation we use the "large"
-resolution image from Gatherer ([example][3]). Set symbols vary in width, so we standardize on a height of 21px and let
-the widths behave how they want.
+We display MTG set symbols for released sets. Where possible these are SVGs, but often the most recent set symbol isn't
+yet available in SVG (check [Robert's mtgimage.com][2]). In this situation we use the "large" resolution image from
+Gatherer ([example][3]). Set symbols vary in width, so we standardize on a height of 21px and let the widths behave how
+they want.
 
 ### Running it locally
 
@@ -31,11 +31,11 @@ fine.
 ### Branches
 
 Since we use Bower and we are hosted by GitHub, the `gh-pages` branch just reflects `master` after a `bower install`
-happens. This way `master` retains separation from its dependencies (Bootstrap). `gh-pages` is the live site.
+happens. This way `master` retains separation from its dependencies. `gh-pages` is the live site.
 
-When a set is nearing release, there should be an additional branch which contains the site as it will be when the
-release happens, and it should be named for the new set (e.g. `return-to-ravnica`). This branch should be in a state
-that allows `master` to be fast-forwarded when a merge happens at 00:00 on release day.
+When a set is nearing release, there should be a feature branch for that set which contains the site as it will be when
+the release happens, and it should be named for the new set (e.g. `return-to-ravnica`). This branch should be in a state
+that allows `master` to be fast-forwarded to it when a merge happens at 00:00 on release day.
 
 ### API
 

@@ -8,14 +8,14 @@ yearly rotations work.
 
 ### Images
 
-The only images used are the GitHub octocat and the MTG set symbols. Where possible these are SVGs, but often the most
-recent set symbol isn't yet available in SVG (check [Robert's mtgimage.com][4]). In this situation we use the "large"
-resolution image from Gatherer ([example][2]). Set symbols vary in width, so we standardize on a height of 21px and let
-the widths behave how they want.
+We display MTG set symbols for released sets. Where possible these are SVGs, but often the most recent set symbol isn't
+yet available in SVG (check [Robert's mtgimage.com][2]). In this situation we use the "large" resolution image from
+Gatherer ([example][3]). Set symbols vary in width, so we standardize on a height of 21px and let the widths behave how
+they want.
 
 ### Running it locally
 
-[Bower][3] manages the Bootstrap CSS/JS, so you'll need it installed if you don't want the site to look like it's from
+[Bower][4] manages the Bootstrap CSS/JS, so you'll need it installed if you don't want the site to look like it's from
 the 90s. But hey, if that's your thing I won't stop you.
 
 ```bash
@@ -31,17 +31,17 @@ fine.
 ### Branches
 
 Since we use Bower and we are hosted by GitHub, the `gh-pages` branch just reflects `master` after a `bower install`
-happens. This way `master` retains separation from its dependencies (Bootstrap). `gh-pages` is the live site.
+happens. This way `master` retains separation from its dependencies. `gh-pages` is the live site.
 
-When a set is nearing release, there should be an additional branch which contains the site as it will be when the
-release happens, and it should be named for the new set (e.g. `return-to-ravnica`). This branch should be in a state
-that allows `master` to be fast-forwarded when a merge happens at 00:00 on release day.
+When a set is nearing release, there should be a feature branch for that set which contains the site as it will be when
+the release happens, and it should be named for the new set (e.g. `return-to-ravnica`). This branch should be in a state
+that allows `master` to be fast-forwarded to it when a merge happens at 00:00 on release day.
 
 ### API
 
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
 
-#### [/api/3/sets.json][4]
+#### [/api/3/sets.json][5]
 
 This is the only API call we have. It returns a JSON array of sets which looks something like this:
 
@@ -63,7 +63,7 @@ This is the only API call we have. It returns a JSON array of sets which looks s
 The array is guaranteed to contain all sets currently in Standard and no other sets (unlike the website, which shows
 between one and three upcoming sets grayed out).
 
-For API details see [the baby API readme][5]!
+For API details see [the baby API readme][6]!
 
 ### Contributing
 
@@ -72,7 +72,8 @@ Otherwise use `master`.
 
 [0]: http://whatsinstandard.com/
 [1]: http://www.wizards.com/magic/magazine/article.aspx?x=judge/resources/sfrstandard
-[2]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
-[3]: https://github.com/bower/bower
-[4]: http://whatsinstandard.com/api/3/sets.json
-[5]: https://github.com/glacials/whatsinstandard/blob/master/api
+[2]: http://mtgimage.com/
+[3]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
+[4]: https://github.com/bower/bower
+[5]: http://whatsinstandard.com/api/3/sets.json
+[6]: https://github.com/glacials/whatsinstandard/blob/master/api

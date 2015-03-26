@@ -9,9 +9,8 @@ yearly rotations work.
 ### Images
 
 We display MTG set symbols for released sets. Where possible these are SVGs, but often the most recent set symbol isn't
-yet available in SVG (check [Robert's mtgimage.com][2]). In this situation we use the "large" resolution image from
-Gatherer ([example][3]). Set symbols vary in width, so we standardize on a height of 21px and let the widths behave how
-they want.
+yet available in SVG. In this situation we use the "large" resolution image from Gatherer ([example][3]). Set symbols
+vary in width, so we standardize on a height of 21px and let the widths behave how they want.
 
 ### Running it locally
 
@@ -69,6 +68,13 @@ For API details see [the baby API readme][6]!
 
 Pull requests are welcome. If you have a change specific to an upcoming set release, pull request that branch directly.
 Otherwise use `master`.
+
+## Attributions
+
+Thanks to:
+
+* BaconCatBug and skibulk for SVG set images
+
 
 [0]: http://whatsinstandard.com/
 [1]: http://www.wizards.com/magic/magazine/article.aspx?x=judge/resources/sfrstandard

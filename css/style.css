@@ -1,0 +1,103 @@
+/*
+ * entire page
+ */
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", sans-serif;
+}
+
+/*
+ * tooltips
+ */
+
+a.tip {
+  color: #333;
+}
+
+a.tip:hover {
+  text-decoration: none;
+}
+
+a.tip:after {
+  border-bottom: 1px dashed #ccc;
+  content: "(?)";
+  color: #333;
+  font-size: .65em;
+  position: relative;
+  top: -.2em;
+}
+
+/*
+ * release & drop date labels
+ */
+
+.label {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-right: .25em;
+  font-size: .77em;
+  font-weight: normal;
+}
+
+.label-danger {
+  background-color: #ffdada;
+  color: #c83030;
+}
+
+.label-warning {
+  background-color: #feefb3;
+  color: #9f6000;
+}
+
+.label-success {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+
+.label-primary {
+  background-color: #bde5f8;
+  color: #00529b;
+}
+
+.label-default {
+  background-color: #ddd;
+  color: #666;
+}
+
+/*
+ * set list
+ */
+
+ul.list-group > li.gray {
+  color: #ddd;
+}
+
+/*
+ * set symbols
+ */
+
+/* center symbols on an imaginary vertical line */
+ul.list-group > li.list-group-item > span.badge {
+  margin-right: -15px;
+  margin-top: -3px;
+  width: 60px;
+}
+
+span.badge > img {
+  height: 21px;
+}
+
+.badge {
+  background: none;
+}
+
+/*
+ * miscellaneous
+ */
+
+hr {
+  border-top: dashed 1px #ccc;
+  color: #999;
+  font-size: .8em;
+  margin: 2em 0;
+}

@@ -7,69 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" href="bower_components/tipsy/src/stylesheets/tipsy.css" media="screen" />
-    <style>
-      body, h1, h2, h3, h4, h5, h6 {
-        font-family: "Open Sans", sans-serif;
-      }
-      a.tip {
-        color: #333;
-      }
-      a.tip:hover {
-        text-decoration: none;
-      }
-      a.tip:after {
-        border-bottom: 1px dashed #ccc;
-        content: "(?)";
-        color: #333;
-        font-size: .65em;
-        position: relative;
-        top: -.2em;
-      }
-      .badge {
-        background: none;
-      }
-      .label {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        margin-right: .25em;
-        font-size: .77em;
-        font-weight: normal;
-      }
-      .label-warning {
-        background-color: #feefb3;
-        color: #9f6000;
-      }
-      .label-success {
-        background-color: #dff2bf;
-        color: #4f8a10;
-      }
-      .label-primary {
-        background-color: #bde5f8;
-        color: #00529b;
-      }
-      .label-default {
-        background-color: #ddd;
-        color: #666;
-      }
-      ul.list-group > li.gray {
-        color: #ddd;
-      }
-      /* Center set symbols on an imaginary vertical line */
-      ul.list-group > li.list-group-item > span.badge {
-        margin-right: -15px;
-        margin-top: -3px;
-        width: 60px;
-      }
-      span.badge > img {
-        height: 21px;
-      }
-      hr {
-        border-top: dashed 1px #ccc;
-        color: #999;
-        font-size: .8em;
-        margin: 2em 0;
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css" media="screen" />
   </head>
   <body>
     <div class="container">
@@ -114,20 +52,18 @@
           </span>
         </ul>
         <ul class="list-group">
-          <li class="list-group-item gray">
+          <li class="list-group-item">
             Dragons of Tarkir
+            <span class="badge"><img src="img/dtk.svg" /></span>
           </li>
           <li class="list-group-item gray">
             Magic Origins
           </li>
-          <span class="label label-default">
-            Dragons of Tarkir releases March 27, 2015
+          <span class="label label-primary">
+            Until late 2016
           </span>
           <span class="label label-default">
             Magic Origins releases July 17, 2015
-          </span>
-          <span class="label label-success">
-            Until late 2016
           </span>
         </ul>
       </div>
@@ -136,39 +72,34 @@
         <p>Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
         released and drop out about eighteen months later.</p>
         <p>
-          A card is Standard if it has been printed or reprinted
+          A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
           <a class="tip" title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize are also considered Standard."></a>
-          into a set currently in Standard.
         </p>
         <p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
         <h3>Rotation patterns</h3>
         <p>
-        The set rotation pattern for Standard is currently in a two-year transitory phase between the previous set
-        release pattern and the
-        <a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">upcoming one</a>.
-          <h4>The new pattern's changes</h4>
+        The set rotation pattern for Standard is currently in a two-year transition between the old set release
+        pattern and the
+        <a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">new one</a>.
+          <h4>How the changes touch Standard</h4>
           <ul>
-            <li>There will be no more core set releases.</li>
-            <li>Block size will be reduced from three sets to two.</li>
-            <li>There will be a total of two blocks per year, up from one.</li>
-            <li>Blocks will stay in Standard for six months less than they do currently.</li>
-          </ul>
-          <h4>Effects on Standard</h4>
-          <ul>
-            <li>Sets will release into Standard at the same rate (four per year).</li>
-            <li>Sets will fall out of Standard twice as often, in groups half the size.
-              <a class="tip" title="Two per six months, changed from four per twelve."></a>
+            <li>
+              Sets will enter Standard at the same rate (four per year).
+              <a class="tip" title="However, instead of this group of four containing a core set and a three-set block, it will contain two two-set blocks."></a>
             </li>
             <li>
-              The average number of sets in Standard will drop by one.
-              <a class="tip" title="During a rotation period, Standard will contain five then six sets with evenly
-              distributed durations. Previously it contained five, six, seven, then eight sets with evenly distributed
-              durations."></a>
+              Sets will rotate out of Standard twice as often, in groups half the size.
+              <a class="tip" title="Two sets per six months, changed from four per twelve."></a>
+            </li>
+            <li>
+              As a result, the mean number of sets in Standard over a rotation period will drop by one.
+              <a class="tip" title="A Standard rotation period will contain (with equal durations) five then six sets; changed from five, six, seven, then eight."></a>
             </li>
           </ul>
-          <h4>The transitory phase</h4>
+          <h4>Getting through the two-year transition</h4>
           <p>
-          The <i>Theros</i> block and <i>2015 Core Set</i> will drop out together, as in the old rotation pattern.</p>
+            The <i>Theros</i> block and <i>2015 Core Set</i> will drop out together, as in the old rotation pattern.
+          </p>
           <p>
             The <i>Khans of Tarkir</i> block and <i>Magic Origins</i>, although released in the old style, will drop out
             in the new; <i>Khans of Tarkir</i> and <i>Fate Reforged</i> will drop out together as if they were a two-set

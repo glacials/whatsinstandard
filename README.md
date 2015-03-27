@@ -73,8 +73,7 @@ Otherwise use `master`.
 
 Thanks to:
 
-* BaconCatBug and skibulk for SVG set images
-
+* BaconCatBug and skibulk for their SVG set images
 
 [0]: http://whatsinstandard.com/
 [1]: http://www.wizards.com/magic/magazine/article.aspx?x=judge/resources/sfrstandard

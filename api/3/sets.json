@@ -52,5 +52,14 @@
     "enter_date": "2015-01-23T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "early/mid 2016"
+  },
+  {
+    "name": "Dragons of Tarkir",
+    "block": "Khans of Tarkir",
+    "code": "DTK",
+    "symbol": "http://whatsinstandard.com/img/dtk.svg",
+    "enter_date": "2015-03-27T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2016"
   }
 ]

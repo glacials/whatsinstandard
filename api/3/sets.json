@@ -61,5 +61,14 @@
     "enter_date": "2015-03-27T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2016"
+  },
+  {
+    "name": "Magic Origins",
+    "block": null,
+    "code": "ORI",
+    "symbol": "http://whatsinstandard.com/img/ori.jpg",
+    "enter_date": "2015-07-17T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2016"
   }
 ]

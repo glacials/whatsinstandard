@@ -73,7 +73,15 @@ Otherwise use `master`.
 
 Thanks to:
 
-* BaconCatBug and skibulk for their SVG set images
+* For SVG set icon images:
+  * BaconCatBug
+  * White Dragon
+  * Goblin Hero
+  * Skibulk
+  * Baka-Neku
+  * Qanadhar
+  * Poopski
+* For gathering them: [jninnes][7]
 
 [0]: http://whatsinstandard.com/
 [1]: http://www.wizards.com/magic/magazine/article.aspx?x=judge/resources/sfrstandard
@@ -82,3 +90,4 @@ Thanks to:
 [4]: https://github.com/bower/bower
 [5]: http://whatsinstandard.com/api/3/sets.json
 [6]: https://github.com/glacials/whatsinstandard/blob/master/api
+[7]: https://github.com/jninnes/mtgicons

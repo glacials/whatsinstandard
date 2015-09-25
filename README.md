@@ -1,8 +1,8 @@
 # What's in Standard?
 
 *[What's in Standard?][0]* is a simple reference page made to help new (or not new) Magic: The Gathering players easily
-check which sets are currently in [Standard][1], see when the next rotation is going to happen, and understand how the
-yearly rotations work.
+check which sets are currently in [Standard][1], see when the next rotation is going to happen, and understand how
+rotations work.
 
 ## Development
 

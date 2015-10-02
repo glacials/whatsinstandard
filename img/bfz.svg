@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="600"
+   height="689.25903"
+   id="svg3820"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="B2201 - Battle for Zendikar - Common.svg">
+  <sodipodi:namedview
+     pagecolor="#d9d9df"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     id="namedview3406"
+     showgrid="false"
+     inkscape:zoom="0.68479335"
+     inkscape:cx="116.7263"
+     inkscape:cy="290.29727"
+     inkscape:window-x="1912"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3820" />
+  <defs
+     id="defs3822" />
+  <metadata
+     id="metadata3825">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="fill:#ffffff;fill-opacity:1"
+     d="M 185.48096,487.16984 C 89.810944,354.76915 67.49376,322.73563 67.057254,317.18744 66.559789,310.86446 75.089833,299.06367 180.61055,160.09356 287.79287,18.935112 295.08305,9.8083428 300.99901,9.3760613 c 6.20032,-0.4530596 8.11279,1.9720207 124.18314,157.4686687 94.55968,126.67933 118.00564,159.25145 118.49133,164.61323 0.55428,6.1188 -9.06051,19.85248 -113.63137,162.30978 -107.4853,146.42765 -114.60448,155.65264 -120.45612,156.08667 -6.12535,0.45434 -7.99836,-2.00092 -124.10503,-162.68457 z"
+     id="path3494"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="sssssssss" />
+  <path
+     style="fill:#000000"
+     d=""
+     id="path3427"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#000000"
+     d=""
+     id="path3425"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:#000000"
+     d="M 209.95662,477.70809 C 154.12318,401.79237 108.65065,339.46891 108.90655,339.21155 c 0.25589,-0.25739 23.28739,8.55134 51.18111,19.57496 27.89371,11.0236 51.49618,20.04292 52.44991,20.04292 0.95374,0 19.4049,-19.93037 41.00258,-44.28972 l 39.2685,-44.28969 0,76.58003 c 0,42.11902 0.76146,76.27888 1.69214,75.91079 0.93069,-0.36807 29.01976,-29.35407 62.42019,-64.41334 33.40041,-35.05926 61.47394,-63.74411 62.38562,-63.74411 4.02706,0 87.3209,31.89543 87.3209,33.43749 0,2.1778 -192.31313,267.58218 -193.94682,267.65897 -0.66481,0.0313 -46.89062,-62.05603 -102.72406,-137.97176 z m 110.4816,-190.84558 -0.52577,-75.90541 -61.00816,63.85928 c -33.55448,35.1226 -61.78295,63.85927 -62.72993,63.85927 -2.20069,0 -86.04347,-31.43187 -87.36327,-32.75166 C 107.46292,304.5758 300.81706,38.5262 303.14504,38.5262 c 1.68973,0 204.67162,274.49183 203.71257,275.47992 -0.22772,0.23464 -23.23053,-8.5741 -51.11735,-19.57497 -27.88683,-11.00084 -51.78712,-19.93803 -53.1118,-19.86041 -1.32465,0.0777 -19.5742,19.92597 -40.55455,44.10741 -20.98034,24.18147 -38.81294,43.99408 -39.628,44.02803 -0.81504,0.0339 -1.7185,-34.09569 -2.00769,-75.84367 z"
+     id="path3419"
+     inkscape:connector-curvature="0" />
+</svg>

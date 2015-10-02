@@ -1,41 +1,5 @@
 [
   {
-    "name": "Theros",
-    "block": "Theros",
-    "code": "THS",
-    "symbol": "http://whatsinstandard.com/img/ths.svg",
-    "enter_date": "2013-09-27T00:00:00.000Z",
-    "exit_date": "2015-10-02T00:00:00.000Z",
-    "rough_exit_date": "late 2015"
-  },
-  {
-    "name": "Born of the Gods",
-    "block": "Theros",
-    "code": "BNG",
-    "symbol": "http://whatsinstandard.com/img/bng.svg",
-    "enter_date": "2014-02-07T00:00:00.000Z",
-    "exit_date": "2015-10-02T00:00:00.000Z",
-    "rough_exit_date": "late 2015"
-  },
-  {
-    "name": "Journey into Nyx",
-    "block": "Theros",
-    "code": "JOU",
-    "symbol": "http://whatsinstandard.com/img/jou.svg",
-    "enter_date": "2014-05-02T00:00:00.000Z",
-    "exit_date": "2015-10-02T00:00:00.000Z",
-    "rough_exit_date": "late 2015"
-  },
-  {
-    "name": "2015 Core Set",
-    "block": null,
-    "code": "M15",
-    "symbol": "http://whatsinstandard.com/img/m15.svg",
-    "enter_date": "2014-07-18T00:00:00.000Z",
-    "exit_date": "2015-10-02T00:00:00.000Z",
-    "rough_exit_date": "late 2015"
-  },
-  {
     "name": "Khans of Tarkir",
     "block": "Khans of Tarkir",
     "code": "KTK",

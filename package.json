@@ -1,0 +1,14 @@
+{
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/glacials/whatsinstandard.git"
+  },
+  "scripts": {
+    "autotest": "./node_modules/.bin/supervisor -q -n exit -x ./node_modules/.bin/mocha -- -b"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.3",
+    "supervisor": "~0.9.1"
+  }
+}

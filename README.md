@@ -64,6 +64,28 @@ between one and three upcoming sets grayed out).
 
 For API details see [the baby API readme][6]!
 
+### Testing
+The API has a few quick tests. To run them, you'll need to install a couple of testing dependencies:
+
+```bash
+npm install
+npm install -g mocha
+```
+
+Then to run the tests, just type
+
+```bash
+mocha
+```
+
+Or to autorun them whenever test files update, instead use
+
+```bash
+npm run autotest
+```
+
+[mocha]: https://github.com/mochajs/mocha
+
 ### Contributing
 
 Pull requests are welcome. If you have a change specific to an upcoming set release, pull request that branch directly.

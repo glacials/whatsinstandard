@@ -33,7 +33,7 @@ Since we use Bower and we are hosted by GitHub, the `gh-pages` branch just refle
 happens. This way `master` retains separation from its dependencies. `gh-pages` is the live site.
 
 When a set is nearing release, there should be a feature branch for that set which contains the site as it will be when
-the release happens, and it should be named for the new set (e.g. `return-to-ravnica`). This branch should be in a state
+the release happens, and it should be named for the new set (e.g. `oath-of-the-gatewatch`). This branch should be in a state
 that allows `master` to be fast-forwarded to it when a merge happens at 00:00 on release day.
 
 ### API

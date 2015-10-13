@@ -41,7 +41,6 @@ describe("API", function() {
 
   describe("v3", function() {
     var versionPath = apiPath + "/3";
-    var remainingImages = fs.readdirSync('img');
 
     describe("sets.json", function() {
       var setsPath = versionPath + "/sets.json";
@@ -117,11 +116,8 @@ describe("API", function() {
             });
 
             it("should have a corresponding image file present", function() {
-              filePath = symbol.replace("http://whatsinstandard.com/", "")
-              remainingImages = remainingImages.splice(remainingImages.indexOf(filePath), 1);
-              expect(
-                fs.statSync(filePath).isFile()
-              ).to.equal(true);
+              filePath = symbol.replace("http://whatsinstandard.com/", "");
+              expect(fs.statSync(filePath).isFile()).to.equal(true);
             });
           });
 
@@ -168,11 +164,6 @@ describe("API", function() {
               expect(roughExitDate).to.match(/(early\/mid|late) 20\d\d/);
             });
           });
-        });
-      });
-      describe("(after scanning)", function() {
-        it("should have contained a reference to everything in img/", function() {
-          expect(remainingImages).to.be.empty();
         });
       });
     });

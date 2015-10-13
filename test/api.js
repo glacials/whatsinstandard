@@ -32,11 +32,16 @@ describe("API", function() {
       it("should be an array", function() {
         expect(sets).to.be.an("array");
       });
+
+      it("shouldn't grow", function() {
+        expect(sets).to.have.length.within(0, 1);
+      });
     });
   });
 
   describe("v3", function() {
     var versionPath = apiPath + "/3";
+    var remainingImages = fs.readdirSync('img');
 
     describe("sets.json", function() {
       var setsPath = versionPath + "/sets.json";
@@ -112,8 +117,10 @@ describe("API", function() {
             });
 
             it("should have a corresponding image file present", function() {
+              filePath = symbol.replace("http://whatsinstandard.com/", "")
+              remainingImages = remainingImages.splice(remainingImages.indexOf(filePath), 1);
               expect(
-                fs.statSync(symbol.replace("http://whatsinstandard.com/", "")).isFile()
+                fs.statSync(filePath).isFile()
               ).to.equal(true);
             });
           });
@@ -161,6 +168,11 @@ describe("API", function() {
               expect(roughExitDate).to.match(/(early\/mid|late) 20\d\d/);
             });
           });
+        });
+      });
+      describe("(after scanning)", function() {
+        it("should have contained a reference to everything in img/", function() {
+          expect(remainingImages).to.be.empty();
         });
       });
     });

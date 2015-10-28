@@ -65,26 +65,18 @@ between one and three upcoming sets grayed out).
 For API details see [the baby API readme][6]!
 
 ### Testing
-The API has a few quick tests. To run them, you'll need to install a couple of testing dependencies:
+The API has a few quick tests. You can run them with
 
 ```bash
 npm install
-npm install -g mocha
+npm test
 ```
 
-Then to run the tests, just type
-
-```bash
-mocha
-```
-
-Or to autorun them whenever test files update, instead use
+Or to autorun them whenever test files update, use
 
 ```bash
 npm run autotest
 ```
-
-[mocha]: https://github.com/mochajs/mocha
 
 ### Contributing
 

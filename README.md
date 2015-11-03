@@ -64,6 +64,20 @@ between one and three upcoming sets grayed out).
 
 For API details see [the baby API readme][6]!
 
+### Testing
+The API has a few quick tests. You can run them with
+
+```bash
+npm install
+npm test
+```
+
+Or to autorun them whenever test files update, use
+
+```bash
+npm run autotest
+```
+
 ### Contributing
 
 Pull requests are welcome. If you have a change specific to an upcoming set release, pull request that branch directly.
@@ -84,7 +98,7 @@ Thanks to:
 * For gathering them: [jninnes][7]
 
 [0]: http://whatsinstandard.com/
-[1]: http://www.wizards.com/magic/magazine/article.aspx?x=judge/resources/sfrstandard
+[1]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
 [2]: http://mtgimage.com/
 [3]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
 [4]: https://github.com/bower/bower

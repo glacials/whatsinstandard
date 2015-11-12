@@ -64,12 +64,21 @@ a.tip:after {
   color: #666;
 }
 
+.label-low-distraction {
+  background-color: #fff;
+  color: #ddd;
+}
+
 /*
  * set list
  */
 
 ul.list-group > li.gray {
   color: #ddd;
+}
+
+div.recently-dropped-toggle-container {
+  text-align: right;
 }
 
 /*
@@ -87,8 +96,21 @@ span.badge > img {
   height: 21px;
 }
 
+ul.list-group > li.list-group-item.gray > span.badge > img {
+  opacity: .2;
+}
+
 .badge {
   background: none;
+}
+
+/*
+ * low-distraction links
+ */
+a.low-distraction {
+  color: #ddd;
+  font-size: .8em;
+  text-decoration: none;
 }
 
 /*

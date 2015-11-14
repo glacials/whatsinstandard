@@ -16,7 +16,7 @@ describe("API", function() {
         expect(sets).to.be.an("array");
       });
 
-      it("should be empty", function() {
+      it("shouldn't grow", function() {
         expect(sets).to.have.length(0);
       });
     });

@@ -123,3 +123,9 @@ hr {
   font-size: .8em;
   margin: 2em 0;
 }
+
+a.github {
+  position: relative;
+  bottom: 15px;
+  right: 15px;
+}

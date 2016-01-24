@@ -27,15 +27,6 @@ bower install
 You shouldn't need to serve the files from any sort of web server. Opening `index.html` in a browser should work just
 fine.
 
-### Branches
-
-Since we use Bower and we are hosted by GitHub, the `gh-pages` branch just reflects `master` after a `bower install`
-happens. This way `master` retains separation from its dependencies. `gh-pages` is the live site.
-
-When a set is nearing release, there should be a feature branch for that set which contains the site as it will be when
-the release happens, and it should be named for the new set (e.g. `oath-of-the-gatewatch`). This branch should be in a state
-that allows `master` to be fast-forwarded to it when a merge happens at 00:00 on release day.
-
 ### API
 
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
@@ -78,11 +69,6 @@ Or to autorun them whenever test files update, use
 npm run autotest
 ```
 
-### Contributing
-
-Pull requests are welcome. If you have a change specific to an upcoming set release, pull request that branch directly.
-Otherwise use `master`.
-
 ## Attributions
 
 Thanks to:
@@ -103,5 +89,5 @@ Thanks to:
 [3]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
 [4]: https://github.com/bower/bower
 [5]: http://whatsinstandard.com/api/3/sets.json
-[6]: https://github.com/glacials/whatsinstandard/blob/master/api
+[6]: https://github.com/glacials/whatsinstandard/blob/gh-pages/api
 [7]: https://github.com/jninnes/mtgicons

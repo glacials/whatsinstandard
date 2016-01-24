@@ -11,13 +11,13 @@ This will return something like:
 ```json
 [
   {
-    "name": "Theros",
-    "block": "Theros",
-    "code": "THS",
-    "symbol": "http://whatsinstandard.com/img/ths.jpg",
-    "enter_date": "2013-09-27T00:00:00.000Z",
-    "exit_date": null,
-    "rough_exit_date": "late 2015"
+    "name": "Khans of Tarkir",
+    "block": "Khans of Tarkir",
+    "code": "KTK",
+    "symbol": "http://whatsinstandard.com/img/ktk.svg",
+    "enter_date": "2014-09-26T00:00:00.000Z",
+    "exit_date": "2015-04-08T00:00:00.000Z",
+    "rough_exit_date": "early/mid 2016"
   },
   ...
 ]

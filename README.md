@@ -4,6 +4,8 @@ check which sets are currently in the [Standard format][1].
 
 This is a remix of the original [What's in Standard MTG][2] project ([also on Github][3])
 
+Licensed under MIT license.
+
 [0]: http://whatsinstandard.com/
 [1]: http://hearthstone.gamepedia.com/Standard_format
 [2]: http://whatsinstandard.com/

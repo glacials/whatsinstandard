@@ -6,7 +6,7 @@ This is a remix of the original [What's in Standard MTG][2] project ([also on Gi
 
 Licensed under MIT license.
 
-[0]: http://whatsinstandard.com/
+[0]: http://hearthstandard.com/
 [1]: http://hearthstone.gamepedia.com/Standard_format
 [2]: http://whatsinstandard.com/
 [3]: https://github.com/glacials/whatsinstandard

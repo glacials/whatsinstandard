@@ -93,7 +93,7 @@ ul.list-group > li.list-group-item > span.badge {
 }
 
 span.badge > img {
-  height: 21px;
+  width: 22px;
 }
 
 ul.list-group > li.list-group-item.gray > span.badge > img {

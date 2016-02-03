@@ -1,11 +1,11 @@
 {
   "name": "whatsinstandard",
   "version": "1",
-  "homepage": "http://whatsinstandard.com/",
+  "homepage": "http://hearthstandard.com/",
   "authors": [
-    "Ben Carlsson <qhiiyr@gmail.com>"
+    "Daniel Gyori <qydaniel@gmail.com>"
   ],
-  "description": "a Magic: the Gathering format describer",
+  "description": "What's in Hearthstone Standard?",
   "main": "index.html",
   "license": "MIT",
   "private": true,

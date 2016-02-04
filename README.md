@@ -4,7 +4,7 @@ check which sets are currently in the [Standard format][1].
 
 This is a remix of the original [What's in Standard MTG][2] project ([also on Github][3])
 
-Licensed under MIT license, except for the setc icons. Those are from [Hearthpwn][4] with their approval.
+Licensed under MIT license, except for the set icons. Those are from [Hearthpwn][4] with their approval.
 
 [0]: http://standardhearth.com//
 [1]: http://hearthstone.gamepedia.com/Standard_format

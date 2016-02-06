@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/glacials
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://whatsinstandard.com
+  * I am glacials (https://keybase.io/glacials) on keybase.
+  * I have a public key ASAbRmmNkJWK3lSSvpMGza5t1LQWO3QGeACorXtbOvqMFQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01201b46698d90958ade5492be9306cdae6dd4b4163b74067800a8ad7b5b3afa8c150a",
+            "host": "keybase.io",
+            "kid": "01201b46698d90958ade5492be9306cdae6dd4b4163b74067800a8ad7b5b3afa8c150a",
+            "uid": "affbcde0cb4f92bc8aadadc606ee5000",
+            "username": "glacials"
+        },
+        "service": {
+            "hostname": "whatsinstandard.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.9"
+    },
+    "ctime": 1454783508,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1454783451,
+        "hash":
+"9fa942a3cc180c298ee3d94b60f68a7fe92a11b381a493b31152fc66594ab3a0a50d29def893864da00eb81e8d34cce1dfa51ec44b65396de8739e474e58b1db",
+        "seqno": 373248
+    },
+    "prev": "3d807c140b0c983a3d3feebdfd3d152c267eb23e85731a2f25cea93ca07641a5",
+    "seqno": 21,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgG0ZpjZCVit5Ukr6TBs2ubdS0Fjt0BngAqK17Wzr6jBUKp3BheWxvYWTFAvp7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMWI0NjY5OGQ5MDk1OGFkZTU0OTJiZTkzMDZjZGFlNmRkNGI0MTYzYjc0MDY3ODAwYThhZDdiNWIzYWZhOGMxNTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMWI0NjY5OGQ5MDk1OGFkZTU0OTJiZTkzMDZjZGFlNmRkNGI0MTYzYjc0MDY3ODAwYThhZDdiNWIzYWZhOGMxNTBhIiwidWlkIjoiYWZmYmNkZTBjYjRmOTJiYzhhYWRhZGM2MDZlZTUwMDAiLCJ1c2VybmFtZSI6ImdsYWNpYWxzIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJ3aGF0c2luc3RhbmRhcmQuY29tIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC45In0sImN0aW1lIjoxNDU0NzgzNTA4LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0NTQ3ODM0NTEsImhhc2giOiI5ZmE5NDJhM2NjMTgwYzI5OGVlM2Q5NGI2MGY2OGE3ZmU5MmExMWIzODFhNDkzYjMxMTUyZmM2NjU5NGFiM2EwYTUwZDI5ZGVmODkzODY0ZGEwMGViODFlOGQzNGNjZTFkZmE1MWVjNDRiNjUzOTZkZTg3MzllNDc0ZTU4YjFkYiIsInNlcW5vIjozNzMyNDh9LCJwcmV2IjoiM2Q4MDdjMTQwYjBjOTgzYTNkM2ZlZWJkZmQzZDE1MmMyNjdlYjIzZTg1NzMxYTJmMjVjZWE5M2NhMDc2NDFhNSIsInNlcW5vIjoyMSwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEBMPKryIhHfqNgZ569vJcq2E25fpkFR8e3q5HC0aCMIwI2NkpDGQf9gMQnB6IHW9LQpAeUIAqF63EDziw/Sf9UBqHNpZ190eXBlIKN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/glacials
+
+==================================================================

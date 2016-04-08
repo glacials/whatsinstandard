@@ -49,13 +49,13 @@ This is the only API call we have. It returns a JSON array of sets which looks s
 ```json
 [
   {
-    "name": "Khans of Tarkir",
+    "name": "Dragons of Tarkir",
     "block": "Khans of Tarkir",
-    "code": "KTK",
-    "symbol": "http://whatsinstandard.com/img/ktk.svg",
-    "enter_date": "2014-09-26T00:00:00.000Z",
-    "exit_date": "2015-04-08T00:00:00.000Z",
-    "rough_exit_date": "early/mid 2016"
+    "code": "DTK",
+    "symbol": "http://whatsinstandard.com/img/dtk.svg",
+    "enter_date": "2015-03-27T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2016"
   },
   ...
 ]

@@ -34,7 +34,7 @@ describe("API", function() {
       });
 
       it("shouldn't grow", function() {
-        expect(sets).to.have.length.within(0, 1);
+        expect(sets).to.have.length(0);
       });
     });
   });
@@ -144,7 +144,7 @@ describe("API", function() {
               expect(exitDate || "").to.be.a("string");
             });
 
-            it("should be an ISO 8601 datetime", function() {
+            it("should be an ISO 8601 datetime if present", function() {
               expect(Date.parse(exitDate || "1970-01-01T00:00:00.000Z")).to.be.a("number");
             });
 

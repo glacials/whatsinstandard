@@ -5,7 +5,7 @@
   "authors": [
     "Ben Carlsson <qhiiyr@gmail.com>"
   ],
-  "description": "a Magic: the Gathering format describer",
+  "description": "a Magic: the Gathering & Hearthstone format describer",
   "main": "index.html",
   "license": "MIT",
   "private": true,

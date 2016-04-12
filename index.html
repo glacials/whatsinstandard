@@ -1,155 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>What's in Standard?</title>
-    <meta name="description" content="A Magic: The Gathering format describer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" />
-    <link rel="stylesheet" href="bower_components/tipsy/src/stylesheets/tipsy.css" media="screen" />
-    <link rel="stylesheet" href="css/style.css" media="screen" />
-    <link rel="manifest" href="manifest.json">
-  </head>
-  <body>
-    <div class="container">
-      <div class="col-md-12">
-        <div class="page-header">
-          <h1>What's in Standard?</h1>
-        </div>
-      </div>
-      <div class="col-md-5">
-        <div class="recently-dropped-toggle-container">
-          <a href="#" class="low-distraction" onclick="toggleRecentlyDropped();">show recently dropped sets</a>
-        </div>
-        <ul id="recently-dropped" class="list-group" style="display: none;">
-          <li class="list-group-item gray">
-            Khans of Tarkir
-            <span class="badge"><img src="img/ktk.svg" /></span>
-          </li>
-          <li class="list-group-item gray">
-            Fate Reforged
-            <span class="badge"><img src="img/frf.svg" /></span>
-          </li>
-          <span class="label label-low-distraction">
-            Dropped April 8, 2016
-          </span>
-        </ul>
-        <ul class="list-group">
-          <li class="list-group-item">
-            Dragons of Tarkir
-            <span class="badge"><img src="img/dtk.svg" /></span>
-          </li>
-          <li class="list-group-item">
-            Magic Origins
-            <span class="badge"><img src="img/ori.svg" /></span>
-          </li>
-          <span class="label label-success">
-            Until Q4 2016
-          </span>
-        </ul>
-        <ul class="list-group">
-          <li class="list-group-item">
-            Battle for Zendikar
-            <span class="badge"><img src="img/bfz.svg" /></span>
-          </li>
-          <li class="list-group-item">
-            Oath of the Gatewatch
-            <span class="badge"><img src="img/ogw.svg" /></span>
-          </li>
-          <span class="label label-primary">
-            Until Q2 2017
-          </span>
-        </ul>
-        <ul class="list-group">
-          <li class="list-group-item">
-            Shadows over Innistrad
-            <span class="badge"><img src="img/soi.jpg" /></span>
-          </li>
-          <li class="list-group-item gray">
-            Eldritch Moon
-          </li>
-          <span class="label label-default">
-            Eldritch Moon releases July 22, 2016
-          </span>
-        </ul>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-2775839314260416"
-             data-ad-slot="7743939687"
-             data-ad-format="horizontal">
-        </ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-      </div>
-      <div class="col-md-7">
-        <h2>What <em>is</em> Standard?</h2>
-        <p>Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
-        released and drop out about eighteen months later.</p>
-        <p>
-          A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
-          <a class="tip"
-             title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
-                    are also considered Standard.">
-          </a>
-        </p>
-        <p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
-        <h3>Rotation patterns</h3>
-        <p>
-          The set rotation pattern for Standard is currently in a two-year transition between the old set release
-          pattern and the
-          <a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">new one</a>.
-        </p>
-        <h4>How the changes touch Standard</h4>
-        <ul>
-          <li>
-            Sets enter Standard at the same rate (four per year).
-            <a class="tip"
-               title="However, instead of this group containing a core set and a three-set block, it contains two
-                      two-set blocks.">
-            </a>
-          </li>
-          <li>
-            Sets rotate out of Standard twice as often, in groups half the size.
-            <a class="tip" title="Two sets per six months, changed from four per twelve."></a>
-          </li>
-          <li>
-            Therefore the mean number of Standard sets over a rotation period has dropped by one.
-            <a class="tip"
-               title="A Standard rotation period now contains (with equal durations) five then six sets; changed from
-                      five, six, seven, then eight.">
-            </a>
-          </li>
-        </ul>
-        <h4>Getting through the two-year transition</h4>
-        <p>
-          The <i>Theros</i> block and <i>2015 Core Set</i> were the last group to rotate out in the old pattern.
-        </p>
-        <p>
-          The <i>Khans of Tarkir</i> block and <i>Magic Origins</i>, although released in the old pattern, are dropping
-          in the new: <i>Khans of Tarkir</i> and <i>Fate Reforged</i> dropped together in April as if they were a
-          two-set block; <i>Dragons of Tarkir</i> and <i>Magic Origins</i> will drop in the same fashion Q4 2016.
-        </p>
-        <p>After that, all sets will be both released and dropped in the new style.</p>
-      </div>
-    </div>
-    <footer style="width: 100%; text-align: right; margin-top: 15px;">
-      <a class="github" target="_blank" href="https://github.com/glacials/whatsinstandard">
-        <img src="img/github.png" />
-      </a>
-    </footer>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
-    <script src="js/toggleRecentlyDropped.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-2876079-7', 'auto');
-      ga('require', 'displayfeatures');
-      ga('send', 'pageview');
+	<head>
+		<title>What's in Standard?</title>
+		<meta name="description" content="A Magic: The Gathering format describer" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" />
+		<link rel="stylesheet" href="bower_components/tipsy/src/stylesheets/tipsy.css" media="screen" />
+		<link rel="stylesheet" href="css/style.css" media="screen" />
+		<link rel="manifest" href="manifest.json">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="page-header">
+						<h1>What's in Standard?</h1>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="sub-header">
+						<h3>Magic The Gathering</h3>
+					</div>
+					<div class="recently-dropped-toggle-container">
+						<a href="#" class="low-distraction dropped-toggle">show recently dropped sets</a>
+					</div>
+					<ul id="" class="list-group recently-dropped" style="display: none;">
+						<li class="list-group-item gray">
+							Khans of Tarkir
+							<span class="badge"><img src="img/ktk.svg" /></span>
+						</li>
+						<li class="list-group-item gray">
+							Fate Reforged
+							<span class="badge"><img src="img/frf.svg" /></span>
+						</li>
+						<span class="label label-low-distraction">
+							Dropped April 8, 2016
+						</span>
+					</ul>
+					<ul class="list-group">
+						<li class="list-group-item">
+							Dragons of Tarkir
+							<span class="badge"><img src="img/dtk.svg" /></span>
+						</li>
+						<li class="list-group-item">
+							Magic Origins
+							<span class="badge"><img src="img/ori.svg" /></span>
+						</li>
+						<span class="label label-success">
+							Until Q4 2016
+						</span>
+					</ul>
+					<ul class="list-group">
+						<li class="list-group-item">
+							Battle for Zendikar
+							<span class="badge"><img src="img/bfz.svg" /></span>
+						</li>
+						<li class="list-group-item">
+							Oath of the Gatewatch
+							<span class="badge"><img src="img/ogw.svg" /></span>
+						</li>
+						<span class="label label-primary">
+							Until Q2 2017
+						</span>
+					</ul>
+					<ul class="list-group">
+						<li class="list-group-item">
+							Shadows over Innistrad
+							<span class="badge"><img src="img/soi.jpg" /></span>
+						</li>
+						<li class="list-group-item gray">
+							Eldritch Moon
+						</li>
+						<span class="label label-default">
+							Eldritch Moon releases July 22, 2016
+						</span>
+					</ul>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-2775839314260416"
+							 data-ad-slot="7743939687"
+							 data-ad-format="horizontal">
+					</ins>
+					<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				</div>
+				<div class="col-md-7">
+					<h2>What <em>is</em> Standard (MTG)?</h2>
+					<p>Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
+					released and drop out about eighteen months later.</p>
+					<p>
+						A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
+						<a class="tip"
+							 title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
+											are also considered Standard.">
+						</a>
+					</p>
+					<p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
+					<h3>Rotation patterns</h3>
+					<p>
+						The set rotation pattern for Standard is currently in a two-year transition between the old set release
+						pattern and the
+						<a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">new one</a>.
+					</p>
+					<h4>How the changes touch Standard</h4>
+					<ul>
+						<li>
+							Sets enter Standard at the same rate (four per year).
+							<a class="tip"
+								 title="However, instead of this group containing a core set and a three-set block, it contains two
+												two-set blocks.">
+							</a>
+						</li>
+						<li>
+							Sets rotate out of Standard twice as often, in groups half the size.
+							<a class="tip" title="Two sets per six months, changed from four per twelve."></a>
+						</li>
+						<li>
+							Therefore the mean number of Standard sets over a rotation period has dropped by one.
+							<a class="tip"
+								 title="A Standard rotation period now contains (with equal durations) five then six sets; changed from
+												five, six, seven, then eight.">
+							</a>
+						</li>
+					</ul>
+					<h4>Getting through the two-year transition</h4>
+					<p>
+						The <i>Theros</i> block and <i>2015 Core Set</i> were the last group to rotate out in the old pattern.
+					</p>
+					<p>
+						The <i>Khans of Tarkir</i> block and <i>Magic Origins</i>, although released in the old pattern, are dropping
+						in the new: <i>Khans of Tarkir</i> and <i>Fate Reforged</i> dropped together in April as if they were a
+						two-set block; <i>Dragons of Tarkir</i> and <i>Magic Origins</i> will drop in the same fashion Q4 2016.
+					</p>
+					<p>After that, all sets will be both released and dropped in the new style.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-5">
+					<div class="sub-header">
+						<h3>Hearthstone</h3>
+					</div>
+					<div class="recently-dropped-toggle-container">
+						<a href="#" class="low-distraction dropped-toggle">show recently dropped sets</a>
+					</div>
+					<ul id="" class="list-group recently-dropped" style="display: none;">
+						<li class="list-group-item gray">
+							Curse of Naxxaramas
+							<span class="badge"><img src="img/SET_Naxx.svg" /></span>
+						</li>
+						<li class="list-group-item gray">
+							Goblins vs Gnomes
+							<span class="badge"><img src="img/SET_GVG.svg" /></span>
+						</li>
+						<span class="label label-low-distraction">
+							Dropped April 26th, 2016
+						</span>
+					</ul>
+					<ul class="list-group">
+						<li class="list-group-item">
+							Blackrock Mountain
+							<span class="badge"><img src="img/SET_BRM.svg" /></span>
+						</li>
+						<li class="list-group-item">
+							The Grand Tournament
+							<span class="badge"><img src="img/SET_TGT.svg" /></span>
+						</li>
+						<li class="list-group-item">
+							The League of Explorers
+							<span class="badge"><img src="img/SET_LOE.svg" /></span>
+						</li>
+						<li class="list-group-item">
+							Whispers of the Old Gods
+							<span class="badge"><img src="img/SET_OG.svg" /></span>
+						</li>
+						<span class="label label-primary">
+							Until Q2 2017
+						</span>
+					</ul>
 
-      $(".tip").tipsy({gravity: 's'});
-    </script>
-  </body>
+					<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<ins class="adsbygoogle"
+							 style="display:block"
+							 data-ad-client="ca-pub-2775839314260416"
+							 data-ad-slot="7743939687"
+							 data-ad-format="horizontal">
+					</ins>
+					<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				</div>
+				<div class="col-md-7">
+					<h2>What <em>is</em> Standard (Hearthstone)?</h2>
+					<p>Standard format or Standard is a new game format for hearthstone coming in spring 2016. Games played in Standard format include only cards from card sets released in the current or previous calendar year, as well as the Basic and Classic sets. However, effects which generate specific cards will continue to function normally regardless of the generated card's card set. 						<a class="tip"
+							 title="During Standard matches random effects such as Murloc Knight, Summoning Stone or Discover will only select from current Standard options.">
+						</a></p>
+					<p>
+						A <i>Standard</i> format is the counterpart to Wild format, which has no such restrictions.
+					</p>
+					<p>A deck which contains only Standard cards is called a <i>Standard deck</i>.<a class="tip"
+							 title="Cards from other sets cannot be included in decks used in Standard matches">
+						</a></p>
+					<h3>The Hearthstone Zodiac</h3>
+					<p>
+						Each Standard year aka Hearthstone year will be symbolised by a constellation formed from stars in Azeroth's night sky. The previous year will rotate out in favor of a <a href="http://us.battle.net/hearthstone/en/blog/19995505/a-new-way-to-play-2-2-2016" target="_blank">new one</a>. Each year will be marked by a different "mythical beast". The current year's constellation will act as a symbol for Standard format, as seen on the Standard format selection button on the Play mode screen.
+						
+					</p>
+					<h4>The Year of the Kraken <span class="badge"><img src="img/Mode_Standard_Kraken.svg" /></span></h4>
+					<p>
+						With the removal of many cards key to aggressive play, and the introduction with Whispers of the Old Gods of many cards effective at slowing and defending against attackers, the start of the Year of the Kraken is widely considered to herald a move away from the aggressive decks considered by many to have dominated Hearthstone for too long, and toward a slower meta.
+					</p>			
+				</div>
+			</div>
+		</div>
+			<footer style="width: 100%; text-align: right; margin-top: 15px;">
+				<a class="github" target="_blank" href="https://github.com/glacials/whatsinstandard">
+					<img src="img/github.png" />
+				</a>
+			</footer>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
+			<script src="js/toggleRecentlyDropped.js"></script>
+			<script>
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+				ga('create', 'UA-2876079-7', 'auto');
+				ga('require', 'displayfeatures');
+				ga('send', 'pageview');
+
+				$(".tip").tipsy({gravity: 's'});
+			</script>
+	</body>
 </html>

@@ -87,3 +87,5 @@ Thanks to:
 [5]: http://whatsinstandard.com/api/3/sets.json
 [6]: https://github.com/glacials/whatsinstandard/blob/gh-pages/api
 [7]: https://github.com/jninnes/mtgicons
+[7]: https://github.com/andburn/hs-icons
+

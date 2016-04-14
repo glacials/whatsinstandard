@@ -6,6 +6,10 @@ body, h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", sans-serif;
 }
 
+body {
+  padding-bottom: 15px;
+}
+
 /*
  * tooltips
  */
@@ -124,8 +128,10 @@ hr {
   margin: 2em 0;
 }
 
-a.github {
-  position: relative;
-  bottom: 15px;
-  right: 15px;
+.github {
+  text-align: right;
+}
+
+.github > a {
+  display: inline-block;
 }

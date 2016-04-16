@@ -104,12 +104,19 @@ ul.list-group > li.list-group-item.gray > span.badge > img {
 }
 
 /*
- * low-distraction links
+ * low-distraction
  */
-a.low-distraction {
-  color: #ddd;
+.low-distraction {
   font-size: .8em;
+}
+
+.low-distraction, a.low-distraction, a.low-distraction:active {
+  color: #bbb;
   text-decoration: none;
+}
+
+a.low-distraction:hover {
+  color: #666;
 }
 
 /*

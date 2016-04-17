@@ -7,6 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" />
     <link rel="stylesheet" href="bower_components/tipsy/src/stylesheets/tipsy.css" media="screen" />
+    <link rel="stylesheet" href="bower_components/keyrune/css/keyrune.min.css" media="screen" />
     <link rel="stylesheet" href="css/style.css" media="screen" />
     <link rel="manifest" href="manifest.json">
   </head>
@@ -27,14 +28,14 @@
         <div class="recently-dropped-toggle-container">
           <a href="#" class="low-distraction" onclick="toggleRecentlyDropped();">show recently dropped sets</a>
         </div>
-        <ul id="recently-dropped" class="list-group" style="display: none;">
+        <ul id="recently-dropped" class="list-group list-group--dropped" style="display: none;">
           <li class="list-group-item gray">
             Khans of Tarkir
-            <span class="badge"><img src="img/ktk.svg" /></span>
+            <span class="icon"><i class="ss ss-ktk"></i></span>
           </li>
           <li class="list-group-item gray">
             Fate Reforged
-            <span class="badge"><img src="img/frf.svg" /></span>
+            <span class="icon"><i class="ss ss-frf"></i></span>
           </li>
           <span class="label label-low-distraction">
             Dropped April 8, 2016
@@ -43,11 +44,11 @@
         <ul class="list-group">
           <li class="list-group-item">
             Dragons of Tarkir
-            <span class="badge"><img src="img/dtk.svg" /></span>
+            <span class="icon"><i class="ss ss-dtk"></i></span>
           </li>
           <li class="list-group-item">
             Magic Origins
-            <span class="badge"><img src="img/ori.svg" /></span>
+            <span class="icon"><i class="ss ss-ori"></i></span>
           </li>
           <span class="label label-success">
             Until Q4 2016
@@ -56,11 +57,11 @@
         <ul class="list-group">
           <li class="list-group-item">
             Battle for Zendikar
-            <span class="badge"><img src="img/bfz.svg" /></span>
+            <span class="icon"><i class="ss ss-bfz"></i></span>
           </li>
           <li class="list-group-item">
             Oath of the Gatewatch
-            <span class="badge"><img src="img/ogw.svg" /></span>
+            <span class="icon"><i class="ss ss-ogw"></i></span>
           </li>
           <span class="label label-primary">
             Until Q2 2017
@@ -69,7 +70,7 @@
         <ul class="list-group">
           <li class="list-group-item">
             Shadows over Innistrad
-            <span class="badge"><img src="img/soi.jpg" /></span>
+            <span class="icon"><i class="ss ss-soi"></i></span>
           </li>
           <li class="list-group-item gray">
             Eldritch Moon

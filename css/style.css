@@ -85,27 +85,31 @@ div.recently-dropped-toggle-container {
   text-align: right;
 }
 
+.list-group-item {
+  line-height: 20px;
+  position: relative;
+}
+
 /*
  * set symbols
  */
-
-/* center symbols on an imaginary vertical line */
-ul.list-group > li.list-group-item > span.badge {
-  margin-right: -15px;
-  margin-top: -3px;
-  width: 60px;
+.list-group-item .icon {
+  top: 10px;
+  right: 15px;
+  position: absolute;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  vertical-align: middle;
 }
 
-span.badge > img {
-  height: 21px;
+.list-group-item .ss {
+  color: #000;
+  font-size: 1.7rem;
 }
 
-ul.list-group > li.list-group-item.gray > span.badge > img {
-  opacity: .2;
-}
-
-.badge {
-  background: none;
+.list-group--dropped .ss {
+  color: #ddd;
 }
 
 /*

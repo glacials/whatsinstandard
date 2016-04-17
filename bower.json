@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.0.3",
-    "tipsy": "~0.1.7"
+    "tipsy": "~0.1.7",
+    "keyrune": "*"
   }
 }

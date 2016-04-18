@@ -5,11 +5,6 @@ rotations work.
 
 ## Development
 
-### Images
-We display MTG set symbols for released sets. Where possible these are SVGs, but often the most recent set symbol isn't
-yet available in SVG. In this situation we use the "large" resolution image from Gatherer ([example][3]). Set symbols
-vary in width, so we standardize on a height of 21px and let the widths behave how they want.
-
 ### Running it locally
 ```bash
 git clone git@github.com:glacials/whatsinstandard

@@ -90,6 +90,10 @@ div.recently-dropped-toggle-container {
   position: relative;
 }
 
+.subset {
+  font-size: .7em;
+}
+
 /*
  * set symbols
  */
@@ -120,12 +124,13 @@ div.recently-dropped-toggle-container {
 }
 
 .low-distraction, a.low-distraction, a.low-distraction:active {
-  color: #bbb;
+  color: #000;
+  opacity: .35;
   text-decoration: none;
 }
 
 a.low-distraction:hover {
-  color: #666;
+  opacity: 1;
 }
 
 /*

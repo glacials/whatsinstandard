@@ -50,10 +50,6 @@ describe("API", function() {
         expect(sets).to.be.an("array");
       });
 
-      it("should contain either five or six sets", function() {
-        expect(sets).to.have.length.within(5, 6);
-      });
-
       sets.forEach(function(set) {
         describe(set.name, function() {
           describe("name", function() {

@@ -52,5 +52,14 @@
     "enter_date": "2016-04-09T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2017"
+  },
+  {
+    "name": "Eldritch Moon",
+    "block": "Shadows over Innistrad",
+    "code": "EMN",
+    "symbol": "http://whatsinstandard.com/img/emn.jpg",
+    "enter_date": "2016-07-21T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "late 2017"
   }
 ]

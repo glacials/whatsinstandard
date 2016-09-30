@@ -1,29 +1,11 @@
 [
   {
-    "name": "Dragons of Tarkir",
-    "block": "Khans of Tarkir",
-    "code": "DTK",
-    "symbol": "http://whatsinstandard.com/img/dtk.svg",
-    "enter_date": "2015-03-27T00:00:00.000Z",
-    "exit_date": "2016-09-30T00:00:00.000Z",
-    "rough_exit_date": "late 2016"
-  },
-  {
-    "name": "Magic Origins",
-    "block": null,
-    "code": "ORI",
-    "symbol": "http://whatsinstandard.com/img/ori.svg",
-    "enter_date": "2015-07-17T00:00:00.000Z",
-    "exit_date": "2016-09-30T00:00:00.000Z",
-    "rough_exit_date": "late 2016"
-  },
-  {
     "name": "Battle for Zendikar",
     "block": "Battle for Zendikar",
     "code": "BFZ",
     "symbol": "http://whatsinstandard.com/img/bfz.svg",
     "enter_date": "2015-10-02T00:00:00.000Z",
-    "exit_date": null,
+    "exit_date": "2017-04-28T00:00:00.000Z",
     "rough_exit_date": "early/mid 2017"
   },
   {
@@ -32,7 +14,7 @@
     "code": "OGW",
     "symbol": "http://whatsinstandard.com/img/ogw.svg",
     "enter_date": "2016-01-22T00:00:00.000Z",
-    "exit_date": null,
+    "exit_date": "2017-04-28T00:00:00.000Z",
     "rough_exit_date": "early/mid 2017"
   },
   {
@@ -61,5 +43,14 @@
     "enter_date": "2016-07-21T00:00:00.000Z",
     "exit_date": null,
     "rough_exit_date": "late 2017"
+  },
+  {
+    "name": "Kaladesh",
+    "block": "Kaladesh",
+    "code": "KLD",
+    "symbol": "http://whatsinstandard.com/img/kld.jpg",
+    "enter_date": "2016-09-30T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "early/mid 2017"
   }
 ]

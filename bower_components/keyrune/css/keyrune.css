@@ -2,8 +2,8 @@
  * Global */
 @font-face {
   font-family: 'Keyrune';
-  src: url('../fonts/keyrune.eot?v=1.6.0');
-  src: url('../fonts/keyrune.eot?#iefix&v=1.6.0') format('embedded-opentype'), url('../fonts/keyrune.woff2?v=1.6.0') format('woff2'), url('../fonts/keyrune.woff?v=1.6.0') format('woff'), url('../fonts/keyrune.ttf?v=1.6.0') format('truetype'), url('../fonts/keyrune.svg?v=1.6.0#keyrune') format('svg');
+  src: url('../fonts/keyrune.eot?v=1.7.2');
+  src: url('../fonts/keyrune.eot?#iefix&v=1.7.2') format('embedded-opentype'), url('../fonts/keyrune.woff2?v=1.7.2') format('woff2'), url('../fonts/keyrune.woff?v=1.7.2') format('woff'), url('../fonts/keyrune.ttf?v=1.7.2') format('truetype'), url('../fonts/keyrune.svg?v=1.7.2#keyrune') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -406,6 +406,13 @@
 .ss-emn:before {
   content: "\e90b";
 }
+/* Kaladesh Block */
+.ss-kld:before {
+  content: "\e90e";
+}
+.ss-aer:before {
+  content: "\e90f";
+}
 /**
  * Command Zone */
 .ss-van:before {
@@ -441,6 +448,12 @@
 .ss-cn2:before {
   content: "\e904";
 }
+.ss-c16:before {
+  content: "\e910";
+}
+.ss-pca:before {
+  content: "\e911";
+}
 /**
  * Reprint */
 .ss-chr:before {
@@ -466,6 +479,9 @@
 }
 .ss-ema:before {
   content: "\e903";
+}
+.ss-mm3:before {
+  content: "\e912";
 }
 /**
  * Beginner */
@@ -539,6 +555,9 @@
 }
 .ss-ddq:before {
   content: "\e908";
+}
+.ss-ddr:before {
+  content: "\e90d";
 }
 /**
  * From the Vault */
@@ -624,6 +643,9 @@
 .ss-psalvat11:before {
   content: "\e90a";
 }
+.ss-mp1:before {
+  content: "\e913";
+}
 /**
  * Online */
 .ss-med:before {
@@ -643,6 +665,9 @@
 }
 .ss-vma:before {
   content: "\e696";
+}
+.ss-xlcu:before {
+  content: "\e90c";
 }
 /**
  * Un-serious */

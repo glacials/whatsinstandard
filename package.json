@@ -9,8 +9,8 @@
     "test": "./node_modules/mocha/bin/mocha"
   },
   "devDependencies": {
-    "mocha": "~2.3.3",
-    "chai": "~3.3.0",
+    "mocha": "*",
+    "chai": "*",
     "supervisor": "~0.9.1"
   }
 }

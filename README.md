@@ -37,27 +37,25 @@ npm run autotest
 ### API
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
 
-#### [/api/3/sets.json][5]
+#### [/api/4/sets.json][5]
 
 This is the only API call we have. It returns a JSON array of sets which looks something like this:
 
 ```json
 [
   {
-    "name": "Dragons of Tarkir",
-    "block": "Khans of Tarkir",
-    "code": "DTK",
-    "symbol": "http://whatsinstandard.com/img/dtk.svg",
-    "enter_date": "2015-03-27T00:00:00.000Z",
-    "exit_date": null,
-    "rough_exit_date": "late 2016"
+    "name": "Battle for Zendikar",
+    "block": "Battle for Zendikar",
+    "code": "BFZ",
+    "enter_date": "2015-10-02T00:00:00.000Z",
+    "exit_date": "2017-04-28T00:00:00.000Z",
+    "rough_exit_date": "Q2 2017"
   },
   ...
 ]
 ```
 
-The array is guaranteed to contain all sets currently in Standard and no other sets (unlike the website, which shows a
-few upcoming sets grayed out).
+The array is guaranteed to contain all sets currently in Standard plus the next two to three unreleased sets.
 
 For API details see [the API readme][6].
 
@@ -79,6 +77,6 @@ Thanks to:
 [2]: http://mtgimage.com/
 [3]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
 [4]: https://github.com/bower/bower
-[5]: http://whatsinstandard.com/api/3/sets.json
+[5]: http://whatsinstandard.com/api/4/sets.json
 [6]: https://github.com/glacials/whatsinstandard/blob/gh-pages/api
 [7]: https://github.com/jninnes/mtgicons

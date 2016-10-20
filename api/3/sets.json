@@ -6,7 +6,7 @@
     "symbol": "http://whatsinstandard.com/img/bfz.svg",
     "enter_date": "2015-10-02T00:00:00.000Z",
     "exit_date": "2017-04-28T00:00:00.000Z",
-    "rough_exit_date": "early/mid 2017"
+    "rough_exit_date": "late 2017"
   },
   {
     "name": "Oath of the Gatewatch",
@@ -15,7 +15,7 @@
     "symbol": "http://whatsinstandard.com/img/ogw.svg",
     "enter_date": "2016-01-22T00:00:00.000Z",
     "exit_date": "2017-04-28T00:00:00.000Z",
-    "rough_exit_date": "early/mid 2017"
+    "rough_exit_date": "late 2017"
   },
   {
     "name": "Shadows over Innistrad",
@@ -51,6 +51,6 @@
     "symbol": "http://whatsinstandard.com/img/kld.jpg",
     "enter_date": "2016-09-30T00:00:00.000Z",
     "exit_date": null,
-    "rough_exit_date": "early/mid 2018"
+    "rough_exit_date": "late 2018"
   }
 ]

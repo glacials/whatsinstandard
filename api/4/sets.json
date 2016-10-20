@@ -5,7 +5,7 @@
     "code": "BFZ",
     "enter_date": "2015-10-02T00:00:00.000Z",
     "exit_date": "2017-04-28T00:00:00.000Z",
-    "rough_exit_date": "Q2 2017"
+    "rough_exit_date": "Q4 2017"
   },
   {
     "name": "Oath of the Gatewatch",
@@ -13,7 +13,7 @@
     "code": "OGW",
     "enter_date": "2016-01-22T00:00:00.000Z",
     "exit_date": "2017-04-28T00:00:00.000Z",
-    "rough_exit_date": "Q2 2017"
+    "rough_exit_date": "Q4 2017"
   },
   {
     "name": "Shadows over Innistrad",
@@ -45,7 +45,7 @@
     "code": "KLD",
     "enter_date": "2016-09-30T00:00:00.000Z",
     "exit_date": null,
-    "rough_exit_date": "Q2 2018"
+    "rough_exit_date": "Q4 2018"
   },
   {
     "name": "Aether Revolt",
@@ -53,7 +53,7 @@
     "code": "AER",
     "enter_date": "2017-01-20T00:00:00.000Z",
     "exit_date": null,
-    "rough_exit_date": "Q2 2018"
+    "rough_exit_date": "Q4 2018"
   },
   {
     "name": "Amonkhet",

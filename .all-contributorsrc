@@ -42,6 +42,15 @@
       ]
     },
     {
+      "login": "reecerunnells",
+      "name": "Reece Runnells",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/711567?v=3",
+      "profile": "http://www.reecerunnells.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "Kerrick",
       "name": "Kerrick Long",
       "avatar_url": "https://avatars2.githubusercontent.com/u/552093?v=3",
@@ -78,10 +87,10 @@
       ]
     },
     {
-      "login": "reecerunnells",
-      "name": "Reece Runnells",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/711567?v=3",
-      "profile": "http://www.reecerunnells.com",
+      "login": "Nightfirecat",
+      "name": "Jordan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2199511?v=3",
+      "profile": "http://webhost.ischool.uw.edu/~joatwood/portfolio/",
       "contributions": [
         "code"
       ]

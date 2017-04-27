@@ -30,6 +30,16 @@
         "example",
         "infra"
       ]
+    },
+    {
+      "login": "tkrajcar",
+      "name": "Tim Krajcar",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/621861?v=3",
+      "profile": "http://www.twitter.com/TimKrajcar",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ]
 }

@@ -78,6 +78,24 @@
       ]
     },
     {
+      "login": "Nightfirecat",
+      "name": "Jordan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2199511?v=3",
+      "profile": "http://webhost.ischool.uw.edu/~joatwood/portfolio/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "fenhl",
+      "name": "Fenhl",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/641386?v=3",
+      "profile": "http://fenhl.net/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
       "login": "forstermatth",
       "name": "Matt Forster",
       "avatar_url": "https://avatars2.githubusercontent.com/u/3375444?v=3",
@@ -86,14 +104,5 @@
         "code"
       ]
     },
-    {
-      "login": "Nightfirecat",
-      "name": "Jordan",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/2199511?v=3",
-      "profile": "http://webhost.ischool.uw.edu/~joatwood/portfolio/",
-      "contributions": [
-        "code"
-      ]
-    }
   ]
 }

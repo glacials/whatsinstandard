@@ -80,3 +80,14 @@ Thanks to:
 [5]: http://whatsinstandard.com/api/4/sets.json
 [6]: https://github.com/glacials/whatsinstandard/blob/gh-pages/api
 [7]: https://github.com/jninnes/mtgicons
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars2.githubusercontent.com/u/3375444?v=3" width="100px;"/><br /><sub>Matt Forster</sub>](http://mattforster.ca)<br />[💻](https://github.com/glacials/whatsinstandard/commits?author=forstermatth "Code") [📖](https://github.com/glacials/whatsinstandard/commits?author=forstermatth "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/438911?v=3" width="100px;"/><br /><sub>Ben Carlsson</sub>](https://github.com/glacials)<br />[💬](#question-glacials "Answering Questions") [💻](https://github.com/glacials/whatsinstandard/commits?author=glacials "Code") [🎨](#design-glacials "Design") [📖](https://github.com/glacials/whatsinstandard/commits?author=glacials "Documentation") [💡](#example-glacials "Examples") [🚇](#infra-glacials "Infrastructure (Hosting, Build-Tools, etc)") |
+| :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

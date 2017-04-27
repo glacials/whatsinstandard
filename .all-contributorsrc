@@ -1,0 +1,35 @@
+{
+  "projectName": "whatsinstandard",
+  "projectOwner": "glacials",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "forstermatth",
+      "name": "Matt Forster",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3375444?v=3",
+      "profile": "http://mattforster.ca",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "glacials",
+      "name": "Ben Carlsson",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/438911?v=3",
+      "profile": "https://github.com/glacials",
+      "contributions": [
+        "question",
+        "code",
+        "design",
+        "doc",
+        "example",
+        "infra"
+      ]
+    }
+  ]
+}

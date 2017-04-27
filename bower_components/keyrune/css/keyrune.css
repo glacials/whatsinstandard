@@ -2,8 +2,8 @@
  * Global */
 @font-face {
   font-family: 'Keyrune';
-  src: url('../fonts/keyrune.eot?v=1.7.2');
-  src: url('../fonts/keyrune.eot?#iefix&v=1.7.2') format('embedded-opentype'), url('../fonts/keyrune.woff2?v=1.7.2') format('woff2'), url('../fonts/keyrune.woff?v=1.7.2') format('woff'), url('../fonts/keyrune.ttf?v=1.7.2') format('truetype'), url('../fonts/keyrune.svg?v=1.7.2#keyrune') format('svg');
+  src: url('../fonts/keyrune.eot?v=2.3.0');
+  src: url('../fonts/keyrune.eot?#iefix&v=2.3.0') format('embedded-opentype'), url('../fonts/keyrune.woff2?v=2.3.0') format('woff2'), url('../fonts/keyrune.woff?v=2.3.0') format('woff'), url('../fonts/keyrune.ttf?v=2.3.0') format('truetype'), url('../fonts/keyrune.svg?v=2.3.0#keyrune') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -96,6 +96,38 @@
   -webkit-text-fill-color: transparent;
 }
 .ss-mythic.ss-grad.ss-no-border {
+  -webkit-text-stroke: 0;
+}
+.ss-timeshifted {
+  color: #652978;
+}
+.ss-timeshifted.ss-grad {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #652978), color-stop(50%, #c09ac5), color-stop(100%, #652978));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(-45deg, #652978 0%, #c09ac5 50%, #652978 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #652978 0%, #c09ac5 50%, #652978 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  -webkit-text-stroke: 0.03em #333;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ss-timeshifted.ss-grad.ss-no-border {
+  -webkit-text-stroke: 0;
+}
+.ss-foil {
+  color: #a6dced;
+}
+.ss-foil.ss-grad {
+  background: -webkit-linear-gradient(-45deg, #ea8d66 0%, #ea8d66 10%, #fdef8a 17%, #8bcc93 33%, #a6dced 50%, #6f75aa 67%, #e599c2 83%, #eeeeee 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ea8d66 0%, #ea8d66 15%, #fdef8a 28%, #8bcc93 42%, #a6dced 55%, #6f75aa 68%, #e599c2 84%, #e599c2 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  -webkit-text-stroke: 0.03em #333;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ss-foil.ss-grad.ss-no-border {
   -webkit-text-stroke: 0;
 }
 /**
@@ -232,6 +264,7 @@
 .ss-mmq:before {
   content: "\e625";
 }
+.ss-nem:before,
 .ss-nms:before {
   content: "\e626";
 }
@@ -413,6 +446,13 @@
 .ss-aer:before {
   content: "\e90f";
 }
+/* Amonkhet Block */
+.ss-akh:before {
+  content: "\e914";
+}
+.ss-hou:before {
+  content: "\e924";
+}
 /**
  * Command Zone */
 .ss-van:before {
@@ -454,6 +494,12 @@
 .ss-pca:before {
   content: "\e911";
 }
+.ss-cma:before {
+  content: "\e916";
+}
+.ss-ann:before {
+  content: "\e657";
+}
 /**
  * Reprint */
 .ss-chr:before {
@@ -483,11 +529,18 @@
 .ss-mm3:before {
   content: "\e912";
 }
+.ss-xren:before {
+  content: "\e917";
+}
+.ss-xrin:before {
+  content: "\e918";
+}
 /**
  * Beginner */
 .ss-por:before {
   content: "\e664";
 }
+.ss-p02:before,
 .ss-po2:before {
   content: "\e665";
 }
@@ -502,6 +555,9 @@
 }
 .ss-w16:before {
   content: "\e907";
+}
+.ss-w17:before {
+  content: "\e923";
 }
 /**
  * Duel Decks */
@@ -559,6 +615,12 @@
 .ss-ddr:before {
   content: "\e90d";
 }
+.ss-td2:before {
+  content: "\e91c";
+}
+.ss-dds:before {
+  content: "\e921";
+}
 /**
  * From the Vault */
 .ss-drb:before {
@@ -587,6 +649,9 @@
 }
 .ss-v16:before {
   content: "\e906";
+}
+.ss-v0x:before {
+  content: "\e920";
 }
 /**
  * Premium Deck Series */
@@ -643,8 +708,21 @@
 .ss-psalvat11:before {
   content: "\e90a";
 }
+.ss-mps:before,
 .ss-mp1:before {
   content: "\e913";
+}
+.ss-pxbox:before {
+  content: "\e915";
+}
+.ss-pmps:before {
+  content: "\e919";
+}
+.ss-pmpu:before {
+  content: "\e91a";
+}
+.ss-mp2:before {
+  content: "\e922";
 }
 /**
  * Online */
@@ -666,8 +744,23 @@
 .ss-vma:before {
   content: "\e696";
 }
+.ss-pz1:before,
 .ss-xlcu:before {
   content: "\e90c";
+}
+.ss-modo:before,
+.ss-pmodo:before {
+  content: "\e91b";
+}
+.ss-duels:before,
+.ss-xduels:before {
+  content: "\e91d";
+}
+.ss-xmods:before {
+  content: "\e91e";
+}
+.ss-pz2:before {
+  content: "\e91f";
 }
 /**
  * Un-serious */
@@ -681,7 +774,7 @@
   content: "";
   position: absolute;
   left: -0.05em;
-  top: .0em;
+  top: 0em;
   color: #fff;
   font-size: 1.15em;
   z-index: -1;

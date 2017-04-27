@@ -1,0 +1,108 @@
+{
+  "projectName": "whatsinstandard",
+  "projectOwner": "glacials",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "glacials",
+      "name": "Ben Carlsson",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/438911?v=3",
+      "profile": "https://github.com/glacials",
+      "contributions": [
+        "question",
+        "code",
+        "design",
+        "doc",
+        "example",
+        "infra"
+      ]
+    },
+    {
+      "login": "tkrajcar",
+      "name": "Tim Krajcar",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/621861?v=3",
+      "profile": "http://www.twitter.com/TimKrajcar",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "strattonw",
+      "name": "Wesley",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/664174?v=3",
+      "profile": "http://wstratto.ca",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "reecerunnells",
+      "name": "Reece Runnells",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/711567?v=3",
+      "profile": "http://www.reecerunnells.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Kerrick",
+      "name": "Kerrick Long",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/552093?v=3",
+      "profile": "https://kerricklong.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "valbaca",
+      "name": "Valentin Baca",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/318337?v=3",
+      "profile": "https://github.com/valbaca",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "LPGhatguy",
+      "name": "Lucien Greathouse",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/654598?v=3",
+      "profile": "http://lpghatguy.com/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Nightfirecat",
+      "name": "Jordan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2199511?v=3",
+      "profile": "http://webhost.ischool.uw.edu/~joatwood/portfolio/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "fenhl",
+      "name": "Fenhl",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/641386?v=3",
+      "profile": "http://fenhl.net/",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "forstermatth",
+      "name": "Matt Forster",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3375444?v=3",
+      "profile": "http://mattforster.ca",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
+}

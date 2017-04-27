@@ -116,6 +116,10 @@ div.recently-dropped-toggle-container {
   color: #ddd;
 }
 
+.list-group--upcoming .ss {
+  color: #ddd;
+}
+
 /*
  * low-distraction
  */

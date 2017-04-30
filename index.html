@@ -33,11 +33,11 @@
         <ul id="recently-dropped" class="list-group list-group--dropped" style="display: none;">
           <li class="list-group-item gray">
             Dragons of Tarkir
-            <span class="icon"><i class="ss ss-dtk"></i></span>
+            <span class="icon tip-left" title="DTK"><i class="ss ss-dtk"></i></span>
           </li>
           <li class="list-group-item gray">
             Magic Origins
-            <span class="icon"><i class="ss ss-ori"></i></span>
+            <span class="icon tip-left" title="ORI"><i class="ss ss-ori"></i></span>
           </li>
           <span class="label label-low-distraction">
             Dropped September 30, 2016
@@ -46,11 +46,11 @@
         <ul class="list-group">
           <li class="list-group-item">
             Battle for Zendikar
-            <span class="icon"><i class="ss ss-bfz"></i></span>
+            <span class="icon tip-left" title="BFZ"><i class="ss ss-bfz"></i></span>
           </li>
           <li class="list-group-item">
             Oath of the Gatewatch
-            <span class="icon"><i class="ss ss-ogw"></i></span>
+            <span class="icon tip-left" title="OGW"><i class="ss ss-ogw"></i></span>
           </li>
           <span class="label label-warning">
             Until September 29, 2017
@@ -61,13 +61,13 @@
             Shadows over Innistrad
             <div class="subset">(includes Welcome Deck 2016)</div>
             <span class="icon">
-              <i class="ss ss-soi"></i>
-              <i class="ss ss-w16"></i>
+              <i class="ss ss-soi tip-left" title="SOI"></i>
+              <i class="ss ss-w16 tip-left" title="W16"></i>
             </span>
           </li>
           <li class="list-group-item">
             Eldritch Moon
-            <span class="icon"><i class="ss ss-emn"></i></span>
+            <span class="icon tip-left" title="EMN"><i class="ss ss-emn"></i></span>
           </li>
           <span class="label label-warning">
             Until September 29, 2017
@@ -76,11 +76,11 @@
         <ul class="list-group">
           <li class="list-group-item">
             Kaladesh
-            <span class="icon"><i class="ss ss-kld"></i></span>
+            <span class="icon tip-left" title="KLD"><i class="ss ss-kld"></i></span>
           </li>
           <li class="list-group-item">
             Aether Revolt
-            <span class="icon"><i class="ss ss-aer"></i></span>
+            <span class="icon tip-left" title="AER"><i class="ss ss-aer"></i></span>
           </li>
           <span class="label label-success">
             Until Q4 2018
@@ -89,11 +89,11 @@
         <ul class="list-group gray">
           <li class="list-group-item">
             Amonkhet
-            <span class="icon"><i class="ss ss-akh"></i></span>
+            <span class="icon tip-left" title="AKH"><i class="ss ss-akh"></i></span>
           </li>
           <li class="list-group-item gray list-group-item--upcoming">
             Hour of Devastation
-            <span class="icon"><i class="ss ss-hou"></i></span>
+            <span class="icon tip-left" title="HOU"><i class="ss ss-hou"></i></span>
           </li>
           <span class="label label-success">
             Until Q4 2018
@@ -179,6 +179,7 @@
       ga('send', 'pageview');
 
       $(".tip").tipsy({gravity: 's'});
+      $(".tip-left").tipsy({gravity: 'e'});
     </script>
   </body>
 </html>

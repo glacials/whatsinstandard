@@ -64,6 +64,14 @@
     "rough_exit_date": "Q4 2018"
   },
   {
+    "name": "Welcome Deck 2017",
+    "block": "Amonkhet",
+    "code": "W17",
+    "enter_date": "2017-04-28T00:00:00.000Z",
+    "exit_date": null,
+    "rough_exit_date": "Q4 2018"
+  },
+  {
     "name": "Hour of Devastation",
     "block": "Amonkhet",
     "code": "HOU",

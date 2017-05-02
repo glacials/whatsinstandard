@@ -43,8 +43,8 @@ describe("API", function() {
         expect(sets).to.be.an.array;
       });
 
-      it("should have between 8 and 9 sets", function() {
-        expect(sets).to.have.length.within(8, 9);
+      it("should have between 8 and 10 sets", function() {
+        expect(sets).to.have.length.within(8, 10);
       });
 
       sets.forEach(function(set) {

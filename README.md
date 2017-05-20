@@ -9,6 +9,7 @@ rotations work.
 ```bash
 git clone git@github.com:glacials/whatsinstandard
 cd whatsinstandard
+npm install
 
 # OS X
 open index.html
@@ -24,7 +25,6 @@ fine.
 The API has a few tests. You can run them with
 
 ```bash
-npm install
 npm test
 ```
 

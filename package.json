@@ -11,6 +11,7 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
-    "supervisor": "~0.9.1"
+    "supervisor": "~0.9.1",
+    "vue": "~2.3.3"
   }
 }

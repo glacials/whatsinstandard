@@ -4,6 +4,17 @@ var apiURL = 'http://whatsinstandard.com/api/4/sets.json'
  * Actual demo
  */
 
+var symbol = Vue.component('edition-symbol', {
+	props: [ 'symbol'],
+	template: '<span class="icon"><i :title="symbol" class="ss tip-left" :class="imsym">{{symbolimage}}</i></span>',
+    	data: function(){
+		return {
+			imsym: 'ss-' + this.symbol.toLowerCase()
+		}
+	},
+
+})
+
 var demo = new Vue({
 
   el: '#vue-container',
@@ -15,7 +26,6 @@ var demo = new Vue({
   created: function () {
     this.fetchData()
   },
-
 
   filters: {
     truncate: function (v) {

@@ -6,7 +6,7 @@ var apiURL = 'http://whatsinstandard.com/api/4/sets.json'
 
 var symbol = Vue.component('edition-symbol', {
 	props: [ 'symbol'],
-	template: '<span class="icon"><i :title="symbol" class="ss tip-left" :class="imsym">{{symbolimage}}</i></span>',
+	template: '<span class="icon"><i :title="symbol" class="ss tip-left" :class="imsym"></i></span>',
     	data: function(){
 		return {
 			imsym: 'ss-' + this.symbol.toLowerCase()
@@ -44,6 +44,7 @@ var demo = new Vue({
       xhr.open('GET', apiURL)
       xhr.onload = function () {
         self.editions = JSON.parse(xhr.responseText)
+	//debugger;
         //console.log(self.commits[0].html_url)
       }
       xhr.send()

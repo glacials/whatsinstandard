@@ -20,7 +20,8 @@ var demo = new Vue({
   el: '#vue-container',
 
   data: {
-    editions: null
+    editions: null,
+    blockeditions: null
   },
 
   created: function () {
@@ -41,11 +42,19 @@ var demo = new Vue({
     fetchData: function () {
       var xhr = new XMLHttpRequest()
       var self = this
+      var blockeditions = {};
       xhr.open('GET', apiURL)
       xhr.onload = function () {
         self.editions = JSON.parse(xhr.responseText)
-	//debugger;
-        //console.log(self.commits[0].html_url)
+	debugger
+	for(var i=0; i<self.editions.length; i++){
+		if(!blockeditions[self.editions[i].block]){
+			blockeditions[self.editions[i].block] = []
+		}
+		blockeditions[self.editions[i].block].push(self.editions[i])	
+	}
+	self.blockeditions = blockeditions
+	debugger
       }
       xhr.send()
     }

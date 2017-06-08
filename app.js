@@ -2,7 +2,6 @@ var apiURL = 'http://whatsinstandard.com/api/4/sets.json'
 /**
  * Actual demo
  */
-//Vue.use(require('vue-moment'));
 var symbol = Vue.component('edition-symbol', {
 	props: [ 'symbol'],
 	template: '<span class="icon"><i :title="symbol" class="ss tip-left" :class="imsym"></i></span>',
@@ -28,16 +27,6 @@ var demo = new Vue({
   },
 
   filters: {
-    truncate: function (v) {
-      var newline = v.indexOf('\n')
-      return newline > 0 ? v.slice(0, newline) : v
-    },
-    formatDate: function (v) {
-      console.log(v)
-      //var date = new Date(v)
-      return v.replace(/T|Z/g, ' ')
-
-    },
     moment: function (date) {
       return moment(date).format('MMMM Do YYYY, h:mm:ss a');
     }

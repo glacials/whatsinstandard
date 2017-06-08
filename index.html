@@ -54,7 +54,7 @@
 	    <edition-symbol :symbol="element.code"  />
           </li>
 	  <span class="label label-warning" v-if="record[0].exit_date">
-	  Until {record[0].exit_date }}
+	  Until {{record[0].exit_date  | moment}}
           </span>
 	  <span class="label label-success" v-else>
 	  Until {{record[0].rough_exit_date }}
@@ -127,6 +127,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
     <script src="js/toggleRecentlyDropped.js"></script>
+    <script data-main="scripts/main" src="/node_modules/requirejs/require.js"></script>
+    <script src="node_modules/moment/moment.js"></script>
     <script src="node_modules/vue/dist/vue.js"></script>
     <script src="app.js"></script>
   </body>

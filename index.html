@@ -83,9 +83,15 @@
         <p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
         <h3>
           Banlist
-          <a class="tip" title="Despite being printed into Standard sets, these cards are not allowed in Standard decks as of January 2017."></a>
+          <a class="tip" title="Despite being printed into Standard sets, these cards are not allowed in Standard."></a>
         </h3>
         <ul>
+          <li>
+            <span class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
+            <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Aetherworks+Marvel">
+              Aetherworks Marvel
+            </a>
+          </li>
           <li>
             <span class="icon tip" title="Oath of the Gatewatch"><i class="ss ss-ogw"></i></span>
             <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Reflector+Mage">
@@ -111,6 +117,18 @@
              </a>
           </li>
         </ul>
+
+        <div class="ban-source-toggle-container">
+          <a id="ban-source-toggler" href="#" class="low-distraction" onclick="toggleBanSources();">
+            show announcements
+          </a>
+          <ul id="ban-source" style="display: none;">
+            <li><a href="http://magic.wizards.com/en/articles/archive/news/january-9-2017-banned-and-restricted-announcement-2017-01-09"> January 2017</a></li>
+            <li><a href="http://magic.wizards.com/en/articles/archive/news/addendum-april-24-2017-banned-and-restricted-announcement-2017-04-26"> April 2017</a></li>
+            <li><a href="http://magic.wizards.com/en/articles/archive/feature/june-13-2017-banned-and-restricted-announcement-2017-06-13"> June 2017</a></li>
+          </ul>
+        </div>
+
         <h3>Recent updates</h3>
         <p>
           If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> organizes blocks has
@@ -126,9 +144,21 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
-    <script src="js/toggleRecentlyDropped.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/vue/dist/vue.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/toggles.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-2876079-7', 'auto');
+      ga('require', 'displayfeatures');
+      ga('send', 'pageview');
+
+      $(".tip").tipsy({gravity: 's'});
+      $(".tip-left").tipsy({gravity: 'e'});
+    </script>
   </body>
 </html>

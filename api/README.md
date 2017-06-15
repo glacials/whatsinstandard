@@ -61,7 +61,7 @@ allow smooth deprecation.
 * The `symbol` field has been removed to decrease maintenance work. If you'd like still like to fetch set images, you
   can instead use the `code` field to construct an image URL like
   `http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=<code>&size=large&rarity=C`.
-* `rough_exit_date` regex has changed from `/(early\/mid|late 20\d\d/` to `/Q\d 20\d\d/` for simplicity.
+* `rough_exit_date` regex has changed from `/(early\/mid|late) 20\d\d/` to `/Q\d 20\d\d/` for simplicity.
 
 ##### Version 3
 Valid `rough_exit_date` regex has changed from `/(early|late) 20\d\d/` to `/(early\/mid|late) 20\d\d/` to account for

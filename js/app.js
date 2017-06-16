@@ -13,7 +13,7 @@ var symbol = Vue.component('edition-symbol', {
 
 })
 
-var demo = new Vue({
+var app = new Vue({
 
   el: '#vue-container',
 

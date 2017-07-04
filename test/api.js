@@ -162,7 +162,7 @@ describe("API", function() {
       var body = JSON.parse(fs.readFileSync(setsPath, "utf8"));
 
       it("should be an object", function() {
-        expect(body).to.be.an.object;
+        expect(body).to.be.an('object');
       });
 
       it("should be marked not deprecated", function() {
@@ -170,7 +170,7 @@ describe("API", function() {
       });
 
       it("should have a sets array", function() {
-        expect(body.sets).to.be.an.array;
+        expect(body.sets).to.be.an('array');
       });
 
       it("should have between 8 and 10 sets", function() {
@@ -244,7 +244,7 @@ describe("API", function() {
             });
 
             it("should be an ISO 8601 datetime", function() {
-              expect(Date.parse(enterDate)).to.be.a.number;
+              expect(Date.parse(enterDate)).to.be.a('number');
             });
 
             it("should represent midnight", function() {
@@ -260,7 +260,7 @@ describe("API", function() {
             });
 
             it("should be an ISO 8601 datetime if present", function() {
-              expect(Date.parse(exitDate || "1970-01-01T00:00:00.000Z")).to.be.a.number;
+              expect(Date.parse(exitDate || "1970-01-01T00:00:00.000Z")).to.be.a('number');
             });
 
             it("should represent midnight if present", function() {

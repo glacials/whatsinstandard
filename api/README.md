@@ -42,23 +42,25 @@ The sets array is in order of release (aka `enter_date`), from oldest set to new
 in Standard -- it may contain some sets that have dropped and some sets that have not yet released. It is your
 responsibility to filter these sets out by comparing each set's `enter_date` and `exit_date` to the current date.
 
-Here's a JavaScript snippet that does just that:
+Here's a naive JavaScript function that does just that:
 ```javascript
-fetch('http://whatsinstandard.com/api/v5/sets.json').then(function(resp) {
-  resp.json().then(function(body) {
-    let standardSets = body.sets.filter(function(set) {
-      if(set.enter_date === null || new Date(set.enter_date) > Date.now()) {
-        return false;
-      }
-      if(set.exit_date !== null && new Date(set.exit_date) < Date.now()) {
-        return false;
-      }
-      return true;
-    });
+var getStandardSets = function(callback) {
+  fetch('http://whatsinstandard.com/api/v5/sets.json').then(function(resp) {
+    resp.json().then(function(body) {
+      let standardSets = body.sets.filter(function(set) {
+        if(set.enter_date === null || new Date(set.enter_date) > Date.now()) {
+          return false;
+        }
+        if(set.exit_date !== null && new Date(set.exit_date) < Date.now()) {
+          return false;
+        }
+        return true;
+      });
 
-    console.log(standardSets);
+      callback(standardSets);
+    });
   });
-});
+};
 ```
 
 [1]: http://whatsinstandard.com/api/v5/sets.json

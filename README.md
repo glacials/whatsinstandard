@@ -9,6 +9,7 @@ rotations work.
 ```bash
 git clone git@github.com:glacials/whatsinstandard
 cd whatsinstandard
+npm install
 
 # OS X
 open index.html
@@ -24,7 +25,6 @@ fine.
 The API has a few tests. You can run them with
 
 ```bash
-npm install
 npm test
 ```
 
@@ -78,5 +78,5 @@ Thanks to:
 [3]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
 [4]: https://github.com/bower/bower
 [5]: http://whatsinstandard.com/api/4/sets.json
-[6]: https://github.com/glacials/whatsinstandard/blob/gh-pages/api
+[6]: https://github.com/glacials/whatsinstandard/blob/master/api
 [7]: https://github.com/jninnes/mtgicons

@@ -95,6 +95,18 @@ div.recently-dropped-toggle-container {
 }
 
 /*
+ * ban list
+ */
+
+.ban-source-toggle-container {
+  text-align: left;
+}
+
+.ban-source-toggle-container > ul {
+  text-align: left;
+}
+
+/*
  * set symbols
  */
 .list-group-item .icon {
@@ -136,6 +148,7 @@ div.recently-dropped-toggle-container {
 a.low-distraction:hover {
   opacity: 1;
 }
+
 
 /*
  * miscellaneous

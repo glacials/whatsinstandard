@@ -135,8 +135,9 @@
         <h2>What <em>is</em> Standard?</h2>
         <p>
           Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
-          released and drop out about eighteen months later. Reprint/Masters sets are Modern sets, not Standard sets.
-          <sup><a target="_blank" href="http://magic.wizards.com/en/content/standard-formats-magic-gathering">1</a>
+          released and drop out about eighteen months later. (<i>Masters</i> sets never enter Standard.<sup><a
+              target="_blank"
+              href="http://magic.wizards.com/en/content/standard-formats-magic-gathering">1</a></sup>)
         </p>
         <p>
           A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
@@ -148,9 +149,15 @@
         <p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
         <h3>
           Banlist
-          <a class="tip" title="Despite being printed into Standard sets, these cards are not allowed in Standard decks as of January 2017."></a>
+          <a class="tip" title="Despite being printed into Standard sets, these cards are not allowed in Standard."></a>
         </h3>
         <ul>
+          <li>
+            <span class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
+            <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Aetherworks+Marvel">
+              Aetherworks Marvel
+            </a>
+          </li>
           <li>
             <span class="icon tip" title="Oath of the Gatewatch"><i class="ss ss-ogw"></i></span>
             <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Reflector+Mage">
@@ -176,11 +183,37 @@
              </a>
           </li>
         </ul>
-        <h3>Recent updates</h3>
+
+        <div class="ban-source-toggle-container">
+          <a id="ban-source-toggler" href="#" class="low-distraction" onclick="toggleBanSources();">
+            show announcements
+          </a>
+          <ul id="ban-source" style="display: none;">
+            <li><a href="http://magic.wizards.com/en/articles/archive/news/january-9-2017-banned-and-restricted-announcement-2017-01-09"> January 2017</a></li>
+            <li><a href="http://magic.wizards.com/en/articles/archive/news/addendum-april-24-2017-banned-and-restricted-announcement-2017-04-26"> April 2017</a></li>
+            <li><a href="http://magic.wizards.com/en/articles/archive/feature/june-13-2017-banned-and-restricted-announcement-2017-06-13"> June 2017</a></li>
+          </ul>
+        </div>
+
+        <h3>Release pattern changes</h3>
         <p>
-          If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> organizes blocks has
-          recently changed. Previously, each 12-month period saw one new core set and one new three-set block; today,
-          each 12-month period sees instead two new two-set blocks (core sets are gone).<sup><a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">2</a></sup>
+          If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> releases sets into
+          Standard has changed twice. For most of <i>Magic</i>'s history, each 12-month period saw one new core set and
+          one new three-set block. <a class="tip" title="A block is a group of sets that share a theme. Sets in a block
+            are released separately, but drop out of Standard simultaneously."></a>
+        </p>
+        <p>
+          In 2014, the set release pattern was changed such that each 12-month period saw instead two two-set
+          blocks, with core sets abandoned.<sup><a target="_blank"
+            href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis">2</a></sup>
+        </p>
+        <p>
+          In 2017, the set release pattern was changed again such that each 12-month period sees once again one
+          core set and three non-core sets, but with the concept of blocks completely removed. This change will start to
+          come into effect in Q2 2018.<sup><a
+            href="http://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
+            target="_blank">3</a></sup>
+        </p>
         </p>
         <div class="github">
           <a target="_blank" href="https://github.com/glacials/whatsinstandard">
@@ -191,7 +224,7 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
-    <script src="js/toggleRecentlyDropped.js"></script>
+    <script src="js/toggles.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

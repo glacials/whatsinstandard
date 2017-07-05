@@ -49,8 +49,8 @@
         </ul>
 	<div id="vue-container">
         <ul class="list-group" v-for="record in blockeditions">
-          <li class="list-group-item" v-bind:class="{ grey : (Date.parse(record.enter_date) > Date.now()) }" v-for="element in record">
-		{{element.name}}
+          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : (Date.parse(element.enter_date) > Date.now()) }" v-for="element in record">
+		{{element.name}} 
 	    <edition-symbol :symbol="element.code"  />
           </li>
 	  <span class="label label-warning" v-if="record[0].exit_date">
@@ -59,7 +59,7 @@
 	  <span class="label label-success" v-else>
 	  Until {{record[0].rough_exit_date }}
           </span>
-	  <span class="label label-default" v-if="Date.parse(record.enter_date) > Date.now()">
+	  <span class="label label-default" v-if="isNotReleased(record[0].enter_date)">
 		  {{ record[0].name }} releases {{record[0].enter_date }}
 	  </span>
 	</ul>
@@ -70,8 +70,9 @@
         <h2>What <em>is</em> Standard?</h2>
         <p>
           Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
-          released and drop out about eighteen months later. Reprint/Masters sets are Modern sets, not Standard sets.
-          <sup><a target="_blank" href="http://magic.wizards.com/en/content/standard-formats-magic-gathering">1</a>
+          released and drop out about eighteen months later. (<i>Masters</i> sets never enter Standard.<sup><a
+              target="_blank"
+              href="http://magic.wizards.com/en/content/standard-formats-magic-gathering">1</a></sup>)
         </p>
         <p>
           A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
@@ -129,11 +130,25 @@
           </ul>
         </div>
 
-        <h3>Recent updates</h3>
+        <h3>Release pattern changes</h3>
         <p>
-          If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> organizes blocks has
-          recently changed. Previously, each 12-month period saw one new core set and one new three-set block; today,
-          each 12-month period sees instead two new two-set blocks (core sets are gone).<sup><a href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis" target="_blank">2</a></sup>
+          If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> releases sets into
+          Standard has changed twice. For most of <i>Magic</i>'s history, each 12-month period saw one new core set and
+          one new three-set block. <a class="tip" title="A block is a group of sets that share a theme. Sets in a block
+            are released separately, but drop out of Standard simultaneously."></a>
+        </p>
+        <p>
+          In 2014, the set release pattern was changed such that each 12-month period saw instead two two-set
+          blocks, with core sets abandoned.<sup><a target="_blank"
+            href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis">2</a></sup>
+        </p>
+        <p>
+          In 2017, the set release pattern was changed again such that each 12-month period sees once again one
+          core set and three non-core sets, but with the concept of blocks completely removed. This change will start to
+          come into effect in Q2 2018.<sup><a
+            href="http://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
+            target="_blank">3</a></sup>
+        </p>
         </p>
         <div class="github">
           <a target="_blank" href="https://github.com/glacials/whatsinstandard">

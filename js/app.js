@@ -1,6 +1,6 @@
 var apiURL = 'http://whatsinstandard.com/api/4/sets.json'
 /**
- * Actual demo
+ * Vue.js code that parse json file for whatsinstandard.com
  */
 var symbol = Vue.component('edition-symbol', {
 	props: [ 'symbol'],
@@ -49,6 +49,8 @@ var app = new Vue({
 	self.blockeditions = blockeditions
       }
       xhr.send()
+    },
+    isNotReleased( release_date ){
+	return Date.parse(release_date) > Date.now();
     }
   }
-})

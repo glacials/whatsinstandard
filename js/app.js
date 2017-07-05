@@ -50,7 +50,18 @@ var app = new Vue({
       }
       xhr.send()
     },
-    isNotReleased( release_date ){
+
+    isNotReleased: function ( release_date ){
 	return Date.parse(release_date) > Date.now();
+    },
+
+    getFirstNotReleasedSet : function(block){
+	for(var i=0; i<block.length; i++){
+		if(this.isNotReleased(block[i].enter_date)){
+			return block[i].name + " releases " + moment(block[i].enter_date).format('MMMM Do YYYY'); 
+		}
+	}
+	console.log(block)
     }
   }
+});

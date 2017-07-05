@@ -49,7 +49,7 @@
         </ul>
 	<div id="vue-container">
         <ul class="list-group" v-for="record in blockeditions">
-          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : (Date.parse(element.enter_date) > Date.now()) }" v-for="element in record">
+          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : isNotReleased(element.enter_date) }" v-for="element in record">
 		{{element.name}} 
 	    <edition-symbol :symbol="element.code"  />
           </li>
@@ -57,10 +57,10 @@
 	  Until {{record[0].exit_date  | moment}}
           </span>
 	  <span class="label label-success" v-else>
-	  Until {{record[0].rough_exit_date }}
+	  Until {{record[0].rough_exit_date }} 
           </span>
-	  <span class="label label-default" v-if="isNotReleased(record[0].enter_date)">
-		  {{ record[0].name }} releases {{record[0].enter_date }}
+	  <span class="label label-default" v-if="getFirstNotReleasedSet(record) !== undefined">
+		  {{getFirstNotReleasedSet(record)}}
 	  </span>
 	</ul>
 	</div>

@@ -49,7 +49,7 @@
         </ul>
 	<div id="vue-container">
         <ul class="list-group" v-for="record in blockeditions">
-          <li class="list-group-item" v-for="element in record">
+          <li class="list-group-item" v-bind:class="{ grey : (Date.parse(record.enter_date) > Date.now()) }" v-for="element in record">
 		{{element.name}}
 	    <edition-symbol :symbol="element.code"  />
           </li>

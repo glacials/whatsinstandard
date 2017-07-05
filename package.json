@@ -12,6 +12,6 @@
     "mocha": "*",
     "chai": "*",
     "requirejs": "^2.3.3",
-    "supervisor": "~0.9.1",
+    "supervisor": "~0.9.1"
   }
 }

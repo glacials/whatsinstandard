@@ -9,9 +9,13 @@
     "test": "./node_modules/mocha/bin/mocha"
   },
   "devDependencies": {
-    "mocha": "*",
     "chai": "*",
+    "mocha": "*",
     "requirejs": "^2.3.3",
     "supervisor": "~0.9.1"
+  },
+  "dependencies": {
+    "bootstrap-vue": "^0.18.0",
+    "lint": "^1.1.2"
   }
 }

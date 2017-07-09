@@ -51,7 +51,9 @@
           <ul class="list-group" v-for="record in blockeditions">
             <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : isNotReleased(element.enter_date) }" v-for="element in record">
               {{element.name}} 
-              <edition-symbol :symbol="element.code" />
+              <b-tooltip :content="element.code" placement="left" />
+                <edition-symbol :symbol="element.code" />
+              </b-tooltip>
             </li>
             <span class="label label-warning" v-if="record[0].exit_date">
               Until {{record[0].exit_date | moment}}
@@ -161,19 +163,19 @@
     <script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/tether@latest/dist/js/tether.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     <script src="js/app.js"></script>
     <script src="js/toggles.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-2876079-7', 'auto');
-      ga('require', 'displayfeatures');
-      ga('send', 'pageview');
-
-      $(".tip").tipsy({gravity: 's'});
-      $(".tip-left").tipsy({gravity: 'e'});
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-2876079-7', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
     </script>
   </body>
 </html>

@@ -15,7 +15,6 @@
   ],
   "dependencies": {
     "bootstrap": "~3.0.3",
-    "tipsy": "~0.1.7",
     "keyrune": "*",
     "moment": "^2.18.1",
     "vue": "^2.3.3"

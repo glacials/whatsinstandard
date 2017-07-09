@@ -1,7 +1,7 @@
 var apiURL = 'http://whatsinstandard.com/api/4/sets.json'
 var symbol = Vue.component('edition-symbol', {
   props: ['symbol'],
-  template: '<span class="icon"><i :title="symbol" class="ss tip-left" :class="imsym"></i></span>',
+  template: '<span class="icon"><i class="ss" :class="imsym"></i></span>',
   data: function () {
     return {
       imsym: 'ss-' + this.symbol.toLowerCase()

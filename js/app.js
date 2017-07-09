@@ -1,20 +1,15 @@
 var apiURL = 'http://whatsinstandard.com/api/4/sets.json'
-/**
- * Vue.js code that parse json file for whatsinstandard.com
- */
 var symbol = Vue.component('edition-symbol', {
-	props: [ 'symbol'],
-	template: '<span class="icon"><i :title="symbol" class="ss tip-left" :class="imsym"></i></span>',
-    	data: function(){
-		return {
-			imsym: 'ss-' + this.symbol.toLowerCase()
-		}
-	},
-
+  props: ['symbol'],
+  template: '<span class="icon"><i :title="symbol" class="ss tip-left" :class="imsym"></i></span>',
+  data: function () {
+    return {
+      imsym: 'ss-' + this.symbol.toLowerCase()
+    }
+  },
 })
 
 var app = new Vue({
-
   el: '#vue-container',
 
   data: {
@@ -35,33 +30,34 @@ var app = new Vue({
   methods: {
     fetchData: function () {
       var xhr = new XMLHttpRequest()
-      var self = this
+      var self = this;
       var blockeditions = {};
-      xhr.open('GET', apiURL)
+      xhr.open('GET', apiURL);
       xhr.onload = function () {
         self.editions = JSON.parse(xhr.responseText)
-	for(var i=0; i<self.editions.length; i++){
-		if(!blockeditions[self.editions[i].block]){
-			blockeditions[self.editions[i].block] = []
-		}
-		blockeditions[self.editions[i].block].push(self.editions[i])	
-	}
-	self.blockeditions = blockeditions
+
+        for(var i=0; i<self.editions.length; i++) {
+          if(!blockeditions[self.editions[i].block]) {
+            blockeditions[self.editions[i].block] = [];
+          }
+
+          blockeditions[self.editions[i].block].push(self.editions[i]);
+        }
+        self.blockeditions = blockeditions;
+      };
+      xhr.send();
+    },
+
+    isNotReleased: function (release_date) {
+      return Date.parse(release_date) > Date.now();
+    },
+
+    getFirstNotReleasedSet: function (block) {
+      for(var i=0; i < block.length; i++) {
+        if(this.isNotReleased(block[i].enter_date)) {
+          return block[i].name + " releases " + moment(block[i].enter_date).format('MMMM Do YYYY');
+        }
       }
-      xhr.send()
-    },
-
-    isNotReleased: function ( release_date ){
-	return Date.parse(release_date) > Date.now();
-    },
-
-    getFirstNotReleasedSet : function(block){
-	for(var i=0; i<block.length; i++){
-		if(this.isNotReleased(block[i].enter_date)){
-			return block[i].name + " releases " + moment(block[i].enter_date).format('MMMM Do YYYY'); 
-		}
-	}
-	console.log(block)
     }
   }
 });

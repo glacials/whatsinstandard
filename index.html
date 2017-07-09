@@ -47,39 +47,39 @@
             Dropped September 30, 2016
           </span>
         </ul>
-	<div id="vue-container">
-        <ul class="list-group" v-for="record in blockeditions">
-          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : isNotReleased(element.enter_date) }" v-for="element in record">
-		{{element.name}} 
-	    <edition-symbol :symbol="element.code"  />
-          </li>
-	  <span class="label label-warning" v-if="record[0].exit_date">
-	  Until {{record[0].exit_date  | moment}}
-          </span>
-	  <span class="label label-success" v-else>
-	  Until {{record[0].rough_exit_date }} 
-          </span>
-	  <span class="label label-default" v-if="getFirstNotReleasedSet(record) !== undefined">
-		  {{getFirstNotReleasedSet(record)}}
-	  </span>
-	</ul>
-	</div>
+        <div id="vue-container">
+          <ul class="list-group" v-for="record in blockeditions">
+            <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : isNotReleased(element.enter_date) }" v-for="element in record">
+              {{element.name}} 
+              <edition-symbol :symbol="element.code" />
+            </li>
+            <span class="label label-warning" v-if="record[0].exit_date">
+              Until {{record[0].exit_date | moment}}
+            </span>
+            <span class="label label-success" v-else>
+              Until {{record[0].rough_exit_date}} 
+            </span>
+            <span class="label label-default" v-if="getFirstNotReleasedSet(record) !== undefined">
+              {{getFirstNotReleasedSet(record)}}
+            </span>
+          </ul>
+        </div>
 
       </div>
       <div class="col-md-7">
         <h2>What <em>is</em> Standard?</h2>
         <p>
-          Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
-          released and drop out about eighteen months later. (<i>Masters</i> sets never enter Standard.<sup><a
-              target="_blank"
-              href="http://magic.wizards.com/en/content/standard-formats-magic-gathering">1</a></sup>)
+        Standard is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
+        released and drop out about eighteen months later. (<i>Masters</i> sets never enter Standard.<sup><a
+           target="_blank"
+           href="http://magic.wizards.com/en/content/standard-formats-magic-gathering">1</a></sup>)
         </p>
         <p>
-          A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
-          <a class="tip"
-             title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
-                    are also considered Standard.">
-          </a>
+        A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
+        <a class="tip"
+           title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
+           are also considered Standard.">
+        </a>
         </p>
         <p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
         <h3>
@@ -113,9 +113,9 @@
           </li>
           <li>
             <span class="icon tip" title="Aether Revolt"><i class="ss ss-aer"></i></span>
-             <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Felidar+Guardian">
-               Felidar Guardian
-             </a>
+            <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Felidar+Guardian">
+              Felidar Guardian
+            </a>
           </li>
         </ul>
 
@@ -132,22 +132,22 @@
 
         <h3>Release pattern changes</h3>
         <p>
-          If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> releases sets into
-          Standard has changed twice. For most of <i>Magic</i>'s history, each 12-month period saw one new core set and
-          one new three-set block. <a class="tip" title="A block is a group of sets that share a theme. Sets in a block
-            are released separately, but drop out of Standard simultaneously."></a>
+        If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> releases sets into
+        Standard has changed twice. For most of <i>Magic</i>'s history, each 12-month period saw one new core set and
+        one new three-set block. <a class="tip" title="A block is a group of sets that share a theme. Sets in a block
+        are released separately, but drop out of Standard simultaneously."></a>
         </p>
         <p>
-          In 2014, the set release pattern was changed such that each 12-month period saw instead two two-set
-          blocks, with core sets abandoned.<sup><a target="_blank"
-            href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis">2</a></sup>
+        In 2014, the set release pattern was changed such that each 12-month period saw instead two two-set
+        blocks, with core sets abandoned.<sup><a target="_blank"
+                                                 href="http://magic.wizards.com/en/articles/archive/mm/metamorphosis">2</a></sup>
         </p>
         <p>
-          In 2017, the set release pattern was changed again such that each 12-month period sees once again one
-          core set and three non-core sets, but with the concept of blocks completely removed. This change will start to
-          come into effect in Q2 2018.<sup><a
-            href="http://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
-            target="_blank">3</a></sup>
+        In 2017, the set release pattern was changed again such that each 12-month period sees once again one
+        core set and three non-core sets, but with the concept of blocks completely removed. This change will start to
+        come into effect in Q2 2018.<sup><a
+                                                 href="http://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
+                                                 target="_blank">3</a></sup>
         </p>
         </p>
         <div class="github">
@@ -165,8 +165,8 @@
     <script src="js/toggles.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-2876079-7', 'auto');
       ga('require', 'displayfeatures');

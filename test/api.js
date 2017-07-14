@@ -44,7 +44,7 @@ describe("API", function() {
       });
 
       it("should have between 8 and 10 sets", function() {
-        expect(sets).to.have.length.within(8, 10);
+        expect(sets).to.have.length.within(8, 12);
       });
 
       sets.forEach(function(set) {
@@ -174,7 +174,7 @@ describe("API", function() {
       });
 
       it("should have between 8 and 10 sets", function() {
-        expect(body.sets).to.have.length.within(8, 10);
+        expect(body.sets).to.have.length.within(8, 12);
       });
 
       body.sets.forEach(function(set) {

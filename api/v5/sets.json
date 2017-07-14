@@ -80,6 +80,22 @@
       "enter_date": "2017-07-14T00:00:00.000Z",
       "exit_date": null,
       "rough_exit_date": "Q4 2018"
+    },
+    {
+      "name": "Ixalan",
+      "block": "Ixalan",
+      "code": "XLN",
+      "enter_date": "2017-09-29T00:00:00.000Z",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2019"
+    },
+    {
+      "name": "Rivals of Ixalan",
+      "block": "Ixalan",
+      "code": "RIX",
+      "enter_date": "2018-01-19T00:00:00.000Z",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2019"
     }
   ]
 }

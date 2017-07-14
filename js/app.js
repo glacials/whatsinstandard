@@ -55,7 +55,7 @@ var app = new Vue({
     getFirstNotReleasedSet: function (block) {
       for(var i=0; i < block.length; i++) {
         if(this.isNotReleased(block[i].enter_date)) {
-          return block[i].name + " releases " + moment(block[i].enter_date).format('MMMM Do YYYY');
+          return block[i].name + " releases " + moment(block[i].enter_date).format('MMMM Do, YYYY');
         }
       }
     }

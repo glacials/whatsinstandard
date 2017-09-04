@@ -50,16 +50,14 @@
         <div id="vue-container">
           <ul class="list-group" v-for="record in blockeditions">
             <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : isNotReleased(element.enter_date) }" v-for="element in record">
-              {{element.name}} 
-              <b-tooltip :content="element.code" placement="left" />
-                <edition-symbol :symbol="element.code" />
-              </b-tooltip>
+              {{element.name}}
+              <edition-symbol :symbol="element.code" />
             </li>
             <span class="label label-warning" v-if="record[0].exit_date">
               Until {{record[0].exit_date | moment}}
             </span>
             <span class="label label-success" v-else>
-              Until {{record[0].rough_exit_date}} 
+              Until {{record[0].rough_exit_date}}
             </span>
             <span class="label label-default" v-if="getFirstNotReleasedSet(record) !== undefined">
               {{getFirstNotReleasedSet(record)}}

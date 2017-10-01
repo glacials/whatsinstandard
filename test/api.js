@@ -173,8 +173,8 @@ describe("API", function() {
         expect(body.sets).to.be.an('array');
       });
 
-      it("should have between 8 and 10 sets", function() {
-        expect(body.sets).to.have.length.within(8, 12);
+      it("should have between 8 and 14 sets", function() {
+        expect(body.sets).to.have.length.within(8, 14);
       });
 
       body.sets.forEach(function(set) {
@@ -198,12 +198,12 @@ describe("API", function() {
               expect(block).to.be.a.string;
             });
 
-            it("should have a nonzero length", function() {
-              expect(block).to.not.have.length(0);
+            it("should have a nonzero length or be null", function() {
+              expect(block || "abc").to.not.have.length(0);
             });
 
-            it("should be the same as the previous set's block or equal to this set's name", function() {
-              var validNames = new Set([set.name]);
+            it("should be the same as the previous set's block or equal to this set's name or be null", function() {
+              var validNames = new Set([set.name, null]);
               if (body.sets.indexOf(set) > 0) {
                 validNames.add(body.sets[body.sets.indexOf(set) - 1].block);
               }

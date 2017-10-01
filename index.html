@@ -48,10 +48,10 @@
               <edition-symbol :symbol="set.code" />
             </li>
             <span class="label label-warning" v-if="block[0].exit_date">
-              Until {{block[0].exit_date | moment}}
+              Until {{ block[0].exit_date | moment }}
             </span>
             <span class="label label-success" v-else>
-              Until {{block[0].rough_exit_date}}
+              Until {{ block[0].rough_exit_date }}
             </span>
             <span class="label label-default" v-if="firstUnreleasedSet(block) !== undefined">
               {{ firstUnreleasedSet(block).name}} releases {{firstUnreleasedSet(block).enter_date | moment }} 

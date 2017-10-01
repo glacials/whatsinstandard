@@ -96,6 +96,22 @@
       "enter_date": "2018-01-19T00:00:00.000Z",
       "exit_date": null,
       "rough_exit_date": "Q4 2019"
+    },
+    {
+      "name": "Dominaria",
+      "block": null,
+      "code": "DOM",
+      "enter_date": "2018-04-27T00:00:00.000Z",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2019"
+    },
+    {
+      "name": "Core 2019",
+      "block": null,
+      "code": "M19",
+      "enter_date": "2018-07-20T00:00:00.000Z",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2019"
     }
   ]
 }

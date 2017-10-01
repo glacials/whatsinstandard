@@ -15,7 +15,10 @@
     "supervisor": "~0.9.1"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "bootstrap-vue": "^0.18.0",
-    "lint": "^1.1.2"
+    "jquery": "^3.2.1",
+    "lint": "^1.1.2",
+    "vue-tippy": "^0.2.8"
   }
 }

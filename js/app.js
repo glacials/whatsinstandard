@@ -1,14 +1,14 @@
 var apiURL = 'http://whatsinstandard.com/api/v5/sets.json'
-var symbol = Vue.component('edition-symbol', {
-  props: ['symbol'],
+var code = Vue.component('set-image', {
+  props: ['code'],
   template: `
-    <span class="icon tip" :title="symbol">
+    <span v-tippy="{ position: 'left' }" class="icon tip" :title="code">
       <i class="ss" :class="imsym"></i>
     </span>
   `,
   data: function () {
     return {
-      imsym: 'ss-' + this.symbol.toLowerCase()
+      imsym: 'ss-' + this.code.toLowerCase()
     }
   },
 })

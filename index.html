@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen" />
-    <link rel="stylesheet" href="bower_components/tipsy/src/stylesheets/tipsy.css" media="screen" />
+    <link rel="stylesheet" href="bower_components/tippyjs/dist/tippy.css" media="screen" />
     <link rel="stylesheet" href="bower_components/keyrune/css/keyrune.min.css" media="screen" />
     <link rel="stylesheet" href="css/style.css" media="screen" />
     <link rel="manifest" href="manifest.json">
@@ -35,7 +35,7 @@
             <ul v-for="block in blocks(dropped(sets))" class="list-group list-group--dropped">
               <li v-for="set in block" class="list-group-item gray">
                 {{ set.name }}
-                <edition-symbol :symbol="set.code" />
+                <set-image :code="set.code" />
               </li>
               <span class="label label-low-distraction">
                 Dropped {{ block[0].exit_date | moment }}
@@ -45,7 +45,7 @@
           <ul class="list-group" v-for="block in blocks(standard(sets).concat(unreleased(sets)))">
             <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in block">
               {{ set.name }}
-              <edition-symbol :symbol="set.code" />
+              <set-image :code="set.code" />
             </li>
             <span class="label label-warning" v-if="block[0].exit_date">
               Until {{ block[0].exit_date | moment }}
@@ -70,7 +70,7 @@
         </p>
         <p>
         A <i>Standard card</i> is a card printed or reprinted into a set currently in Standard.
-        <a class="tip"
+        <a v-tippy class="tip"
            title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
            are also considered Standard.">
         </a>
@@ -78,23 +78,23 @@
         <p>A deck which contains only Standard cards is called a <i>Standard deck</i>.</p>
         <h3>
           Banlist
-          <a class="tip" title="Despite being printed into Standard sets, these cards are not allowed in Standard."></a>
+          <a v-tippy class="tip" title="Despite being printed into Standard sets, these cards are not allowed in Standard."></a>
         </h3>
         <ul>
           <li>
-            <span class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
+            <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
             <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Aetherworks+Marvel">
               Aetherworks Marvel
             </a>
           </li>
           <li>
-            <span class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
+            <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
             <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Smuggler%27s+Copter">
               Smuggler's Copter
             </a>
           </li>
           <li>
-            <span class="icon tip" title="Aether Revolt"><i class="ss ss-aer"></i></span>
+            <span v-tippy class="icon tip" title="Aether Revolt"><i class="ss ss-aer"></i></span>
             <a target="_blank" href="http://gatherer.wizards.com/Pages/Card/Details.aspx?name=Felidar+Guardian">
               Felidar Guardian
             </a>
@@ -116,7 +116,7 @@
         <p>
         If you're coming back to <i>Magic</i> after a break, note that the way <i>Wizards</i> releases sets into
         Standard has changed twice. For most of <i>Magic</i>'s history, each 12-month period saw one new core set and
-        one new three-set block. <a class="tip" title="A block is a group of sets that share a theme. Sets in a block
+        one new three-set block. <a v-tippy class="tip" title="A block is a group of sets that share a theme. Sets in a block
         are released separately, but drop out of Standard simultaneously."></a>
         </p>
         <p>
@@ -140,9 +140,9 @@
       </div>
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="bower_components/tipsy/src/javascripts/jquery.tipsy.js"></script>
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/vue/dist/vue.min.js"></script>
+    <script src="node_modules/vue-tippy/dist/vue-tippy.min.js"></script>
     <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
     <script src="https://unpkg.com/tether@latest/dist/js/tether.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>

@@ -6,7 +6,7 @@ var showSetsText = 'show recently dropped sets';
 var hideSetsText = 'hide recently dropped sets';
 
 var droppedToggler = $('#recently-dropped-toggler')[0];
-var droppedSets = $('#recently-dropped')[0];
+var droppedSets = document.getElementById('recently-dropped');
 
 var toggleRecentlyDropped = function () {
   if (droppedSets.style.display === 'none') {

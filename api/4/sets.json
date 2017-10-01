@@ -1,45 +1,5 @@
 [
   {
-    "name": "Battle for Zendikar",
-    "block": "Battle for Zendikar",
-    "code": "BFZ",
-    "enter_date": "2015-10-02T00:00:00.000Z",
-    "exit_date": "2017-09-29T00:00:00.000Z",
-    "rough_exit_date": "Q4 2017"
-  },
-  {
-    "name": "Oath of the Gatewatch",
-    "block": "Battle for Zendikar",
-    "code": "OGW",
-    "enter_date": "2016-01-22T00:00:00.000Z",
-    "exit_date": "2017-09-29T00:00:00.000Z",
-    "rough_exit_date": "Q4 2017"
-  },
-  {
-    "name": "Shadows over Innistrad",
-    "block": "Shadows over Innistrad",
-    "code": "SOI",
-    "enter_date": "2016-04-08T00:00:00.000Z",
-    "exit_date": "2017-09-29T00:00:00.000Z",
-    "rough_exit_date": "Q4 2017"
-  },
-  {
-    "name": "Welcome Deck 2016",
-    "block": "Shadows over Innistrad",
-    "code": "W16",
-    "enter_date": "2016-04-09T00:00:00.000Z",
-    "exit_date": "2017-09-29T00:00:00.000Z",
-    "rough_exit_date": "Q4 2017"
-  },
-  {
-    "name": "Eldritch Moon",
-    "block": "Shadows over Innistrad",
-    "code": "EMN",
-    "enter_date": "2016-07-21T00:00:00.000Z",
-    "exit_date": "2017-09-29T00:00:00.000Z",
-    "rough_exit_date": "Q4 2017"
-  },
-  {
     "name": "Kaladesh",
     "block": "Kaladesh",
     "code": "KLD",

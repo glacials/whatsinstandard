@@ -30,62 +30,31 @@
             show recently dropped sets
           </a>
         </div>
-        <div id="recently-dropped" style="display: none;">
-          <ul class="list-group list-group--dropped">
-            <li class="list-group-item gray">
-              Battle for Zendikar
-              <span class="icon">
-                <i class="ss ss-bfz tip-left" title="BFZ"></i>
-              </span>
-            </li>
-            <li class="list-group-item gray">
-              Oath of the Gatewatch
-              <span class="icon">
-                <i class="ss ss-ogw tip-left" title="OGW"></i>
-              </span>
-            </li>
-            <span class="label label-low-distraction">
-              Dropped September 28, 2017
-            </span>
-          </ul>
-          <ul class="list-group list-group--dropped">
-            <li class="list-group-item gray">
-              Shadows over Innistrad
-              <span class="icon">
-                <i class="ss ss-soi tip-left" title="SOI"></i>
-              </span>
-            </li>
-            <li class="list-group-item gray">
-              Welcome Deck 2016
-              <span class="icon">
-                <i class="ss ss-w16 tip-left" title="W16"></i>
-              </span>
-            </li>
-            <li class="list-group-item gray">
-              Eldritch Moon
-              <span class="icon">
-                <i class="ss ss-emn tip-left" title="EMN"></i>
-              </span>
-            </li>
-            <span class="label label-low-distraction">
-              Dropped September 28, 2017
-            </span>
-          </ul>
-        </div>
         <div id="vue-container">
-          <ul class="list-group" v-for="record in blockeditions">
-            <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : isNotReleased(element.enter_date) }" v-for="element in record">
-              {{element.name}}
-              <edition-symbol :symbol="element.code" />
+          <div id="recently-dropped" style="display: none;">
+            <ul v-for="block in blocks(dropped(sets))" class="list-group list-group--dropped">
+              <li v-for="set in block" class="list-group-item gray">
+                {{ set.name }}
+                <edition-symbol :symbol="set.code" />
+              </li>
+              <span class="label label-low-distraction">
+                Dropped {{ block[0].exit_date | moment }}
+              </span>
+            </ul>
+          </div>
+          <ul class="list-group" v-for="block in blocks(standard(sets).concat(unreleased(sets)))">
+            <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in block">
+              {{ set.name }}
+              <edition-symbol :symbol="set.code" />
             </li>
-            <span class="label label-warning" v-if="record[0].exit_date">
-              Until {{record[0].exit_date | moment}}
+            <span class="label label-warning" v-if="block[0].exit_date">
+              Until {{block[0].exit_date | moment}}
             </span>
             <span class="label label-success" v-else>
-              Until {{record[0].rough_exit_date}}
+              Until {{block[0].rough_exit_date}}
             </span>
-            <span class="label label-default" v-if="getFirstNotReleasedSet(record) !== undefined">
-              {{getFirstNotReleasedSet(record)}}
+            <span class="label label-default" v-if="firstUnreleasedSet(block) !== undefined">
+              {{ firstUnreleasedSet(block).name}} releases {{firstUnreleasedSet(block).enter_date | moment }} 
             </span>
           </ul>
         </div>

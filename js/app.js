@@ -1,4 +1,4 @@
-var apiURL = 'http://whatsinstandard.com/api/4/sets.json'
+var apiURL = 'http://whatsinstandard.com/api/v5/sets.json'
 var symbol = Vue.component('edition-symbol', {
   props: ['symbol'],
   template: `
@@ -17,8 +17,7 @@ var app = new Vue({
   el: '#vue-container',
 
   data: {
-    editions: null,
-    blockeditions: null
+    sets: [],
   },
 
   created: function () {
@@ -27,41 +26,63 @@ var app = new Vue({
 
   filters: {
     moment: function (date) {
-      return moment(date).format('MMMM Do YYYY');
+      return moment(date).format('MMMM Do, YYYY');
     }
   },
 
   methods: {
     fetchData: function () {
-      var xhr = new XMLHttpRequest()
-      var self = this;
-      var blockeditions = {};
+      let self = this;
+
+      let setsByBlock = {};
+      let recentlyDroppedSetsByBlock = {};
+
+      let xhr = new XMLHttpRequest()
       xhr.open('GET', apiURL);
       xhr.onload = function () {
-        self.editions = JSON.parse(xhr.responseText)
-
-        for(var i=0; i<self.editions.length; i++) {
-          if(!blockeditions[self.editions[i].block]) {
-            blockeditions[self.editions[i].block] = [];
-          }
-
-          blockeditions[self.editions[i].block].push(self.editions[i]);
-        }
-        self.blockeditions = blockeditions;
+        self.sets = JSON.parse(xhr.responseText).sets;
       };
       xhr.send();
     },
 
-    isNotReleased: function (release_date) {
-      return Date.parse(release_date) > Date.now();
+    dropped: function(sets) {
+      return sets.filter(function(set) {
+        return Date.parse(set.exit_date) < Date.now();
+      });
     },
 
-    getFirstNotReleasedSet: function (block) {
-      for(var i=0; i < block.length; i++) {
-        if(this.isNotReleased(block[i].enter_date)) {
-          return block[i].name + " releases " + moment(block[i].enter_date).format('MMMM Do, YYYY');
+    standard: function(sets) {
+      return sets.filter(function(set) {
+        return ((Date.parse(set.enter_date) || Infinity) <= Date.now())
+            && ((Date.parse(set.exit_date ) || Infinity) >= Date.now());
+      });
+    },
+
+    unreleased: function(sets) {
+      return sets.filter(function(set) {
+        return Date.parse(set.enter_date) > Date.now();
+      });
+    },
+
+    blocks: function(sets) {
+      let blocks = {};
+      sets.forEach(function(set) {
+        if(!blocks[set.block]) {
+          blocks[set.block] = [];
         }
-      }
+        blocks[set.block].push(set);
+      });
+      return blocks;
+    },
+
+    isReleased: function (set) {
+      return Date.parse(set.enter_date) <= Date.now();
+    },
+
+    firstUnreleasedSet: function(block) {
+      return block.find(function(set) {
+        return Date.parse(set.enter_date) > Date.now();
+      });
     }
   }
 });

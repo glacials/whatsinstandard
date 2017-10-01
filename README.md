@@ -37,7 +37,7 @@ npm run autotest
 ### API
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
 
-#### [/api/4/sets.json][5]
+#### [/api/v5/sets.json][5]
 
 This is the only API call we have. It returns a JSON array of sets which looks something like this:
 

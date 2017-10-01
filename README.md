@@ -37,7 +37,7 @@ npm run autotest
 ### API
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
 
-#### [/api/v5/sets.json][5]
+#### [/api/v5/sets.json][4]
 
 This is the only API call we have. It returns a JSON array of sets which looks something like this:
 
@@ -57,7 +57,7 @@ This is the only API call we have. It returns a JSON array of sets which looks s
 
 The array is guaranteed to contain all sets currently in Standard plus the next two to three unreleased sets.
 
-For API details see [the API readme][6].
+For API details see [the API readme][5].
 
 ## Attributions
 Thanks to:
@@ -70,13 +70,12 @@ Thanks to:
   * Baka-Neku
   * Qanadhar
   * Poopski
-* For gathering them: [jninnes][7]
+* For gathering them: [jninnes][6]
 
 [0]: http://whatsinstandard.com/
 [1]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
 [2]: http://mtgimage.com/
 [3]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
-[4]: https://github.com/bower/bower
-[5]: http://whatsinstandard.com/api/4/sets.json
-[6]: https://github.com/glacials/whatsinstandard/blob/master/api
-[7]: https://github.com/jninnes/mtgicons
+[4]: http://whatsinstandard.com/api/4/sets.json
+[5]: https://github.com/glacials/whatsinstandard/blob/master/api
+[6]: https://github.com/jninnes/mtgicons

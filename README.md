@@ -1,63 +1,73 @@
 # What's in Standard?
-*[What's in Standard?][0]* is a simple reference page made to help new (or not new) Magic: The Gathering players easily
-check which sets are currently in [Standard][1], see when the next rotation is going to happen, and understand how
+*[What's in Standard?][website]* is a simple reference page made to help new (or not new) Magic: The Gathering players easily
+check which sets are currently in [Standard][standard-official], see when the next rotation is going to happen, and understand how
 rotations work.
 
-## Development
+[website]: http://whatsinstandard.com/
+[standard-official]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
 
+## Development
 ### Running it locally
-```bash
+```sh
 git clone git@github.com:glacials/whatsinstandard
 cd whatsinstandard
-npm install
 
-# OS X
+# macOS
 open index.html
 
 # Linux
 xdg-open index.html
 ```
 
-You shouldn't need to serve the files from any sort of web server. Opening `index.html` in a browser should work just
-fine.
+You shouldn't need to serve the files from a web server. Opening `index.html` in a browser should work just fine.
 
 #### Tests
 The API has a few tests. You can run them with
 
-```bash
+```sh
 npm test
 ```
 
 To autorun them whenever test files update, use
 
-```bash
+```sh
 npm run autotest
 ```
+
+### Tech
+*What's in Standard?* uses [Vue.js][vue], a lightweight JavaScript framework. It fetches the setlist from its own API
+and filters it based on release and drop dates.
+
+[vue]: https://vuejs.org/
 
 ### API
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
 
-#### [/api/v5/sets.json][4]
-
-This is the only API call we have. It returns a JSON array of sets which looks something like this:
+#### [/api/v5/sets.json][api]
+This is the only API call we have. It returns something like this:
 
 ```json
-[
-  {
-    "name": "Battle for Zendikar",
-    "block": "Battle for Zendikar",
-    "code": "BFZ",
-    "enter_date": "2015-10-02T00:00:00.000Z",
-    "exit_date": "2017-04-28T00:00:00.000Z",
-    "rough_exit_date": "Q2 2017"
-  },
-  ...
-]
+{
+  "deprecated": false,
+  "sets": [
+    {
+      "name": "Battle for Zendikar",
+      "block": "Battle for Zendikar",
+      "code": "BFZ",
+      "enter_date": "2015-10-02T00:00:00.000Z",
+      "exit_date": "2017-09-29T00:00:00.000Z",
+      "rough_exit_date": "Q4 2017"
+    },
+    ...,
+  ]
+{
 ```
 
-The array is guaranteed to contain all sets currently in Standard plus the next two to three unreleased sets.
+The array is guaranteed to contain all sets currently in Standard, but also contains recently dropped sets and some
+future sets. For API details including how to filter them, see [the API readme][api-readme].
 
-For API details see [the API readme][5].
+[api]: http://whatsinstandard.com/api/v5/sets.json
+[api-readme]: https://github.com/glacials/whatsinstandard/blob/master/api
 
 ## Attributions
 Thanks to:
@@ -70,12 +80,6 @@ Thanks to:
   * Baka-Neku
   * Qanadhar
   * Poopski
-* For gathering them: [jninnes][6]
+* For gathering them: [jninnes][jninnes]
 
-[0]: http://whatsinstandard.com/
-[1]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
-[2]: http://mtgimage.com/
-[3]: http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=RTR&size=large&rarity=C
-[4]: http://whatsinstandard.com/api/4/sets.json
-[5]: https://github.com/glacials/whatsinstandard/blob/master/api
-[6]: https://github.com/jninnes/mtgicons
+[jninnes]: https://github.com/jninnes/mtgicons

@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" media="screen" />
-    <link rel="stylesheet" href="node_modules/tippyjs/dist/tippy.css" media="screen" />
     <link rel="stylesheet" href="node_modules/keyrune/css/keyrune.min.css" media="screen" />
     <link rel="stylesheet" href="css/style.css" media="screen" />
     <link rel="manifest" href="manifest.json">
   </head>
   <body>
-    <div class="container">
+    <div id="vue" class="container">
       <div class="col-md-12">
         <div class="page-header">
           <h1>What's in Standard?</h1>
@@ -30,35 +29,32 @@
             show recently dropped sets
           </a>
         </div>
-        <div id="vue-container">
-          <div id="recently-dropped" style="display: none;">
-            <ul v-for="block in blocks(dropped(sets))" class="list-group list-group--dropped">
-              <li v-for="set in block" class="list-group-item gray">
-                {{ set.name }}
-                <set-image :code="set.code" />
-              </li>
-              <span class="label label-low-distraction">
-                Dropped {{ block[0].exit_date | moment }}
-              </span>
-            </ul>
-          </div>
-          <ul class="list-group" v-for="block in blocks(standard(sets).concat(unreleased(sets)))">
-            <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in block">
+        <div id="recently-dropped" style="display: none;">
+          <ul v-for="block in blocks(dropped(sets))" class="list-group list-group--dropped">
+            <li v-for="set in block" class="list-group-item gray">
               {{ set.name }}
               <set-image :code="set.code" />
             </li>
-            <span class="label label-warning" v-if="block[0].exit_date">
-              Until {{ block[0].exit_date | moment }}
-            </span>
-            <span class="label label-success" v-else>
-              Until {{ block[0].rough_exit_date }}
-            </span>
-            <span class="label label-default" v-if="firstUnreleasedSet(block) !== undefined">
-              {{ firstUnreleasedSet(block).name}} releases {{firstUnreleasedSet(block).enter_date | moment }} 
+            <span class="label label-low-distraction">
+              Dropped {{ block[0].exit_date | moment }}
             </span>
           </ul>
         </div>
-
+        <ul v-cloak class="list-group" v-for="block in blocks(standard(sets).concat(unreleased(sets)))">
+          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in block">
+            {{ set.name }}
+            <set-image :code="set.code" />
+          </li>
+          <span class="label label-warning" v-if="block[0].exit_date">
+            Until {{ block[0].exit_date | moment }}
+          </span>
+          <span class="label label-success" v-else>
+            Until {{ block[0].rough_exit_date }}
+          </span>
+          <span class="label label-default" v-if="firstUnreleasedSet(block) !== undefined">
+            {{ firstUnreleasedSet(block).name}} releases {{firstUnreleasedSet(block).enter_date | moment }}
+          </span>
+        </ul>
       </div>
       <div class="col-md-7">
         <h2>What <em>is</em> Standard?</h2>
@@ -141,6 +137,7 @@
     </div>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="node_modules/moment/moment.js"></script>
+    <script src="node_modules/underscore/underscore-min.js"></script>
     <script src="node_modules/vue/dist/vue.min.js"></script>
     <script src="node_modules/vue-tippy/dist/vue-tippy.min.js"></script>
     <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>

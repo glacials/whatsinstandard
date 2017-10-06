@@ -168,3 +168,7 @@ hr {
 .github > a {
   display: inline-block;
 }
+
+[v-cloak] {
+  display: none;
+}

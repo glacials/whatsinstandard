@@ -8,7 +8,7 @@ var hideSetsText = 'hide recently dropped sets';
 var droppedToggler = $('#recently-dropped-toggler')[0];
 var droppedSets = document.getElementById('recently-dropped');
 
-var toggleRecentlyDropped = function () {
+var toggleRecentlyDropped = function (e) {
   if (droppedSets.style.display === 'none') {
     droppedSets.style.display = 'block';
     droppedToggler.innerHTML = hideSetsText;
@@ -18,6 +18,7 @@ var toggleRecentlyDropped = function () {
     droppedToggler.innerHTML = showSetsText;
     ga('send', 'event', 'link', 'click', 'hide recently dropped sets');
   }
+  e.preventDefault();
 };
 
 /**
@@ -29,7 +30,7 @@ var hideBanSourcesText = 'hide announcements';
 var bannedSourcesToggler = $('#ban-source-toggler')[0];
 var bannedSourcesList = $('#ban-source')[0];
 
-var toggleBanSources = function () {
+var toggleBanSources = function (e) {
   if (bannedSourcesList.style.display === 'none') {
     bannedSourcesList.style.display = 'block';
     bannedSourcesToggler.innerHTML = hideBanSourcesText;
@@ -39,4 +40,5 @@ var toggleBanSources = function () {
     bannedSourcesToggler.innerHTML = showBanSourcesText;
     ga('send', 'event', 'link', 'click', 'hide ban sources');
   }
+  e.preventDefault();
 };

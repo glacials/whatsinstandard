@@ -4,9 +4,9 @@
     <title>What's in Standard?</title>
     <meta name="description" content="A Magic: The Gathering format describer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" media="screen" />
-    <link rel="stylesheet" href="node_modules/keyrune/css/keyrune.min.css" media="screen" />
+    <link href="https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="css/style.css" media="screen" />
     <link rel="manifest" href="manifest.json">
   </head>
@@ -25,11 +25,12 @@
       </div>
       <div class="col-md-5">
         <div class="recently-dropped-toggle-container">
-          <a id="recently-dropped-toggler" href="#" class="low-distraction" onclick="toggleRecentlyDropped();">
-            show recently dropped sets
+          <a id="recently-dropped-toggler" href="#" class="low-distraction" v-on:click.prevent="toggleRecentlyDropped">
+            <span v-if="!showRecentlyDropped">show recently dropped sets</span>
+            <span v-else>hide recently dropped sets</span>
           </a>
         </div>
-        <div id="recently-dropped" style="display: none;">
+        <div id="recently-dropped" v-if="showRecentlyDropped">
           <ul v-for="block in blocks(dropped(sets))" class="list-group list-group--dropped">
             <li v-for="set in block" class="list-group-item gray">
               {{ set.name }}
@@ -122,10 +123,11 @@
         </ul>
 
         <div class="ban-source-toggle-container">
-          <a id="ban-source-toggler" href="#" class="low-distraction" onclick="toggleBanSources();">
-            show announcements
+          <a id="ban-source-toggler" href="#" class="low-distraction" v-on:click.prevent="toggleBanSource">
+            <span v-if="!showBanSource">show announcements</span>
+            <span v-else>hide announcements</span>
           </a>
-          <ul id="ban-source" style="display: none;">
+          <ul id="ban-source" v-if="showBanSource">
             <li><a href="http://magic.wizards.com/en/articles/archive/news/january-9-2017-banned-and-restricted-announcement-2017-01-09"> January 2017</a></li>
             <li><a href="http://magic.wizards.com/en/articles/archive/news/addendum-april-24-2017-banned-and-restricted-announcement-2017-04-26"> April 2017</a></li>
             <li><a href="http://magic.wizards.com/en/articles/archive/feature/june-13-2017-banned-and-restricted-announcement-2017-06-13"> June 2017</a></li>
@@ -169,7 +171,6 @@
     <script src="https://unpkg.com/tether@latest/dist/js/tether.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/toggles.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

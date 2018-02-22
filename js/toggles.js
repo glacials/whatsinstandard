@@ -40,5 +40,5 @@ var toggleBanSources = function (e) {
     bannedSourcesToggler.innerHTML = showBanSourcesText;
     ga('send', 'event', 'link', 'click', 'hide ban sources');
   }
-  event.preventDefault();
+  e.preventDefault();
 };

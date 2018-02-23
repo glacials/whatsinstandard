@@ -17,7 +17,9 @@ var app = new Vue({
   el: '#vue',
 
   data: {
-    sets: []
+    sets: [],
+    showRecentlyDropped: false,
+    showBanSource: false
   },
 
   created: function() {
@@ -67,6 +69,18 @@ var app = new Vue({
       return block.find(function(set) {
         return Date.parse(set.enter_date) > Date.now();
       });
+    },
+
+    toggleRecentlyDropped: function() {
+      this.showRecentlyDropped = !(this.showRecentlyDropped);
+      var msg = (this.showRecentlyDropped) ? 'show recently dropped sets' : 'hide recently dropped sets';
+      ga('send', 'event', 'link', 'click', msg);
+    },
+      
+    toggleBanSource: function() {
+      this.showBanSource = !(this.showBanSource);
+      var msg = (this.showBanSource) ? 'show ban sources' : 'hide ban sources';
+      ga('send', 'event', 'link', 'click', msg);
     }
   }
 });

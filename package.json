@@ -19,7 +19,7 @@
     "bootstrap-vue": "^0.18.0",
     "jquery": "^3.2.1",
     "lint": "^1.1.2",
-    "moment": "^2.18.1",
+    "moment": "^2.19.3",
     "underscore": "^1.8.3",
     "vue": "^2.4.4",
     "vue-tippy": "^0.2.8"

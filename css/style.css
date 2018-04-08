@@ -31,6 +31,10 @@ a.tip:after {
   top: -.2em;
 }
 
+.label-success > a.tip:after {
+  color: #4f8a10;
+}
+
 /*
  * release & drop date labels
  */

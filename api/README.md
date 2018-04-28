@@ -84,6 +84,9 @@ API v1 through v4 are past deprecation and no longer available.
   `enter_date` and `exit_date` if you care only about the sets currently in Standard.
 * `enter_date` can now be null to allow for upcoming sets whose release dates are not known.
 * `block` can now be null to allow for new [blockless sets][2].
+###### Midversion nonbreaking changes
+* **2018-04-28:** `enter_date` and `exit_date` no longer include timezone (see #75). The dates are still ISO 8601
+  compatible and are now intended to be parsed in the local timezone.
 
 [2]: http://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12
 

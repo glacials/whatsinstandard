@@ -137,6 +137,10 @@ describe("API", function() {
             it("should represent midnight", function() {
               expect(enterDate).to.contain("00:00:00.00");
             });
+
+            it("should not attach a timezone", function() {
+              expect(enterDate.substring(enterDate.length - 12, enterDate.length - 1)).to.equal("00:00:00.00");
+            });
           });
 
           describe("exit date", function() {
@@ -147,11 +151,20 @@ describe("API", function() {
             });
 
             it("should be an ISO 8601 datetime if present", function() {
-              expect(Date.parse(exitDate || "1970-01-01T00:00:00.000Z")).to.be.a('number');
+              expect(Date.parse(exitDate || "1970-01-01T00:00:00.000")).to.be.a('number');
             });
 
             it("should represent midnight if present", function() {
-              expect(exitDate || "1970-01-01T00:00:00.000Z").to.contain("00:00:00.00");
+              expect(exitDate || "1970-01-01T00:00:00.000").to.contain("00:00:00.00");
+            });
+
+            it("should not attach a timezone if present", function() {
+              expect(
+                (exitDate || "1970-01-01T00:00:00.000").substring(
+                  (exitDate || "1970-01-01T00:00:00.000").length - 12,
+                  (exitDate || "1970-01-01T00:00:00.000").length - 1
+                )
+              ).to.equal("00:00:00.00");
             });
           });
 

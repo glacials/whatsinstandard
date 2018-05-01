@@ -3,7 +3,7 @@
 check which sets are currently in [Standard][standard-official], see when the next rotation is going to happen, and understand how
 rotations work.
 
-[website]: http://whatsinstandard.com/
+[website]: https://whatsinstandard.com/
 [standard-official]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
 
 ## Development
@@ -66,7 +66,7 @@ This is the only API call we have. It returns something like this:
 The array is guaranteed to contain all sets currently in Standard, but also contains recently dropped sets and some
 future sets. For API details including how to filter them, see [the API readme][api-readme].
 
-[api]: http://whatsinstandard.com/api/v5/sets.json
+[api]: https://whatsinstandard.com/api/v5/sets.json
 [api-readme]: https://github.com/glacials/whatsinstandard/blob/master/api
 
 ## Attributions

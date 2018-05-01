@@ -4,7 +4,7 @@ https://keybase.io/glacials
 
 I hereby claim:
 
-  * I am an admin of http://whatsinstandard.com
+  * I am an admin of https://whatsinstandard.com
   * I am glacials (https://keybase.io/glacials) on keybase.
   * I have a public key ASAbRmmNkJWK3lSSvpMGza5t1LQWO3QGeACorXtbOvqMFQo
 

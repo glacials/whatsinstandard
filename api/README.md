@@ -43,7 +43,7 @@ responsibility to filter these sets out by comparing each set's `enter_date` and
 Here's a JavaScript function that does just that:
 ```javascript
 var standardSets = function(callback) {
-  fetch('http://whatsinstandard.com/api/v5/sets.json').then(function(response) {
+  fetch('https://whatsinstandard.com/api/v5/sets.json').then(function(response) {
     response.json().then(function(body) {
       callback(body.sets.filter(function(set) {
         return ((Date.parse(set.enter_date) || Infinity) <= Date.now())
@@ -54,7 +54,7 @@ var standardSets = function(callback) {
 };
 ```
 
-[1]: http://whatsinstandard.com/api/v5/sets.json
+[1]: https://whatsinstandard.com/api/v5/sets.json
 
 ### Set images
 You can fetch set images from Gatherer by inserting the set's `code` into this URL template:

@@ -1,4 +1,4 @@
-var apiURL = 'https://whatsinstandard.com/api/v5/sets.json'
+var apiURL = '/api/v5/sets.json'
 var code = Vue.component('set-image', {
   props: ['code'],
   template: `

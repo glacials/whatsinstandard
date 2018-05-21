@@ -11,15 +11,13 @@ rotations work.
 ```sh
 git clone git@github.com:glacials/whatsinstandard
 cd whatsinstandard
-
-# macOS
-open index.html
-
-# Linux
-xdg-open index.html
+npm install
+http-server
 ```
 
-You shouldn't need to serve the files from a web server. Opening `index.html` in a browser should work just fine.
+Then open [localhost:8080][localhost] in your browser!
+
+[localhost]: http://localhost:8080
 
 #### Tests
 The API has a few tests. You can run them with

@@ -60,8 +60,8 @@ describe("API", function() {
         expect(body.sets).to.be.an('array');
       });
 
-      it("should have between 8 and 14 sets", function() {
-        expect(body.sets).to.have.length.within(8, 14);
+      it("shouldn't have too few or too many sets", function() {
+        expect(body.sets).to.have.length.within(8, 16);
       });
 
       body.sets.forEach(function(set) {

@@ -33,28 +33,28 @@
           </a>
         </div>
         <div id="recently-dropped" v-if="showRecentlyDropped">
-          <ul v-for="block in blocks(dropped(sets))" class="list-group list-group--dropped">
-            <li v-for="set in block" class="list-group-item gray">
+          <ul v-for="sets in rounds(dropped(sets))" class="list-group list-group--dropped">
+            <li v-for="set in sets" class="list-group-item gray">
               {{ set.name }}
               <set-image :code="set.code" />
             </li>
             <span class="label label-low-distraction">
-              Dropped {{ block[0].exit_date | moment }}
+              Dropped {{ sets[0].exit_date | moment }}
             </span>
           </ul>
         </div>
-        <ul v-cloak class="list-group" v-for="block in blocks(standard(sets).concat(unreleased(sets)))">
-          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in block">
+        <ul v-cloak class="list-group" v-for="sets in rounds(standard(sets).concat(unreleased(sets)))">
+          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in sets">
             {{ set.name }}
             <set-image :code="set.code" />
           </li>
-          <span class="label label-warning" v-if="block[0].exit_date">
-            Until {{ block[0].exit_date | moment }}
+          <span class="label label-warning" v-if="sets[0].exit_date">
+            Until {{ sets[0].exit_date | moment }}
           </span>
           <span class="label label-success" v-else>
-            Until {{ block[0].rough_exit_date }}
+            Until {{ sets[0].rough_exit_date }}
               <a
-                v-if="block[0].code == 'KLD' || block[0].code == 'AKH' || block[0].code == 'XLN'"
+                v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'"
                 class="tip"
                 v-tippy="{html: '#why', interactive: true, theme: 'light'}"
               ></a>
@@ -73,8 +73,8 @@
               </div>
             </div>
           </span>
-          <span class="label label-default" v-if="firstUnreleasedSet(block) !== undefined">
-            {{ firstUnreleasedSet(block).name}} releases {{firstUnreleasedSet(block).enter_date | moment }}
+          <span class="label label-default" v-if="firstUnreleasedSet(sets) !== undefined">
+            {{ firstUnreleasedSet(sets).name}} releases {{firstUnreleasedSet(sets).enter_date | moment }}
           </span>
         </ul>
       </div>

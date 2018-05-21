@@ -55,10 +55,15 @@ var app = new Vue({
       return _.difference(sets, this.unreleased(sets), this.dropped(sets));
     },
 
-    blocks: function(sets) {
-      return sets.reduce(function(blocks, set) {
-        return _.extend(blocks, {[set.block]: (blocks[set.block] || []).concat(set)});
-      }, {});
+    // rounds takes an array of sets and returns a two-dimensional array of sets, with each sub-array being a group of
+    // the input sets that drop on the same rough_exit_date. The order of the outer array is by date-increasing. The
+    // order of the inner arrays is preserved from the input.
+    rounds: function(sets) {
+      return Object.values(sets.reduce(function(rounds, set) {
+        return _.extend(rounds, {[set.rough_exit_date]: (rounds[set.rough_exit_date] || []).concat(set)});
+      }, {})).sort(function(a, b) {
+        return (a[0].rough_exit_date < b[0].rough_exit_date) ? -1 : 1;
+      });
     },
 
     isReleased: function(set) {

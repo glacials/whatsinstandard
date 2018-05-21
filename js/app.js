@@ -66,6 +66,25 @@ var app = new Vue({
       });
     },
 
+    // pad takes a two-dimensional array of rounds of drops (as returned from rounds) and returns the same
+    // two-dimensional array with the last round of drops padded with placeholder ("...") sets to four sets total.
+    pad: function(rounds) {
+      if (rounds.length === 0) {
+        return rounds
+      }
+      while (rounds[rounds.length - 1].length < 4) {
+        rounds[rounds.length - 1].push({
+          "name": "...",
+          "block": null,
+          "code": null,
+          "enter_date": null,
+          "exit_date": null,
+          "rough_exit_date": rounds[rounds.length - 1][0].rough_exit_date
+        })
+      }
+      return rounds
+    },
+
     isReleased: function(set) {
       return Date.parse(set.enter_date) <= Date.now();
     },

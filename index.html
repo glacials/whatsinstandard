@@ -43,10 +43,10 @@
             </span>
           </ul>
         </div>
-        <ul v-cloak class="list-group" v-for="sets in rounds(standard(sets).concat(unreleased(sets)))">
+        <ul v-cloak class="list-group" v-for="sets in pad(rounds(standard(sets).concat(unreleased(sets))))">
           <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in sets">
             {{ set.name }}
-            <set-image :code="set.code" />
+            <set-image v-if="set.code !== null" :code="set.code" />
           </li>
           <span class="label label-warning" v-if="sets[0].exit_date">
             Until {{ sets[0].exit_date | moment }}

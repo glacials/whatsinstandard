@@ -12,7 +12,7 @@ rotations work.
 git clone git@github.com:glacials/whatsinstandard
 cd whatsinstandard
 npm install
-http-server
+npm start
 ```
 
 Then open [localhost:8080][localhost] in your browser!

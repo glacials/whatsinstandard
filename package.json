@@ -1,12 +1,21 @@
 {
   "license": "MIT",
+  "homepage": "https://github.com/glacials/whatsinstandard",
+  "bugs": "https://github.com/glacials/whatsinstandard/issues",
+  "people": {
+    "author": {
+      "name": "Ben Carlsson",
+      "email": "qhiiyr@gmail.com"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/glacials/whatsinstandard.git"
   },
   "scripts": {
     "autotest": "./node_modules/.bin/supervisor -q -n exit -x ./node_modules/.bin/mocha -- -b",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha",
+    "start": "http-server"
   },
   "devDependencies": {
     "chai": "*",

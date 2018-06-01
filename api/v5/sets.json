@@ -120,6 +120,14 @@
       "enter_date": "2018-10-05T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2020"
+    },
+    {
+      "name": "Ravnica Allegiance",
+      "block": null,
+      "code": "RNA",
+      "enter_date": "2019-01-01T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2020"
     }
   ]
 }

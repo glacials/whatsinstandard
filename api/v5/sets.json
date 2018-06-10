@@ -46,7 +46,7 @@
       "block": "Kaladesh",
       "code": "KLD",
       "enter_date": "2016-09-30T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2018-10-05T00:00:00.000",
       "rough_exit_date": "Q4 2018"
     },
     {
@@ -54,7 +54,7 @@
       "block": "Kaladesh",
       "code": "AER",
       "enter_date": "2017-01-20T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2018-10-05T00:00:00.000",
       "rough_exit_date": "Q4 2018"
     },
     {
@@ -62,7 +62,7 @@
       "block": "Amonkhet",
       "code": "AKH",
       "enter_date": "2017-04-28T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2018-10-05T00:00:00.000",
       "rough_exit_date": "Q4 2018"
     },
     {
@@ -70,7 +70,7 @@
       "block": "Amonkhet",
       "code": "W17",
       "enter_date": "2017-04-28T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2018-10-05T00:00:00.000",
       "rough_exit_date": "Q4 2018"
     },
     {
@@ -78,7 +78,7 @@
       "block": "Amonkhet",
       "code": "HOU",
       "enter_date": "2017-07-14T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2018-10-05T00:00:00.000",
       "rough_exit_date": "Q4 2018"
     },
     {

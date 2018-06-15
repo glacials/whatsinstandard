@@ -1,5 +1,5 @@
 steps:
+  - name: 'gcr.io/cloud-builders/npm'
+    args: ['install', '--unsafe-perm']
   - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://whatsinstandard.com"]
-  - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-r", "-c", "-d", ".", "gs://www.whatsinstandard.com"]
+    args: ['-m', 'rsync', '-r', '-c', '-d', '-d', '.', 'gs://${_BUCKET}']

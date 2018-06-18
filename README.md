@@ -79,5 +79,6 @@ Thanks to:
   * Qanadhar
   * Poopski
 * For gathering them: [jninnes][jninnes]
+* For favicon: Nils Enevoldsen
 
 [jninnes]: https://github.com/jninnes/mtgicons

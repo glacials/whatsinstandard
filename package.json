@@ -1,4 +1,6 @@
 {
+  "name": "whatsinstandard",
+  "version": "0.0.1",
   "engines": {
     "node": "10.1.0"
   },
@@ -25,10 +27,9 @@
     "chai": "*",
     "http-server": "^0.11.1",
     "lint": "^1.1.2",
-    "mocha": "*",
-    "npm": "^6.1.0",
+    "mocha": "^5.2.0",
     "requirejs": "^2.3.3",
-    "supervisor": "~0.9.1"
+    "supervisor": "^0.9.1"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",

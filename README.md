@@ -7,6 +7,12 @@ rotations work.
 [standard-official]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
 
 ## Development
+
+### Dependencies
+- [npm][npm]
+
+[npm]: https://github.com/npm/npm
+
 ### Running it locally
 ```sh
 git clone git@github.com:glacials/whatsinstandard

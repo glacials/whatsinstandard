@@ -31,63 +31,9 @@ a.tip:after {
   top: -.2em;
 }
 
-.label-success > a.tip:after {
-  color: #4f8a10;
-}
-
-/*
- * release & drop date labels
- */
-
-.label {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  margin-right: .25em;
-  font-size: .77em;
-  font-weight: normal;
-}
-
-.label-danger {
-  background-color: #ffdada;
-  color: #c83030;
-}
-
-.label-warning {
-  background-color: #feefb3;
-  color: #9f6000;
-}
-
-.label-success {
-  background-color: #dff2bf;
-  color: #4f8a10;
-}
-
-.label-primary {
-  background-color: #bde5f8;
-  color: #00529b;
-}
-
-.label-default {
-  background-color: #ebebeb;
-  color: #666;
-}
-
-.label-low-distraction {
-  background-color: #fff;
-  color: #ddd;
-}
-
 /*
  * set list
  */
-
-ul.list-group > li.gray {
-  color: #ddd;
-}
-
-div.recently-dropped-toggle-container {
-  text-align: right;
-}
 
 .list-group-item {
   line-height: 20px;
@@ -96,18 +42,6 @@ div.recently-dropped-toggle-container {
 
 .subset {
   font-size: .7em;
-}
-
-/*
- * ban list
- */
-
-.ban-source-toggle-container {
-  text-align: left;
-}
-
-.ban-source-toggle-container > ul {
-  text-align: left;
 }
 
 /*
@@ -124,16 +58,7 @@ div.recently-dropped-toggle-container {
 }
 
 .list-group-item .ss {
-  color: #000;
-  font-size: 1.7rem;
-}
-
-.list-group--dropped .ss {
-  color: #ddd;
-}
-
-.list-group-item--upcoming .ss {
-  color: #ddd;
+  font-size: 1.5em;
 }
 
 /*
@@ -153,17 +78,34 @@ a.low-distraction:hover {
   opacity: 1;
 }
 
+/*
+ * spinner
+ * from https://projects.lukehaas.me/css-loaders/
+ */
+@keyframes spinner {
+	to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	margin-left: -10px;
+	border-radius: 50%;
+	border: 2px solid transparent;
+	border-top-color: #07d;
+	border-bottom-color: #07d;
+	animation: spinner .8s ease infinite;
+}
 
 /*
  * miscellaneous
  */
-
-hr {
-  border-top: dashed 1px #ccc;
-  color: #999;
-  font-size: .8em;
-  margin: 2em 0;
-}
 
 .github {
   text-align: right;

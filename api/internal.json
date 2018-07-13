@@ -1,6 +1,10 @@
 {
   "meta": {
-    "comment": "This file is used to generate APIs. Do not consume it as an API. Its structure will change without notice."
+    "comments": {
+      "consuming": "Do not consume this file as an API. Use api/v5/*, which is stable and generated from this file.",
+      "contributing": "Keep the most recent round of drops in this file to power 'recently dropped sets' on the site.",
+      "building": "After modifying this file, run `npm install` to build the API from it."
+    }
   },
   "sets": [
     {

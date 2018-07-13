@@ -20,178 +20,209 @@
   </head>
   <body>
     <div id="vue" class="container">
-      <div class="col-md-12">
-        <div class="page-header">
-          <h1>What's in Standard?</h1>
-          <div>
-            <span class="low-distraction">for</span>
-            <span>Magic: The Gathering</span>
-            <span class="low-distraction"> / </span>
-            <a href="http://standardhearth.com/" class="low-distraction">Hearthstone</a>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mt-5 mb-3 border-bottom">
+            <h1>What's in Standard?</h1>
+            <div>
+              <span class="low-distraction">for</span>
+              <span>Magic: The Gathering</span>
+              <span class="low-distraction"> / </span>
+              <a href="http://standardhearth.com/" class="low-distraction">Hearthstone</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-5">
-        <div class="recently-dropped-toggle-container">
-          <a id="recently-dropped-toggler" href="#" class="low-distraction" v-on:click.prevent="toggleRecentlyDropped">
-            <span v-if="!showRecentlyDropped">show recently dropped sets</span>
-            <span v-else>hide recently dropped sets</span>
-          </a>
+      <div class="row">
+        <div v-if="false" class="col-md-5">
+          <div class="spinner"></div>
         </div>
-        <div id="recently-dropped" v-if="showRecentlyDropped">
-          <ul v-for="sets in rounds(dropped(sets))" class="list-group list-group--dropped">
-            <li v-for="set in sets" class="list-group-item gray">
-              {{ set.name }}
-              <set-image :code="set.code" />
-            </li>
-            <span class="label label-low-distraction">
-              Dropped {{ sets[0].exit_date | moment }}
-            </span>
-          </ul>
-        </div>
-        <ul v-cloak class="list-group" v-for="sets in pad(rounds(standard(sets).concat(unreleased(sets))))">
-          <li class="list-group-item" v-bind:class="{ 'gray list-group-item--upcoming' : !isReleased(set) }" v-for="set in sets">
-            {{ set.name }}
-            <set-image v-if="set.code !== null" :code="set.code" />
-          </li>
-          <span class="label label-warning" v-if="sets[0].exit_date">
-            Until {{ sets[0].exit_date | moment }}
-          </span>
-          <span class="label label-success" v-else>
-            Until {{ sets[0].rough_exit_date }}
-              <a
-                v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'"
-                class="tip"
-                v-tippy="{html: '#why', interactive: true, theme: 'light'}"
-              ></a>
-          </span>
-            <div id="why" style="display: none" v-tippy-html>
-              <div style="max-width: 50em">
-                In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
-                shortened average set lifetime in Standard.<sup><a
-                  target="_blank"
-                  href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
-                >2</a></sup> The change was reverted in 2017,<sup><a
-                  target="_blank"
-                  href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
-                >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
-                will drop in unintuitive ways, ending in Q4 2019.
+        <div v-cloak class="col-md-5">
+          <div class="recently-dropped-toggle-container">
+            <button id="recently-dropped-toggler" href="#" class="btn btn-sm btn-block btn-outline-secondary mb-3" v-on:click.prevent="toggleRecentlyDropped">
+              <span v-if="!showRecentlyDropped">show recently dropped sets</span>
+              <span v-else>hide recently dropped sets</span>
+            </button>
+          </div>
+          <div id="recently-dropped" v-if="showRecentlyDropped">
+            <div class="card mb-4" v-for="sets in rounds(dropped(sets))">
+              <div class="card-header text-muted">
+                <div>Sets dropped {{ sets[0].exit_date | relative }}</div>
+                <small>On {{ sets[0].exit_date | absolute }}</small>
+              </div>
+              <ul class="list-group">
+                <li v-for="set in sets" class="list-group-item text-muted">
+                  {{ set.name }}
+                  <set-image :code="set.code" />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card mb-4" v-bind:class="{ 'bg-danger text-light': sets[0].exit_date }" v-for="sets in pad(rounds(standard(sets).concat(unreleased(sets))))">
+            <div class="card-header" v-if="sets[0].exit_date">
+              <div>Sets dropping {{ sets[0].exit_date | relative }}</div>
+              <small>On {{ sets[0].exit_date | absolute }}</small>
+            </div>
+            <div class="card-header" v-else>
+              Sets dropping {{ sets[0].rough_exit_date }}
+              <a v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'" class="tip"
+              v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+              <div id="why" style="display: none" v-tippy-html>
+                <div style="max-width: 50em">
+                  In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
+                  shortened average set lifetime in Standard.<sup><a
+                    target="_blank"
+                    href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
+                  >2</a></sup> The change was reverted in 2017,<sup><a
+                    target="_blank"
+                    href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
+                  >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
+                  will drop in unintuitive ways, ending in Q4 2019.
+                </div>
               </div>
             </div>
-          </span>
-          <span class="label label-default" v-if="firstUnreleasedSet(sets) !== undefined">
-            {{ firstUnreleasedSet(sets).name}} releases {{firstUnreleasedSet(sets).enter_date | moment }}
-          </span>
-        </ul>
-      </div>
-      <div class="col-md-7">
-        <h2>What <em>is</em> Standard?</h2>
-        <p>
-        <b>Standard</b> is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
-        released and drop out about twenty-one months later. At any given time, Standard will contain between five and
-        eight sets inclusive.
-        </p>
-        <p>
-        A <b>Standard card</b> is a card printed or reprinted into a set currently in Standard.
-        <a v-tippy class="tip"
-           title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
-           are also considered Standard.">
-        </a>
-        </p>
-        <p>
-        A <b>Standard deck</b> contains only Standard cards (60+ of them), may have a sideboard
-        <a v-tippy class="tip"
-          title='A sideboard is an optional second pool of cards past the main deck that cannot be used during
-          games, but whose cards can be swapped with those from the main deck between games. It is generally used to
-          keep counters to specific deck archetypes available without needing to classify any change as an official deck
-          edit.'>
-        </a> of up to 15 more Standard cards, and apart from basic lands does not have more than four copies of any
-        one card
-        <a v-tippy class="tip"
-          title="Different prints of the same card count as the same card.">
-        </a>.
-        </p>
-        <h3>Related sets and formats</h3>
-        <p>
-        <a
-          target="_blank"
-          href="https://magic.wizards.com/en/articles/archive/ways-play/join-brawl-2018-03-22"><b>Brawl</b></a>
-        is partially based on Standard—all rotations listed here apply to Brawl—but Brawl has a
-        <a
-          target="_blank"
-          href="https://magic.wizards.com/en/articles/archive/news/future-brawl-2018-05-10"
-        >separate banlist</a>.</p>
-        <p>
-        <b>Masters</b> sets never enter Standard.
-        </p>
-        <h3>
-          Banlist
-          <a v-tippy class="tip"
-            title="Despite being printed into Standard sets, these cards are not allowed in Standard."
-          >
-          </a>
-        </h3>
-        <ul>
-          <li>
-            <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
-            <a target="_blank" href="https://deckbox.org/mtg/Aetherworks+Marvel">
-              Aetherworks Marvel
-            </a>
-          </li>
-          <li>
-            <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
-            <a target="_blank" href="https://deckbox.org/mtg/Attune+with+Aether">
-              Attune with Aether
-            </a>
-          </li>
-          <li>
-            <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
-            <a target="_blank" href="https://deckbox.org/mtg/Smuggler%27s+Copter">
-              Smuggler's Copter
-            </a>
-          </li>
-          <li>
-            <span v-tippy class="icon tip" title="Aether Revolt"><i class="ss ss-aer"></i></span>
-            <a target="_blank" href="https://deckbox.org/mtg/Felidar+Guardian">
-              Felidar Guardian
-            </a>
-          </li>
-          <li>
-            <span v-tippy class="icon tip" title="Aether Revolt"><i class="ss ss-aer"></i></span>
-            <a target="_blank" href="https://deckbox.org/mtg/Rogue+Refiner">
-              Rogue Refiner
-            </a>
-          </li>
-          <li>
-            <span v-tippy class="icon tip" title="Hour of Devastation"><i class="ss ss-hou"></i></span>
-            <a target="_blank" href="https://deckbox.org/mtg/Ramunap+Ruins">
-              Ramunap Ruins
-            </a>
-          </li>
-          <li>
-            <span v-tippy class="icon tip" title="Ixalan"><i class="ss ss-xln"></i></span>
-            <a target="_blank" href="https://deckbox.org/mtg/Rampaging+Ferocidon">
-              Rampaging Ferocidon
-            </a>
-          </li>
-        </ul>
-
-        <div class="ban-source-toggle-container">
-          <a id="ban-source-toggler" href="#" class="low-distraction" v-on:click.prevent="toggleBanSource">
-            <span v-if="!showBanSource">show announcements</span>
-            <span v-else>hide announcements</span>
-          </a>
-          <ul id="ban-source" v-if="showBanSource">
-            <li><a href="https://magic.wizards.com/en/articles/archive/news/january-9-2017-banned-and-restricted-announcement-2017-01-09"> January 2017</a></li>
-            <li><a href="https://magic.wizards.com/en/articles/archive/news/addendum-april-24-2017-banned-and-restricted-announcement-2017-04-26"> April 2017</a></li>
-            <li><a href="https://magic.wizards.com/en/articles/archive/feature/june-13-2017-banned-and-restricted-announcement-2017-06-13"> June 2017</a></li>
-            <li><a href="https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15"> January 2018</a></li>
-          </ul>
+            <ul class="list-group list-group-flush text-dark">
+              <li class="list-group-item" v-bind:class="{ 'disabled text-black-50 bg-transparent': !isReleased(set) }" v-for="set in sets">
+                <div>
+                  {{ set.name }}
+                  <set-image v-if="set.code !== null" :code="set.code" />
+                </div>
+                <small v-if="!isReleased(set) && set.enter_date != null">
+                  <div>Releasing {{ set.enter_date | relative }}</div>
+                  <div v-if="set.code == 'RNA'">On 2018-01-??</div>
+                  <div v-else="set.code == 'RNA'">On {{ set.enter_date | absolute }}</div>
+                </small>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="github">
-          <a target="_blank" href="https://github.com/glacials/whatsinstandard">
-            <img src="img/github.png" />
+        <div class="col-md-7">
+          <h2>What <em>is</em> Standard?</h2>
+          <p>
+          <b>Standard</b> is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
+          released and drop out about twenty-one months later. At any given time, Standard will contain between five and
+          eight sets.
+          </p>
+          <p>
+          A <b>Standard card</b> is a card printed or reprinted into a set currently in Standard.
+          <a v-tippy class="tip"
+             title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
+             are also considered Standard.">
           </a>
+          </p>
+          <p>
+          A <b>Standard deck</b> contains only Standard cards (60+ of them), may have a sideboard
+          <a v-tippy class="tip"
+            title='A sideboard is an optional second pool of cards past the main deck that cannot be used during
+            games, but whose cards can be swapped with those from the main deck between games. It is generally used to
+            keep counters to specific deck archetypes available without needing to classify any change as an official deck
+            edit.'>
+          </a> of up to 15 more Standard cards, and apart from basic lands does not have more than four copies of any
+          one card
+          <a v-tippy class="tip"
+            title="Different prints of the same card count as the same card.">
+          </a>.
+          </p>
+          <h3 class="mt-5">Related sets and formats</h3>
+          <p>
+          <a
+            target="_blank"
+            href="https://magic.wizards.com/en/articles/archive/ways-play/join-brawl-2018-03-22"><b>Brawl</b></a>
+          is partially based on Standard—all rotations listed here apply to Brawl—but Brawl has a
+          <a
+            target="_blank"
+            href="https://magic.wizards.com/en/articles/archive/news/future-brawl-2018-05-10"
+          >separate banlist</a>.</p>
+          <p>
+          <b>Masters</b> sets never enter Standard.
+          </p>
+          <h3 class="mt-5">Banlist</h3>
+					<p>Despite being in Standard sets, these cards are explicitly not allowed in Standard decks.</p>
+          <p><ul class="list-group">
+            <li class="list-group-item">
+              <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
+              <div>
+                <a href="https://deckbox.org/mtg/Aetherworks+Marvel" target="_blank">
+                  Aetherworks Marvel
+                </a>
+              </div>
+              <small>
+                Banned for not being fun to play against.<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/feature/june-13-2017-banned-and-restricted-announcement-2017-06-13">3</a></sup>
+              </small>
+            </li>
+            <li class="list-group-item">
+              <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
+                <div>
+                <a href="https://deckbox.org/mtg/Attune+with+Aether" target="_blank">
+                  Attune with Aether
+                </a>
+              </div>
+              <small>
+                Banned for making four-color energy decks too easy.<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15">4</a></sup>
+              </small>
+            </li>
+            <li class="list-group-item">
+              <span v-tippy class="icon tip" title="Kaladesh"><i class="ss ss-kld"></i></span>
+              <div>
+                <a href="https://deckbox.org/mtg/Smuggler%27s+Copter" target="_blank">
+                  Smuggler's Copter
+                </a>
+              </div>
+              <small>
+                Banned for being too efficient in too many deck types.<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/january-9-2017-banned-and-restricted-announcement-2017-01-09">1</a></sup>
+              </small>
+            </a>
+            <li class="list-group-item">
+              <span v-tippy class="icon tip" title="Aether Revolt"><i class="ss ss-aer"></i></span>
+              <div>
+                <a href="https://deckbox.org/mtg/Felidar+Guardian" target="_blank">
+                  Felidar Guardian
+                </a>
+              </div>
+              <small>
+                Banned for comboing too well with
+                <a href="https://deckbox.org/mtg/Saheeli+Rai" target="_blank">Saheeli Rai</a>.<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/addendum-april-24-2017-banned-and-restricted-announcement-2017-04-26">2</a></sup>
+              </small>
+            </a>
+            <li class="list-group-item">
+              <span v-tippy class="icon tip" title="Aether Revolt"><i class="ss ss-aer"></i></span>
+              <div>
+                <a href="https://deckbox.org/mtg/Rogue+Refiner" target="_blank">
+                  Rogue Refiner
+                </a>
+              </div>
+              <small>
+                Banned for providing so much value as to force energy decks into 3+ colors.<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15">4</a></sup>
+              </small>
+            </li>
+            <li class="list-group-item">
+              <span v-tippy class="icon tip" title="Hour of Devastation"><i class="ss ss-hou"></i></span>
+              <div>
+                <a href="https://deckbox.org/mtg/Ramunap+Ruins" target="_blank">
+                  Ramunap Ruins
+                </a>
+              </div>
+              <small>
+                Banned for more-or-less reducing the opponent's effective starting life.<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15">4</a></sup>
+              </small>
+            </li>
+            <li class="list-group-item">
+              <span v-tippy class="icon tip" title="Ixalan"><i class="ss ss-xln"></i></span>
+              <div>
+                <a href="https://deckbox.org/mtg/Rampaging+Ferocidon" target="_blank">
+                  Rampaging Ferocidon
+                </a>
+              </div>
+              <small>
+                Banned for being too effective a shutdown against counters to aggressive red (filling the board with small creatures and gaining life).<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15">4</a></sup>
+              </small>
+            </li>
+          </ul>
+          <div class="github">
+            <a target="_blank" href="https://github.com/glacials/whatsinstandard">
+              <img src="img/github.png" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

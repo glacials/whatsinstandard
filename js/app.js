@@ -18,8 +18,7 @@ var app = new Vue({
 
   data: {
     sets: [],
-    showRecentlyDropped: false,
-    showBanSource: false
+    showRecentlyDropped: false
   },
 
   created: function() {
@@ -33,8 +32,12 @@ var app = new Vue({
   },
 
   filters: {
-    moment: function(date) {
-      return moment(date).format('MMMM Do, YYYY');
+    relative: function(date) {
+      return moment(date).fromNow()
+    },
+
+    absolute: function(date) {
+      return moment(date).format('YYYY-MM-DD')
     }
   },
 
@@ -89,22 +92,10 @@ var app = new Vue({
       return Date.parse(set.enter_date) <= Date.now();
     },
 
-    firstUnreleasedSet: function(block) {
-      return block.find(function(set) {
-        return Date.parse(set.enter_date) > Date.now();
-      });
-    },
-
     toggleRecentlyDropped: function() {
       this.showRecentlyDropped = !(this.showRecentlyDropped);
       var msg = (this.showRecentlyDropped) ? 'show recently dropped sets' : 'hide recently dropped sets';
       ga('send', 'event', 'link', 'click', msg);
     },
-      
-    toggleBanSource: function() {
-      this.showBanSource = !(this.showBanSource);
-      var msg = (this.showBanSource) ? 'show ban sources' : 'hide ban sources';
-      ga('send', 'event', 'link', 'click', msg);
-    }
   }
 });

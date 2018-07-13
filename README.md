@@ -7,7 +7,6 @@ rotations work.
 [standard-official]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
 
 ## Development
-
 ### Dependencies
 - [npm][npm]
 
@@ -24,6 +23,16 @@ npm start
 Then open [localhost:8080][localhost] in your browser!
 
 [localhost]: http://localhost:8080
+
+### Updating Set Information
+If you're looking to add, remove, or change a set, you'll want to change [`api/internal.json`][api-internal] then run
+```sh
+npm install
+```
+to regenerate the API. This file is the source of truth for set information, as the website itself consumes the APIs
+generated from this file.
+
+[api-internal]: api/internal.json
 
 #### Tests
 The API has a few tests. You can run them with

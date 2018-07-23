@@ -40,8 +40,8 @@
         <div v-cloak class="col-md-5">
           <div class="recently-dropped-toggle-container">
             <button id="recently-dropped-toggler" href="#" class="btn btn-sm btn-block btn-outline-secondary mb-3" v-on:click.prevent="toggleRecentlyDropped">
-              <span v-if="!showRecentlyDropped">show recently dropped sets</span>
-              <span v-else>hide recently dropped sets</span>
+              <span v-if="!showRecentlyDropped">show last dropped sets</span>
+              <span v-else>hide last dropped sets</span>
             </button>
           </div>
           <div id="recently-dropped" v-if="showRecentlyDropped">

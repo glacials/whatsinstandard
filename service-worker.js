@@ -1,7 +1,7 @@
 // This file is required to be at the project root.
 // See https://developers.google.com/web/fundamentals/primers/service-workers/#register_a_service_worker
 
-const version = '7'
+const version = '8'
 
 self.addEventListener('activate', event => {
   event.waitUntil(
@@ -26,6 +26,7 @@ self.addEventListener('install', event => event.waitUntil(
       '/img/github.png',
       '/js/app.js',
       '/js/service-worker.js',
+      '/js/tracking.js',
       '/node_modules/bootstrap/dist/css/bootstrap.min.css',
       '/node_modules/bootstrap-vue/dist/bootstrap-vue.min.js',
       '/node_modules/keyrune/css/keyrune.min.css',

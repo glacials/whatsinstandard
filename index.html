@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="description" content="A Magic: The Gathering format describer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/keyrune@latest/css/keyrune.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" media="screen" />
+
+    <link rel="stylesheet" href="/node_modules/npm-font-open-sans/open-sans.css" type="text/css" />
+    <link rel="stylesheet" href="/node_modules/keyrune/css/keyrune.min.css" type="text/css" />
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" media="screen" />
+
     <link rel="stylesheet" href="css/style.css" media="screen" />
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -16,7 +19,6 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#808080">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
-    <script src="https://deckbox.org/assets/external/tooltip.js"></script>
   </head>
   <body>
     <div id="vue" class="container">
@@ -226,15 +228,17 @@
         </div>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="node_modules/moment/moment.js"></script>
-    <script src="node_modules/underscore/underscore-min.js"></script>
-    <script src="node_modules/vue/dist/vue.min.js"></script>
-    <script src="node_modules/vue-tippy/dist/vue-tippy.min.js"></script>
-    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
-    <script src="https://unpkg.com/tether@latest/dist/js/tether.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
-    <script src="js/app.js"></script>
+    <script src="/node_modules/bootstrap-vue/dist/bootstrap-vue.min.js"></script>
+    <script src="/node_modules/moment/moment.js"></script>
+    <script src="/node_modules/tether/dist/js/tether.min.js"></script>
+    <script src="/node_modules/underscore/underscore-min.js"></script>
+    <script src="/node_modules/vue/dist/vue.min.js"></script>
+    <script src="/node_modules/vue-tippy/dist/vue-tippy.min.js"></script>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/service-worker.js"></script>
+
+    <script src="https://deckbox.org/assets/external/tooltip.js"></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

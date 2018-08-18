@@ -60,42 +60,49 @@
               </ul>
             </div>
           </div>
-          <div class="card mb-4" v-bind:class="{ 'bg-danger text-light': sets[0].exit_date }" v-for="sets in pad(rounds(standard(sets).concat(unreleased(sets))))">
-            <div class="card-header" v-if="sets[0].exit_date">
-              <div>Sets dropping {{ sets[0].exit_date | relative }}</div>
-              <small>On {{ sets[0].exit_date | absolute }}</small>
+          <div class="card border border-primary">
+            <div class="card-header bg-primary text-light">
+              All Sets in Standard
             </div>
-            <div class="card-header" v-else>
-              Sets dropping {{ sets[0].rough_exit_date }}
-              <a v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'" class="tip"
-              v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-              <div id="why" style="display: none" v-tippy-html>
-                <div style="max-width: 50em">
-                  In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
-                  shortened average set lifetime in Standard.<sup><a
-                    target="_blank"
-                    href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
-                  >2</a></sup> The change was reverted in 2017,<sup><a
-                    target="_blank"
-                    href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
-                  >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
-                  will drop in unintuitive ways, ending in Q4 2019.
+            <div class="card-body">
+              <div class="card mb-4" v-bind:class="{ 'bg-danger text-light': sets[0].exit_date }" v-for="sets in pad(rounds(standard(sets).concat(unreleased(sets))))">
+                <div class="card-header" v-if="sets[0].exit_date">
+                  <div>Dropping {{ sets[0].exit_date | relative }}</div>
+                  <small>On {{ sets[0].exit_date | absolute }}</small>
                 </div>
+                <div class="card-header" v-else>
+                  Dropping {{ sets[0].rough_exit_date }}
+                  <a v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'" class="tip"
+                  v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+                  <div id="why" style="display: none" v-tippy-html>
+                    <div style="max-width: 50em">
+                      In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
+                      shortened average set lifetime in Standard.<sup><a
+                        target="_blank"
+                        href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
+                      >2</a></sup> The change was reverted in 2017,<sup><a
+                        target="_blank"
+                        href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
+                      >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
+                      will drop in unintuitive ways, ending in Q4 2019.
+                    </div>
+                  </div>
+                </div>
+                <ul class="list-group list-group-flush text-dark">
+                  <li class="list-group-item" v-bind:class="{ 'disabled text-black-50 bg-transparent': !isReleased(set) }" v-for="set in sets">
+                    <div>
+                      {{ set.name }}
+                      <set-image v-if="set.code !== null" :code="set.code" />
+                    </div>
+                    <small v-if="!isReleased(set) && set.enter_date != null">
+                      <div>Releasing {{ set.enter_date | relative }}</div>
+                      <div v-if="set.code == 'RNA'">On 2018-01-??</div>
+                      <div v-else="set.code == 'RNA'">On {{ set.enter_date | absolute }}</div>
+                    </small>
+                  </li>
+                </ul>
               </div>
             </div>
-            <ul class="list-group list-group-flush text-dark">
-              <li class="list-group-item" v-bind:class="{ 'disabled text-black-50 bg-transparent': !isReleased(set) }" v-for="set in sets">
-                <div>
-                  {{ set.name }}
-                  <set-image v-if="set.code !== null" :code="set.code" />
-                </div>
-                <small v-if="!isReleased(set) && set.enter_date != null">
-                  <div>Releasing {{ set.enter_date | relative }}</div>
-                  <div v-if="set.code == 'RNA'">On 2018-01-??</div>
-                  <div v-else="set.code == 'RNA'">On {{ set.enter_date | absolute }}</div>
-                </small>
-              </li>
-            </ul>
           </div>
         </div>
         <div class="col-md-7">

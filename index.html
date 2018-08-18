@@ -52,7 +52,7 @@
                 <div>Sets dropped {{ sets[0].exit_date | relative }}</div>
                 <small>On {{ sets[0].exit_date | absolute }}</small>
               </div>
-              <ul class="list-group">
+              <ul class="list-group list-group-flush">
                 <li v-for="set in sets" class="list-group-item text-muted">
                   {{ set.name }}
                   <set-image :code="set.code" />

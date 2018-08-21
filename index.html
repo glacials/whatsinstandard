@@ -89,7 +89,7 @@
                   </div>
                 </div>
                 <ul class="list-group list-group-flush text-dark">
-                  <li class="list-group-item" v-bind:class="{ 'disabled text-black-50 bg-transparent': !isReleased(set) }" v-for="set in sets">
+                  <li class="list-group-item" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
                     <div>
                       {{ set.name }}
                       <set-image v-if="set.code !== null" :code="set.code" />

@@ -42,14 +42,14 @@
         <div v-cloak class="col-md-5">
           <div class="recently-dropped-toggle-container">
             <button id="recently-dropped-toggler" href="#" class="btn btn-sm btn-block btn-outline-secondary mb-3" v-on:click.prevent="toggleRecentlyDropped">
-              <span v-if="!showRecentlyDropped">show last dropped sets</span>
-              <span v-else>hide last dropped sets</span>
+              <span v-if="!showRecentlyDropped">show previous round of exits</span>
+              <span v-else>hide previous round of exits</span>
             </button>
           </div>
           <div id="recently-dropped" v-if="showRecentlyDropped">
             <div class="card mb-4" v-for="sets in rounds(dropped(sets))">
-              <div class="card-header text-muted">
-                <div>Sets dropped {{ sets[0].exit_date | relative }}</div>
+              <div class="card-header">
+                <div>Sets that exited Standard {{ sets[0].exit_date | relative }}</div>
                 <small>On {{ sets[0].exit_date | absolute }}</small>
               </div>
               <ul class="list-group list-group-flush">
@@ -60,18 +60,28 @@
               </ul>
             </div>
           </div>
-          <div class="card border border-primary">
+          <div class="card border border-primary mb-4">
             <div class="card-header bg-primary text-light">
               All Sets in Standard
             </div>
             <div class="card-body">
-              <div class="card mb-4" v-bind:class="{ 'bg-danger text-light': sets[0].exit_date }" v-for="sets in pad(rounds(standard(sets).concat(unreleased(sets))))">
-                <div class="card-header" v-if="sets[0].exit_date">
-                  <div>Dropping {{ sets[0].exit_date | relative }}</div>
+              <div class="card mb-4 bg-dark text-light" v-for="sets in rounds(standard(sets))">
+                <ul class="list-group list-group-flush text-dark">
+                  <li class="list-group-item" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
+                    <div>
+                      {{ set.name }}
+                      <set-image v-if="set.code !== null" :code="set.code" />
+                    </div>
+                  </li>
+                </ul>
+                <div class="card-footer" v-if="sets[0].exit_date">
+                  <div class="text-warning">
+                    Exiting Standard {{ sets[0].exit_date | relative }}
+                  </div>
                   <small>On {{ sets[0].exit_date | absolute }}</small>
                 </div>
-                <div class="card-header" v-else>
-                  Dropping {{ sets[0].rough_exit_date }}
+                <div class="card-footer" v-else>
+                  Exiting Standard {{ sets[0].rough_exit_date }}
                   <a v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'" class="tip"
                   v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
                   <div id="why" style="display: none" v-tippy-html>
@@ -88,21 +98,26 @@
                     </div>
                   </div>
                 </div>
-                <ul class="list-group list-group-flush text-dark">
-                  <li class="list-group-item" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
-                    <div>
-                      {{ set.name }}
-                      <set-image v-if="set.code !== null" :code="set.code" />
-                    </div>
-                    <small v-if="!isReleased(set) && set.enter_date != null">
-                      <div>Releasing {{ set.enter_date | relative }}</div>
-                      <div v-if="set.code == 'RNA'">On 2019-01-??</div>
-                      <div v-else="set.code == 'RNA'">On {{ set.enter_date | absolute }}</div>
-                    </small>
-                  </li>
-                </ul>
               </div>
             </div>
+          </div>
+          <div class="card mb-4" v-bind:class="{ 'bg-warning': sets[0].exit_date }" v-for="sets in pad(rounds(unreleased(sets)))">
+            <div class="card-header">
+              Upcoming Sets
+            </div>
+            <ul class="list-group list-group-flush text-dark">
+              <li class="list-group-item" v-bind:class="{ 'text-black-50': !isReleased(set) }" v-for="set in sets">
+                <div>
+                  {{ set.name }}
+                  <set-image v-if="set.code !== null" :code="set.code" />
+                </div>
+                <small v-if="!isReleased(set) && set.enter_date != null">
+                  <div>Entering Standard {{ set.enter_date | relative }}</div>
+                  <div v-if="set.code == 'RNA'">(on release: 2019-01-??)</div>
+                  <div v-else="set.code == 'RNA'">(on release: {{ set.enter_date | absolute }})</div>
+                </small>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="col-md-7">

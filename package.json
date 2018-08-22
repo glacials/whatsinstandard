@@ -39,7 +39,6 @@
     "node": "^10.4.1",
     "npm-font-open-sans": "^1.1.0",
     "popper.js": "^1.14.3",
-    "tether": "^1.4.4",
     "underscore": "^1.8.3",
     "vue": "^2.4.4",
     "vue-tippy": "^0.2.8"

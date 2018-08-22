@@ -25,7 +25,6 @@ a.tip:hover {
 a.tip:after {
   border-bottom: 1px dashed #ccc;
   content: "(?)";
-  color: #333;
   font-size: .65em;
   position: relative;
   top: -.2em;

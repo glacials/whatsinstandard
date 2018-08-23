@@ -39,8 +39,8 @@ a.tip:after {
   position: relative;
 }
 
-.subset {
-  font-size: .7em;
+.round.card:not(:last-child) {
+  margin-bottom: 1.5em;
 }
 
 /*

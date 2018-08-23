@@ -65,7 +65,7 @@
               All Sets in Standard
             </div>
             <div class="card-body">
-              <div class="card mb-4 bg-dark text-light" v-for="sets in rounds(standard(sets))">
+              <div class="round card bg-dark text-light" v-for="sets in rounds(standard(sets))">
                 <ul class="list-group list-group-flush text-dark">
                   <li class="list-group-item" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
                     <div>

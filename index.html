@@ -101,7 +101,7 @@
               </div>
             </div>
           </div>
-          <div class="card mb-4" v-bind:class="{ 'bg-warning': sets[0].exit_date }" v-for="sets in pad(rounds(unreleased(sets)))">
+          <div class="card mb-4" v-bind:class="{ 'bg-warning': sets[0].exit_date }" v-for="sets in rounds(unreleased(sets))">
             <div class="card-header">
               Upcoming Sets
             </div>

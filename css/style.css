@@ -31,6 +31,53 @@ a.tip:after {
 }
 
 /*
+ * card popups
+ */
+
+a.cardname {
+  -webkit-text-decoration-skip: unset;
+  text-decoration: underline;
+  -webkit-text-decoration-style: dotted;
+  text-decoration-style: dotted;
+}
+
+div.tippy-tooltip.scryfall-theme {
+  padding: 0;
+  background-color: transparent;
+  height: 340px;
+}
+
+div.tippy-tooltip.error {
+  border-radius: 12px;
+  color: #fff;
+  text-shadow: 2px 2px 6px #000;
+}
+
+img.cardimage {
+  border-radius: 4.75% / 3.5%;
+  display: block;
+  overflow: hidden;
+}
+
+img.rotate-90cw {
+  -webkit-transform: rotate( 90deg );
+  -ms-transform: rotate( 90deg );
+  transform: rotate( 90deg );
+}
+
+img.rotate-90ccw {
+  -webkit-transform: rotate( -90deg );
+  -ms-transform: rotate( -90deg );
+  transform: rotate( -90deg );
+}
+
+img.rotate-180 {
+  -webkit-transform: rotate( 180deg );
+  -ms-transform: rotate( 180deg );
+  transform: rotate( 180deg );
+}
+
+/*
  * set list
  */
 

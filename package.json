@@ -40,6 +40,7 @@
     "npm-font-open-sans": "^1.1.0",
     "popper.js": "^1.14.3",
     "sw-precache": "^5.2.1",
+    "tippy.js": "^2.6.0",
     "underscore": "^1.8.3",
     "vue": "^2.4.4",
     "vue-tippy": "^0.2.8"

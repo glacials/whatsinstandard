@@ -13,7 +13,6 @@ const tip = tippy( '.cardname', {
 	onShow() {
 		const thisPopper = this,
 			content = thisPopper.querySelector( '.tippy-content' ),
-			/* eslint no-underscore-dangle: ["error", { "allow": ["_reference"] }] */
 			target = thisPopper._reference,
 			jsonURI = new URL( 'https://api.scryfall.com/cards/named' );
 		var rotationClass = 'rotate-0';
@@ -32,9 +31,8 @@ const tip = tippy( '.cardname', {
 			.then( response => response.json() )
 			.then( data => {
 				const queryURI = new URL( target.href ),
-					directURI = new URL( data.scryfall_uri ),
-					utmSource = queryURI.searchParams.get( 'utm_source' );
-				directURI.searchParams.set( 'utm_source', utmSource );
+					directURI = new URL( data.scryfall_uri );
+				directURI.searchParams.set( 'utm_source', 'whatsinstandard' );
 				if ( data.hasOwnProperty( 'card_faces' ) ) {
 					const isSecondface = data.card_faces[ 0 ].name.replace( /[^a-z]/ig, '' ).toUpperCase() !==
 						decodeURIComponent( target.dataset.cardName ).replace( /[^a-z]/ig, '' ).toUpperCase();
@@ -62,8 +60,7 @@ const tip = tippy( '.cardname', {
 			.then( blob => {
 				const url = URL.createObjectURL( blob ),
 					img = document.createElement( 'img' );
-				img.classList.add( 'cardimage' );
-				img.classList.add( rotationClass );
+				img.classList.add( 'cardimage', rotationClass );
 				img.src = url;
 				img.alt = target.text;
 				img.width = 244;

@@ -20,6 +20,7 @@ const tip = Tippy( '.cardname', {
 		jsonURI.searchParams.set( 'set', typeof target.dataset.cardSet === 'undefined' ? '' : target.dataset.cardSet );
 		if ( tip.loading || content.innerHTML !== '' ) { return; }
 		tip.loading = true;
+		target.style.cursor = 'progress';
 		// Hide the tooltip until we've finished loaded the image
 		thisPopper.style.display = 'none';
 		// fetch() only works on modern browsers
@@ -67,6 +68,7 @@ const tip = Tippy( '.cardname', {
 				content.append( img );
 				// Show the tooltip by removing display:none
 				thisPopper.style.removeProperty( 'display' );
+				target.style.removeProperty( 'cursor' );
 				tip.loading = false;
 			} )
 			.catch( function () {
@@ -76,6 +78,7 @@ const tip = Tippy( '.cardname', {
 				content.parentNode.classList.add( 'error' );
 				// Show the tooltip by removing display:none
 				thisPopper.style.removeProperty( 'display' );
+				target.style.removeProperty( 'cursor' );
 				tip.loading = false;
 			} );
 	},

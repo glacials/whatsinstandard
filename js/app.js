@@ -2,7 +2,7 @@ var apiURL = '/api/v5/sets.json'
 var code = Vue.component('set-image', {
   props: ['code'],
   template: `
-    <span v-tippy="{ position: 'left' }" class="icon tip" :title="code">
+    <span v-tippy="{ placement: 'left' }" class="icon tip" :title="code">
       <i class="ss" :class="imsym"></i>
     </span>
   `,

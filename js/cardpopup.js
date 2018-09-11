@@ -1,4 +1,4 @@
-const tip = tippy( '.cardname', {
+const tip = Tippy( '.cardname', {
 	arrow: false,
 	animateFill: false,
 	followCursor: true,

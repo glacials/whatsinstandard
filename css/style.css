@@ -86,6 +86,10 @@ img.rotate-180 {
   position: relative;
 }
 
+#set-list a {
+  color: inherit;
+}
+
 .round.card:not(:last-child) {
   margin-bottom: 1.5em;
 }

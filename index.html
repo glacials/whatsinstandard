@@ -55,7 +55,7 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li v-for="set in sets" class="list-group-item text-muted">
-                  <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'">{{ set.name }}</a>
+                  <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
                   <set-image :code="set.code" />
                 </li>
               </ul>
@@ -63,14 +63,14 @@
           </div>
           <div class="card border border-primary mb-4">
             <div class="card-header bg-primary text-light">
-              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard">All Sets in Standard</a>
+              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard" target="_blank">All Sets in Standard</a>
             </div>
             <div class="card-body">
               <div class="round card bg-dark text-light" v-for="sets in rounds(standard(sets))">
                 <ul class="list-group list-group-flush text-dark">
                   <li class="list-group-item" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
                     <div>
-                      <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'">{{ set.name }}</a>
+                      <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
                       <set-image :code="set.code" />
                     </div>
                   </li>
@@ -109,7 +109,7 @@
             <ul class="list-group list-group-flush text-dark">
               <li class="list-group-item" v-bind:class="{ 'text-black-50': !isReleased(set) }" v-for="set in sets">
                 <div>
-                  <a v-if="set.code !== null" :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'">{{ set.name }}</a>
+                  <a v-if="set.code !== null" :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
                   <span v-if="set.code === null">{{ set.name }}</span>
                   <set-image v-if="set.code !== null" :code="set.code" />
                 </div>

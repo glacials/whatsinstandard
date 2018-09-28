@@ -85,16 +85,5 @@ const tip = Tippy( '.cardname', {
 	onHidden() {
 		const content = this.querySelector( '.tippy-content' );
 		content.innerHTML = '';
-	},
-	// prevent tooltip from displaying over button
-	popperOptions: {
-		modifiers: {
-			preventOverflow: {
-				enabled: false
-			},
-			hide: {
-				enabled: false
-			}
-		}
 	}
 } );

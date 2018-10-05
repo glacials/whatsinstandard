@@ -48,7 +48,7 @@
             </button>
           </div>
           <div id="recently-dropped" v-if="showRecentlyDropped">
-            <div class="card mb-4" v-for="sets in rounds(dropped(sets))">
+            <div class="card mb-4" v-for="sets in recent(rounds(dropped(sets)))">
               <div class="card-header">
                 <div>Sets that exited Standard {{ sets[0].exit_date | relative }}</div>
                 <small>On {{ sets[0].exit_date | absolute }}</small>

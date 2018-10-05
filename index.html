@@ -115,8 +115,7 @@
                 </div>
                 <small v-if="!isReleased(set) && set.enter_date != null">
                   <div>Entering Standard {{ set.enter_date | relative }}</div>
-                  <div v-if="set.code == 'RNA'">(on release: 2019-01-??)</div>
-                  <div v-else="set.code == 'RNA'">(on release: {{ set.enter_date | absolute }})</div>
+                  <div>(on release: {{ set.enter_date | absolute }})</div>
                 </small>
               </li>
             </ul>

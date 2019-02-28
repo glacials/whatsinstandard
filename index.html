@@ -64,33 +64,37 @@
               <ul class="list-group list-group-flush">
                 <li v-for="set in sets" class="list-group-item text-muted">
                   <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
-                  <set-image :code="set.code" />
+                  <set-image :code="set.code"></set-image>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="card border border-primary mb-4">
+          <div class="card border bg-white border-primary mb-4 shadow">
             <div class="card-header bg-primary text-light">
-              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard" target="_blank">All Sets in Standard</a>
+              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard" target="_blank">
+                <b>All Sets in Standard</b>
+              </a>
             </div>
             <div class="card-body">
-              <div class="round card bg-dark text-light" v-for="sets in rounds(standard(sets))">
+              <div class="round card bg-transparent text-dark" v-for="sets in rounds(standard(sets))">
                 <ul class="list-group list-group-flush text-dark">
-                  <li class="list-group-item" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
+                  <li class="list-group-item bg-transparent" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
                     <div>
-                      <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
-                      <set-image :code="set.code" />
+                      <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">
+                        {{ set.name }}
+                      </a>
+                      <set-image :code="set.code"></set-image>
                     </div>
                   </li>
                 </ul>
-                <div class="card-footer" v-if="sets[0].exit_date">
+                <div class="card-footer py-2" v-if="sets[0].exit_date">
                   <div class="text-warning">
-                    Exiting Standard {{ sets[0].exit_date | relative }}
+                    <small>Exiting Standard {{ sets[0].exit_date | relative }}</small>
                   </div>
                   <small>On {{ sets[0].exit_date | absolute }}</small>
                 </div>
-                <div class="card-footer" v-else>
-                  Exiting Standard {{ sets[0].rough_exit_date }}
+                <div class="card-footer py-2 text-black-50" v-else>
+                  <small>Exiting Standard {{ sets[0].rough_exit_date }}</small>
                   <a v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'" class="tip"
                   v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
                   <div id="why" style="display: none" v-tippy-html>
@@ -119,7 +123,7 @@
                 <div>
                   <a v-if="set.code !== null" :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
                   <span v-if="set.code === null">{{ set.name }}</span>
-                  <set-image v-if="set.code !== null" :code="set.code" />
+                  <set-image v-if="set.code !== null" :code="set.code"></set-image>
                 </div>
                 <small v-if="!isReleased(set) && set.enter_date != null">
                   <div>Entering Standard {{ set.enter_date | relative }}</div>
@@ -169,25 +173,31 @@
           <p>
           Not all sets enter Standard upon release. For example, Masters sets and Commander sets do not enter Standard.
           </p>
-          <h3 class="mt-5">Banlist</h3>
+          <h3 class="mt-5">Banned cards</h3>
 					<p>Despite being in Standard sets, these cards are explicitly not allowed in Standard decks.</p>
-          <p><ul class="list-group">
-            <li class="list-group-item">
-              <span v-tippy class="icon tip" title="Ixalan (XLN)"><i class="ss ss-xln"></i></span>
-              <div>
-                <a href="https://scryfall.com/search?q=!“Rampaging Ferocidon” set:XLN&utm_source=whatsinstandard"
-                class="cardname" data-card-name="Rampaging Ferocidon" data-card-set="XLN" target="_blank">
-                  Rampaging Ferocidon
-                </a>
+          <div class="row">
+            <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
+              <div class="card">
+                <img :src="ban.card_image_url" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <set-image :code="ban.set_code"></set-image>
+                    {{ ban.card_name }}
+                  </h5>
+                  <p class="card-text">{{ ban.reason }}</p>
+                  <a :href="'https://scryfall.com/search?q=!“' + ban.card_name + '” set:XLN&utm_source=whatsinstandard'" class="btn btn-primary m-1">
+                    View on Scryfall
+                  </a>
+                  <a :href="ban.announcement_url" class="btn btn-secondary m-1">
+                    View ban announcement
+                  </a>
+                </div>
               </div>
-              <small>
-                Banned for being too effective a shutdown against counters to aggressive red (filling the board with small creatures and gaining life).<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15">1</a></sup>
-              </small>
-            </li>
-          </ul>
+            </div>
+          </div>
           <div class="github mt-4">
-            <a target="_blank" href="https://github.com/glacials/whatsinstandard">
-              <img src="img/github.png" />
+            <a v-tippy class="btn btn-light" href="https://github.com/glacials/whatsinstandard" title="We're open source!">
+              <img class="m-1" src="img/github.png" />
             </a>
           </div>
         </div>

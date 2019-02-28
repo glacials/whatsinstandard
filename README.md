@@ -64,16 +64,26 @@ This is the only API call we have. It returns something like this:
   "deprecated": false,
   "sets": [
     {
-      "name": "Battle for Zendikar",
-      "block": "Battle for Zendikar",
-      "code": "BFZ",
-      "enter_date": "2015-10-02T00:00:00.000Z",
-      "exit_date": "2017-09-29T00:00:00.000Z",
-      "rough_exit_date": "Q4 2017"
+      "name": "Kaladesh",
+      "block": "Kaladesh",
+      "code": "KLD",
+      "enter_date": "2016-09-30T00:00:00.000",
+      "exit_date": "2018-10-05T00:00:00.000",
+      "rough_exit_date": "Q4 2018"
     },
-    ...,
+    ...
+  ],
+  "bans": [
+    {
+      "card_name": "Rampaging Ferocidon",
+      "card_image_url": "https://img.scryfall.com/cards/large/en/xln/154.jpg?1527429722",
+      "set_code": "XLN",
+      "reason": "Banned for being too effective a shutdown against counters to aggressive red (filling the board with small creatures and gaining life).",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15"
+    },
+    ...
   ]
-{
+}
 ```
 
 The array is guaranteed to contain all sets currently in Standard, but also contains recently dropped sets and some

@@ -33,13 +33,13 @@
       <div class="row">
         <div class="col-md-12">
           <div class="mt-5 mb-3 border-bottom">
-            <img id="site-icon" src="icon-original.svg">
+            <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" />
             <h1>What's in Standard?</h1>
             <div>
-              <span class="low-distraction">for</span>
+              <small class="text-muted">for</small>
               <span>Magic: The Gathering</span>
-              <span class="low-distraction"> / </span>
-              <a href="http://standardhearth.com/" class="low-distraction" rel="noopener">Hearthstone</a>
+              <small class="text-muted"> / </small>
+              <a href="http://standardhearth.com/" class="text-muted" rel="noopener">Hearthstone</a>
             </div>
           </div>
         </div>
@@ -63,7 +63,8 @@
               </div>
               <ul class="list-group list-group-flush">
                 <li v-for="set in sets" class="list-group-item text-muted">
-                  <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank" rel="noopener">
+                  <a :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                    target="_blank" rel="noopener">
                     {{ set.name }}
                   </a>
                   <set-image :code="set.code"></set-image>
@@ -73,8 +74,9 @@
           </div>
           <div class="card border bg-white border-primary mb-4 shadow">
             <div class="card-header bg-primary text-light">
-              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard" target="_blank" rel="noopener">
-                <b>All Sets in Standard</b>
+              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard"
+                target="_blank" rel="noopener">
+                All Sets in Standard
               </a>
             </div>
             <div class="card-body">
@@ -82,7 +84,9 @@
                 <ul class="list-group list-group-flush text-dark">
                   <li class="list-group-item bg-transparent" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
                     <div>
-                      <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank" rel="noopener">
+                      <a :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                        target="_blank"
+                        rel="noopener">
                         {{ set.name }}
                       </a>
                       <set-image :code="set.code"></set-image>
@@ -95,7 +99,7 @@
                   </div>
                   <small>On {{ sets[0].exit_date | absolute }}</small>
                 </div>
-                <div class="card-footer py-2 text-black-50" v-else>
+                <div class="card-footer py-2 text-dark text-right" v-else>
                   <small>Exiting Standard {{ sets[0].rough_exit_date }}</small>
                   <a v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'" class="tip"
                   v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
@@ -104,8 +108,8 @@
                       In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
                       shortened average set lifetime in Standard.<sup><a
                         target="_blank"
-                        href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis
-                        rel="noopener""
+                        href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
+                        rel="noopener"
                       >2</a></sup> The change was reverted in 2017,<sup><a
                         target="_blank"
                         href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
@@ -123,9 +127,11 @@
               Upcoming Sets
             </div>
             <ul class="list-group list-group-flush text-dark">
-              <li class="list-group-item" v-bind:class="{ 'text-black-50': !isReleased(set) }" v-for="set in sets">
+              <li class="list-group-item text-muted" v-for="set in sets">
                 <div>
-                  <a v-if="set.code !== null" :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank" rel="noopener">
+                  <a v-if="set.code !== null"
+                    :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                    target="_blank" rel="noopener">
                     {{ set.name }}
                   </a>
                   <span v-if="set.code === null">{{ set.name }}</span>
@@ -161,9 +167,9 @@
           <p>
           A <b>Standard deck</b> contains only Standard cards (60+ of them), may have a sideboard
           <a v-tippy class="tip"
-            title='A sideboard is an optional second pool of cards past the main deck that cannot be used during
-            games, but whose cards can be swapped with those from the main deck between games. It is generally used to
-            keep counters to specific deck archetypes available without needing to classify any change as an official deck
+            title='A sideboard is an optional second pool of cards past the main deck that cannot be used during games,
+            but whose cards can be swapped with those from the main deck between games. It is generally used to keep
+            counters to specific deck archetypes available without needing to classify any change as an official deck
             edit.'>
           </a> of up to 15 more Standard cards, and apart from basic lands does not have more than four copies of any
           one card
@@ -173,8 +179,7 @@
           </p>
           <h3 class="mt-5">Related sets and formats</h3>
           <p>
-          <a
-            target="_blank"
+          <a target="_blank"
             href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl" rel="noopener"><b>Brawl</b></a>
           is a format based on Standard—all rotations listed here apply to Brawl—but Brawl has a separate banlist</a>.
           </p>
@@ -186,14 +191,15 @@
           <div class="row" v-cloak>
             <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
               <div class="card">
-                <img :src="ban.card_image_url" class="card-img-top" />
+                <img :src="ban.card_image_url" class="card-img-top" :alt="`Image of ${ban.card_name}`" />
                 <div class="card-body">
                   <h5 class="card-title">
                     <set-image :code="ban.set_code"></set-image>
                     {{ ban.card_name }}
                   </h5>
                   <p class="card-text">{{ ban.reason }}</p>
-                  <a :href="'https://scryfall.com/search?q=!“' + ban.card_name + '” set:' + ban.set_code + '&utm_source=whatsinstandard'" class="btn btn-primary my-1" rel="noopener">
+                  <a :href="`https://scryfall.com/search?q=!“${ban.card_name}” set:${ban.set_code}&utm_source=whatsinstandard`"
+                    class="btn btn-primary text-white my-1" rel="noopener">
                     View on Scryfall
                   </a>
                   <a :href="ban.announcement_url" class="btn btn-secondary my-1">
@@ -205,7 +211,7 @@
           </div>
           <div class="github mt-4">
             <a v-tippy class="btn btn-light" href="https://github.com/glacials/whatsinstandard" title="We're open source!" rel="noopener">
-              <img class="m-1" src="img/github.png" />
+              <img class="m-1" src="img/github.png" alt="GitHub logo" />
             </a>
           </div>
         </div>

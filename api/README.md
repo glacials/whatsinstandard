@@ -1,4 +1,4 @@
-## API
+"sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'"## API
 Hey, welcome to this super awesome API. It has one endpoint! Here is an example request:
 
 ```sh
@@ -126,13 +126,14 @@ API v1 through v4 are past deprecation and no longer available.
 * `enter_date` can now be null to allow for upcoming sets whose release dates are not known.
 * `block` can now be null to allow for new [blockless sets][2].
 ###### Midversion nonbreaking changes
-* **2018-04-28:** `enter_date` and `exit_date` no longer include timezone (see #75). The dates are still ISO 8601
+* **2018-04-28:** `enter_date` and `exit_date` no longer include timezone (see [#75][3]). The dates are still ISO 8601
   compatible and are now intended to be parsed in the local timezone.
 * **2019-02-28:** Documentation for `code` now correctly states it matches `/[A-Z0-9]{3}/`. It previously incorrectly
   stated that it matched `/[A-Z]{3}/`. No behavior has changed, only documentation.
 * **2019-02-28:** Banned cards are now included in API.
 
-[2]: http://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12
+[2]: https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12
+[3]: https://github.com/glacials/whatsinstandard/issues/75
 
 ##### Version 4
 * Upcoming sets are once again included in the sets array. To use only released sets or only unreleased sets, filter on
@@ -148,7 +149,7 @@ Valid `rough_exit_date` regex has changed from `/(early|late) 20\d\d/` to `/(ear
 the new Standard rotation style. Old API versions will continue to match their respective regexes, but with potentially
 less accuracy. See Wizards's [article on the change][3] for details.
 
-[3]: http://magic.wizards.com/en/articles/archive/mm/metamorphosis
+[4]: https://magic.wizards.com/en/articles/archive/mm/metamorphosis
 
 ##### Version 2
 Upcoming unreleased sets are no longer included in the sets array.

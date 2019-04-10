@@ -1,4 +1,4 @@
-"sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'"## API
+## API
 Hey, welcome to this super awesome API. It has one endpoint! Here is an example request:
 
 ```sh

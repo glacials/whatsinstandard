@@ -62,7 +62,7 @@
                 <small>On {{ sets[0].exit_date | absolute }}</small>
               </div>
               <ul class="list-group list-group-flush">
-                <li v-for="set in sets" class="list-group-item text-muted">
+                <li v-for="set in sets" class="list-group-item text-muted d-flex justify-content-between align-items-center">
                   <a :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
                     target="_blank" rel="noopener">
                     {{ set.name }}
@@ -82,15 +82,13 @@
             <div class="card-body">
               <div class="round card bg-transparent text-dark" v-for="sets in rounds(standard(sets))">
                 <ul class="list-group list-group-flush text-dark">
-                  <li class="list-group-item bg-transparent" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
-                    <div>
-                      <a :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
-                        target="_blank"
-                        rel="noopener">
-                        {{ set.name }}
-                      </a>
-                      <set-image :code="set.code"></set-image>
-                    </div>
+                  <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
+                    <a :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                      target="_blank"
+                      rel="noopener">
+                      {{ set.name }}
+                    </a>
+                    <set-image :code="set.code"></set-image>
                   </li>
                 </ul>
                 <div class="card-footer py-2" v-if="sets[0].exit_date">
@@ -128,7 +126,7 @@
             </div>
             <ul class="list-group list-group-flush text-dark">
               <li class="list-group-item text-muted" v-for="set in sets">
-                <div>
+                <div class="d-flex justify-content-between align-items-center">
                   <a v-if="set.code !== null"
                     :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
                     target="_blank" rel="noopener">

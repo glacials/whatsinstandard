@@ -16,7 +16,8 @@ module.exports = {
       const inputJSON = JSON.parse(inputBody)
       const outputJSON = {
         "deprecated": deprecated,
-        "sets": []
+        "sets": [],
+        "bans": []
       }
       inputJSON.sets.forEach((set) => {
         outputJSON.sets.push({
@@ -26,6 +27,15 @@ module.exports = {
           "enter_date": set.enter_date,
           "exit_date": set.exit_date,
           "rough_exit_date": set.rough_exit_date
+        })
+      })
+      inputJSON.bans.forEach((ban) => {
+        outputJSON.bans.push({
+          "card_name": ban.card_name,
+          "card_image_url": ban.card_image_url,
+          "set_code": ban.set_code,
+          "reason": ban.reason,
+          "announcement_url": ban.announcement_url
         })
       })
 

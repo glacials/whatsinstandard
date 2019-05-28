@@ -18,6 +18,7 @@ var app = new Vue({
 
   data: {
     sets: [],
+    bans: [],
     showRecentlyDropped: false
   },
 
@@ -27,6 +28,7 @@ var app = new Vue({
     fetch(apiURL).then(function(response) {
       response.json().then(function(data) {
         self.sets = data.sets
+        self.bans = data.bans
       })
     })
   },

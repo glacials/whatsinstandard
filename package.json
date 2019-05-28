@@ -21,7 +21,8 @@
     "autotest": "./node_modules/.bin/supervisor -q -n exit -x ./node_modules/.bin/mocha -- -b",
     "test": "./node_modules/mocha/bin/mocha",
     "prepare": "./node_modules/node/bin/node api/generate.js && ./node_modules/sw-precache/cli.js --config js/sw-precache-config.js",
-    "start": "http-server -o -c-1"
+    "start": "http-server -o -c-1",
+    "postinstall": "opencollective-postinstall"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -32,16 +33,24 @@
     "supervisor": "^0.9.1"
   },
   "dependencies": {
-    "bootstrap": "^4.1.3",
-    "bootstrap-vue": "^2.0.0-rc.11",
-    "keyrune": "^3.3.3",
-    "moment": "^2.22.2",
-    "node": "^10.11.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.0-rc.20",
+    "chai-url": "^1.0.4",
+    "jquery": "^3.4.1",
+    "keyrune": "^3.4.1",
+    "moment": "^2.24.0",
+    "node": "^10.15.3",
     "npm-font-open-sans": "^1.1.0",
-    "popper.js": "^1.14.4",
+    "opencollective": "^1.0.3",
+    "opencollective-postinstall": "^2.0.2",
+    "popper.js": "^1.15.0",
     "sw-precache": "^5.2.1",
     "underscore": "^1.9.1",
-    "vue": "^2.5.17",
-    "vue-tippy": "^2.0.19"
+    "vue": "^2.6.10",
+    "vue-tippy": "^2.1.2"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/whatsinstandard"
   }
 }

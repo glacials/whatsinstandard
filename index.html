@@ -19,19 +19,27 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#808080">
     <meta name="msapplication-TileColor" content="#2d89ef">
     <meta name="theme-color" content="#ffffff">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-2775839314260416",
+              enable_page_level_ads: true
+         });
+    </script>
   </head>
   <body>
     <div id="vue" class="container">
       <div class="row">
         <div class="col-md-12">
           <div class="mt-5 mb-3 border-bottom">
-            <img id="site-icon" src="icon-original.svg">
+            <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" />
             <h1>What's in Standard?</h1>
             <div>
-              <span class="low-distraction">for</span>
+              <small class="text-muted">for</small>
               <span>Magic: The Gathering</span>
-              <span class="low-distraction"> / </span>
-              <a href="http://standardhearth.com/" class="low-distraction">Hearthstone</a>
+              <small class="text-muted"> / </small>
+              <a href="http://standardhearth.com/" class="text-muted" rel="noopener">Hearthstone</a>
             </div>
           </div>
         </div>
@@ -54,46 +62,56 @@
                 <small>On {{ sets[0].exit_date | absolute }}</small>
               </div>
               <ul class="list-group list-group-flush">
-                <li v-for="set in sets" class="list-group-item text-muted">
-                  <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
-                  <set-image :code="set.code" />
+                <li v-for="set in sets" class="list-group-item text-muted d-flex justify-content-between align-items-center">
+                  <a :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                    target="_blank" rel="noopener">
+                    {{ set.name }}
+                  </a>
+                  <set-image :code="set.code"></set-image>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="card border border-primary mb-4">
+          <div class="card border bg-white border-primary mb-4 shadow">
             <div class="card-header bg-primary text-light">
-              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard" target="_blank">All Sets in Standard</a>
+              <a href="https://www.scryfall.com/search?q=format:standard&utm_source=whatsinstandard"
+                target="_blank" rel="noopener">
+                All Sets in Standard
+              </a>
             </div>
             <div class="card-body">
-              <div class="round card bg-dark text-light" v-for="sets in rounds(standard(sets))">
+              <div class="round card bg-transparent text-dark" v-for="sets in rounds(standard(sets))">
                 <ul class="list-group list-group-flush text-dark">
-                  <li class="list-group-item" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
-                    <div>
-                      <a :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
-                      <set-image :code="set.code" />
-                    </div>
+                  <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center" v-bind:class="{ 'text-black-50 bg-light font-italic': !isReleased(set) }" v-for="set in sets">
+                    <a :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                      target="_blank"
+                      rel="noopener">
+                      {{ set.name }}
+                    </a>
+                    <set-image :code="set.code"></set-image>
                   </li>
                 </ul>
-                <div class="card-footer" v-if="sets[0].exit_date">
+                <div class="card-footer py-2" v-if="sets[0].exit_date">
                   <div class="text-warning">
-                    Exiting Standard {{ sets[0].exit_date | relative }}
+                    <small>Exiting Standard {{ sets[0].exit_date | relative }}</small>
                   </div>
                   <small>On {{ sets[0].exit_date | absolute }}</small>
                 </div>
-                <div class="card-footer" v-else>
-                  Exiting Standard {{ sets[0].rough_exit_date }}
+                <div class="card-footer py-2 text-dark text-right" v-else>
+                  <small>Exiting Standard {{ sets[0].rough_exit_date }}</small>
                   <a v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'" class="tip"
                   v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-                  <div id="why" style="display: none" v-tippy-html>
+                  <div id="why" style="display: none" v-tippy-html v-if="sets[0].code == 'KLD' || sets[0].code == 'AKH' || sets[0].code == 'XLN'">
                     <div style="max-width: 50em">
                       In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
                       shortened average set lifetime in Standard.<sup><a
                         target="_blank"
                         href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
+                        rel="noopener"
                       >2</a></sup> The change was reverted in 2017,<sup><a
                         target="_blank"
                         href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
+                        rel="noopener"
                       >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
                       will drop in unintuitive ways, ending in Q4 2019.
                     </div>
@@ -107,11 +125,15 @@
               Upcoming Sets
             </div>
             <ul class="list-group list-group-flush text-dark">
-              <li class="list-group-item" v-bind:class="{ 'text-black-50': !isReleased(set) }" v-for="set in sets">
-                <div>
-                  <a v-if="set.code !== null" :href="'https://www.scryfall.com/sets/' + set.code.toLowerCase() + '?utm_source=whatsinstandard'" target="_blank">{{ set.name }}</a>
+              <li class="list-group-item text-muted" v-for="set in sets">
+                <div class="d-flex justify-content-between align-items-center">
+                  <a v-if="set.code !== null"
+                    :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                    target="_blank" rel="noopener">
+                    {{ set.name }}
+                  </a>
                   <span v-if="set.code === null">{{ set.name }}</span>
-                  <set-image v-if="set.code !== null" :code="set.code" />
+                  <set-image v-if="set.code !== null" :code="set.code"></set-image>
                 </div>
                 <small v-if="!isReleased(set) && set.enter_date != null">
                   <div>Entering Standard {{ set.enter_date | relative }}</div>
@@ -124,12 +146,17 @@
         <div class="col-md-7">
           <h2>What <em>is</em> Standard?</h2>
           <p>
-            <a
-            target="_blank"
-            href="https://magic.wizards.com/en/content/standard-formats-magic-gathering"><b>Standard</b></a>
-          is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're
-          released and drop out about twenty-one months later. At any given time, Standard contains between five and
-          eight sets.
+          <a
+          target="_blank"
+          href="https://magic.wizards.com/en/content/standard-formats-magic-gathering" rel="noopener">
+            <b>Standard</b>
+          </a>
+          is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're released and
+          drop out about twenty-one months later.
+          </p>
+          <p>
+          Generally Standard will grow until it would receive its ninth set, then instead it drops its oldest four sets
+          to receive it as a fifth set. There are exceptions to this. It's confusing.
           </p>
           <p>
           A <b>Standard card</b> is a card printed or reprinted into a set currently in Standard.
@@ -139,11 +166,11 @@
           </a>
           </p>
           <p>
-          A <b>Standard deck</b> contains only Standard cards (60+ of them), may have a sideboard
+          A <b>Standard deck</b> contains only Standard cards (60+ of them), can optionally have a sideboard
           <a v-tippy class="tip"
-            title='A sideboard is an optional second pool of cards past the main deck that cannot be used during
-            games, but whose cards can be swapped with those from the main deck between games. It is generally used to
-            keep counters to specific deck archetypes available without needing to classify any change as an official deck
+            title='A sideboard is an optional second pool of cards past the main deck that cannot be used during games,
+            but whose cards can be swapped with those from the main deck between games. It is generally used to keep
+            counters to specific deck archetypes available without needing to classify any change as an official deck
             edit.'>
           </a> of up to 15 more Standard cards, and apart from basic lands does not have more than four copies of any
           one card
@@ -153,33 +180,42 @@
           </p>
           <h3 class="mt-5">Related sets and formats</h3>
           <p>
-          <a
-            target="_blank"
-            href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl"><b>Brawl</b></a>
+          <a target="_blank"
+            href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl" rel="noopener"><b>Brawl</b></a>
           is a format based on Standard—all rotations listed here apply to Brawl—but Brawl has a separate banlist</a>.
           </p>
           <p>
           Not all sets enter Standard upon release. For example, Masters sets and Commander sets do not enter Standard.
           </p>
-          <h3 class="mt-5">Banlist</h3>
+          <h3 class="mt-5">Banned cards</h3>
 					<p>Despite being in Standard sets, these cards are explicitly not allowed in Standard decks.</p>
-          <p><ul class="list-group">
-            <li class="list-group-item">
-              <span v-tippy class="icon tip" title="Ixalan (XLN)"><i class="ss ss-xln"></i></span>
-              <div>
-                <a href="https://scryfall.com/search?q=!“Rampaging Ferocidon” set:XLN&utm_source=whatsinstandard"
-                class="cardname" data-card-name="Rampaging Ferocidon" data-card-set="XLN" target="_blank">
-                  Rampaging Ferocidon
-                </a>
+          <div class="row" v-cloak>
+            <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
+              <div class="card">
+                <img :src="ban.card_image_url" class="card-img-top" :alt="`Image of ${ban.card_name}`" />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <set-image :code="ban.set_code"></set-image>
+                    {{ ban.card_name }}
+                  </h5>
+                  <p class="card-text">{{ ban.reason }}</p>
+                  <a :href="`https://scryfall.com/search?q=!“${ban.card_name}” set:${ban.set_code}&utm_source=whatsinstandard`"
+                    class="btn btn-primary text-white my-1" rel="noopener">
+                    View on Scryfall
+                  </a>
+                  <a :href="ban.announcement_url" class="btn btn-secondary my-1">
+                    View ban announcement
+                  </a>
+                </div>
               </div>
-              <small>
-                Banned for being too effective a shutdown against counters to aggressive red (filling the board with small creatures and gaining life).<sup><a target="_blank" href="https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15">1</a></sup>
-              </small>
-            </li>
-          </ul>
+            </div>
+          </div>
           <div class="github mt-4">
-            <a target="_blank" href="https://github.com/glacials/whatsinstandard">
-              <img src="img/github.png" />
+            <a v-tippy class="btn" href="https://twitter.com/whatsinstandard" title="We tweet when Standard changes!">
+              <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='60' width='60' />
+            </a>
+            <a v-tippy class="btn" href="https://github.com/glacials/whatsinstandard" title="We're open source!">
+              <img class="m-1" src="img/github.png" alt="GitHub logo" height='35' width='35' />
             </a>
           </div>
         </div>
@@ -187,13 +223,12 @@
     </div>
     <div style="display:none" id="js--card-popup"></div>
     <script src="/node_modules/bootstrap-vue/dist/bootstrap-vue.min.js"></script>
-    <script src="/node_modules/moment/moment.js"></script>
+    <script src="/node_modules/moment/min/moment.min.js"></script>
     <script src="/node_modules/underscore/underscore-min.js"></script>
     <script src="/node_modules/vue/dist/vue.min.js"></script>
     <script src="/node_modules/vue-tippy/dist/vue-tippy.min.js"></script>
 
     <script src="/js/app.js"></script>
-    <script src="/js/cardpopup.js"></script>
     <script src="/js/service-worker.js"></script>
     <script src="/js/tracking.js"></script>
 
@@ -201,7 +236,7 @@
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-2876079-7', 'auto');
         ga('require', 'displayfeatures');
         ga('send', 'pageview');

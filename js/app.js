@@ -22,11 +22,14 @@ var app = new Vue({
       this.sets = data.sets
       this.bans = data.bans
     })
+
+    setInterval(() => this.now = new Date, 1000 * 60)
   },
 
   data: {
-    sets: [],
     bans: [],
+    now: new Date,
+    sets: [],
     showRecentlyDropped: false
   },
 
@@ -42,7 +45,7 @@ var app = new Vue({
     // dropped returns the sets in the given array of sets that have dropped from Standard according to local time,
     // preserving order.
     dropped: function(sets) {
-      return sets.filter(set => (Date.parse(set.exit_date) || Infinity) <= this.now())
+      return sets.filter(set => (Date.parse(set.exit_date) || Infinity) <= this.now)
     },
 
     // exitDate returns a Date object for the given set or round's exit date. If the set or round has no exit date, a
@@ -67,7 +70,7 @@ var app = new Vue({
     // gestation returns, as a number from 0 to 1, what portion of the given round's "gestation" (the time between its
     // first set's release and its last set's release) has elapsed.
     gestation: function(round) {
-      const roundLifeCurrent = this.now() - Date.parse(round[0].enter_date)
+      const roundLifeCurrent = this.now - Date.parse(round[0].enter_date)
       const roundLifeTotal = Date.parse(this.last(round).enter_date) - Date.parse(round[0].enter_date)
 
       return Math.max(0, Math.min(1, roundLifeCurrent / roundLifeTotal))
@@ -80,7 +83,7 @@ var app = new Vue({
         return this.isReleased(this.last(setOrRound))
       }
 
-      return Date.parse(setOrRound.enter_date) <= this.now()
+      return Date.parse(setOrRound.enter_date) <= this.now
     },
 
     // last returns the last element of an array.
@@ -111,9 +114,6 @@ var app = new Vue({
 
       return Math.max(0, Math.min(1, setLifeCurrent / setLifeTotal))
     },
-
-    // now returns Date.now(). It is provided so that it can be easily overridden for debugging and testing.
-    now: () => Date.now(),
 
     // pad returns an array padded to the given length with the given fill value.
     pad: (array, length, fill) => length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array,
@@ -154,13 +154,13 @@ var app = new Vue({
     // undropped returns the sets in the given array of sets that have not dropped from Standard (including sets that
     // haven't even entered it yet) according to local time, preserving order.
     undropped: function(sets) {
-      return sets.filter(set => (Date.parse(set.exit_date) || Infinity) > this.now())
+      return sets.filter(set => (Date.parse(set.exit_date) || Infinity) > this.now)
     },
 
     // unreleased returns the sets in the given array that have not been released yet according to local time,
     // preserving order.
     unreleased: function(sets) {
-      return sets.filter(set => (Date.parse(set.enter_date) || Infinity) > this.now())
+      return sets.filter(set => (Date.parse(set.enter_date) || Infinity) > this.now)
     },
   }
 })

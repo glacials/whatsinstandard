@@ -104,9 +104,9 @@
                       <set-image :code="set.code" v-if="isReleased(set)"></set-image>
                     </div>
                     <template v-else>
-                      <div class="lead">
+                      <a class="lead w-100 text-light" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
                         {{ set.unknown ? '???' : set.name }}
-                      </div>
+                      </a>
                       <small class="card-text text-muted float-right d-block">Unreleased</small>
                     </template>
                   </div>

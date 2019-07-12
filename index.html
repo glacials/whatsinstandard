@@ -118,7 +118,7 @@
                 <div class="progress-bar bg-transparent text-dark text-right d-inline"
                 role="progressbar" aria-valuemin="0" aria-valuemax="100"
                 :style="`width: ${gestation(round) * 100}%`" :aria-valuenow="gestation(round) * 100"
-                :title="round[0].exit_date === null ? round[0].rough_exit_date : round[0].exit_date">
+                :title="unreleased(round)[0].enter_date === null ? unreleased(round)[0].rough_enter_date : unreleased(round)[0].enter_date">
                   <template v-if="gestation(round) > .5">
                     <template v-if="isReleased(round)">
                       All released
@@ -133,7 +133,7 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light text-right d-inline"
                 role="progressbar" aria-valuemin="0" aria-valuemax="100"
                 :style="`width: ${(1 - gestation(round)) * 100}%`" :aria-valuenow="(1 - mortality(round)) * 100"
-                :title="round[0].exit_date === null ? round[0].rough_exit_date : round[0].exit_date">
+                :title="unreleased(round)[0].enter_date === null ? unreleased(round)[0].rough_enter_date : unreleased(round)[0].enter_date">
                   <template v-if="gestation(round) <= .5">
                     <span class="mx-1">&rarr;</span>
                     {{ last(round).name }} releases {{ last(round).enter_date | relative }}

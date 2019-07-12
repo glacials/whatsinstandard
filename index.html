@@ -65,7 +65,7 @@
           <template v-if="showRecentlyDropped">
             <div class="row">
               <div class="card-group w-100" style="min-height: 7em">
-                <div class="card mb-0 bg-dark text-light" v-for="set in last(rounds(dropped(sets)))">
+                <div class="card mb-0 bg-dark text-light rounded-0" v-for="set in last(rounds(dropped(sets)))">
                   <div class="card-body">
                     <div class="justify-content-between d-flex">
                       <a class="lead w-100 text-light" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
@@ -81,7 +81,7 @@
               </div>
             </div>
             <div class="row mb-3 d-none d-sm-flex">
-              <div class="progress w-100" style="height: 2em; line-height: 2em">
+              <div class="progress w-100 rounded-0" style="height: 2em; line-height: 2em">
                 <div class="progress-bar d-inline text-right bg-dark text-light"
                 role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%" :aria-valuenow="100">
                   Left Standard {{ last(rounds(dropped(sets)))[0].exit_date | relative }}

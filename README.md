@@ -32,4 +32,4 @@ Twitter: [@mccallum_jon]
 
 ## Changelog
 
-2019-07-13 - Initial commit after forking from [glacials]. Creating page and linking to domain.
+2019-07-13 - Initial commit after forking from [glacials]. Creating basic page and linking to domain.

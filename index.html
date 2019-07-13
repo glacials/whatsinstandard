@@ -2,6 +2,20 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143834429-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-143834429-1');
+  </script>
+
+
   <title>What's in Standard? Pokémon Edition</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,31 +38,31 @@
 
     <!-- HEADER -->
 
-    <header class="row">
-      <div class="col-md-12">
-        <div class="mt-5 mb-3 border-bottom">
-          <img id="site-icon" src="/img/icon-original.svg" alt="What's in Standard? logo" />
-          <h1>What's in Standard?</h1>
-          <div>
-            <small class="text-muted">for</small>
-            <span>Pokémon TCG</span>
-            <small class="text-muted"> / </small>
-            <a href="http://whatsinstandard.com/" class="text-muted" rel="noopener">Magic: The Gathering</a>
-            <small class="text-muted"> / </small>
-            <a href="http://standardhearth.com/" class="text-muted" rel="noopener">Hearthstone</a>
-          </div>
-        </div>
+    <header class="grid-header">
+      <img id="site-icon" src="/img/icon-original.svg" alt="What's in Standard? logo" />
+      <h1>What's in Standard?</h1>
+      <div>
+        <small class="text-muted">for</small>
+        <span>Pokémon TCG</span>
+        <small class="text-muted"> / </small>
+        <a href="http://whatsinstandard.com/" class="text-muted" rel="noopener">Magic: The Gathering</a>
+        <small class="text-muted"> / </small>
+        <a href="http://standardhearth.com/" class="text-muted" rel="noopener">Hearthstone</a>
       </div>
-      <hr/>
-    </header>
 
+    </header>
+    <hr />
     <!-- MAIN CONTENT -->
 
-    <main class="row">
+    <main class="grid-main">
 
       <!-- Set Lists -->
-      <!-- COMMENTING OUT FOR NOW WHILE UNDER DEVELOPMENT
 
+      <section id="set-display" class="grid-set-section">
+        <!-- All information in this section is added with scripts.js -->
+      </section>
+
+      <!-- COMMENTING OUT FOR NOW WHILE UNDER DEVELOPMENT
         <section v-cloak class="col-md-5" id="set-list">
         <div class="recently-dropped-toggle-container">
           <button id="recently-dropped-toggler" href="#" class="btn btn-sm btn-block btn-outline-secondary mb-3"
@@ -148,13 +162,14 @@
       </section>
 
       <!-- General Blurb -->
-      <section class="col-md-7">
-        <h2>What <em>is</em> Standard? Pokémon Edition</h2>
+      <section class="grid-text-section">
+        <h2>What <em>is</em> Standard?</h2>
         <p>
           <a target="_blank" href="https://www.poke-spot.com/tcg-formats-explained/" rel="noopener"><b>Standard</b></a>
           is a rotating group of <i>Pokémon TCG</i> sets. Sets enter Standard when they're released and drop out roughly
           2 years later.
-          There are 4 releases each year, usually in February, May, August, and November.
+          There are 4 main releases each year, usually in February, May, August, and November. In addition, some other
+          smaller sets are also released throughout the year.
         </p>
         <p>
           Each year, usually in Q2, there will be an <a target="_blank"
@@ -222,7 +237,7 @@
 
   <!-- FOOTER -->
 
-  <footer>
+  <footer class="grid-footer">
     <!-- COMMENTING OUT WHILE UNDER DEV
       <div class="github mt-4">
       <a v-tippy class="btn" href="https://twitter.com/whatsinstandard" title="We tweet when Standard changes!">
@@ -236,8 +251,7 @@
   </footer>
 
   <!-- MAKE IT DO STUFF -->
-
-  <script></script>
+  <script src="js/scripts.js"></script>
 
   <!-- THE END -->
 </body>

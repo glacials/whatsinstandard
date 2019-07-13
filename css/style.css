@@ -1,8 +1,8 @@
-/*
- * entire page
- */
+/* #################
+   # Site-wide CSS #
+   ################# */
 
-body, h1, h2, h3, h4, h5, h6 {
+* {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -11,104 +11,67 @@ body, h1, h2, h3, h4, h5, h6 {
   margin: auto;
 }
 
-/*
- * webpage logo
- */
- 
+/*  ##############
+    # Header CSS #
+    ############## */
+
+header {
+  padding: 2em;
+}
+
 #site-icon {
   float: left;
   height: 5em;
   margin: 0em 0.5em 0em 0.5em;
 }
 
-/*
- * tooltips
- */
-
-a.tip {
-  color: #333;
-}
-
-a.tip:hover {
-  text-decoration: none;
-}
-
-a.tip:after {
-  border-bottom: 1px dashed #ccc;
-  content: "(?)";
-  font-size: .65em;
-  position: relative;
-  top: -.2em;
-}
-
-/*
- * card popups
- */
-
-a.cardname {
-  -webkit-text-decoration-skip: unset;
-  text-decoration: underline;
-  -webkit-text-decoration-style: dotted;
-  text-decoration-style: dotted;
-}
-
-div.tippy-tooltip.scryfall-theme {
-  padding: 0;
-  background-color: transparent;
-  height: 340px;
-}
-
-div.tippy-tooltip.error {
-  border-radius: 12px;
-  color: #fff;
-  text-shadow: 2px 2px 6px #000;
-}
-
-img.cardimage {
-  border-radius: 4.75% / 3.5%;
-  display: block;
-  overflow: hidden;
-}
-
-img.rotate-90cw {
-  -webkit-transform: rotate( 90deg );
-  -ms-transform: rotate( 90deg );
-  transform: rotate( 90deg );
-}
-
-img.rotate-90ccw {
-  -webkit-transform: rotate( -90deg );
-  -ms-transform: rotate( -90deg );
-  transform: rotate( -90deg );
-}
-
-img.rotate-180 {
-  -webkit-transform: rotate( 180deg );
-  -ms-transform: rotate( 180deg );
-  transform: rotate( 180deg );
-}
+/*  ############
+    # Main CSS #
+    ############ */
 
 /*
  * set list
  */
 
-.list-group-item {
-  line-height: 20px;
-  position: relative;
+#set-display ul {
+  padding: 0;
+  margin: 0;
+}
+
+#set-list {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
 
 #set-list a {
   color: inherit;
 }
 
-.round.card:not(:last-child) {
-  margin-bottom: 1.5em;
+.item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  border: 1px solid #ddd;
 }
 
-/*
- * set symbols
- */
-.list-group-item .icon {
+/* Set symbols */
+
+.set-logo {
+  display: inline-block;
+  min-width: 10px;
+  padding: 0px 10px;
+  color: #fff;
+  text-align: center;
+  float: right;
+}
+
+.set-list img {
   align-items: center;
   display: flex;
   font-size: 1.5em;
@@ -117,65 +80,51 @@ img.rotate-180 {
   width: 1em;
 }
 
-.card-title .icon {
-  position: relative;
-  bottom: 2px;
-}
+/*  ##############
+    # Footer CSS #
+    ############## */
+
+
+
+
+
+/*  #################
+    # MEDIA QUERIES #
+    ################# */
 
 /*
- * low-distraction
- */
-.low-distraction {
-  font-size: .8em;
+CSS Grid Classes Used:
+.grid-header <-- Still to configure if decide to use
+.grid-main
+  .grid-set-section
+  .grid-text-section
+.grid-footer <-- Still to configure if decide to use
+*/
+
+/* For tablets and bigger */
+@media only screen and (min-width: 768px) {}
+
+/* For desktops */
+@media only screen and (min-width: 992px) {
+  .grid-main {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 30% 70%;
+  }
+
+  .grid-set-section {
+    grid-column: 1/2;
+  }
+
+  .grid-text-section {
+    grid-column: 2/3;
+  }
+
 }
 
-.low-distraction, a.low-distraction, a.low-distraction:active {
-  color: #000;
-  opacity: .35;
-  text-decoration: none;
-}
-
-a.low-distraction:hover {
-  opacity: 1;
-}
-
-/*
- * spinner
- * from https://projects.lukehaas.me/css-loaders/
- */
-@keyframes spinner {
-	to {transform: rotate(360deg);}
-}
-
-.spinner:before {
-	content: '';
-	box-sizing: border-box;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: 20px;
-	height: 20px;
-	margin-top: -10px;
-	margin-left: -10px;
-	border-radius: 50%;
-	border: 2px solid transparent;
-	border-top-color: #07d;
-	border-bottom-color: #07d;
-	animation: spinner .8s ease infinite;
-}
-
-/*
- * miscellaneous
- */
-
-.github {
-  text-align: right;
-}
-
-.github > a {
-  display: inline-block;
-}
-
-[v-cloak] {
-  display: none;
+/* For larger screens */
+@media only screen and (min-width: 1200px) {
+  .grid-main {
+    grid-template-columns: 320px auto;
+  }
 }

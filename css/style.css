@@ -11,6 +11,11 @@
   margin: auto;
 }
 
+.fa {
+  padding: 0 10px;
+  color: #38A1F3;
+}
+
 /*  ##############
     # Header CSS #
     ############## */
@@ -63,7 +68,6 @@ header {
 /* Set symbols */
 
 .set-logo {
-  display: inline-block;
   min-width: 10px;
   padding: 0px 10px;
   color: #fff;

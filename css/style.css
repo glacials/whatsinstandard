@@ -11,6 +11,11 @@
   margin: auto;
 }
 
+.fa {
+  color: #38A1F3;
+  padding: 0 10px;
+}
+
 /*  ##############
     # Header CSS #
     ############## */

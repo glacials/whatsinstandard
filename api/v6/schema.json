@@ -1,0 +1,228 @@
+{
+  "definitions": {
+    "date": {
+      "type": "object",
+      "title": "Date",
+      "description": "Date wraps both a rough date and an optional exact date.",
+      "required": ["exact", "rough"],
+      "properties": {
+        "exact": {
+          "anyOf": [{"type": "null"}, {"type": "string"}],
+          "description": "A day-precise date formatted as RFC3339.",
+          "examples": [
+            "2018-10-05T00:00:00.000",
+            "2016-09-30T00:00:00.000"
+          ],
+          "title": "Exact date"
+        },
+        "rough": {
+          "description": "A quarter- or month-precise date.",
+          "examples": [
+            "Q1 2020",
+            "Q4 2020",
+            "January 2021",
+            "December 2025"
+          ],
+          "title": "Rough date",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://whatsinstandard.com/api/v6/schema.json",
+  "type": "object",
+  "title": "What's in Standard? API v6",
+  "additionalProperties": true,
+  "required": [
+    "deprecated",
+    "sets",
+    "bans"
+  ],
+  "properties": {
+    "deprecated": {
+      "type": "boolean",
+      "title": "Deprecated",
+      "description": "Whether this API version is deprecated or not. Configure your software to notify you if this field is ever true so you aren't caught off-guard if this version is deprecated then eventually killed.",
+      "examples": [
+        false,
+        true
+      ],
+      "readOnly": true
+    },
+    "sets": {
+      "type": "array",
+      "title": "Sets",
+      "description": "A superset of the sets in Standard, ordered from least recent release date (`enterDate.exact`) to newest. To get a list of Standard sets you MUST filter this array by comparing your local time to each set's enter and exit date, as the array by itself will contain sets that have already exited Standard as well as sets that have not yet entered it.",
+      "readOnly": true,
+      "items": {
+        "type": "object",
+        "title": "Set",
+        "description": "A Magic: The Gathering set.",
+        "readOnly": true,
+        "required": [
+          "name",
+          "code",
+          "codename",
+          "enterDate",
+          "exitDate",
+          "symbol"
+        ],
+        "properties": {
+          "name": {
+            "anyOf": [{"type": "null"}, {"type": "string"}],
+            "title": "Name",
+            "description": "The human-friendly name of the set, if known.",
+            "examples": [
+              "Kaladesh",
+              "Amonkhet",
+              "Hour of Devastation"
+            ],
+            "readOnly": true
+          },
+          "code": {
+            "anyOf": [{"type": "null"}, {"type": "string"}],
+            "title": "Code",
+            "description": "Wizards of the Coasts's official code for the set.",
+            "examples": ["KLD", "HOU", "W17", "M20"],
+            "readOnly": true
+          },
+          "codename": {
+            "anyOf": [{"type": "null"}, {"type": "string"}],
+            "title": "Codename",
+            "description": "Pre-launch development codename given to the set.",
+            "examples": ["Lock", "Stock", "Barrel", "Spaghetti", "Meatballs"],
+            "readOnly": true
+          },
+          "enterDate": {
+            "$ref": "#/definitions/date",
+            "title": "Enter datetime",
+            "description": "The date this set enters or entered Standard.",
+            "readOnly": true
+          },
+          "exitDate": {
+            "$ref": "#/definitions/date",
+            "title": "Exit datetime",
+            "description": "The date this set exits or exited Standard.",
+            "readOnly": true
+          },
+          "symbol": {
+            "type": "object",
+            "title": "Symbol",
+            "description": "A set of URLs to access this set's symbol.",
+            "readOnly": true,
+            "required": ["common", "uncommon", "rare", "mythicRare"],
+            "properties": {
+              "common": {
+                "type": "string",
+                "title": "Set symbol URL (common)",
+                "description": "A URL to a set symbol in common coloring.",
+                "examples": [
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=KLD",
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=HOU"
+                ],
+                "format": "uri",
+                "readOnly": true
+              },
+              "uncommon": {
+                "type": "string",
+                "title": "Set symbol URL (uncommon)",
+                "description": "A URL to a set symbol in uncommon coloring.",
+                "examples": [
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=KLD",
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=HOU"
+                ],
+                "format": "uri",
+                "readOnly": true
+              },
+              "rare": {
+                "type": "string",
+                "title": "Set symbol URL (rare)",
+                "description": "A URL to a set symbol in rare coloring.",
+                "examples": [
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=KLD",
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=HOU"
+                ],
+                "format": "uri",
+                "readOnly": true
+              },
+              "mythicRare": {
+                "type": "string",
+                "title": "Set symbol URL (mythic rare)",
+                "description": "A URL to a set symbol in mythic rare coloring.",
+                "examples": [
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=KLD",
+                  "https://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=HOU"
+                ],
+                "format": "uri",
+                "readOnly": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "bans": {
+      "type": "array",
+      "title": "Bans",
+      "description": "Cards that have been banned from Standard, ordered from oldest ban to newest. This array may contain bans from a previous rotation; you should filter them out based on the provided set `setCode` and that set's exit date from Standard.",
+      "items": {
+        "type": "object",
+        "title": "Card",
+        "description": "A card currently banned from Standard.",
+        "required": [
+          "cardName",
+          "cardImageUrl",
+          "setCode",
+          "reason",
+          "announcementUrl"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Card name",
+            "description": "The official English name of the banned card.",
+            "examples": ["Rampaging Ferocidon"],
+            "readOnly": true
+          },
+          "cardImageUrl": {
+            "type": "string",
+            "title": "Card image URL",
+            "description": "A URL to an image of the banned card.",
+            "format": "uri",
+            "examples": [
+              "https://img.scryfall.com/cards/large/en/xln/154.jpg?1527429722"
+            ],
+            "readOnly": true
+          },
+          "setCode": {
+            "type": "string",
+            "title": "Set code",
+            "description": "The set the banned card was printed into, specified by its `code` property.",
+            "examples": ["XLN"],
+            "readOnly": true
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason",
+            "description": "Human-readable description for why the card was banned.",
+            "examples": [
+              "Banned for being too effective a shutdown against counters to aggressive red (filling the board with small creatures and gaining life)."
+            ],
+            "readOnly": true
+          },
+          "announcementUrl": {
+            "type": "string",
+            "title": "Announcement URL",
+            "description": "A URL to the page where Wizards of the Coast officially announced the card would be banned.",
+            "format": "uri",
+            "examples": [
+              "https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15"
+            ],
+            "readOnly": true
+          }
+        }
+      }
+    }
+  }
+}

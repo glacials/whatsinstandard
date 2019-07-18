@@ -31,8 +31,8 @@
   </head>
   <body>
     <div id="vue" class="container">
-      <div class="d-flex" style="min-height: 90vh">
-        <div class="align-self-center w-100">
+      <div class="d-flex">
+        <div class="w-100">
           <div class="row">
             <div class="col-md-12">
               <div class="mt-5 mb-3 border-bottom">
@@ -54,7 +54,7 @@
               <span class="sr-only">Loading...</span>
             </div>
           </div>
-          <div class="row mb-2">
+          <div class="row mb-2 mx-0">
             <button class="btn btn-light" v-on:click.prevent="toggleRecentlyDropped">
               <template v-if="showRecentlyDropped">
                 Hide previous round of exits
@@ -64,81 +64,83 @@
               </template>
             </button>
           </div>
-          <template v-if="showRecentlyDropped">
-            <div class="row">
-              <div class="card-group w-100" style="min-height: 7em">
-                <div class="card mb-0 bg-dark text-light rounded-0" v-for="set in last(rounds(dropped(sets)))">
-                  <div class="card-body">
-                    <div class="justify-content-between d-flex">
-                      <a class="lead w-100 text-light" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
-                        {{ set.name }}
-                      </a>
-                      <set-image :code="set.code"></set-image>
+          <div class="row">
+            <template v-if="showRecentlyDropped">
+              <div class="col-md-3">
+                <div class="w-100">
+                  <div class="card mb-0 bg-dark text-light rounded-0" v-for="set in last(rounds(dropped(sets)))">
+                    <div class="card-body">
+                      <div class="justify-content-between d-flex">
+                        <a class="lead w-100 text-light" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
+                          {{ set.name }}
+                        </a>
+                        <set-image :code="set.code" />
+                      </div>
+                      <p class="card-text d-xs-block d-sm-none" :title="set.enterDate.exact | absolute">
+                        <small class="card-text text-light float-right d-block">No longer in Standard</small>
+                      </p>
                     </div>
-                    <p class="card-text d-xs-block d-sm-none" :title="set.enter_date | absolute">
-                      <small class="card-text text-light float-right d-block">No longer in Standard</small>
-                    </p>
+                  </div>
+                </div>
+                <div class="progress w-100 rounded-0" style="height: 2em; line-height: 2em">
+                  <div class="progress-bar d-inline text-right bg-dark text-light"
+                  role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%" :aria-valuenow="100">
+                    Left Standard {{ last(rounds(dropped(sets)))[0].exitDate.exact | relative }}
+                    <span class="mx-1">♻</span>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row mb-3 d-none d-sm-flex">
-              <div class="progress w-100 rounded-0" style="height: 2em; line-height: 2em">
-                <div class="progress-bar d-inline text-right bg-dark text-light"
-                role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%" :aria-valuenow="100">
-                  Left Standard {{ last(rounds(dropped(sets)))[0].exit_date | relative }}
-                  <span class="mx-1">♻</span>
-                </div>
-              </div>
-            </div>
-          </template>
-          <template v-for="round in rounds(undropped(sets))">
-            <div class="row">
-              <div class="card-group w-100" style="min-height: 7em">
+            </template>
+            <div v-for="round in rounds(undropped(sets))" class="mb-4" :class="{'col-md-4': !showRecentlyDropped, 'col-md-3': showRecentlyDropped}">
+              <div class="w-100">
                 <div
                    class="card mb-0" v-for="set in round"
                    :class="{'bg-light text-dark': isReleased(set), 'bg-dark text-light': !isReleased(set)}">
                   <div class="card-body">
-                    <div v-if="isReleased(set)" class="justify-content-between d-flex">
-                      <a class="lead w-100 text-dark" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
-                        {{ set.unknown ? '???' : set.name }}
+                    <div class="justify-content-between d-flex">
+                      <a
+                        class="lead w-100"
+                        :class="{'text-dark': isReleased(set), 'text-light': !isReleased(set)}"
+                        :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
+                        v-if="set.code">
+                        {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
                       </a>
-                      <set-image :code="set.code" v-if="isReleased(set)"></set-image>
+                      <div
+                        class="lead w-100"
+                        :class="{'text-dark': isReleased(set), 'text-light': !isReleased(set)}"
+                        v-if="!set.code">
+                        {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                      </div>
+                      <set-image :code="set.code" v-if="isReleased(set)" />
+                      <small v-else class="card-text text-muted float-right d-block">Unreleased</small>
                     </div>
-                    <template v-else>
-                      <a class="lead w-100 text-light" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
-                        {{ set.unknown ? '???' : set.name }}
-                      </a>
-                      <small class="card-text text-muted float-right d-block">Unreleased</small>
-                    </template>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row mb-3 d-none d-sm-flex">
               <div class="progress w-100" style="height: 2em; line-height: 2em" v-if="!isReleased(round)">
                 <div class="progress-bar bg-transparent text-dark text-right d-inline"
                 role="progressbar" aria-valuemin="0" aria-valuemax="100"
                 :style="`width: ${gestation(round) * 100}%`" :aria-valuenow="gestation(round) * 100"
-                :title="unreleased(round)[0].enter_date === null ? unreleased(round)[0].rough_enter_date : unreleased(round)[0].enter_date">
+                :title="unreleased(round)[0].enterDate.exact === null ? unreleased(round)[0].enterDate.rough : unreleased(round)[0].enterDate.exact">
                   <template v-if="gestation(round) > .5">
                     <template v-if="isReleased(round)">
-                      All released
-                      <span class="mx-1">✓</span>
+                      <span class="mx-1">All released ✓</span>
                     </template>
                     <template v-else>
-                      {{ last(round).name }} releases {{ last(round).enter_date | relative }}
-                      <span class="mx-1">&rarr;</span>
+                      <span class="mx-1">
+                        {{ last(round).name }} releases {{ last(round).enterDate.exact | relative }} &rarr;
+                      </span>
                     </template>
                   </template>
                 </div>
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light text-right d-inline"
                 role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                :style="`width: ${(1 - gestation(round)) * 100}%`" :aria-valuenow="(1 - mortality(round)) * 100"
-                :title="unreleased(round)[0].enter_date === null ? unreleased(round)[0].rough_enter_date : unreleased(round)[0].enter_date">
+                :style="`width: ${(1 - gestation(round)) * 100}%`" :aria-valuenow="(1 - gestation(round)) * 100"
+                :title="unreleased(round)[0].enterDate.exact === null ? unreleased(round)[0].enterDate.rough : unreleased(round)[0].enterDate.exact">
                   <template v-if="gestation(round) <= .5">
-                    <span class="mx-1">&rarr;</span>
-                    {{ last(round).name }} releases {{ last(round).enter_date | relative }}
+                    <span class="mx-1">
+                      &rarr; {{ last(round).name || `"${last(round).codename}"` }} releases {{ last(round).enterDate.exact | relative }}
+                    </span>
                   </template>
                 </div>
               </div>
@@ -146,23 +148,26 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light text-right d-inline"
                 role="progressbar" aria-valuemin="0" aria-valuemax="100"
                 :style="`width: ${mortality(round) * 100}%`" :aria-valuenow="mortality(round) * 100"
-                :title="round[0].exit_date === null ? round[0].rough_exit_date : round[0].exit_date">
+                :title="round[0].exitDate.exact === null ? round[0].exitDate.rough : round[0].exitDate.exact">
                   <template v-if="mortality(round) >= .5">
-                    Leaving Standard {{ exitDate(round) | relative }}
-                    <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
-                    v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-                    <span class="mx-1">&rarr;</span>
+                    <span class="mx-1">
+                      Leaving Standard {{ dateFrom(round[0].exitDate) | relative }}
+                      <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
+                      v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+                      &rarr;
+                    </span>
                   </template>
                 </div>
                 <div class="progress-bar bg-transparent text-dark text-left d-inline"
                 role="progressbar" aria-valuemin="0" aria-valuemax="100"
                 :style="`width: ${(1 - mortality(round)) * 100}%`" :aria-valuenow="(1 - mortality(round)) * 100"
-                :title="round[0].exit_date === null ? round[0].rough_exit_date : round[0].exit_date">
+                :title="round[0].exitDate.exact === null ? round[0].exitDate.rough : round[0].exitDate.exact">
                   <template v-if="mortality(round) < .5">
-                    <span class="mx-1">&rarr;</span>
-                    Leaving Standard {{ exitDate(round) | relative }}
-                    <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
-                    v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+                    <span class="mx-1">
+                      &rarr; Leaving Standard {{ dateFrom(round[0].exitDate) | relative }}
+                      <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
+                      v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+                    </span>
                   </template>
                   <div id="why" style="display: none" v-tippy-html v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'">
                     <div style="max-width: 50em">
@@ -181,38 +186,39 @@
                   </div>
                 </div>
               </div>
-              <small class="bar w-100">
-                <template v-if="gestation(round) < 1">
-                  12 months to enter
-                </template>
-                <template v-else>
-                  18 months to exit
-                </template>
-              </small>
+              <div class="row m-0">
+                <small class="bar w-100">
+                  <template v-if="gestation(round) < 1 && gestation(round) > 0">
+                    12 months
+                  </template>
+                  <template v-else-if="gestation(round) === 1">
+                    {{ Math.floor(lifetime(round) / 1000 / 60 / 60 / 24 / 30) }} months
+                  </template>
+                </small>
+              </div>
             </div>
-          </template>
+          </div>
         </div>
       </div>
-      <div class="d-block text-center text-muted" style="font-size: 2em">↓</div>
-      <div class="row" data-aos="fade-in" data-aos-offset="200">
+      <div class="row">
         <div class="col-md-6">
           <h3 class="mt-5">Banned cards</h3>
 					<p>Despite being in Standard sets, these cards are explicitly not allowed in Standard decks.</p>
           <div class="row" v-cloak>
             <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
               <div class="card">
-                <img :src="ban.card_image_url" class="card-img-top" :alt="`Image of ${ban.card_name}`" />
+                <img :src="ban.cardImageUrl" class="card-img-top" :alt="`Image of ${ban.cardName}`" />
                 <div class="card-body">
                   <h5 class="card-title">
-                    <set-image :code="ban.set_code"></set-image>
-                    {{ ban.card_name }}
+                    <set-image :code="ban.setCode" />
+                    {{ ban.cardName }}
                   </h5>
                   <p class="card-text">{{ ban.reason }}</p>
-                  <a :href="`https://scryfall.com/search?q=!“${ban.card_name}” set:${ban.set_code}&utm_source=whatsinstandard`"
+                  <a :href="`https://scryfall.com/search?q=!“${ban.cardName}” set:${ban.setCode}&utm_source=whatsinstandard`"
                     class="btn btn-primary text-white my-1" rel="noopener">
                     View on Scryfall
                   </a>
-                  <a :href="ban.announcement_url" class="btn btn-secondary my-1">
+                  <a :href="ban.announcementUrl" class="btn btn-secondary my-1">
                     View ban announcement
                   </a>
                 </div>

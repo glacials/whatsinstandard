@@ -1,7 +1,9 @@
-const fs = require("fs")
 const chai = require("chai")
-chai.use(require('chai-url'));
+chai.use(require('chai-url'))
+chai.use(require('chai-json-schema'))
+
 const expect = chai.expect
+const fs = require("fs")
 
 describe("API", () => {
   const apiPath = "./api"
@@ -53,8 +55,8 @@ describe("API", () => {
         expect(body).to.be.an('object')
       })
 
-      it("should be marked not deprecated", () => {
-        expect(body.deprecated).to.be.false
+      it("should be marked deprecated", () => {
+        expect(body.deprecated).to.be.true
       })
 
       it("should have a sets array", () => {
@@ -176,7 +178,7 @@ describe("API", () => {
               expect(roughExitDate).to.be.a.string
             })
 
-            it("should be QX 20XX or late 20XX", () => {
+            it("should be QX 20XX", () => {
               expect(roughExitDate).to.match(/Q\d 20\d\d/)
             })
           })
@@ -264,6 +266,21 @@ describe("API", () => {
             })
           })
         })
+      })
+    })
+  })
+
+  describe("v6", () => {
+    const versionPath = apiPath + "/v6"
+
+    describe("standard.json", () => {
+      const apiPath = versionPath + "/standard.json"
+      const schemaPath = versionPath + "/schema.json"
+      const api = JSON.parse(fs.readFileSync(apiPath, "utf8"))
+      const schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"))
+
+      it("should adhere to the schema", () => {
+        expect(api).to.be.jsonSchema(schema)
       })
     })
   })

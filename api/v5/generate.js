@@ -5,7 +5,7 @@ const fs = require('fs')
 
 const inputFile = './api/internal.json'
 const outputFile = './api/v5/sets.json'
-const deprecated = false
+const deprecated = true
 
 module.exports = {
   // generate generates API v5 from the raw set data in api/internal.json.
@@ -19,7 +19,7 @@ module.exports = {
         "sets": [],
         "bans": []
       }
-      inputJSON.sets.forEach((set) => {
+      inputJSON.sets.filter(set => set.name !== null).forEach((set) => {
         outputJSON.sets.push({
           "name": set.name,
           "block": set.block,

@@ -59,7 +59,7 @@ and filters it based on release and drop dates.
 ### API
 We've got an API. It's super slim and the output is written by hand but it works like a charm.
 
-#### [/api/v5/sets.json][api]
+#### [/api/v6/standard.json][api]
 This is the only API call we have. It returns something like this:
 
 ```json
@@ -68,21 +68,31 @@ This is the only API call we have. It returns something like this:
   "sets": [
     {
       "name": "Kaladesh",
-      "block": "Kaladesh",
+      "codename": "Lock",
       "code": "KLD",
-      "enter_date": "2016-09-30T00:00:00.000",
-      "exit_date": "2018-10-05T00:00:00.000",
-      "rough_exit_date": "Q4 2018"
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=KLD",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=KLD",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=KLD",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=KLD"
+      },
+      "enterDate": {
+        "exact": "2016-09-30T00:00:00.000"
+      },
+      "exitDate": {
+        "exact": "2018-10-05T00:00:00.000",
+        "rough": "Q4 2018"
+      }
     },
     ...
   ],
   "bans": [
     {
-      "card_name": "Rampaging Ferocidon",
-      "card_image_url": "https://img.scryfall.com/cards/large/en/xln/154.jpg?1527429722",
-      "set_code": "XLN",
+      "cardName": "Rampaging Ferocidon",
+      "cardImageUrl": "https://img.scryfall.com/cards/large/en/xln/154.jpg?1527429722",
+      "setCode": "XLN",
       "reason": "Banned for being too effective a shutdown against counters to aggressive red (filling the board with small creatures and gaining life).",
-      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15"
+      "announcementUrl": "https://magic.wizards.com/en/articles/archive/news/january-15-2018-banned-and-restricted-announcement-2018-01-15"
     },
     ...
   ]
@@ -92,7 +102,7 @@ This is the only API call we have. It returns something like this:
 The array is guaranteed to contain all sets currently in Standard, but also contains recently dropped sets and some
 future sets. For API details including how to filter them, see [the API readme][api-readme].
 
-[api]: https://whatsinstandard.com/api/v5/sets.json
+[api]: https://whatsinstandard.com/api/v6/standard.json
 [api-readme]: https://github.com/glacials/whatsinstandard/blob/master/api
 
 ## Attributions

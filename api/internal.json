@@ -64,7 +64,7 @@
       "code": "XLN",
       "enter_date": "2017-09-29T00:00:00.000",
       "rough_enter_date": "September 2017",
-      "exit_date": null,
+      "exit_date": "2019-10-04T00:00:00.000",
       "rough_exit_date": "Q4 2019"
     },
     {
@@ -74,7 +74,7 @@
       "code": "RIX",
       "enter_date": "2018-01-19T00:00:00.000",
       "rough_enter_date": "January 2018",
-      "exit_date": null,
+      "exit_date": "2019-10-04T00:00:00.000",
       "rough_exit_date": "Q4 2019"
     },
     {
@@ -84,7 +84,7 @@
       "code": "DOM",
       "enter_date": "2018-04-27T00:00:00.000",
       "rough_enter_date": "April 2018",
-      "exit_date": null,
+      "exit_date": "2019-10-04T00:00:00.000",
       "rough_exit_date": "Q4 2019"
     },
     {
@@ -94,7 +94,7 @@
       "code": "M19",
       "enter_date": "2018-07-13T00:00:00.000",
       "rough_enter_date": "July 2018",
-      "exit_date": null,
+      "exit_date": "2019-10-04T00:00:00.000",
       "rough_exit_date": "Q4 2019"
     },
     {

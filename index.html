@@ -37,13 +37,18 @@
               <div class="mt-5 mb-3 border-bottom">
                 <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" />
                 <h1>What's in Standard?</h1>
-                <div>
-                  <small class="text-muted">for</small>
+                <div class="d-flex">
+                  <span class="text-muted mx-1">for</span>
                   <span>Magic: The Gathering</span>
-                  <small class="text-muted"> / </small>
-                  <a href="https://standardhearth.com/" class="text-muted" rel="noopener">Hearthstone</a>
-                  <small class="text-muted"> / </small>
-                  <a href="https://standardpokemon.tk/" class="text-muted" rel="noopener">Pokémon</a>
+                  <span class="text-muted mx-1"> / </span>
+                  <a href="https://standardhearth.com/" class="text-muted mx-1" rel="noopener">Hearthstone</a>
+                  <span class="text-muted mx-1"> / </span>
+                  <a href="https://standardpokemon.tk/" class="text-muted mx-1" rel="noopener">Pokémon</a>
+                  <div class="flex-fill text-right">
+                    <button class="btn btn-link btn-sm text-muted" v-on:click.prevent="toggleRecentlyDropped">
+                      (What just left Standard?)
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -53,147 +58,61 @@
               <span class="sr-only">Loading...</span>
             </div>
           </div>
-          <div class="row mb-2 mx-0">
-            <button class="btn btn-light" v-on:click.prevent="toggleRecentlyDropped">
-              <template v-if="showRecentlyDropped">
-                Hide previous round of exits
-              </template>
-              <template v-else>
-                Show previous round of exits
-              </template>
-            </button>
-          </div>
           <div class="row">
             <template v-if="showRecentlyDropped">
               <div class="col-md-3">
-                <div class="w-100">
-                  <div class="card mb-0 bg-dark text-light rounded-0" v-for="set in last(rounds(dropped(sets)))">
-                    <div class="card-body">
-                      <div class="justify-content-between d-flex">
-                        <a class="lead w-100 text-light" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
-                          {{ set.name }}
-                        </a>
-                        <set-image :code="set.code"></set-image>
-                      </div>
-                      <p class="card-text d-xs-block d-sm-none" :title="set.enterDate.exact | absolute">
-                        <small class="card-text text-light float-right d-block">No longer in Standard</small>
-                      </p>
+                <div class="list-group">
+                  <div class="list-group-item p-3" v-for="set in last(rounds(dropped(sets)))">
+                    <div class="justify-content-between d-flex" v-tippy :title="set.code">
+                      <a class="lead w-100 text-muted" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
+                        {{ set.name }}
+                      </a>
+                      <set-image class="text-muted" :code="set.code"></set-image>
                     </div>
                   </div>
                 </div>
-                <div class="progress w-100 rounded-0" style="height: 2em; line-height: 2em">
-                  <div class="progress-bar d-inline text-right bg-dark text-light"
-                  role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 100%" :aria-valuenow="100">
-                    Left Standard {{ last(rounds(dropped(sets)))[0].exitDate.exact | relative }}
-                    <span class="mx-1">♻</span>
-                  </div>
+                <div class="w-100 text-right small" style="height: 2em; line-height: 2em" v-tippy :title="humanDate(last(rounds(dropped(sets)))[0].exitDate)">
+                  left Standard {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
                 </div>
               </div>
             </template>
             <div v-for="round in rounds(undropped(sets))" class="mb-4" :class="{'col-md-4': !showRecentlyDropped, 'col-md-3': showRecentlyDropped}">
-              <div class="w-100">
-                <div
-                   class="card mb-0" v-for="set in round"
-                   :class="{'bg-light text-dark': isReleased(set), 'bg-dark text-light': !isReleased(set)}">
-                  <div class="card-body">
-                    <div class="justify-content-between d-flex">
-                      <a
-                        class="lead w-100"
-                        :class="{'text-dark': isReleased(set), 'text-light': !isReleased(set)}"
-                        :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`"
-                        v-if="set.code">
-                        {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
-                      </a>
-                      <div
-                        class="lead w-100"
-                        :class="{'text-dark': isReleased(set), 'text-light': !isReleased(set)}"
-                        v-if="!set.code">
-                        {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
-                      </div>
-                      <set-image :code="set.code" v-if="isReleased(set)"></set-image>
-                      <small v-else class="card-text text-muted float-right d-block">Unreleased</small>
+              <div class="list-group">
+                <div class="list-group-item p-3" v-for="set in round" :class="{'bg-light text-dark': isReleased(set)}">
+                  <div class="justify-content-between d-flex" v-tippy :title="set.code">
+                    <a class="lead w-100 text-dark" v-if="set.code"
+                       :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
+                      {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                    </a>
+                    <div class="lead w-100 text-dark" v-else>
+                      {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
                     </div>
+                    <set-image :code="set.code" v-if="isReleased(set)"></set-image>
+                  </div>
+                  <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(unreleased(round)[0].enterDate)">
+                    releases {{ dateFrom(unreleased(round)[0].enterDate) | relative }}
+                  </small>
+                </div>
+              </div>
+              <div class="w-100 text-right small" style="height: 2em; line-height: 2em">
+                until {{ humanDate(round[0].exitDate) }}
+                <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
+                v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+                <div id="why" style="display: none" v-tippy-html v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'">
+                  <div style="max-width: 50em">
+                    In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
+                    shortened average set lifetime in Standard.<sup><a
+                      target="_blank"
+                      href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
+                      rel="noopener"
+                    >2</a></sup> The change was reverted in 2017,<sup><a
+                      target="_blank"
+                      href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
+                      rel="noopener"
+                    >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
+                    will drop in unintuitive ways ending in Q4 2019.
                   </div>
                 </div>
-              </div>
-              <div class="progress w-100" style="height: 2em; line-height: 2em" v-if="!isReleased(round)">
-                <div class="progress-bar bg-transparent text-dark text-right d-inline"
-                role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                :style="`width: ${gestation(round) * 100}%`" :aria-valuenow="gestation(round) * 100"
-                :title="unreleased(round)[0].enterDate.exact === null ? unreleased(round)[0].enterDate.rough : unreleased(round)[0].enterDate.exact">
-                  <template v-if="gestation(round) > .5">
-                    <template v-if="isReleased(round)">
-                      <span class="mx-1">All released ✓</span>
-                    </template>
-                    <template v-else>
-                      <span class="mx-1">
-                        {{ last(round).name }} releases {{ last(round).enterDate.exact | relative }} &rarr;
-                      </span>
-                    </template>
-                  </template>
-                </div>
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light text-right d-inline"
-                role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                :style="`width: ${(1 - gestation(round)) * 100}%`" :aria-valuenow="(1 - gestation(round)) * 100"
-                :title="unreleased(round)[0].enterDate.exact === null ? unreleased(round)[0].enterDate.rough : unreleased(round)[0].enterDate.exact">
-                  <template v-if="gestation(round) <= .5">
-                    <span class="mx-1">
-                      &rarr; {{ last(round).name || `"${last(round).codename}"` }} releases {{ last(round).enterDate.exact | relative }}
-                    </span>
-                  </template>
-                </div>
-              </div>
-              <div class="progress w-100" style="height: 2em; line-height: 2em" v-else>
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark text-light text-right d-inline"
-                role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                :style="`width: ${mortality(round) * 100}%`" :aria-valuenow="mortality(round) * 100"
-                :title="round[0].exitDate.exact === null ? round[0].exitDate.rough : round[0].exitDate.exact">
-                  <template v-if="mortality(round) >= .5">
-                    <span class="mx-1">
-                      Leaving Standard {{ dateFrom(round[0].exitDate) | relative }}
-                      <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
-                      v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-                      &rarr;
-                    </span>
-                  </template>
-                </div>
-                <div class="progress-bar bg-transparent text-dark text-left d-inline"
-                role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                :style="`width: ${(1 - mortality(round)) * 100}%`" :aria-valuenow="(1 - mortality(round)) * 100"
-                :title="round[0].exitDate.exact === null ? round[0].exitDate.rough : round[0].exitDate.exact">
-                  <template v-if="mortality(round) < .5">
-                    <span class="mx-1">
-                      &rarr; Leaving Standard {{ dateFrom(round[0].exitDate) | relative }}
-                      <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
-                      v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-                    </span>
-                  </template>
-                  <div id="why" style="display: none" v-tippy-html v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'">
-                    <div style="max-width: 50em">
-                      In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
-                      shortened average set lifetime in Standard.<sup><a
-                        target="_blank"
-                        href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
-                        rel="noopener"
-                      >2</a></sup> The change was reverted in 2017,<sup><a
-                        target="_blank"
-                        href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
-                        rel="noopener"
-                      >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
-                      will drop in unintuitive ways ending in Q4 2019.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row m-0">
-                <small class="bar w-100">
-                  <template v-if="gestation(round) < 1 && gestation(round) > 0">
-                    12 months
-                  </template>
-                  <template v-else-if="gestation(round) === 1">
-                    {{ Math.floor(lifetime(round) / 1000 / 60 / 60 / 24 / 30) }} months
-                  </template>
-                </small>
               </div>
             </div>
           </div>
@@ -206,12 +125,8 @@
           <div class="row" v-cloak>
             <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
               <div class="card">
-                <img :src="ban.cardImageUrl" class="card-img-top" :alt="`Image of ${ban.cardName}`" />
+                <img :src="ban.cardImageUrl" class="card-img-top" :alt="`${ban.cardName} from ${ban.setCode}`" />
                 <div class="card-body">
-                  <h5 class="card-title">
-                    <set-image :code="ban.setCode"></set-image>
-                    {{ ban.cardName }}
-                  </h5>
                   <p class="card-text">{{ ban.reason }}</p>
                   <a :href="`https://scryfall.com/search?q=!“${ban.cardName}” set:${ban.setCode}&utm_source=whatsinstandard`"
                     class="btn btn-primary text-white my-1" rel="noopener">

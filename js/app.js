@@ -2,10 +2,8 @@ var apiURL = '/api/v6/standard.json'
 var code = Vue.component('set-image', {
   props: ['code'],
   template: `
-    <template v-if="code !== undefined && code !== null">
-      <h4 v-tippy="{ placement: 'left' }" class="icon tip ml-2" :title="code">
-        <i class="ss" :class="\`ss-\${this.code.toLowerCase()}\`"></i>
-      </h4>
+    <div class="icon ml-2" v-if="code !== undefined && code !== null">
+      <i class="ss" :class="\`ss-\${this.code.toLowerCase()}\`"></i>
     </template>
   `,
 })
@@ -34,7 +32,7 @@ var app = new Vue({
 
   filters: {
     absolute: date => moment(date).format('YYYY-MM-DD'),
-    relative: date => moment(date).fromNow(),
+    relative: function(date) { return moment(date).from(this.now) },
     year: date => moment(date).format('\\QQ YYYY'),
   },
 
@@ -66,13 +64,21 @@ var app = new Vue({
       }
     },
 
-    // gestation returns, as a number from 0 to 1, what portion of the given round's "gestation" (the time between its
-    // first set's release and its last set's release) has elapsed.
-    gestation: function(round) {
-      const roundLifeCurrent = this.now - Date.parse(round[0].enterDate.exact)
-      const roundLifeTotal = Date.parse(this.last(round).enterDate.exact) - Date.parse(round[0].enterDate.exact)
+    // humanDate returns a human-friendly string expressing the given set date. A set date is an object returned by the
+    // What's in Standard? API that contains a rough date and an optional exact date.
+    //
+    // If the set date has no exact property, a the rough exit date is shown.
+    humanDate: function(setDate) {
+      if (setDate.exact !== null) {
+        return new Date(setDate.exact).toLocaleDateString(undefined, {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })
+      }
 
-      return Math.max(0, Math.min(1, roundLifeCurrent / roundLifeTotal))
+      return setDate.rough
     },
 
     // isReleased returns true if the given set or round has been released according to local time, or false otherwise.
@@ -87,28 +93,6 @@ var app = new Vue({
 
     // last returns the last element of an array.
     last: setsOrRounds => setsOrRounds[setsOrRounds.length - 1],
-
-    // lifetime returns the total number of milliseconds the given set or round will be (or was) in Standard. A round is
-    // considered to be in Standard as long as it has at least one set in Standard.
-    lifetime: function(setOrRound) {
-      if (Array.isArray(setOrRound)) {
-        return this.lifetime(setOrRound[0])
-      }
-      return this.dateFrom(setOrRound.exitDate) - this.dateFrom(setOrRound.enterDate)
-    },
-
-    // mortality returns, as a number from 0 to 1, what portion of the given set's or round's lifetime has elapsed,
-    // measured from enter date to exit date. A round's enter date is considered its first set's enter date.
-    mortality: function(setOrRound) {
-      if (Array.isArray(setOrRound)) {
-        return this.mortality(setOrRound[0])
-      }
-
-      const setLifeCurrent = this.now - this.dateFrom(setOrRound.enterDate)
-      const setLifeTotal = this.lifetime(setOrRound)
-
-      return Math.max(0, Math.min(1, setLifeCurrent / setLifeTotal))
-    },
 
     // pad returns an array padded to the given length with the given fill value.
     pad: (array, length, fill) => length > array.length ? array.concat(Array(length - array.length).fill(fill)) : array,

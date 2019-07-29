@@ -209,7 +209,7 @@
                 <img :src="ban.cardImageUrl" class="card-img-top" :alt="`Image of ${ban.cardName}`" />
                 <div class="card-body">
                   <h5 class="card-title">
-                    <set-image :code="ban.setCode" />
+                    <set-image :code="ban.setCode"></set-image>
                     {{ ban.cardName }}
                   </h5>
                   <p class="card-text">{{ ban.reason }}</p>

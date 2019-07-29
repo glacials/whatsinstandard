@@ -73,7 +73,7 @@
                         <a class="lead w-100 text-light" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
                           {{ set.name }}
                         </a>
-                        <set-image :code="set.code" />
+                        <set-image :code="set.code"></set-image>
                       </div>
                       <p class="card-text d-xs-block d-sm-none" :title="set.enterDate.exact | absolute">
                         <small class="card-text text-light float-right d-block">No longer in Standard</small>
@@ -110,7 +110,7 @@
                         v-if="!set.code">
                         {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
                       </div>
-                      <set-image :code="set.code" v-if="isReleased(set)" />
+                      <set-image :code="set.code" v-if="isReleased(set)"></set-image>
                       <small v-else class="card-text text-muted float-right d-block">Unreleased</small>
                     </div>
                   </div>

@@ -19,7 +19,7 @@ module.exports = {
         "sets": [],
         "bans": []
       }
-      inputJSON.sets.filter(set => set.name !== null).forEach((set) => {
+      inputJSON.sets.filter(set => set.name !== null && set.code !== null).forEach(set => {
         outputJSON.sets.push({
           "name": set.name,
           "block": set.block,
@@ -29,7 +29,7 @@ module.exports = {
           "rough_exit_date": set.rough_exit_date
         })
       })
-      inputJSON.bans.forEach((ban) => {
+      inputJSON.bans.forEach(ban => {
         outputJSON.bans.push({
           "card_name": ban.card_name,
           "card_image_url": ban.card_image_url,

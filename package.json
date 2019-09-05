@@ -19,7 +19,7 @@
   },
   "scripts": {
     "autotest": "./node_modules/.bin/supervisor -q -n exit -x ./node_modules/.bin/mocha -- -b",
-    "test": "./node_modules/mocha/bin/mocha",
+    "test": "npm i && ./node_modules/mocha/bin/mocha",
     "prepare": "./node_modules/node/bin/node api/generate.js && ./node_modules/sw-precache/cli.js --config js/sw-precache-config.js",
     "start": "http-server -o -c-1",
     "postinstall": "opencollective-postinstall"

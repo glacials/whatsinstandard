@@ -130,6 +130,20 @@ var app = new Vue({
       ga('send', 'event', 'link', 'click', msg)
     },
 
+    // truncate returns the sets or rounds in the given array, but limits unreleased sets or rounds to 1. Use this to
+    // prevent the UI from feeling overloaded if we happen to get a bunch of new information about the next year of
+    // sets.
+    truncate: function(setsOrRounds) {
+      var unreleasedSetsOrRounds = 0
+      return setsOrRounds.filter(setOrROund => {
+        if (!this.isReleased(setOrROund)) {
+          unreleasedSetsOrRounds += 1
+        }
+
+        return unreleasedSetsOrRounds <= 1
+      })
+    },
+
     // undropped returns the sets in the given array of sets that have not dropped from Standard (including sets that
     // haven't even entered it yet) according to local time, preserving order.
     undropped: function(sets) {

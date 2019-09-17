@@ -1,1 +1,59 @@
+# Ads.txt last updated on: 2019/09/17 08-00-463751 by MONUMETRIC
+spotxchange.com, 114948, RESELLER, 7842df1d2fe2db34  #SpotX
+spotx.tv, 114948, RESELLER, 7842df1d2fe2db34         #SpotX
+appnexus.com, 1360, RESELLER, f5ab79cb980f11d1   #sovrn
+contextweb.com, 558511, RESELLER   #sovrn
+gumgum.com, 11645, RESELLER, ffdef49475d318a9   #sovrn
+lijit.com, 211941, DIRECT, fafdf38b16bf6b2b
+lijit.com, 220054, DIRECT, fafdf38b16bf6b2b
+lijit.com, 227117, DIRECT, fafdf38b16bf6b2b
+lijit.com, 231199, DIRECT, fafdf38b16bf6b2b
+lijit.com, 231887, DIRECT, fafdf38b16bf6b2b      #upto/for SOVRN
+lijit.com, 231887, RESELLER, fafdf38b16bf6b2b
+lijit.com, 232537, DIRECT, fafdf38b16bf6b2b
+lijit.com, 233156, DIRECT, fafdf38b16bf6b2b
+lijit.com, 233865, DIRECT, fafdf38b16bf6b2b
+lijit.com, 235329, DIRECT, fafdf38b16bf6b2b
+lijit.com, 237451, DIRECT, fafdf38b16bf6b2b
+lijit.com, 240462, DIRECT, fafdf38b16bf6b2b
+lijit.com, 249252, DIRECT, fafdf38b16bf6b2b
+lijit.com, 249902, DIRECT, fafdf38b16bf6b2b
+openx.com, 537120960, RESELLER   #Sovrn
+openx.com, 538959099, RESELLER  #sovrn
+openx.com, 539924617, RESELLER, 6a698e2ec38604c6   #sovrn
+openx.com, 83499, RESELLER        #sovrn
+pubmatic.com, 137711, RESELLER   #sovrn
+pubmatic.com, 156212, RESELLER    #sovrn
+pubmatic.com, 156700, RESELLER, 5d62403b186f2ace   #sovrn
+pubmatic.com, 62483, RESELLER   #sovrn
+rubiconproject.com, 17960, RESELLER, 0bfd66d529a55807   #sovrn
+sovrn.com, 211941, DIRECT, fafdf38b16bf6b2b      #for SOVRN
+sovrn.com, 220054, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 227117, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 231199, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 231887, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 231887, RESELLER, fafdf38b16bf6b2b
+sovrn.com, 232537, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 233156, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 233865, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 235329, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 237451, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 240462, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 249252, DIRECT, fafdf38b16bf6b2b
+sovrn.com, 249902, DIRECT, fafdf38b16bf6b2b
+pubmatic.com, 137711, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156212, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156972, DIRECT, 5d62403b186f2ace        #for PubMatic
+appnexus.com, 2854, RESELLER                     #for APPNEXUS
+google.com, pub-8203063731231781, DIRECT, f08c47fec0942fa0 #for Adsense
+coxmt.com, 2000068032502, DIRECT  #for Comet EB
+google.com, pub-3944954862316283, DIRECT, f08c47fec0942fa0 #AdEx
+google.com, pub-3944954862316283, RESELLER, f08c47fec0942fa0   #AdEx
+google.com, pub-6227966137537604, DIRECT, f08c47fec0942fa0 #AdEx
+google.com, pub-6227966137537604, RESELLER, f08c47fec0942fa0   #AdEx
+Indexexchange.com, 187819, DIRECT, 50b1c356f2c5c8fc  #for Index EB
+pubmatic.com, 157200, DIRECT, 5d62403b186f2ace #for Pubmatic EB
+
+# ADD ANY CUSTOM ENTRY BELOW THIS LINE ONLY
+
 google.com, pub-2775839314260416, DIRECT, f08c47fec0942fa0

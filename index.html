@@ -69,31 +69,31 @@
           </div>
           <div class="row">
             <template v-if="showRecentlyDropped">
-              <div class="col-md-3 mb-4">
+              <div class="col-md-4 mb-4">
                 <div class="list-group">
                   <div class="list-group-item p-3" v-for="set in last(rounds(dropped(sets)))" style="min-height: 5rem">
                     <div class="justify-content-between d-flex" v-tippy :title="set.code">
-                      <a class="lead w-100 text-muted" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
+                      <a class="w-100 text-muted" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
                         {{ set.name }}
                       </a>
                       <set-image class="text-muted" :code="set.code"></set-image>
                     </div>
                   </div>
                 </div>
-                <div class="w-100 text-right small" style="height: 2em; line-height: 2em" v-tippy :title="humanDate(last(rounds(dropped(sets)))[0].exitDate)">
+                <div class="w-100 text-right small" style="height: 2em; line-height: 2em">
                   left Standard {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
                 </div>
               </div>
             </template>
-            <div v-for="round in truncate(rounds(undropped(sets)))" class="mb-4" :class="{'col-md-4': !showRecentlyDropped, 'col-md-3': showRecentlyDropped}">
+            <div v-for="round in truncate(rounds(undropped(sets)))" class="mb-4 col-md-4">
               <div class="list-group">
-                <div class="list-group-item p-3" v-for="set in round" :class="{'bg-light text-dark': isReleased(set)}" style="min-height: 5rem">
+                <div class="list-group-item p-3" v-for="set in round" :class="{'text-muted': !isReleased(set)}" style="min-height: 5rem">
                   <div class="justify-content-between d-flex" v-tippy :title="set.code">
-                    <a class="lead w-100 text-dark" v-if="set.code"
+                    <a class="w-100" v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}"
                        :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
                       {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
                     </a>
-                    <div class="lead w-100 text-dark" v-else>
+                    <div class="w-100 text-dark" :class="{'lead': isReleased(set), 'text-muted': !isReleased(set)}" v-else>
                       {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
                     </div>
                     <set-image :code="set.code" v-if="isReleased(set)"></set-image>
@@ -104,24 +104,9 @@
                 </div>
               </div>
               <div class="w-100 text-right small" style="height: 2em; line-height: 2em">
-                until {{ humanDate(round[0].exitDate) }}
+                in Standard until {{ humanDate(round[0].exitDate) }}
                 <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
                 v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-                <div id="why" style="display: none" v-tippy-html v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'">
-                  <div style="max-width: 50em">
-                    In 2014 <i>Wizards</i> experimented with a drastic change that shrunk blocks, killed Core sets, and
-                    shortened average set lifetime in Standard.<sup><a
-                      target="_blank"
-                      href="https://magic.wizards.com/en/articles/archive/mm/metamorphosis"
-                      rel="noopener"
-                    >2</a></sup> The change was reverted in 2017,<sup><a
-                      target="_blank"
-                      href="https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12"
-                      rel="noopener"
-                    >3</a></sup> but the aftershock still affects Standard in the sets it left behind. These sets
-                    will drop in unintuitive ways ending in Q4 2019.
-                  </div>
-                </div>
               </div>
             </div>
           </div>

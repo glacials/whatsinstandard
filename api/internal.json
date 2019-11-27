@@ -195,6 +195,27 @@
       "set_code": "M20",
       "reason": "Banned for being too effective, repetitive, and hard-to-remove when combined with Golos, Tireless Pilgrim.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-21-2019-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Oko, Thief of Crowns",
+      "card_image_url": "https://api.scryfall.com/cards/eld/197?format=image",
+      "set_code": "ELD",
+      "reason": "Banned for its power level being higher than is healthy for current and future Standard metagame environments.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Once Upon a Time",
+      "card_image_url": "https://api.scryfall.com/cards/eld/169?format=image",
+      "set_code": "ELD",
+      "reason": "Banned for contributing to a high consistency of strong starts for green, providing a level of early mana fixing that other colors don't have access to.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Veil of Summer",
+      "card_image_url": "https://api.scryfall.com/cards/m20/198?format=image",
+      "set_code": "M20",
+      "reason": "Banned for giving green decks too much resilience against removal and disruption, and being too efficient relative to other cards in its cycle.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
     }
   ]
 }

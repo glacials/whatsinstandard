@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/node_modules/npm-font-open-sans/open-sans.css" type="text/css" />
     <link rel="stylesheet" href="/node_modules/keyrune/css/keyrune.min.css" type="text/css" />
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" media="screen" />
+    <script src="https://kit.fontawesome.com/2b022a4ed7.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="css/style.css" media="screen" />
 
@@ -28,18 +29,19 @@
          });
     </script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#nav" id="sets">
     <div id="vue" class="container">
+      <a class="d-inline" name="sets" id="sets"></a>
       <div class="d-flex">
         <div class="w-100">
-          <div class="row">
+          <div class="row bg-dark text-light mb-4">
             <div class="col-md-12">
-              <div class="mt-4 mb-3 border-bottom">
-                <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" />
+              <div class="mt-3 mb-3">
+                <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" class="d-none d-sm-inline"/>
                 <h1>What's in Standard?</h1>
                 <div class="d-flex">
                   <div class="dropdown">
-                    <button class="btn btn-link btn-sm text-muted dropdown-toggle" type="button" id="dropdownMenuButton"
+                    <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Magic: The Gathering
                     </button>
@@ -49,7 +51,7 @@
                     </div>
                   </div>
                   <div class="flex-fill text-right">
-                    <button class="btn btn-link btn-sm text-muted" v-on:click.prevent="toggleRecentlyDropped">
+                    <button class="btn btn-outline-light btn-sm" v-on:click.prevent="toggleRecentlyDropped">
                       <template v-if="showRecentlyDropped">
                         Hide what just left
                       </template>
@@ -67,10 +69,10 @@
               <span class="sr-only">Loading...</span>
             </div>
           </div>
-          <div class="row">
+          <div class="row row-cols-1 row-cols-md-2">
             <template v-if="showRecentlyDropped">
-              <div class="col-md-4 mb-4">
-                <div class="list-group">
+              <div class="col-md-12">
+                <div class="list-group col-md-6 mb-5 mx-auto">
                   <div class="list-group-item p-3" v-for="set in last(rounds(dropped(sets)))" style="min-height: 5rem">
                     <div class="justify-content-between d-flex" v-tippy :title="set.code">
                       <a class="w-100 text-muted" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
@@ -79,34 +81,34 @@
                       <set-image class="text-muted" :code="set.code"></set-image>
                     </div>
                   </div>
-                </div>
-                <div class="w-100 text-right small" style="height: 2em; line-height: 2em">
-                  left Standard {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
+                  <div class="px-2 mx-3 text-right small text-danger block-comment">
+                    left Standard {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
+                  </div>
                 </div>
               </div>
             </template>
-            <div v-for="round in truncate(rounds(undropped(sets)))" class="mb-4 col-md-4">
-              <div class="list-group">
-                <div class="list-group-item p-3" v-for="set in round" :class="{'text-muted': !isReleased(set)}" style="min-height: 5rem">
-                  <div class="justify-content-between d-flex" v-tippy :title="set.code">
-                    <a class="w-100" v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}"
-                       :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
+            <div v-for="round in truncate(rounds(undropped(sets)))" class="col mb-4">
+              <div class="row row-cols-1 row-cols-sm-2 border mx-0 py-3 h-100">
+                <div class="col my-3" v-for="set in round">
+                  <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between" :class="{'bg-light': isReleased(set), 'text-muted border-0': !isReleased(set)}" style="min-height: 5rem"
+                    :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
+                    <div class="w-100" v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}">
                       {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
-                    </a>
+                    </div>
                     <div class="w-100 text-dark" :class="{'lead': isReleased(set), 'text-muted': !isReleased(set)}" v-else>
                       {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
                     </div>
-                    <set-image :code="set.code" v-if="isReleased(set)"></set-image>
-                  </div>
-                  <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(set.enterDate)">
-                    releases {{ dateFrom(set.enterDate) | relative }}
-                  </small>
+                    <h1><set-image :code="set.code" v-if="isReleased(set)"></set-image></h1>
+                    <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(set.enterDate)">
+                      releases {{ dateFrom(set.enterDate) | relative }}
+                    </small>
+                  </a>
                 </div>
-              </div>
-              <div class="w-100 text-right small" style="height: 2em; line-height: 2em">
-                in Standard until {{ humanDate(round[0].exitDate) }}
-                <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
-                v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+                <div class="px-2 mx-3 text-right small block-comment">
+                  in Standard until {{ humanDate(round[0].exitDate) }}
+                  <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
+                  v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+                </div>
               </div>
             </div>
           </div>
@@ -114,7 +116,7 @@
       </div>
       <div class="row">
         <div class="col-md-6">
-          <h3 class="mt-5">Banned cards</h3>
+          <h3 class="pt-3" id="bans">Banned cards</h3>
           <template v-if="bans.length === 0">
             <i>No cards are banned from Standard right now.
           </template>
@@ -122,7 +124,7 @@
             <p>Despite being in Standard sets, these cards are explicitly not allowed in Standard decks.</p>
             <div class="row" v-cloak>
               <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
-                <div class="card">
+                <div class="card mb-3">
                   <img :src="ban.cardImageUrl" class="card-img-top" :alt="`${ban.cardName} from ${ban.setCode}`" />
                   <div class="card-body">
                     <p class="card-text">{{ ban.reason }}</p>
@@ -140,7 +142,7 @@
           </template>
         </div>
         <div class="col-md-6">
-          <h2 class="mt-5">What <em>is</em> Standard?</h2>
+          <h2 class="pt-3" id="info">What <em>is</em> Standard?</h2>
           <p>
           <a
           target="_blank"
@@ -183,12 +185,23 @@
           <p>
           Not all sets enter Standard upon release. For example, Masters sets and Commander sets do not enter Standard.
           </p>
-          <div class="github mt-4">
+          <div class="github my-4">
             <a v-tippy class="btn" href="https://twitter.com/whatsinstandard" title="We tweet when Standard changes!">
               <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='60' width='60' />
             </a>
             <a v-tippy class="btn" href="https://github.com/glacials/whatsinstandard" title="We're open source!">
               <img class="m-1" src="img/github.png" alt="GitHub logo" height='35' width='35' />
+            </a>
+          </div>
+          <div id="nav" class="nav nav-pills nav-fill fixed-bottom d-sm-none navbar-dark bg-dark" style="max-height: 60px">
+            <a class="nav-link nav-item rounded-0 pt-3 text-light" href="#sets">
+              <h5 class="fas fa-clone"></h5>
+            </a>
+            <a class="nav-link nav-item rounded-0 pt-3 text-light" href="#bans">
+              <h5 class="fas fa-ban"></h5>
+            </a>
+            <a class="nav-link nav-item rounded-0 pt-3 text-light" href="#info">
+              <h5 class="fas fa-info-circle"></h5>
             </a>
           </div>
         </div>

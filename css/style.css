@@ -179,3 +179,12 @@ a.low-distraction:hover {
   margin-left: -50%;
   text-align: right;
 }
+
+.block-comment {
+  height: 2em;
+  line-height: 2em;
+  position: absolute;
+  bottom: -12px;
+  right: 5px;
+  background-color: white;
+}

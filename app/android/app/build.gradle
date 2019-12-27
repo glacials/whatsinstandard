@@ -13,12 +13,12 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '3'
+    flutterVersionCode = '4'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '1.0.2'
+    flutterVersionName = '1.0.3'
 }
 
 apply plugin: 'com.android.application'
@@ -31,25 +31,25 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
      keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
  }
 
-   android {
-    compileSdkVersion 28
+ android {
+  compileSdkVersion 28
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
+  sourceSets {
+      main.java.srcDirs += 'src/main/kotlin'
+  }
 
-    lintOptions {
-        disable 'InvalidPackage'
-    }
+  lintOptions {
+      disable 'InvalidPackage'
+  }
 
-    defaultConfig {
-        applicationId "com.whatsinstandard"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 2
-        versionName '1.0.1-rc.1'
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
+  defaultConfig {
+      applicationId "com.whatsinstandard"
+      minSdkVersion 16
+      targetSdkVersion 28
+      versionCode 4
+      versionName '1.0.3'
+      testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
 
    signingConfigs {
        release {

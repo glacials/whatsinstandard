@@ -120,7 +120,7 @@ class _SetsScreenState extends State<SetsScreen> {
                 cards.add(
                     AnimatedContainer(
                         child: Text(
-                            'Until ' + snapshot.data[i].roughExitDate,
+                            'Until ' + snapshot.data[i+1].roughExitDate,
                             style: TextStyle(fontSize: 20),
                         ),
                         curve: Curves.fastOutSlowIn,

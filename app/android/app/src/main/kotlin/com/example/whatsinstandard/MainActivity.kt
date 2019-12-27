@@ -1,4 +1,4 @@
-package com.example.whatsinstandard
+package com.whatsinstandard
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity

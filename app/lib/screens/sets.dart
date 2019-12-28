@@ -17,18 +17,17 @@ class StandardSet {
 
   factory StandardSet.fromJson(Map<String, dynamic> json) {
     return StandardSet(
-        name: json['name'],
-        codename: json['codename'],
-        code: json['code'],
-        symbol: json['symbol']['common'],
-        exactEnterDate: json['enterDate']['exact'] != null ? DateTime.parse(json['enterDate']['exact']) : null,
-        exactExitDate: json['exitDate']['exact'] != null ? DateTime.parse(json['exitDate']['exact']) : null,
-        roughExitDate: json['exitDate']['rough'],
+      name: json['name'],
+      codename: json['codename'],
+      code: json['code'],
+      symbol: json['symbol']['common'],
+      exactEnterDate: json['enterDate']['exact'] != null ? DateTime.parse(json['enterDate']['exact']) : null,
+      exactExitDate: json['exitDate']['exact'] != null ? DateTime.parse(json['exitDate']['exact']) : null,
+      roughExitDate: json['exitDate']['rough'],
     );
   }
 
-  static Future<List<StandardSet>> fetch() async {
-    final response = await http.get('https://whatsinstandard.com/api/v6/standard.json');
+  static List<StandardSet> fetch(http.Response response) {
     List<StandardSet> standardSets = [];
 
     if (response.statusCode == 200) {
@@ -46,6 +45,10 @@ class StandardSet {
 }
 
 class SetsScreen extends StatefulWidget {
+  final http.Response response;
+
+  SetsScreen({this.response});
+
   @override
   _SetsScreenState createState() => _SetsScreenState();
 }
@@ -54,12 +57,12 @@ class _SetsScreenState extends State<SetsScreen> {
   bool _timelineView = false;
   int _currentScreenIndex = 0;
 
-  Future<List<StandardSet>> _sets;
+  List<StandardSet> _sets;
 
   @override
   void initState() {
     super.initState();
-    _sets = StandardSet.fetch();
+    _sets = StandardSet.fetch(widget.response);
   }
 
   void _onBottomBarTap(int index) {
@@ -70,89 +73,66 @@ class _SetsScreenState extends State<SetsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final Widget _setsScreen = FutureBuilder<List<StandardSet>>(
-        future: _sets,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            final DateTime now = new DateTime.now();
-            snapshot.data.removeWhere((s) {
-              if (s.exactEnterDate == null) {
-                return true;
-              }
+    final DateTime now = new DateTime.now();
+    _sets.removeWhere((s) {
+      if (s.exactEnterDate == null) {
+        return true;
+      }
 
-              if (s.exactEnterDate.isAfter(now)) {
-                return true;
-              }
+      if (s.exactEnterDate.isAfter(now)) {
+        return true;
+      }
 
-              if (s.exactExitDate != null && s.exactExitDate.isBefore(now)) {
-                return true;
-              }
+      if (s.exactExitDate != null && s.exactExitDate.isBefore(now)) {
+        return true;
+      }
 
-              return false;
-            });
+      return false;
+    });
 
-            List<Widget> cards = [];
-            cards.add(
-                AnimatedContainer(
-                    child: Text(
-                        'Until ' + snapshot.data[0].roughExitDate,
-                        style: TextStyle(fontSize: 20),
-                    ),
-                    curve: Curves.fastOutSlowIn,
-                    duration: Duration(milliseconds: 500),
-                    height: _timelineView ? 80 : 0,
-                    padding: EdgeInsets.only(left: 20, top: 30),
-                ),
-            );
-            for(var i = 0; i < snapshot.data.length; i++) {
-              cards.add(Card(child: ListTile(
-                          leading: Image.network(
-                              snapshot.data[i].symbol,
-                              height: 40,
-                              width: 40,
-                          ),
-                          title: Text(snapshot.data[i].name),
-                          subtitle: Text(
-                              snapshot.data[i].exactExitDate != null ? snapshot.data[i].exactExitDate : snapshot.data[i].roughExitDate
-                          ),
-              )));
-              if (i+1 < snapshot.data.length && snapshot.data[i].roughExitDate != snapshot.data[i+1].roughExitDate) {
-                cards.add(
-                    AnimatedContainer(
-                        child: Text(
-                            'Until ' + snapshot.data[i+1].roughExitDate,
-                            style: TextStyle(fontSize: 20),
-                        ),
-                        curve: Curves.fastOutSlowIn,
-                        duration: Duration(milliseconds: 500),
-                        height: _timelineView ? 80: 0,
-                        padding: EdgeInsets.only(left: 20, top: 30),
-                    ),
-                );
-              }
-            }
-            return ListView(children: cards);
-          } else if (snapshot.hasError) {
-            return Text("${snapshot.error}");
-          }
-
-          // By default, show a loading spinner.
-          return Center(
-              child: Column(
-                  children: [
-                    CircularProgressIndicator(),
-                    Padding(padding: EdgeInsets.all(20)),
-                    Text('Fetching current sets'),
-                    Padding(padding: EdgeInsets.all(20)),
-                  ],
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-              ),
-          );
-        },
+    List<Widget> cards = [];
+    cards.add(
+      AnimatedContainer(
+        child: Text(
+          'Until ' + _sets[0].roughExitDate,
+          style: TextStyle(fontSize: 20),
+        ),
+        curve: Curves.fastOutSlowIn,
+        duration: Duration(milliseconds: 500),
+        height: _timelineView ? 80 : 0,
+        padding: EdgeInsets.only(left: 20, top: 30),
+      ),
+    );
+    for(var i = 0; i < _sets.length; i++) {
+      cards.add(Card(child: ListTile(
+        leading: Image.network(
+          _sets[i].symbol,
+          height: 40,
+          width: 40,
+        ),
+        title: Text(_sets[i].name),
+        subtitle: Text(
+            _sets[i].exactExitDate != null ? _sets[i].exactExitDate : _sets[i].roughExitDate
+        ),
+      )));
+      if (i+1 < _sets.length && _sets[i].roughExitDate != _sets[i+1].roughExitDate) {
+        cards.add(
+          AnimatedContainer(
+            child: Text(
+              'Until ' + _sets[i+1].roughExitDate,
+              style: TextStyle(fontSize: 20),
+            ),
+            curve: Curves.fastOutSlowIn,
+            duration: Duration(milliseconds: 500),
+            height: _timelineView ? 80: 0,
+            padding: EdgeInsets.only(left: 20, top: 30),
+          ),
         );
+      }
+    }
+    final Widget _setsScreen = ListView(children: cards);
 
-    final Widget _bansScreen = BansScreen();
+    final Widget _bansScreen = BansScreen(response: widget.response);
 
     return Scaffold(
       appBar: AppBar(

@@ -70,7 +70,7 @@ class _SetsScreenState extends State<SetsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    Widget _setsScreen = FutureBuilder<List<StandardSet>>(
+    final Widget _setsScreen = FutureBuilder<List<StandardSet>>(
         future: _sets,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
@@ -152,37 +152,42 @@ class _SetsScreenState extends State<SetsScreen> {
         },
         );
 
-    Widget _bansScreen = BansScreen();
+    final Widget _bansScreen = BansScreen();
 
     return Scaffold(
-        appBar: AppBar(
-            title: _currentScreenIndex == 0 ? Text('Standard-legal sets') : Text('Banned cards'),
+      appBar: AppBar(
+        title: _currentScreenIndex == 0 ? Text('Standard-legal sets') : Text('Banned cards'),
+      ),
+      body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
+      bottomNavigationBar: BottomAppBar(
+        child: BottomNavigationBar(
+          currentIndex: _currentScreenIndex,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+              title: Text('Standard sets'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.content_cut),
+              title: Text('Banned cards'),
+            ),
+          ],
+          onTap: _onBottomBarTap,
         ),
-        body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
-        bottomNavigationBar: BottomNavigationBar(
-            currentIndex: _currentScreenIndex,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.category),
-                  title: Text('Standard sets'),
-              ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.content_cut),
-                  title: Text('Banned cards'),
-              ),
-            ],
-            onTap: _onBottomBarTap,
-        ),
-        floatingActionButton: _currentScreenIndex == 0 ? FloatingActionButton(
-            tooltip: _timelineView ? 'Show as a list' : 'Show as a timeline',
-            child: _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
-            onPressed: () {
-              setState(() {
-                _timelineView ^= true;
-              });
-            },
-        ) : null,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        );
+        clipBehavior: Clip.antiAlias,
+        notchMargin: 6,
+        shape: CircularNotchedRectangle(),
+      ),
+      floatingActionButton: _currentScreenIndex == 0 ? FloatingActionButton(
+        tooltip: _timelineView ? 'Show as a list' : 'Show as a timeline',
+        child: _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
+        onPressed: () {
+          setState(() {
+            _timelineView ^= true;
+          });
+        },
+      ) : null,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    );
   }
 }

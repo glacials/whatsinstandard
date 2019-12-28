@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -11,17 +12,24 @@ class HeroCardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Dismissible(
+      child: Scaffold(
         backgroundColor: Colors.black,
         body: Center(
-            child: Hero(
-                child: Padding(
-                    child: Image.network(bannedCard.imageUrl),
-                    padding: EdgeInsets.all(10),
-                ),
-                tag: bannedCard.name,
+          child: Hero(
+            child: Padding(
+              child: Image.network(bannedCard.imageUrl),
+              padding: EdgeInsets.all(10),
             ),
+            tag: bannedCard.name,
+          ),
         ),
+      ),
+      direction: DismissDirection.vertical,
+      key: Key(bannedCard.imageUrl),
+      onDismissed: (direction) {
+        Navigator.pop(context);
+      },
     );
   }
 }

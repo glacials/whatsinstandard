@@ -69,52 +69,15 @@ class MyApp extends StatelessWidget {
                   notchMargin: 6,
                   shape: CircularNotchedRectangle(),
                 ),
+                floatingActionButton: FloatingActionButton(
+                  child: Icon(Icons.date_range),
+                ),
+                floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
               );
             },
           );
         },
       },
     );
-  }
-}
-
-class HomeScreen extends StatefulWidget {
-  HomeScreen({Key key, this.title, this.dates}) : super(key: key);
-
-  final String title;
-  final bool dates;
-
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int activeTab = 0;
-  bool _timelineView = false;
-  static List<Widget> _widgetOptions = <Widget>[
-    SetsScreen(),
-    BansScreen(),
-    InfoScreen(),
-  ];
-
-  void _toggleDropDates() {
-    setState(() {
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-  }
-
-  void _updateTab(int index) {
-    setState(() {
-      activeTab = index;
-    });
   }
 }

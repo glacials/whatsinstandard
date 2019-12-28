@@ -13,7 +13,7 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '4'
+    flutterVersionCode = '5'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
@@ -46,7 +46,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
       applicationId "com.whatsinstandard"
       minSdkVersion 16
       targetSdkVersion 28
-      versionCode 4
+      versionCode 5
       versionName '1.0.3'
       testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }

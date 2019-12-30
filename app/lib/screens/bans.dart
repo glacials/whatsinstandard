@@ -73,7 +73,10 @@ class _BansScreenState extends State<BansScreen> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => HeroCardScreen(bannedCard: _bans[i]),
+                builder: (context) => PageView(
+                  children: _bans.map((card) => HeroCardScreen(bannedCard: card)).toList(),
+                  controller: PageController(initialPage: i),
+                ),
               ),
             );
           },

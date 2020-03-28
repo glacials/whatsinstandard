@@ -63,8 +63,8 @@ describe("API", () => {
         expect(body.sets).to.be.an('array')
       })
 
-      it("shouldn't have too few or too many sets", () => {
-        expect(body.sets).to.have.length.within(8, 16)
+      it("shouldn't have too few sets", () => {
+        expect(body.sets).to.have.length.above(8)
       })
 
       body.sets.forEach(set => {

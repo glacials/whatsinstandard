@@ -129,7 +129,7 @@
     },
     {
       "name": "Core Set 2020",
-      "codename": "Cookies",
+      "codename": null,
       "block": null,
       "code": "M20",
       "enter_date": "2019-07-12T00:00:00.000",
@@ -169,7 +169,7 @@
     },
     {
       "name": "Core Set 2021",
-      "codename": "Cricket",
+      "codename": null,
       "block": null,
       "code": "M21",
       "enter_date": "2020-07-03T00:00:00.000",
@@ -179,7 +179,7 @@
     },
     {
       "name": "Zendikar Rising",
-      "codename": null,
+      "codename": "Diving",
       "block": null,
       "code": null,
       "enter_date": null,

@@ -89,7 +89,6 @@
             <div v-for="round in truncate(rounds(undropped(sets)))" class="col mb-4">
               <div class="row row-cols-1 row-cols-sm-2 border mx-0 py-3 h-100">
                 <div class="col my-3" v-for="set in round">
-                  <!-- ja;lksdjfl;kasdjfljasdlfjl;sda -->
                   <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border" :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
                     :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
                     <div class="w-100" v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}">

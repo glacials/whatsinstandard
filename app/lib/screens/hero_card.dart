@@ -17,7 +17,6 @@ class HeroCardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(bannedCard.name)),
-      backgroundColor: Colors.white,
       body: ListView(
         children: [
           Hero(
@@ -28,42 +27,44 @@ class HeroCardScreen extends StatelessWidget {
             tag: bannedCard.name,
           ),
           Card(
-            child: Column(
-              children: [
-                ListTile(
-                  isThreeLine: true,
-                  leading: Icon(Icons.content_cut),
-                  subtitle: Text(bannedCard.reason),
-                  title: Text(bannedCard.name),
-                  trailing: Text(bannedCard.setCode),
-                ),
-                ButtonBar(
-                  children: [
-                    FlatButton(
-                      child: const Text('Scryfall'),
-                      onPressed: () async {
-                        String url = "https://scryfall.com/search?q=${bannedCard.name}";
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch ban announcement URL';
+            child: Card(
+              child: Column(
+                children: [
+                  ListTile(
+                    isThreeLine: true,
+                    leading: Icon(Icons.content_cut),
+                    subtitle: Text(bannedCard.reason),
+                    title: Text(bannedCard.name),
+                    trailing: Text(bannedCard.setCode),
+                  ),
+                  ButtonBar(
+                    children: [
+                      FlatButton(
+                        child: const Text('Scryfall'),
+                        onPressed: () async {
+                          String url = "https://scryfall.com/search?q=${bannedCard.name}";
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch ban announcement URL';
+                          }
+                        },
+                      ),
+                      FlatButton(
+                        child: const Text('Announcement'),
+                        onPressed: () async {
+                          String url = bannedCard.announcementUrl;
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch ban announcement URL';
+                          }
                         }
-                      },
-                    ),
-                    FlatButton(
-                      child: const Text('Announcement'),
-                      onPressed: () async {
-                        String url = bannedCard.announcementUrl;
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch ban announcement URL';
-                        }
-                      }
-                    )
-                  ],
-                ),
-              ],
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

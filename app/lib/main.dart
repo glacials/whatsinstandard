@@ -27,6 +27,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
+      darkTheme: ThemeData(
+        accentColor: Colors.pink[300],
+        brightness: Brightness.dark,
+        primarySwatch: Colors.pink,
+      ),
       routes: {
         MyApp.home: (context) {
           return FutureBuilder<http.Response>(

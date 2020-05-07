@@ -11,16 +11,16 @@ rotations work.
 
 ## Development
 ### Dependencies
-- [npm][npm]
+- [yb][yb]
 
-[npm]: https://github.com/npm/npm
+[yb]: https://github.com/yourbase/yb
 
 ### Running it locally
 ```sh
 git clone git@github.com:glacials/whatsinstandard
 cd whatsinstandard
-npm install
-npm start
+yb build
+yb exec
 ```
 
 Then open [localhost:8080][localhost] in your browser!
@@ -30,7 +30,7 @@ Then open [localhost:8080][localhost] in your browser!
 ### Updating Set Information
 If you're looking to add, remove, or change a set, you'll want to change [`api/internal.json`][api-internal] then run
 ```sh
-npm install
+yb build
 ```
 to regenerate the API. This file is the source of truth for set information, as the website itself consumes the APIs
 generated from this file.
@@ -38,10 +38,10 @@ generated from this file.
 [api-internal]: api/internal.json
 
 #### Tests
-The API has a few tests. You can run them with
+The API has a few tests. They run on build, but you can run them separately with
 
 ```sh
-npm test
+yb build test
 ```
 
 To autorun them whenever test files update, use

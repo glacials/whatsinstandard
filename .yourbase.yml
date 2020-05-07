@@ -1,14 +1,29 @@
 dependencies:
   build:
-    - node:10.15.1
+    - node:12.16.3
 
 build_targets:
   - name: default
-    environment:
-      - NODE_ENV=development
     commands:
       - npm install
-      - npm run
+      - npm test
+    environment:
+      - NODE_ENV=development
+    host_only: true
+  - name: test
+    commands:
+      - npm test
+    environment:
+      - NODE_ENV=development
+    host_only: true
+
+exec:
+  commands:
+    - npm start
+  environment:
+    default:
+      - NODE_ENV=development
+  host_only: true
 
 ci:
   builds:

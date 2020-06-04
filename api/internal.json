@@ -216,6 +216,20 @@
       "set_code": "M20",
       "reason": "Banned for giving green decks too much resilience against removal and disruption, and being too efficient relative to other cards in its cycle.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Agent of Treachery",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/c/c/cc6686e6-4535-49be-b0b3-e76464656cd2.png",
+      "set_code": "M20",
+      "reason": "Banned for being frustrating to play against and difficult to come back from and to promote deck-building diversity in Standard.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/june-1-2020-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Fires of Invention",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/a/1/a12b16b0-f75f-42d8-9b24-947c1908e0f7.png",
+      "set_code": "ELD",
+      "reason": "Banned for introducing too many risks and design constraints to the future of Standard.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/june-1-2020-banned-and-restricted-announcement"
     }
   ]
 }

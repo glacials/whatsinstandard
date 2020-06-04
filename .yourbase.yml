@@ -10,12 +10,11 @@ build_targets:
     environment:
       - NODE_ENV=development
     host_only: true
-  - name: test
+  - name: deploy
     commands:
-      - npm test
+      - ./.yourbase_deploy.sh
     environment:
-      - NODE_ENV=development
-    host_only: true
+      - NODE_ENV=production
 
 exec:
   commands:
@@ -29,3 +28,10 @@ ci:
   builds:
     - name: default
       build_target: default
+ci:
+  builds:
+    - name: build
+      build_target: default
+    - name: deploy
+      build_target: deploy
+      when: branch is 'master'

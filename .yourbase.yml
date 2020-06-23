@@ -5,7 +5,7 @@ dependencies:
 build_targets:
   - name: default
     commands:
-      - npm install
+      - npm install --unsafe-perm # See https://stackoverflow.com/a/19132229/392225
       - npm test
     environment:
       - NODE_ENV=development

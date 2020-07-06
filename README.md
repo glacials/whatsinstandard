@@ -24,7 +24,7 @@ Then open [localhost:8080][localhost] in your browser!
 
 [localhost]: http://localhost:8080
 
-### Updating Set Information
+### Updating set information
 If you're looking to add, remove, or change a set, you'll want to change [`api/internal.json`][api-internal] then run
 ```sh
 yb build
@@ -33,6 +33,16 @@ to regenerate the API. This file is the source of truth for set information, as 
 generated from this file.
 
 [api-internal]: api/internal.json
+
+#### Updating set icons
+Set icons are supplied by [Keyrune][keyrune]. If a new set icon is not showing or is invalid, you just need to update
+Keyrune:
+
+```sh
+npm update keyrune
+```
+
+Any pull requests that simply update Keyrune are welcomed and will be accepted!
 
 #### Tests
 The API has a few tests. They run on build, but you can run them separately with
@@ -105,15 +115,7 @@ future sets. For API details including how to filter them, see [the API readme][
 ## Attributions
 Thanks to:
 
-* For SVG set icon images:
-  * BaconCatBug
-  * White Dragon
-  * Goblin Hero
-  * Skibulk
-  * Baka-Neku
-  * Qanadhar
-  * Poopski
-* For gathering them: [jninnes][jninnes]
+* For SVG images: [Keyrune][keyrune]
 * For favicon: Nils Enevoldsen
 
-[jninnes]: https://github.com/jninnes/mtgicons
+[keyrune]: https://github.com/andrewgioia/keyrune

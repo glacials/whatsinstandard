@@ -1,6 +1,6 @@
 version: 2
 updates:
-  - package_ecosystem: "javascript"
+  - package-ecosystem: "javascript"
     directory: "/"
     schedule:
       interval: "daily"

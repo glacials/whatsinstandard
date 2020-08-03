@@ -230,6 +230,34 @@
       "set_code": "ELD",
       "reason": "Banned for introducing too many risks and design constraints to the future of Standard.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/june-1-2020-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Wilderness Reclamation",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/5/4/54af08f7-9c6c-464e-b2f7-2b5803f36481.png",
+      "set_code": "RNA",
+      "reason": "Banned for its dominance in high level play and to reduce the metagame share of ramp decks in general.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Growth Spiral",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/7/c/7c77a6b1-ef06-4da5-8e86-a5204216cb77.png",
+      "set_code": "RNA",
+      "reason": "Banned for its dominance in high level play and to reduce the metagame share of ramp decks in general.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Teferi, Time Raveler",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/5/c/5cb76266-ae50-4bbc-8f96-d98f309b02d3.png",
+      "set_code": "WAR",
+      "reason": "Banned for causing repetitive play patterns and reducing capability for interaction, creating an oppressive and limiting experience.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Cauldron Familiar",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/9/a/9a539a23-8383-4525-82dd-acfe1d219fe9.png",
+      "set_code": "ELD",
+      "reason": "Banned for reducing metagame diversity and for being cumbersome to play against.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
     }
   ]
 }

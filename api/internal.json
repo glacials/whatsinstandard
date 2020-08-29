@@ -191,70 +191,70 @@
   "bans": [
     {
       "card_name": "Field of the Dead",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/4/7/470ca3f4-29aa-4c4c-8ff2-8cdd70c69943.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/4/7/470ca3f4-29aa-4c4c-8ff2-8cdd70c69943.jpg",
       "set_code": "M20",
       "reason": "Banned for being too effective, repetitive, and hard-to-remove when combined with Golos, Tireless Pilgrim.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-21-2019-banned-and-restricted-announcement"
     },
     {
       "card_name": "Oko, Thief of Crowns",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/3/4/3462a3d0-5552-49fa-9eb7-100960c55891.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/3/4/3462a3d0-5552-49fa-9eb7-100960c55891.jpg",
       "set_code": "ELD",
       "reason": "Banned for its power level being higher than is healthy for current and future Standard metagame environments.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
     },
     {
       "card_name": "Once Upon a Time",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/4/0/4034e5ba-9974-43e3-bde7-8d9b4586c3a4.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/4/0/4034e5ba-9974-43e3-bde7-8d9b4586c3a4.jpg",
       "set_code": "ELD",
       "reason": "Banned for contributing to a high consistency of strong starts for green, providing a level of early mana fixing that other colors don't have access to.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
     },
     {
       "card_name": "Veil of Summer",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/a/a/aa686c34-1c11-469f-93c2-f9891aea521f.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/a/a/aa686c34-1c11-469f-93c2-f9891aea521f.jpg",
       "set_code": "M20",
       "reason": "Banned for giving green decks too much resilience against removal and disruption, and being too efficient relative to other cards in its cycle.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
     },
     {
       "card_name": "Agent of Treachery",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/c/c/cc6686e6-4535-49be-b0b3-e76464656cd2.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/c/c/cc6686e6-4535-49be-b0b3-e76464656cd2.jpg",
       "set_code": "M20",
       "reason": "Banned for being frustrating to play against and difficult to come back from and to promote deck-building diversity in Standard.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/june-1-2020-banned-and-restricted-announcement"
     },
     {
       "card_name": "Fires of Invention",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/a/1/a12b16b0-f75f-42d8-9b24-947c1908e0f7.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/a/1/a12b16b0-f75f-42d8-9b24-947c1908e0f7.jpg",
       "set_code": "ELD",
       "reason": "Banned for introducing too many risks and design constraints to the future of Standard.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/june-1-2020-banned-and-restricted-announcement"
     },
     {
       "card_name": "Wilderness Reclamation",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/5/4/54af08f7-9c6c-464e-b2f7-2b5803f36481.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/5/4/54af08f7-9c6c-464e-b2f7-2b5803f36481.jpg",
       "set_code": "RNA",
       "reason": "Banned for its dominance in high level play and to reduce the metagame share of ramp decks in general.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
     },
     {
       "card_name": "Growth Spiral",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/7/c/7c77a6b1-ef06-4da5-8e86-a5204216cb77.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/7/c/7c77a6b1-ef06-4da5-8e86-a5204216cb77.jpg",
       "set_code": "RNA",
       "reason": "Banned for its dominance in high level play and to reduce the metagame share of ramp decks in general.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
     },
     {
       "card_name": "Teferi, Time Raveler",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/5/c/5cb76266-ae50-4bbc-8f96-d98f309b02d3.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/5/c/5cb76266-ae50-4bbc-8f96-d98f309b02d3.jpg",
       "set_code": "WAR",
       "reason": "Banned for causing repetitive play patterns and reducing capability for interaction, creating an oppressive and limiting experience.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
     },
     {
       "card_name": "Cauldron Familiar",
-      "card_image_url": "https://img.scryfall.com/cards/png/front/9/a/9a539a23-8383-4525-82dd-acfe1d219fe9.png",
+      "card_image_url": "https://img.scryfall.com/cards/large/front/9/a/9a539a23-8383-4525-82dd-acfe1d219fe9.jpg",
       "set_code": "ELD",
       "reason": "Banned for reducing metagame diversity and for being cumbersome to play against.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"

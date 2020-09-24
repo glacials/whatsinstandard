@@ -186,6 +186,16 @@
       "rough_enter_date": "Q4 2020",
       "exit_date": null,
       "rough_exit_date": "Q4 2022"
+    },
+    {
+      "name": "Kaldheim",
+      "codename": "Equestrian",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q1 2021",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2022"
     }
   ],
   "bans": [

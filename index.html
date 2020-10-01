@@ -73,7 +73,7 @@
               <div class="col-md-12">
                 <div class="list-group col-md-6 mb-5 mx-auto">
                   <div class="list-group-item p-3" v-for="set in last(rounds(dropped(sets)))" style="min-height: 5rem">
-                    <div class="justify-content-between d-flex set-border" v-tippy :title="set.code">
+                    <div class="justify-content-between d-flex" v-tippy :title="set.code">
                       <a class="w-100 text-muted" :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
                         {{ set.name }}
                       </a>

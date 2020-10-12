@@ -231,9 +231,29 @@
       "card_name": "Uro, Titan of Nature's Wrath",
       "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/png/front/a/0/a0b6a71e-56cb-4d25-8f2b-7a4f1b60900d.png",
       "set_code": "THB",
-      "reason": "Banned for weaken four-colour ramp decks.",
+      "reason": "Banned to weaken four-colour ramp decks.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/september-28-2020-banned-and-restricted-announcement-2020-09-28"
+    },
+    {
+      "card_name": "Omnath, Locus of Creation",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/e/4e4fb50c-a81f-44d3-93c5-fa9a0b37f617.jpg?1602499748",
+      "set_code": "ZNR",
+      "reason": "Banned for being too strong in four-color ramp decks.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-12-2020-banned-and-restricted-announcement?adf"
+    },
+    {
+      "card_name": "Lucky Clover",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/b/4b5d23a6-3a23-4169-aea1-f10bf5153180.jpg?1602499760",
+      "set_code": "ELD",
+      "reason": "Banned for being a powerful and difficult-to-interact-with part of Adventure decks.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-12-2020-banned-and-restricted-announcement?adf"
+    },
+    {
+      "card_name": "Escape to the Wilds",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/e/3e26c10b-179f-4a6e-bc8d-3ec1d6783fb9.jpg?1602499769",
+      "set_code": "ELD",
+      "reason": "Banned for being a unique and powerful bridge between strong ramp enablers and powerful payoffs.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-12-2020-banned-and-restricted-announcement?adf"
     }
-
   ]
 }

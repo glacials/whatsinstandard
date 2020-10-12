@@ -81,7 +81,7 @@
                     </div>
                   </div>
                   <div class="px-2 mx-3 text-right small text-danger block-comment">
-                    left Standard {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
+                    left on {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
                   </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@
                   </a>
                 </div>
                 <div class="px-2 mx-3 text-right small block-comment">
-                  in Standard until {{ humanDate(round[0].exitDate) }}
+                  legal until {{ humanDate(round[0].exitDate) }}
                   <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
                   v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
                 </div>
@@ -120,7 +120,7 @@
             <i>No cards are banned from Standard right now.
           </template>
           <template v-else>
-            <p>Despite being in Standard sets, these cards are explicitly not allowed in Standard decks.</p>
+            <p>Despite being part of legal sets, the following cards are explicitly not allowed in decks for this format.</p>
             <div class="row" v-cloak>
               <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
                 <div class="card mb-3">
@@ -148,41 +148,38 @@
           href="https://magic.wizards.com/en/content/standard-formats-magic-gathering" rel="noopener">
             <b>Standard</b>
           </a>
-          is a rotating group of <i>Magic: The Gathering</i> sets. Most sets enter Standard when they're released and
-          drop out about twenty-one months later.
+          is a tournament format containing several recent <i>Magic: The Gathering</i> sets. Most sets enter
+          the format when they're released and drop out about twenty-one months later.
           </p>
           <p>
-          Generally Standard will grow until it would receive its ninth set, then instead it drops its oldest four sets
-          to receive it as a fifth set. There are exceptions to this. It's confusing.
+          The rotating group's size generally grows to eight, then—with the next joining release—drops its
+          oldest four sets. The joining set is added as a fifth, and the pool's size slowly grows to eight again,
+          repeating the cycle. There are exceptions to this. It's confusing.
           </p>
           <p>
-          A <b>Standard card</b> is a card printed or reprinted into a set currently in Standard.
+          A <b>Standard card</b> is a card from a set currently part of the legal pool.
           <a v-tippy class="tip"
-             title="e.g. As long as Naturalize has a reprint currently in Standard, all previous prints of Naturalize
-             are also considered Standard.">
+             title="Different versions of a card count as the same card.<br>
+                    e.g. As long as Naturalize is Standard-legal, so are all prints of that card from previous sets.">
           </a>
           </p>
           <p>
-          A <b>Standard deck</b> contains only Standard cards (60+ of them), can optionally have a sideboard
+          A <b>Standard deck</b> contains 60+ Standard cards and can optionally have a sideboard
           <a v-tippy class="tip"
-            title='A sideboard is an optional second pool of cards past the main deck that cannot be used during games,
-            but whose cards can be swapped with those from the main deck between games. It is generally used to keep
-            counters to specific deck archetypes available without needing to classify any change as an official deck
-            edit.'>
-          </a> of up to 15 more Standard cards, and apart from basic lands does not have more than four copies of any
-          one card
-          <a v-tippy class="tip"
-            title="Different prints of the same card count as the same card.">
-          </a>.
+            title="A sideboard is a second pool of cards outside the main deck that cannot be used during games,
+                  but whose cards can be swapped with or added to the main deck cards between games in a match.
+                  Sideboard cards are usually situational, providing counters to specific deck archetypes.">
+          </a> of up to 15 additional such cards. Apart from basic lands, the combined main deck and
+          sideboard cannot have more than four copies of any card.
           </p>
           <h3 class="mt-5">Related sets and formats</h3>
           <p>
           <a target="_blank"
             href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl" rel="noopener"><b>Brawl</b></a>
-          is a format based on Standard—all rotations listed here apply to Brawl—but Brawl has a separate banlist</a>.
+          is a format based on Standard—all rotations listed here apply to Brawl as well—but Brawl has its own banlist</a>.
           </p>
           <p>
-          Not all sets enter Standard upon release. For example, Masters sets and Commander sets do not enter Standard.
+          Not all sets enter Standard upon release. For example, Masters sets and Commander sets never enter the format.
           </p>
           <div class="github my-4">
             <a v-tippy class="btn" href="https://twitter.com/whatsinstandard" title="We tweet when Standard changes!">

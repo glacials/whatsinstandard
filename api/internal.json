@@ -191,8 +191,8 @@
       "name": "Kaldheim",
       "codename": "Equestrian",
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "KHM",
+      "enter_date": "2021-02-05T00:00:00.000",
       "rough_enter_date": "Q1 2021",
       "exit_date": null,
       "rough_exit_date": "Q4 2022"

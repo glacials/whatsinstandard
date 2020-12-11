@@ -196,6 +196,26 @@
       "rough_enter_date": "Q1 2021",
       "exit_date": null,
       "rough_exit_date": "Q4 2022"
+    },
+    {
+      "name": "Strixhaven: School of Mages",
+      "codename": "Fencing",
+      "block": null,
+      "code": "STX",
+      "enter_date": null,
+      "rough_enter_date": "Q2 2021",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2022"
+    },
+    {
+      "name": "Dungeons & Dragons: Adventures in the Forgotten Realms",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q3 2021",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2022"
     }
   ],
   "bans": [

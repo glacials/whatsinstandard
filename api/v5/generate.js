@@ -19,7 +19,7 @@ module.exports = {
         "sets": [],
         "bans": []
       }
-      inputJSON.sets.filter(set => set.name !== null && set.code !== null && set.enter_date !== null).forEach(set => {
+      inputJSON.sets.filter(set => set.name !== null && set.code !== null).forEach(set => {
         outputJSON.sets.push({
           "name": set.name,
           "block": set.block,

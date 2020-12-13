@@ -129,20 +129,25 @@ describe("API", () => {
           describe("enter date", () => {
             const enterDate = set.enter_date
 
-            it("should be a string", () => {
-              expect(enterDate).to.be.a.string
+            it("should be a string or null", () => {
+              expect(enterDate || "").to.be.a.string
             })
 
-            it("should be an ISO 8601 datetime", () => {
-              expect(Date.parse(enterDate)).to.be.a('number')
+            it("should be an ISO 8601 datetime if present", () => {
+              expect(Date.parse(enterDate || "1970-01-01T00:00:00.000")).to.be.a('number')
             })
 
-            it("should represent midnight", () => {
-              expect(enterDate).to.contain("00:00:00.00")
+            it("should represent midnight if present", () => {
+              expect(enterDate || "1970-01-01T00:00:00.000").to.contain("00:00:00.00")
             })
 
-            it("should not attach a timezone", () => {
-              expect(enterDate.substring(enterDate.length - 12, enterDate.length - 1)).to.equal("00:00:00.00")
+            it("should not attach a timezone if present", () => {
+              expect(
+                (enterDate || "1970-01-01T00:00:00.000").substring(
+                  (enterDate || "1970-01-01T00:00:00.000").length - 12,
+                  (enterDate || "1970-01-01T00:00:00.000").length - 1
+                )
+              ).to.equal("00:00:00.00")
             })
           })
 

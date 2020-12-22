@@ -17,12 +17,13 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  cupertino_icons: ^0.1.2
+  desktop_window: ^0.3.0
+  expandable_card: ^0.0.3+1
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
-  timeline_list: ^0.0.3
-  expandable_card: ^0.0.3+1
   http: ^0.12.0+2
+  timeline_list: ^0.0.3
   url_launcher: ^5.2.5
 
 
@@ -32,7 +33,7 @@ dev_dependencies:
   flutter_launcher_icons: "^0.7.3"
 
 flutter_icons:
-  android: "launcher_icon" 
+  android: "launcher_icon"
   ios: true
   image_path: "assets/icon/icon.png"
 

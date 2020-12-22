@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:expandable_card/expandable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:whatsinstandard/screens/bans.dart';
@@ -13,7 +12,14 @@ class StandardSet {
   final DateTime exactExitDate;
   final String roughExitDate;
 
-  StandardSet({this.name, this.codename, this.code, this.symbol, this.exactEnterDate, this.exactExitDate, this.roughExitDate});
+  StandardSet(
+      {this.name,
+      this.codename,
+      this.code,
+      this.symbol,
+      this.exactEnterDate,
+      this.exactExitDate,
+      this.roughExitDate});
 
   factory StandardSet.fromJson(Map<String, dynamic> json) {
     return StandardSet(
@@ -21,8 +27,12 @@ class StandardSet {
       codename: json['codename'],
       code: json['code'],
       symbol: json['symbol']['common'],
-      exactEnterDate: json['enterDate']['exact'] != null ? DateTime.parse(json['enterDate']['exact']) : null,
-      exactExitDate: json['exitDate']['exact'] != null ? DateTime.parse(json['exitDate']['exact']) : null,
+      exactEnterDate: json['enterDate']['exact'] != null
+          ? DateTime.parse(json['enterDate']['exact'])
+          : null,
+      exactExitDate: json['exitDate']['exact'] != null
+          ? DateTime.parse(json['exitDate']['exact'])
+          : null,
       roughExitDate: json['exitDate']['rough'],
     );
   }
@@ -33,7 +43,7 @@ class StandardSet {
     if (response.statusCode == 200) {
       final setsJson = JsonDecoder().convert(response.body)['sets'];
 
-      for(var i = 0; i < setsJson.length; i++) {
+      for (var i = 0; i < setsJson.length; i++) {
         standardSets.add(StandardSet.fromJson(setsJson[i]));
       }
       return standardSets;
@@ -103,28 +113,30 @@ class _SetsScreenState extends State<SetsScreen> {
         padding: EdgeInsets.only(left: 20, top: 30),
       ),
     );
-    for(var i = 0; i < _sets.length; i++) {
-      cards.add(Card(child: ListTile(
+    for (var i = 0; i < _sets.length; i++) {
+      cards.add(Card(
+          child: ListTile(
         leading: Image.network(
           _sets[i].symbol,
           height: 40,
           width: 40,
         ),
         title: Text(_sets[i].name),
-        subtitle: Text(
-            _sets[i].exactExitDate != null ? _sets[i].exactExitDate : _sets[i].roughExitDate
-        ),
+        subtitle: Text(_sets[i].exactExitDate != null
+            ? _sets[i].exactExitDate
+            : _sets[i].roughExitDate),
       )));
-      if (i+1 < _sets.length && _sets[i].roughExitDate != _sets[i+1].roughExitDate) {
+      if (i + 1 < _sets.length &&
+          _sets[i].roughExitDate != _sets[i + 1].roughExitDate) {
         cards.add(
           AnimatedContainer(
             child: Text(
-              'Until ' + _sets[i+1].roughExitDate,
+              'Until ' + _sets[i + 1].roughExitDate,
               style: TextStyle(fontSize: 20),
             ),
             curve: Curves.fastOutSlowIn,
             duration: Duration(milliseconds: 500),
-            height: _timelineView ? 80: 0,
+            height: _timelineView ? 80 : 0,
             padding: EdgeInsets.only(left: 20, top: 30),
           ),
         );
@@ -136,7 +148,9 @@ class _SetsScreenState extends State<SetsScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: _currentScreenIndex == 0 ? Text('Standard-legal sets') : Text('Banned cards'),
+        title: _currentScreenIndex == 0
+            ? Text('Standard-legal sets')
+            : Text('Banned cards'),
       ),
       body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
       bottomNavigationBar: BottomAppBar(
@@ -145,11 +159,11 @@ class _SetsScreenState extends State<SetsScreen> {
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.category),
-              title: Text('Standard sets'),
+              label: 'Standard sets',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.content_cut),
-              title: Text('Banned cards'),
+              label: 'Banned cards',
             ),
           ],
           onTap: _onBottomBarTap,
@@ -158,15 +172,17 @@ class _SetsScreenState extends State<SetsScreen> {
         notchMargin: 6,
         shape: CircularNotchedRectangle(),
       ),
-      floatingActionButton: _currentScreenIndex == 0 ? FloatingActionButton(
-        tooltip: _timelineView ? 'Show as a list' : 'Show as a timeline',
-        child: _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
-        onPressed: () {
-          setState(() {
-            _timelineView ^= true;
-          });
-        },
-      ) : null,
+      floatingActionButton: _currentScreenIndex == 0
+          ? FloatingActionButton(
+              tooltip: _timelineView ? 'Show as a list' : 'Show as a timeline',
+              child: _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
+              onPressed: () {
+                setState(() {
+                  _timelineView ^= true;
+                });
+              },
+            )
+          : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }

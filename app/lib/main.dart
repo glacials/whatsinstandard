@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:timeline_list/timeline.dart';
-import 'package:timeline_list/timeline_model.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:whatsinstandard/screens/bans.dart';
-import 'package:whatsinstandard/screens/info.dart';
+import 'package:desktop_window/desktop_window.dart';
+
 import 'package:whatsinstandard/screens/sets.dart';
 
 void main() => runApp(MyApp());
@@ -22,6 +20,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    DesktopWindow.setMinWindowSize(Size(300, 600));
+    DesktopWindow.setMaxWindowSize(Size(500, 1000));
+    DesktopWindow.setWindowSize(Size(500, 1000));
     return MaterialApp(
       title: "What's in Standard?",
       theme: ThemeData(
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
       routes: {
         MyApp.home: (context) {
           return FutureBuilder<http.Response>(
-            future: http.get('https://whatsinstandard.com/api/v6/standard.json'),
+            future:
+                http.get('https://whatsinstandard.com/api/v6/standard.json'),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return SetsScreen(response: snapshot.data);
@@ -47,7 +49,8 @@ class MyApp extends StatelessWidget {
                 appBar: AppBar(
                   title: Text('Standard-legal sets'),
                 ),
-                body: Center(child: Column(
+                body: Center(
+                    child: Column(
                   children: [
                     CircularProgressIndicator(),
                     Padding(padding: EdgeInsets.all(19)),
@@ -62,11 +65,11 @@ class MyApp extends StatelessWidget {
                     items: const <BottomNavigationBarItem>[
                       BottomNavigationBarItem(
                         icon: Icon(Icons.category),
-                        title: Text('Standard sets'),
+                        label: 'Standard sets',
                       ),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.content_cut),
-                        title: Text('Banned cards'),
+                        label: 'Banned cards',
                       ),
                     ],
                   ),
@@ -76,8 +79,12 @@ class MyApp extends StatelessWidget {
                 ),
                 floatingActionButton: FloatingActionButton(
                   child: Icon(Icons.date_range),
+                  onPressed: () {
+                    // Do nothing, this button is only here while loading
+                  },
                 ),
-                floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+                floatingActionButtonLocation:
+                    FloatingActionButtonLocation.centerDocked,
               );
             },
           );

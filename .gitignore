@@ -1,2 +1,6 @@
 node_modules
 service-worker.js
+
+# Firebase Functions config file for when using Firebase local emulation;
+# contains API secrets etc.
+.runtimeconfig.json

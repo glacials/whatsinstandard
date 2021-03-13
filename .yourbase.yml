@@ -26,10 +26,6 @@ exec:
 
 ci:
   builds:
-    - name: default
-      build_target: default
-ci:
-  builds:
     - name: build
       build_target: default
     - name: deploy

@@ -4,7 +4,7 @@ check which sets are currently in [Standard][standard-official], see when the ne
 rotations work.
 
 [website]: https://whatsinstandard.com/
-[standard-official]: http://magic.wizards.com/en/content/standard-formats-magic-gathering 
+[standard-official]: http://magic.wizards.com/en/content/standard-formats-magic-gathering
 
 ## Development
 ### Dependencies
@@ -110,7 +110,7 @@ The array is guaranteed to contain all sets currently in Standard, but also cont
 future sets. For API details including how to filter them, see [the API readme][api-readme].
 
 [api]: https://whatsinstandard.com/api/v6/standard.json
-[api-readme]: https://github.com/glacials/whatsinstandard/blob/master/api
+[api-readme]: https://github.com/glacials/whatsinstandard/blob/main/api
 
 ## Attributions
 Thanks to:

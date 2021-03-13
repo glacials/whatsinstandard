@@ -34,4 +34,4 @@ ci:
       build_target: default
     - name: deploy
       build_target: deploy
-      when: branch is 'master'
+      when: branch is 'main'

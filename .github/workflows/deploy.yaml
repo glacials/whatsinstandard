@@ -9,9 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build
-        run: npm install
+        run: |
+          npm install
+          rsync -Rr ./ ./dist
+          find dist -name .gitignore -delete
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: .
+          folder: dist

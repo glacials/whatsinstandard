@@ -1,0 +1,231 @@
+{
+  "deprecated": true,
+  "sets": [
+    {
+      "name": "Kaladesh",
+      "block": "Kaladesh",
+      "code": "KLD",
+      "enter_date": "2016-09-30T00:00:00.000",
+      "exit_date": "2018-10-05T00:00:00.000",
+      "rough_exit_date": "Q4 2018"
+    },
+    {
+      "name": "Aether Revolt",
+      "block": "Kaladesh",
+      "code": "AER",
+      "enter_date": "2017-01-20T00:00:00.000",
+      "exit_date": "2018-10-05T00:00:00.000",
+      "rough_exit_date": "Q4 2018"
+    },
+    {
+      "name": "Amonkhet",
+      "block": "Amonkhet",
+      "code": "AKH",
+      "enter_date": "2017-04-28T00:00:00.000",
+      "exit_date": "2018-10-05T00:00:00.000",
+      "rough_exit_date": "Q4 2018"
+    },
+    {
+      "name": "Welcome Deck 2017",
+      "block": "Amonkhet",
+      "code": "W17",
+      "enter_date": "2017-04-28T00:00:00.000",
+      "exit_date": "2018-10-05T00:00:00.000",
+      "rough_exit_date": "Q4 2018"
+    },
+    {
+      "name": "Hour of Devastation",
+      "block": "Amonkhet",
+      "code": "HOU",
+      "enter_date": "2017-07-14T00:00:00.000",
+      "exit_date": "2018-10-05T00:00:00.000",
+      "rough_exit_date": "Q4 2018"
+    },
+    {
+      "name": "Ixalan",
+      "block": "Ixalan",
+      "code": "XLN",
+      "enter_date": "2017-09-29T00:00:00.000",
+      "exit_date": "2019-10-04T00:00:00.000",
+      "rough_exit_date": "Q4 2019"
+    },
+    {
+      "name": "Rivals of Ixalan",
+      "block": "Ixalan",
+      "code": "RIX",
+      "enter_date": "2018-01-19T00:00:00.000",
+      "exit_date": "2019-10-04T00:00:00.000",
+      "rough_exit_date": "Q4 2019"
+    },
+    {
+      "name": "Dominaria",
+      "block": null,
+      "code": "DOM",
+      "enter_date": "2018-04-27T00:00:00.000",
+      "exit_date": "2019-10-04T00:00:00.000",
+      "rough_exit_date": "Q4 2019"
+    },
+    {
+      "name": "Core Set 2019",
+      "block": null,
+      "code": "M19",
+      "enter_date": "2018-07-13T00:00:00.000",
+      "exit_date": "2019-10-04T00:00:00.000",
+      "rough_exit_date": "Q4 2019"
+    },
+    {
+      "name": "Guilds of Ravnica",
+      "block": null,
+      "code": "GRN",
+      "enter_date": "2018-10-05T00:00:00.000",
+      "exit_date": "2020-09-25T00:00:00.000",
+      "rough_exit_date": "Q4 2020"
+    },
+    {
+      "name": "Ravnica Allegiance",
+      "block": null,
+      "code": "RNA",
+      "enter_date": "2019-01-25T00:00:00.000",
+      "exit_date": "2020-09-25T00:00:00.000",
+      "rough_exit_date": "Q4 2020"
+    },
+    {
+      "name": "War of the Spark",
+      "block": null,
+      "code": "WAR",
+      "enter_date": "2019-05-03T00:00:00.000",
+      "exit_date": "2020-09-25T00:00:00.000",
+      "rough_exit_date": "Q4 2020"
+    },
+    {
+      "name": "Core Set 2020",
+      "block": null,
+      "code": "M20",
+      "enter_date": "2019-07-12T00:00:00.000",
+      "exit_date": "2020-09-25T00:00:00.000",
+      "rough_exit_date": "Q4 2020"
+    },
+    {
+      "name": "Throne of Eldraine",
+      "block": null,
+      "code": "ELD",
+      "enter_date": "2019-10-04T00:00:00.000",
+      "exit_date": "2021-09-17T00:00:00.000",
+      "rough_exit_date": "Q3 2021"
+    },
+    {
+      "name": "Theros: Beyond Death",
+      "block": null,
+      "code": "THB",
+      "enter_date": "2020-01-24T00:00:00.000",
+      "exit_date": "2021-09-17T00:00:00.000",
+      "rough_exit_date": "Q3 2021"
+    },
+    {
+      "name": "Ikoria: Lair of Behemoths",
+      "block": null,
+      "code": "IKO",
+      "enter_date": "2020-04-24T00:00:00.000",
+      "exit_date": "2021-09-17T00:00:00.000",
+      "rough_exit_date": "Q3 2021"
+    },
+    {
+      "name": "Core Set 2021",
+      "block": null,
+      "code": "M21",
+      "enter_date": "2020-07-03T00:00:00.000",
+      "exit_date": "2021-09-17T00:00:00.000",
+      "rough_exit_date": "Q3 2021"
+    },
+    {
+      "name": "Zendikar Rising",
+      "block": null,
+      "code": "ZNR",
+      "enter_date": "2020-09-25T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2022"
+    },
+    {
+      "name": "Kaldheim",
+      "block": null,
+      "code": "KHM",
+      "enter_date": "2021-02-05T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2022"
+    },
+    {
+      "name": "Strixhaven: School of Mages",
+      "block": null,
+      "code": "STX",
+      "enter_date": "2021-04-23T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2022"
+    },
+    {
+      "name": "Dungeons & Dragons: Adventures in the Forgotten Realms",
+      "block": null,
+      "code": "AFR",
+      "enter_date": "2021-07-16T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2022"
+    }
+  ],
+  "bans": [
+    {
+      "card_name": "Oko, Thief of Crowns",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/3/4/3462a3d0-5552-49fa-9eb7-100960c55891.png",
+      "set_code": "ELD",
+      "reason": "Banned for its power level being higher than is healthy for current and future Standard metagame environments.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Once Upon a Time",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/4/0/4034e5ba-9974-43e3-bde7-8d9b4586c3a4.png",
+      "set_code": "ELD",
+      "reason": "Banned for contributing to a high consistency of strong starts for green, providing a level of early mana fixing that other colors don't have access to.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/november-18-2019-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Fires of Invention",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/a/1/a12b16b0-f75f-42d8-9b24-947c1908e0f7.png",
+      "set_code": "ELD",
+      "reason": "Banned for introducing too many risks and design constraints to the future of Standard.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/june-1-2020-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Cauldron Familiar",
+      "card_image_url": "https://img.scryfall.com/cards/png/front/9/a/9a539a23-8383-4525-82dd-acfe1d219fe9.png",
+      "set_code": "ELD",
+      "reason": "Banned for reducing metagame diversity and for being cumbersome to play against.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/august-8-2020-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Uro, Titan of Nature's Wrath",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/png/front/a/0/a0b6a71e-56cb-4d25-8f2b-7a4f1b60900d.png",
+      "set_code": "THB",
+      "reason": "Banned for weakening four-colour ramp decks.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/september-28-2020-banned-and-restricted-announcement-2020-09-28"
+    },
+    {
+      "card_name": "Omnath, Locus of Creation",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/e/4e4fb50c-a81f-44d3-93c5-fa9a0b37f617.jpg?1602499748",
+      "set_code": "ZNR",
+      "reason": "Banned for being too strong in four-color ramp decks.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-12-2020-banned-and-restricted-announcement?adf"
+    },
+    {
+      "card_name": "Lucky Clover",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/b/4b5d23a6-3a23-4169-aea1-f10bf5153180.jpg?1602499760",
+      "set_code": "ELD",
+      "reason": "Banned for being a powerful and difficult-to-interact-with part of Adventure decks.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-12-2020-banned-and-restricted-announcement?adf"
+    },
+    {
+      "card_name": "Escape to the Wilds",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/e/3e26c10b-179f-4a6e-bc8d-3ec1d6783fb9.jpg?1602499769",
+      "set_code": "ELD",
+      "reason": "Banned for being a unique and powerful bridge between strong ramp enablers and powerful payoffs.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-12-2020-banned-and-restricted-announcement?adf"
+    }
+  ]
+}

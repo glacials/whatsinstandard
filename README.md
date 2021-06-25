@@ -13,7 +13,7 @@ rotations work.
 
 - [Node.js][node]
 
-[npm]: https://nodejs.org/
+[node]: https://nodejs.org/
 
 ### Running locally
 

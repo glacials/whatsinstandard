@@ -13,6 +13,7 @@ jobs:
           npm install
           rsync -Rr ./ ./dist
           find dist -name .gitignore -delete
+          touch .dist/.nojekyll # See https://stackoverflow.com/a/43487798/392225
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 'use strict'
 
-const v5 = require('./v5/generate')
-const v6 = require('./v6/generate')
+import { generate as v5 } from './v5/generate.js'
+import { generate as v6 } from './v6/generate.js'
 
-v5.generate()
-v6.generate()
+v5()
+v6()

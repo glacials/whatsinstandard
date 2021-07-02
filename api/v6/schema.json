@@ -7,47 +7,32 @@
       "required": ["exact", "rough"],
       "properties": {
         "exact": {
-          "anyOf": [{"type": "null"}, {"type": "string"}],
+          "anyOf": [{ "type": "null" }, { "type": "string" }],
           "description": "A day-precise date formatted as RFC3339.",
-          "examples": [
-            "2018-10-05T00:00:00.000",
-            "2016-09-30T00:00:00.000"
-          ],
+          "examples": ["2018-10-05T00:00:00.000", "2016-09-30T00:00:00.000"],
           "title": "Exact date"
         },
         "rough": {
           "description": "A quarter- or month-precise date.",
-          "examples": [
-            "Q1 2020",
-            "Q4 2020",
-            "January 2021",
-            "December 2025"
-          ],
+          "examples": ["Q1 2020", "Q4 2020", "January 2021", "December 2025"],
           "title": "Rough date",
           "type": "string"
         }
       }
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://whatsinstandard.com/api/v6/schema.json",
   "type": "object",
   "title": "What's in Standard? API v6",
   "additionalProperties": true,
-  "required": [
-    "deprecated",
-    "sets",
-    "bans"
-  ],
+  "required": ["deprecated", "sets", "bans"],
   "properties": {
+    "$schema": "./schema.json",
     "deprecated": {
       "type": "boolean",
       "title": "Deprecated",
       "description": "Whether this API version is deprecated or not. Configure your software to notify you if this field is ever true so you aren't caught off-guard if this version is deprecated then eventually killed.",
-      "examples": [
-        false,
-        true
-      ],
+      "examples": [false, true],
       "readOnly": true
     },
     "sets": {
@@ -70,25 +55,21 @@
         ],
         "properties": {
           "name": {
-            "anyOf": [{"type": "null"}, {"type": "string"}],
+            "anyOf": [{ "type": "null" }, { "type": "string" }],
             "title": "Name",
             "description": "The human-friendly name of the set, if known.",
-            "examples": [
-              "Kaladesh",
-              "Amonkhet",
-              "Hour of Devastation"
-            ],
+            "examples": ["Kaladesh", "Amonkhet", "Hour of Devastation"],
             "readOnly": true
           },
           "code": {
-            "anyOf": [{"type": "null"}, {"type": "string"}],
+            "anyOf": [{ "type": "null" }, { "type": "string" }],
             "title": "Code",
             "description": "Wizards of the Coasts's official code for the set.",
             "examples": ["KLD", "HOU", "W17", "M20"],
             "readOnly": true
           },
           "codename": {
-            "anyOf": [{"type": "null"}, {"type": "string"}],
+            "anyOf": [{ "type": "null" }, { "type": "string" }],
             "title": "Codename",
             "description": "Pre-launch development codename given to the set.",
             "examples": ["Lock", "Stock", "Barrel", "Spaghetti", "Meatballs"],

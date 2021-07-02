@@ -1,4 +1,5 @@
 {
+  "$schema": "https://whatsinstandard.com/api/v6/schema.json",
   "deprecated": false,
   "sets": [
     {

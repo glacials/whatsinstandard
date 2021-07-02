@@ -1,9 +1,13 @@
-const chai = require("chai")
-chai.use(require('chai-url'))
-chai.use(require('chai-json-schema'))
+import chai from 'chai'
+const { use, expect } = chai
 
-const expect = chai.expect
-const fs = require("fs")
+import chaiUrl from 'chai-url'
+import chaiJsonSchema from 'chai-json-schema'
+
+use(chaiUrl)
+use(chaiJsonSchema)
+
+import { existsSync, readFileSync } from "fs"
 
 describe("API", () => {
   const apiPath = "./api"
@@ -12,7 +16,7 @@ describe("API", () => {
     const versionPath = apiPath + "/1"
 
     it("shouldn't exist", () => {
-      const exists = fs.existsSync(versionPath)
+      const exists = existsSync(versionPath)
       expect(exists).to.be.false
     })
   })
@@ -21,7 +25,7 @@ describe("API", () => {
     const versionPath = apiPath + "/2"
 
     it("shouldn't exist", () => {
-      const exists = fs.existsSync(versionPath)
+      const exists = existsSync(versionPath)
       expect(exists).to.be.false
     })
   })
@@ -30,7 +34,7 @@ describe("API", () => {
     const versionPath = apiPath + "/3"
 
     it("shouldn't exist", () => {
-      const exists = fs.existsSync(versionPath)
+      const exists = existsSync(versionPath)
       expect(exists).to.be.false
     })
   })
@@ -39,7 +43,7 @@ describe("API", () => {
     const versionPath = apiPath + "/4"
 
     it("shouldn't exist", () => {
-      const exists = fs.existsSync(versionPath)
+      const exists = existsSync(versionPath)
       expect(exists).to.be.false
     })
   })
@@ -49,7 +53,7 @@ describe("API", () => {
 
     describe("sets.json", () => {
       const setsPath = versionPath + "/sets.json"
-      const body = JSON.parse(fs.readFileSync(setsPath, "utf8"))
+      const body = JSON.parse(readFileSync(setsPath, "utf8"))
 
       it("should be an object", () => {
         expect(body).to.be.an('object')
@@ -281,10 +285,15 @@ describe("API", () => {
     describe("standard.json", () => {
       const apiPath = versionPath + "/standard.json"
       const schemaPath = versionPath + "/schema.json"
-      const api = JSON.parse(fs.readFileSync(apiPath, "utf8"))
-      const schema = JSON.parse(fs.readFileSync(schemaPath, "utf8"))
+      const schemaUrl = "https://whatsinstandard.com/api/v6/schema.json"
+      const api = JSON.parse(readFileSync(apiPath, "utf8"))
+      const schema = JSON.parse(readFileSync(schemaPath, "utf8"))
 
-      it("should adhere to the schema", () => {
+      it("should declare its schema", () => {
+        expect(api["$schema"]).to.equal(schemaUrl)
+      })
+
+      it("should adhere to its schema", () => {
         expect(api).to.be.jsonSchema(schema)
       })
     })

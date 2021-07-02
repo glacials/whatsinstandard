@@ -122,7 +122,7 @@ The array is guaranteed to contain all sets currently in Standard, but also cont
 future sets. For API details including how to filter them, see [the API readme][api-readme].
 
 [api]: https://whatsinstandard.com/api/v6/standard.json
-[api-readme]: https://github.com/glacials/whatsinstandard/blob/main/api
+[api-readme]: api/README.md
 
 ## Attributions
 

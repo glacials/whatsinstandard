@@ -6,7 +6,8 @@ import 'package:whatsinstandard/screens/bans.dart';
 class HeroCardScreen extends StatelessWidget {
   final BannedCard bannedCard;
 
-  HeroCardScreen({Key key, @required this.bannedCard}) : super(key: key);
+  HeroCardScreen({required Key key, required this.bannedCard})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class HeroCardScreen extends StatelessWidget {
                 ),
                 ButtonBar(
                   children: [
-                    FlatButton(
+                    TextButton(
                       child: const Text('Scryfall'),
                       onPressed: () async {
                         String url =
@@ -38,7 +39,7 @@ class HeroCardScreen extends StatelessWidget {
                         }
                       },
                     ),
-                    FlatButton(
+                    TextButton(
                         child: const Text('Announcement'),
                         onPressed: () async {
                           String url = bannedCard.announcementUrl;

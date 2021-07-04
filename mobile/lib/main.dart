@@ -36,11 +36,11 @@ class MyApp extends StatelessWidget {
       routes: {
         MyApp.home: (context) {
           return FutureBuilder<http.Response>(
-            future:
-                http.get('https://whatsinstandard.com/api/v6/standard.json'),
+            future: http
+                .get(Uri.https('whatsinstandard.com', '/api/v6/standard.json')),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return SetsScreen(response: snapshot.data);
+                return SetsScreen(response: snapshot.data!);
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");
               }

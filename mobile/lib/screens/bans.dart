@@ -11,7 +11,12 @@ class BannedCard {
   final String reason;
   final String announcementUrl;
 
-  BannedCard({this.name, this.imageUrl, this.setCode, this.reason, this.announcementUrl});
+  BannedCard(
+      {required this.name,
+      required this.imageUrl,
+      required this.setCode,
+      required this.reason,
+      required this.announcementUrl});
 
   factory BannedCard.fromJson(Map<String, dynamic> json) {
     return BannedCard(
@@ -29,7 +34,7 @@ class BannedCard {
     if (response.statusCode == 200) {
       final bansJson = JsonDecoder().convert(response.body)['bans'];
 
-      for(var i = 0; i < bansJson.length; i++) {
+      for (var i = 0; i < bansJson.length; i++) {
         bannedCards.add(BannedCard.fromJson(bansJson[i]));
       }
       return bannedCards;
@@ -43,14 +48,14 @@ class BannedCard {
 class BansScreen extends StatefulWidget {
   final http.Response response;
 
-  BansScreen({this.response});
+  BansScreen({required this.response});
 
   @override
   _BansScreenState createState() => _BansScreenState();
 }
 
 class _BansScreenState extends State<BansScreen> {
-  List<BannedCard> _bans;
+  List<BannedCard> _bans = [];
 
   @override
   void initState() {
@@ -62,7 +67,7 @@ class _BansScreenState extends State<BansScreen> {
   Widget build(BuildContext context) {
     List<Widget> cards = [];
 
-    for(var i = 0; i < _bans.length; i++) {
+    for (var i = 0; i < _bans.length; i++) {
       cards.add(GridTile(
         child: InkResponse(
           child: Hero(
@@ -74,7 +79,10 @@ class _BansScreenState extends State<BansScreen> {
               context,
               MaterialPageRoute(
                 builder: (context) => PageView(
-                  children: _bans.map((card) => HeroCardScreen(bannedCard: card)).toList(),
+                  children: _bans
+                      .map((card) =>
+                          HeroCardScreen(key: Key(card.name), bannedCard: card))
+                      .toList(),
                   controller: PageController(initialPage: i),
                 ),
               ),
@@ -83,7 +91,9 @@ class _BansScreenState extends State<BansScreen> {
         ),
       ));
     }
+
     cards.add(Padding(padding: EdgeInsets.only(bottom: 150)));
+
     return GridView.count(
       childAspectRatio: .71,
       children: cards,

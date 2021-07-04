@@ -5,28 +5,28 @@ import 'package:whatsinstandard/screens/bans.dart';
 
 class StandardSet {
   final String name;
-  final String codename;
-  final String code;
-  final String symbol;
-  final DateTime exactEnterDate;
-  final DateTime exactExitDate;
+  final String? codename;
+  final String? code;
+  final Uri symbol;
+  final DateTime? exactEnterDate;
+  final DateTime? exactExitDate;
   final String roughExitDate;
 
   StandardSet(
-      {this.name,
-      this.codename,
-      this.code,
-      this.symbol,
-      this.exactEnterDate,
-      this.exactExitDate,
-      this.roughExitDate});
+      {required this.name,
+      required this.codename,
+      required this.code,
+      required this.symbol,
+      required this.exactEnterDate,
+      required this.exactExitDate,
+      required this.roughExitDate});
 
   factory StandardSet.fromJson(Map<String, dynamic> json) {
     return StandardSet(
       name: json['name'],
       codename: json['codename'],
       code: json['code'],
-      symbol: json['symbol']['common'],
+      symbol: Uri.parse(json['symbol']['common']).replace(scheme: 'https'),
       exactEnterDate: json['enterDate']['exact'] != null
           ? DateTime.parse(json['enterDate']['exact'])
           : null,
@@ -57,7 +57,7 @@ class StandardSet {
 class SetsScreen extends StatefulWidget {
   final http.Response response;
 
-  SetsScreen({this.response});
+  SetsScreen({required this.response});
 
   @override
   _SetsScreenState createState() => _SetsScreenState();
@@ -67,7 +67,7 @@ class _SetsScreenState extends State<SetsScreen> {
   bool _timelineView = false;
   int _currentScreenIndex = 0;
 
-  List<StandardSet> _sets;
+  List<StandardSet> _sets = [];
 
   @override
   void initState() {
@@ -89,11 +89,11 @@ class _SetsScreenState extends State<SetsScreen> {
         return true;
       }
 
-      if (s.exactEnterDate.isAfter(now)) {
+      if (s.exactEnterDate!.isAfter(now)) {
         return true;
       }
 
-      if (s.exactExitDate != null && s.exactExitDate.isBefore(now)) {
+      if (s.exactExitDate != null && s.exactExitDate!.isBefore(now)) {
         return true;
       }
 
@@ -117,14 +117,11 @@ class _SetsScreenState extends State<SetsScreen> {
       cards.add(Card(
           child: ListTile(
         leading: Image.network(
-          _sets[i].symbol,
+          _sets[i].symbol.toString(),
           height: 40,
           width: 40,
         ),
         title: Text(_sets[i].name),
-        subtitle: Text(_sets[i].exactExitDate != null
-            ? _sets[i].exactExitDate
-            : _sets[i].roughExitDate),
       )));
       if (i + 1 < _sets.length &&
           _sets[i].roughExitDate != _sets[i + 1].roughExitDate) {

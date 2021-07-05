@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:whatsinstandard/screens/bans.dart';
+import 'package:whatsinstandard/widgets/responsive_container.dart';
 
 class StandardSet {
   final String name;
@@ -54,16 +55,16 @@ class StandardSet {
   }
 }
 
-class SetsScreen extends StatefulWidget {
+class NavigationContainer extends StatefulWidget {
   final http.Response response;
 
-  SetsScreen({required this.response});
+  NavigationContainer({required this.response});
 
   @override
-  _SetsScreenState createState() => _SetsScreenState();
+  _NavigationContainerState createState() => _NavigationContainerState();
 }
 
-class _SetsScreenState extends State<SetsScreen> {
+class _NavigationContainerState extends State<NavigationContainer> {
   bool _timelineView = false;
   int _currentScreenIndex = 0;
 
@@ -139,48 +140,96 @@ class _SetsScreenState extends State<SetsScreen> {
         );
       }
     }
-    final Widget _setsScreen = ListView(children: cards);
 
+    final Widget _setsScreen = ListView(children: cards);
     final Widget _bansScreen = BansScreen(response: widget.response);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: _currentScreenIndex == 0
-            ? Text('Standard-legal sets')
-            : Text('Banned cards'),
-      ),
-      body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
-      bottomNavigationBar: BottomAppBar(
-        child: BottomNavigationBar(
-          currentIndex: _currentScreenIndex,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.category),
-              label: 'Standard sets',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.content_cut),
-              label: 'Banned cards',
-            ),
-          ],
-          onTap: _onBottomBarTap,
+    return ResponsiveContainer(
+      phone: Scaffold(
+        appBar: AppBar(
+          title: _currentScreenIndex == 0
+              ? Text('Standard-legal sets')
+              : Text('Banned cards'),
         ),
-        clipBehavior: Clip.antiAlias,
-        notchMargin: 6,
-        shape: CircularNotchedRectangle(),
+        body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
+        bottomNavigationBar: BottomAppBar(
+          child: BottomNavigationBar(
+            currentIndex: _currentScreenIndex,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.category),
+                label: 'Standard sets',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.content_cut),
+                label: 'Banned cards',
+              ),
+            ],
+            onTap: _onBottomBarTap,
+          ),
+          clipBehavior: Clip.antiAlias,
+          notchMargin: 6,
+          shape: CircularNotchedRectangle(),
+        ),
+        floatingActionButton: _currentScreenIndex == 0
+            ? FloatingActionButton(
+                tooltip:
+                    _timelineView ? 'Show as a list' : 'Show as a timeline',
+                child:
+                    _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
+                onPressed: () {
+                  setState(() {
+                    _timelineView ^= true;
+                  });
+                },
+              )
+            : null,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
-      floatingActionButton: _currentScreenIndex == 0
-          ? FloatingActionButton(
-              tooltip: _timelineView ? 'Show as a list' : 'Show as a timeline',
-              child: _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
-              onPressed: () {
-                setState(() {
-                  _timelineView ^= true;
-                });
-              },
-            )
-          : null,
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      tablet: Scaffold(
+        appBar: AppBar(title: Text("What's in Standard?")),
+        body: Row(children: [
+          Expanded(
+              flex: 1,
+              child: Column(children: [
+                Padding(
+                  padding: EdgeInsets.all(10),
+                ),
+                Text('Standard Sets', style: TextStyle(fontSize: 25)),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                ),
+                Expanded(flex: 1, child: _setsScreen)
+              ])),
+          Expanded(
+              flex: 1,
+              child: Column(children: [
+                Padding(
+                  padding: EdgeInsets.all(10),
+                ),
+                Text('Cards Banned from Standard',
+                    style: TextStyle(fontSize: 25)),
+                Padding(
+                  padding: EdgeInsets.all(10),
+                ),
+                Expanded(flex: 1, child: _bansScreen)
+              ]))
+        ]),
+        floatingActionButton: _currentScreenIndex == 0
+            ? FloatingActionButton(
+                tooltip:
+                    _timelineView ? 'Show as a list' : 'Show as a timeline',
+                child:
+                    _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
+                onPressed: () {
+                  setState(() {
+                    _timelineView ^= true;
+                  });
+                },
+              )
+            : null,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      ),
     );
   }
 }

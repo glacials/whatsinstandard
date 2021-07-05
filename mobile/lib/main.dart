@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:desktop_window/desktop_window.dart';
-
 import 'package:whatsinstandard/screens/sets.dart';
 
 void main() => runApp(MyApp());
@@ -20,9 +18,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    DesktopWindow.setMinWindowSize(Size(300, 600));
-    DesktopWindow.setMaxWindowSize(Size(500, 1000));
-    DesktopWindow.setWindowSize(Size(500, 1000));
     return MaterialApp(
       title: "What's in Standard?",
       theme: ThemeData(
@@ -33,6 +28,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         primarySwatch: Colors.pink,
       ),
+      debugShowCheckedModeBanner: false,
       routes: {
         MyApp.home: (context) {
           return FutureBuilder<http.Response>(

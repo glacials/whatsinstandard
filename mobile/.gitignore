@@ -9,26 +9,6 @@
 .history
 .svn/
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-/build/
 
 # Web related
 lib/generated_plugin_registrant.dart
@@ -36,4 +16,20 @@ lib/generated_plugin_registrant.dart
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
+# See https://dart.dev/guides/libraries/private-files
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
 android/key.properties
+build/
+doc/api/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# macOS
+.DS_Store

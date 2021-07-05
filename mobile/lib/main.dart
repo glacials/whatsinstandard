@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:whatsinstandard/screens/sets.dart';
+import 'package:whatsinstandard/widgets/navigation_container.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                 .get(Uri.https('whatsinstandard.com', '/api/v6/standard.json')),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return SetsScreen(response: snapshot.data!);
+                return NavigationContainer(response: snapshot.data!);
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");
               }

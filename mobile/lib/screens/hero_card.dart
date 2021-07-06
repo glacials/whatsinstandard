@@ -30,10 +30,10 @@ class HeroCardScreen extends StatelessWidget {
                     TextButton(
                       child: const Text('Scryfall'),
                       onPressed: () async {
-                        String url =
-                            "https://scryfall.com/search?q=${bannedCard.name}";
-                        if (await canLaunch(url)) {
-                          await launch(url);
+                        Uri uri = Uri.https(
+                            'scryfall.com', '/search', {"q": bannedCard.name});
+                        if (await canLaunch(uri.toString())) {
+                          await launch(uri.toString());
                         } else {
                           throw 'Could not launch ban announcement URL';
                         }

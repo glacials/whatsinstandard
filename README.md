@@ -33,7 +33,7 @@ Then open [localhost:8080][localhost] in your browser!
 If you're looking to add, remove, or change a set, you'll want to change [`api/internal.json`][api-internal] then run
 
 ```sh
-yb build
+npm install
 ```
 
 to regenerate the API. This file is the source of truth for set information, as the website itself consumes the APIs

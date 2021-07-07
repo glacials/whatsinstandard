@@ -4,7 +4,7 @@ class ResponsiveContainer extends StatelessWidget {
   final Widget phone;
   final Widget tablet;
 
-  ResponsiveContainer({required this.phone, required this.tablet});
+  const ResponsiveContainer({required this.phone, required this.tablet});
 
   @override
   Widget build(BuildContext context) {

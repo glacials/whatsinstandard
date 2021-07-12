@@ -54,15 +54,13 @@
                       What just left?
                     </template>
                   </button>
+                  <a href="https://twitter.com/whatsinstandard" class="btn btn-outline-primary btn-sm">
+                    See rotations in your Twitter timeline
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="text-center mb-3">
-          <a href="https://twitter.com/whatsinstandard" class="btn btn-outline-primary btn-sm">
-            See rotations in your Twitter timeline
-          </a>
         </div>
         <div v-if="false" class="col-md-5 text-center">
           <div class="spinner-border" role="status">
@@ -72,25 +70,36 @@
         <div class="row row-cols-1 row-cols-md-2">
           <template v-if="showRecentlyDropped">
             <div class="col-md-12">
-              <div class="list-group col-md-6 mb-5 mx-auto">
-                <div class="list-group-item p-3" v-for="set in last(rounds(dropped(sets)))" style="min-height: 5rem">
-                  <div class="justify-content-between d-flex" v-tippy :title="set.code">
-                    <a class="w-100 text-muted"
-                      :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
-                      {{ set.name }}
+              <div class="list-group mb-5 mx-auto">
+                <div class="row row-cols-1 row-cols-sm-4 border border-danger mx-0 py-3 h-100">
+                  <div v-for="set in last(rounds(dropped(sets)))" class="col my-3" style="min-height: 5rem">
+                    <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
+                      :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
+                      :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
+                      <div v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}">
+                        {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                      </div>
+                      <div class="text-dark" :class="{'lead': isReleased(set), 'text-muted': !isReleased(set)}" v-else>
+                        {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                      </div>
+                      <h1>
+                        <set-image :code="set.code" v-if="isReleased(set)"></set-image>
+                      </h1>
+                      <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(set.enterDate)">
+                        releases {{ dateFrom(set.enterDate) | relative }}
+                      </small>
                     </a>
-                    <set-image class="text-muted" :code="set.code"></set-image>
                   </div>
                 </div>
                 <div class="px-2 mx-3 text-right small text-danger block-comment">
-                  left on {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
+                  not legal as of {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
                 </div>
               </div>
             </div>
           </template>
           <div v-for="round in truncate(rounds(undropped(sets)))" class="col mb-4">
             <div class="row row-cols-1 row-cols-sm-2 border mx-0 py-3 h-100">
-              <div class="col my-3" v-for="set in round">
+              <div v-for="set in round" class="col my-3">
                 <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
                   :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
                   :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">

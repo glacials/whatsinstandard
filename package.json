@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "bootstrap": "^5",
-    "keyrune": "^3.7.2",
+    "keyrune": "^3.8.1",
     "moment": "^2.24.0",
     "node": "^14",
     "npm-font-open-sans": "^1.1.0",

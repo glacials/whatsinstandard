@@ -2,7 +2,13 @@
  * entire page
  */
 
-body, h1, h2, h3, h4, h5, h6 {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -13,7 +19,7 @@ body {
 /*
  * webpage logo
  */
- 
+
 #site-icon {
   float: left;
   height: 5em;
@@ -35,9 +41,9 @@ a.tip:hover {
 a.tip:after {
   border-bottom: 1px dashed #ccc;
   content: "(?)";
-  font-size: .65em;
+  font-size: 0.65em;
   position: relative;
-  top: -.2em;
+  top: -0.2em;
 }
 
 /*
@@ -70,21 +76,21 @@ img.cardimage {
 }
 
 img.rotate-90cw {
-  -webkit-transform: rotate( 90deg );
-  -ms-transform: rotate( 90deg );
-  transform: rotate( 90deg );
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 img.rotate-90ccw {
-  -webkit-transform: rotate( -90deg );
-  -ms-transform: rotate( -90deg );
-  transform: rotate( -90deg );
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 img.rotate-180 {
-  -webkit-transform: rotate( 180deg );
-  -ms-transform: rotate( 180deg );
-  transform: rotate( 180deg );
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /*
@@ -129,12 +135,14 @@ img.rotate-180 {
  * low-distraction
  */
 .low-distraction {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
-.low-distraction, a.low-distraction, a.low-distraction:active {
+.low-distraction,
+a.low-distraction,
+a.low-distraction:active {
   color: #000;
-  opacity: .35;
+  opacity: 0.35;
   text-decoration: none;
 }
 
@@ -168,14 +176,15 @@ a.low-distraction:hover {
   text-align: center;
 }
 
-.bar:before, .bar:after {
+.bar:before,
+.bar:after {
   position: absolute;
   top: 51%;
   overflow: hidden;
-  margin-bottom: .3em;
+  margin-bottom: 0.3em;
   width: 50%;
   height: 1px;
-  content: '\a0';
+  content: "\a0";
   background-color: #aaa;
 }
 
@@ -188,7 +197,7 @@ a.low-distraction:hover {
   height: 2em;
   line-height: 2em;
   position: absolute;
-  bottom: -12px;
-  right: 5px;
+  top: -1em;
+  right: 1em;
   background-color: white;
 }

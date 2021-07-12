@@ -193,11 +193,14 @@ a.low-distraction:hover {
   text-align: right;
 }
 
-.block-comment {
-  height: 2em;
-  line-height: 2em;
-  position: absolute;
-  top: -1em;
-  right: 1em;
-  background-color: white;
+fieldset {
+  border: 1px solid #000;
+}
+
+legend {
+  width: 0;
+}
+
+a {
+  text-decoration: none;
 }

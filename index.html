@@ -38,25 +38,28 @@
     <a class="d-inline" name="sets" id="sets"></a>
     <div class="d-flex">
       <div class="w-100">
-        <div class="row mb-4">
+        <div class="row mb-2">
           <div class="col-md-12">
-            <div class="mt-3 mb-3">
+            <div class="mt-3 d-flex">
               <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" class="d-none d-sm-inline" />
-              <h1>What's in Standard?</h1>
-              <div class="d-flex justify-content-between">
-                for Magic: The Gathering
-                <div>
-                  <button class="btn btn-outline-dark btn-sm" v-on:click.prevent="toggleRecentlyDropped">
-                    <template v-if="showRecentlyDropped">
-                      Hide
-                    </template>
-                    <template v-else>
-                      What just left?
-                    </template>
-                  </button>
-                  <a href="https://twitter.com/whatsinstandard" class="btn btn-outline-primary btn-sm">
-                    See rotations in your Twitter timeline
-                  </a>
+              <div class="w-100">
+                <h1>What's in Standard?</h1>
+                <div class="row row-cols-1 row-cols-sm-2">
+                  <div class="my-2">for Magic: The Gathering</div>
+                  <div class="text-center my-2">
+                    <button class="btn btn-outline-dark btn-sm my-1" v-on:click.prevent="toggleRecentlyDropped">
+                      <template v-if="showRecentlyDropped">
+                        Hide
+                      </template>
+                      <template v-else>
+                        What just left?
+                      </template>
+                    </button>
+                    <a href="https://twitter.com/whatsinstandard" class="btn
+                    btn-outline-primary btn-sm my-1">
+                      See rotations in your Twitter timeline
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -71,7 +74,11 @@
           <template v-if="showRecentlyDropped">
             <div class="col-md-12">
               <div class="list-group mb-5 mx-auto">
-                <div class="row row-cols-1 row-cols-sm-4 border border-danger mx-0 py-3 h-100">
+                <fieldset class="row row-cols-1 row-cols-sm-4 border border-danger mx-0
+                py-3 h-100">
+                  <legend class="text-danger small">
+                    Illegal as of {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
+                  </legend>
                   <div v-for="set in last(rounds(dropped(sets)))" class="col my-3" style="min-height: 5rem">
                     <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
                       :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
@@ -90,15 +97,17 @@
                       </small>
                     </a>
                   </div>
-                </div>
-                <div class="px-2 mx-3 text-right small text-danger block-comment">
-                  not legal as of {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
-                </div>
+                </fieldset>
               </div>
             </div>
           </template>
           <div v-for="round in truncate(rounds(undropped(sets)))" class="col mb-4">
-            <div class="row row-cols-1 row-cols-sm-2 border mx-0 py-3 h-100">
+            <fieldset class="row row-cols-1 row-cols-sm-2 border mx-0 py-3 h-100">
+              <legend class="small">
+                Legal until {{ humanDate(round[0].exitDate) }}
+                <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
+                  v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+              </legend>
               <div v-for="set in round" class="col my-3">
                 <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
                   :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
@@ -116,13 +125,7 @@
                     releases {{ dateFrom(set.enterDate) | relative }}
                   </small>
                 </a>
-              </div>
-              <div class="px-2 mx-3 text-right small block-comment">
-                legal until {{ humanDate(round[0].exitDate) }}
-                <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
-                  v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-              </div>
-            </div>
+            </fieldset>
           </div>
         </div>
       </div>

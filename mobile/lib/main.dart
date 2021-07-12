@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
 
               return Scaffold(
                 appBar: AppBar(
-                  title: Text('Standard-legal sets'),
+                  title: Text('Standard Sets'),
                 ),
                 body: Center(
                     child: Column(
@@ -61,11 +61,11 @@ class MyApp extends StatelessWidget {
                     items: const <BottomNavigationBarItem>[
                       BottomNavigationBarItem(
                         icon: Icon(Icons.category),
-                        label: 'Standard sets',
+                        label: 'Standard Sets',
                       ),
                       BottomNavigationBarItem(
                         icon: Icon(Icons.content_cut),
-                        label: 'Banned cards',
+                        label: 'Banned Cards',
                       ),
                     ],
                   ),

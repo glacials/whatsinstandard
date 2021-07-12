@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:whatsinstandard/screens/bans.dart';
-import 'package:whatsinstandard/widgets/responsive_container.dart';
+import '../screens/bans.dart';
+import 'responsive_container.dart';
+
+import 'blocks.dart';
 
 class StandardSet {
   final String name;
@@ -55,6 +57,31 @@ class StandardSet {
   }
 }
 
+class Block {
+  final Iterable<StandardSet> sets;
+  final String roughExitDate;
+
+  Block({required this.sets, required this.roughExitDate});
+
+  static List<Block> fromSets(Iterable<StandardSet> sets) {
+    List<List<StandardSet>> blocks = [];
+
+    String roughExitDate = "Loading";
+    sets.forEach((set) {
+      if (set.roughExitDate != roughExitDate) {
+        blocks.add([]);
+        roughExitDate = set.roughExitDate;
+      }
+      blocks.last.add(set);
+    });
+
+    return blocks
+        .map((block) =>
+            Block(sets: block, roughExitDate: block[0].roughExitDate))
+        .toList();
+  }
+}
+
 class NavigationContainer extends StatefulWidget {
   final http.Response response;
 
@@ -65,7 +92,6 @@ class NavigationContainer extends StatefulWidget {
 }
 
 class _NavigationContainerState extends State<NavigationContainer> {
-  bool _timelineView = false;
   int _currentScreenIndex = 0;
 
   List<StandardSet> _sets = [];
@@ -84,107 +110,38 @@ class _NavigationContainerState extends State<NavigationContainer> {
 
   @override
   Widget build(BuildContext context) {
-    final DateTime now = new DateTime.now();
-    _sets.removeWhere((s) {
-      if (s.exactEnterDate == null) {
-        return true;
-      }
-
-      if (s.exactEnterDate!.isAfter(now)) {
-        return true;
-      }
-
-      if (s.exactExitDate != null && s.exactExitDate!.isBefore(now)) {
-        return true;
-      }
-
-      return false;
-    });
-
-    List<Widget> cards = [];
-    cards.add(
-      AnimatedContainer(
-        child: Text(
-          'Until ' + _sets[0].roughExitDate,
-          style: TextStyle(fontSize: 20),
-        ),
-        curve: Curves.fastOutSlowIn,
-        duration: Duration(milliseconds: 500),
-        height: _timelineView ? 80 : 0,
-        padding: EdgeInsets.only(left: 20, top: 30),
-      ),
-    );
-    for (var i = 0; i < _sets.length; i++) {
-      cards.add(Card(
-          child: ListTile(
-        leading: Image.network(
-          _sets[i].symbol.toString(),
-          height: 40,
-          width: 40,
-        ),
-        title: Text(_sets[i].name),
-      )));
-      if (i + 1 < _sets.length &&
-          _sets[i].roughExitDate != _sets[i + 1].roughExitDate) {
-        cards.add(
-          AnimatedContainer(
-            child: Text(
-              'Until ' + _sets[i + 1].roughExitDate,
-              style: TextStyle(fontSize: 20),
-            ),
-            curve: Curves.fastOutSlowIn,
-            duration: Duration(milliseconds: 500),
-            height: _timelineView ? 80 : 0,
-            padding: EdgeInsets.only(left: 20, top: 30),
-          ),
-        );
-      }
+    Widget _setsScreen;
+    if (this._sets.isEmpty) {
+      _setsScreen = Text("loading");
+    } else {
+      _setsScreen = Blocks(sets: this._sets);
     }
 
-    final Widget _setsScreen = ListView(children: cards);
     final Widget _bansScreen = BansScreen(response: widget.response);
 
     return ResponsiveContainer(
       phone: Scaffold(
         appBar: AppBar(
           title: _currentScreenIndex == 0
-              ? Text('Standard-legal sets')
-              : Text('Banned cards'),
+              ? Text('Standard Sets')
+              : Text('Banned Cards'),
         ),
         body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
-        bottomNavigationBar: BottomAppBar(
-          child: BottomNavigationBar(
-            currentIndex: _currentScreenIndex,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.category),
-                label: 'Standard sets',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.content_cut),
-                label: 'Banned cards',
-              ),
-            ],
-            onTap: _onBottomBarTap,
-          ),
-          clipBehavior: Clip.antiAlias,
-          notchMargin: 6,
-          shape: CircularNotchedRectangle(),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _currentScreenIndex,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.category),
+              label: 'Standard Sets',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.content_cut),
+              label: 'Banned Cards',
+            ),
+          ],
+          onTap: _onBottomBarTap,
+          enableFeedback: true,
         ),
-        floatingActionButton: _currentScreenIndex == 0
-            ? FloatingActionButton(
-                tooltip:
-                    _timelineView ? 'Show as a list' : 'Show as a timeline',
-                child:
-                    _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
-                onPressed: () {
-                  setState(() {
-                    _timelineView ^= true;
-                  });
-                },
-              )
-            : null,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
       tablet: Scaffold(
         appBar: AppBar(title: Text("What's in Standard?")),
@@ -207,28 +164,13 @@ class _NavigationContainerState extends State<NavigationContainer> {
                 Padding(
                   padding: EdgeInsets.all(10),
                 ),
-                Text('Cards Banned from Standard',
-                    style: TextStyle(fontSize: 25)),
+                Text('Banned Cards', style: TextStyle(fontSize: 25)),
                 Padding(
                   padding: EdgeInsets.all(10),
                 ),
                 Expanded(flex: 1, child: _bansScreen)
               ]))
         ]),
-        floatingActionButton: _currentScreenIndex == 0
-            ? FloatingActionButton(
-                tooltip:
-                    _timelineView ? 'Show as a list' : 'Show as a timeline',
-                child:
-                    _timelineView ? Icon(Icons.menu) : Icon(Icons.date_range),
-                onPressed: () {
-                  setState(() {
-                    _timelineView ^= true;
-                  });
-                },
-              )
-            : null,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

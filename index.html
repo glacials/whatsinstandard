@@ -46,8 +46,8 @@
                 <h1>What's in Standard?</h1>
                 <div class="row row-cols-1 row-cols-sm-2">
                   <div class="my-2">for Magic: The Gathering</div>
-                  <div class="text-center my-2">
-                    <button class="btn btn-outline-dark btn-sm my-1" v-on:click.prevent="toggleRecentlyDropped">
+                  <div class="d-flex justify-content-xs-center justify-content-sm-end my-2">
+                    <button class="btn btn-outline-dark btn-sm my-1 mx-1" v-on:click.prevent="toggleRecentlyDropped">
                       <template v-if="showRecentlyDropped">
                         Hide
                       </template>
@@ -56,7 +56,7 @@
                       </template>
                     </button>
                     <a href="https://twitter.com/whatsinstandard" class="btn
-                    btn-outline-primary btn-sm my-1">
+                    btn-outline-primary btn-sm my-1 mx-1">
                       See rotations in your Twitter timeline
                     </a>
                   </div>

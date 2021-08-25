@@ -404,12 +404,12 @@
     {
       "name": "Innistrad: Midnight Hunt",
       "codename": "Golf",
-      "code": null,
+      "code": "MID",
       "symbol": {
-        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
-        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
-        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
-        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=MID",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=MID",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=MID",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=MID"
       },
       "enterDate": {
         "exact": "2021-09-17T00:00:00.000",

@@ -22,6 +22,8 @@
   <meta name="msapplication-TileColor" content="#2d89ef">
   <meta name="theme-color" content="#ffffff">
 
+  <meta name="apple-itunes-app" content="app-id=1575154818">
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({
@@ -35,16 +37,16 @@
   <div id="vue" class="container">
     <a class="d-inline" name="sets" id="sets"></a>
     <div class="d-flex">
-      <div class="w-100">
-        <div class="row mb-4">
-          <div class="col-md-12">
-            <div class="mt-3 mb-3">
-              <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" class="d-none d-sm-inline" />
+      <div class="col mx-1">
+        <div class="row mb-2">
+          <div class="mt-3 d-flex">
+            <img id="site-icon" src="icon-original.svg" alt="What's in Standard? logo" class="d-none d-sm-inline" />
+            <div class="w-100">
               <h1>What's in Standard?</h1>
-              <div class="d-flex">
-                for Magic: The Gathering
-                <div class="flex-fill text-right">
-                  <button class="btn btn-outline-dark btn-sm" v-on:click.prevent="toggleRecentlyDropped">
+              <div class="row row-cols-1 row-cols-sm-2">
+                <div class="my-2">for Magic: The Gathering</div>
+                <div class="d-flex justify-content-xs-center justify-content-sm-end my-2">
+                  <button class="btn btn-outline-dark btn-sm my-1 mx-1" v-on:click.prevent="toggleRecentlyDropped">
                     <template v-if="showRecentlyDropped">
                       Hide
                     </template>
@@ -52,43 +54,29 @@
                       What just left?
                     </template>
                   </button>
+                  <a href="https://twitter.com/whatsinstandard" class="btn
+                    btn-outline-primary btn-sm my-1 mx-1">
+                    See rotations in your Twitter timeline
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="text-center mb-3">
-          <a href="https://twitter.com/whatsinstandard" class="btn btn-outline-primary btn-sm">
-            See rotations in your Twitter timeline
-          </a>
-        </div>
-        <div v-if="false" class="col-md-5 text-center">
+        <div v-if="false" class="row text-center">
           <div class="spinner-border" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only"></span>
           </div>
         </div>
-        <div class="row row-cols-1 row-cols-md-2">
-          <template v-if="showRecentlyDropped">
-            <div class="col-md-12">
-              <div class="list-group col-md-6 mb-5 mx-auto">
-                <div class="list-group-item p-3" v-for="set in last(rounds(dropped(sets)))" style="min-height: 5rem">
-                  <div class="justify-content-between d-flex" v-tippy :title="set.code">
-                    <a class="w-100 text-muted"
-                      :href="`https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`">
-                      {{ set.name }}
-                    </a>
-                    <set-image class="text-muted" :code="set.code"></set-image>
-                  </div>
-                </div>
-                <div class="px-2 mx-3 text-right small text-danger block-comment">
-                  left on {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
-                </div>
-              </div>
+        <div class="row">
+          <div v-if="showRecentlyDropped" class="col mb-4 border border-danger py-3">
+            <div class="row">
+              <span class="text-danger small">
+                Illegal as of {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
+              </span>
             </div>
-          </template>
-          <div v-for="round in truncate(rounds(undropped(sets)))" class="col mb-4">
-            <div class="row row-cols-1 row-cols-sm-2 border mx-0 py-3 h-100">
-              <div class="col my-3" v-for="set in round">
+            <div class="row row-cols-1 row-cols-sm-4">
+              <div v-for="set in last(rounds(dropped(sets)))" class="col my-3" style="min-height: 5rem">
                 <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
                   :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
                   :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
@@ -106,98 +94,123 @@
                   </small>
                 </a>
               </div>
-              <div class="px-2 mx-3 text-right small block-comment">
-                legal until {{ humanDate(round[0].exitDate) }}
+            </div>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2">
+          <div v-for="round in truncate(rounds(undropped(sets)))" class="col mb-4 border py-3 px-3">
+            <div class="row row-cols-1">
+              <span class="small ">
+                Legal until {{ humanDate(round[0].exitDate) }}
                 <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
                   v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
+              </span>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2">
+              <div v-for="set in round" class="col my-3">
+                <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
+                  :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
+                  :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
+                  <div v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}">
+                    {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                  </div>
+                  <div class="text-dark" :class="{'lead': isReleased(set), 'text-muted': !isReleased(set)}" v-else>
+                    {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                  </div>
+                  <h1>
+                    <set-image :code="set.code" v-if="isReleased(set)"></set-image>
+                  </h1>
+                  <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(set.enterDate)">
+                    releases {{ dateFrom(set.enterDate) | relative }}
+                  </small>
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6">
-        <h3 class="pt-3" id="bans">Banned cards</h3>
-        <template v-if="bans.length === 0">
-          <i>No cards are banned from Standard right now.
-        </template>
-        <template v-else>
-          <p>Despite being part of legal sets, the following cards are explicitly not allowed in decks for this
-            format.
-          </p>
-          <div class="row" v-cloak>
-            <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
-              <div class="card mb-3">
-                <img :src="ban.cardImageUrl" class="card-img-top" :alt="`${ban.cardName} from ${ban.setCode}`" />
-                <div class="card-body">
-                  <p class="card-text">{{ ban.reason }}</p>
-                  <a :href="`https://scryfall.com/search?q=!“${ban.cardName}” set:${ban.setCode}&utm_source=whatsinstandard`"
-                    class="btn btn-outline-primary btn-sm text-uppercase my-1" rel="noopener">
-                    Scryfall
-                  </a>
-                  <a :href="ban.announcementUrl" class="btn btn-outline-secondary btn-sm text-uppercase my-1">
-                    Announcement
-                  </a>
+        <div class="row">
+          <div class="col-md-6">
+            <h3 class="pt-3" id="bans">Banned cards</h3>
+            <template v-if="bans.length === 0">
+              <i>No cards are banned from Standard right now.
+            </template>
+            <template v-else>
+              <p>Despite being part of legal sets, the following cards are explicitly not allowed in decks for this
+                format.
+              </p>
+              <div class="row" v-cloak>
+                <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
+                  <div class="card mb-3">
+                    <img :src="ban.cardImageUrl" class="card-img-top" :alt="`${ban.cardName} from ${ban.setCode}`" />
+                    <div class="card-body">
+                      <p class="card-text">{{ ban.reason }}</p>
+                      <a :href="`https://scryfall.com/search?q=!“${ban.cardName}” set:${ban.setCode}&utm_source=whatsinstandard`"
+                        class="btn btn-outline-primary btn-sm text-uppercase my-1" rel="noopener">
+                        Scryfall
+                      </a>
+                      <a :href="ban.announcementUrl" class="btn btn-outline-secondary btn-sm text-uppercase my-1">
+                        Announcement
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </template>
           </div>
-        </template>
-      </div>
-      <div class="col-md-6">
-        <h2 class="pt-3" id="info">What <em>is</em> Standard?</h2>
-        <p>
-          <a target="_blank" href="https://magic.wizards.com/en/content/standard-formats-magic-gathering"
-            rel="noopener">
-            <b>Standard</b>
-          </a>
-          is a tournament format containing several recent <i>Magic: The Gathering</i> sets. Most sets enter
-          the format when they're released and drop out about twenty-one months later.
-        </p>
-        <p>
-          Generally the group contains 5&ndash;8 sets; when a ninth would be released,
-          the eldest four are dropped. This is a rule of thumb and exceptions are
-          frequently made. This site will always have current information.
-        </p>
-        <p>
-          A <b>Standard card</b> is a card from a set currently part of the legal pool.
-          <a v-tippy class="tip" title="Different versions of a card count as the same card.<br>
+          <div class="col-md-6">
+            <h2 class="pt-3" id="info">What <em>is</em> Standard?</h2>
+            <p>
+              <a target="_blank" href="https://magic.wizards.com/en/content/standard-formats-magic-gathering"
+                rel="noopener">
+                <b>Standard</b>
+              </a>
+              is a tournament format containing several recent <i>Magic: The Gathering</i> sets. Most sets enter
+              the format when they're released and drop out about twenty-one months later.
+            </p>
+            <p>
+              Generally the group contains 5&ndash;8 sets; when a ninth would be released,
+              the eldest four are dropped. This is a rule of thumb and exceptions are
+              frequently made. This site will always have current information.
+            </p>
+            <p>
+              A <b>Standard card</b> is a card from a set currently part of the legal pool.
+              <a v-tippy class="tip" title="Different versions of a card count as the same card.<br>
                     e.g. As long as Naturalize is Standard-legal, so are all prints of that card from previous sets.">
-          </a>
-        </p>
-        <p>
-          A <b>Standard deck</b> contains 60+ Standard cards and can optionally have a sideboard
-          <a v-tippy class="tip" title="A sideboard is a second pool of cards outside the main deck that cannot be used during games,
+              </a>
+            </p>
+            <p>
+              A <b>Standard deck</b> contains 60+ Standard cards and can optionally have a sideboard
+              <a v-tippy class="tip" title="A sideboard is a second pool of cards outside the main deck that cannot be used during games,
                   but whose cards can be swapped with or added to the main deck cards between games in a match.
                   Sideboard cards are usually situational, providing counters to specific deck archetypes.">
-          </a> of up to 15 additional such cards. Apart from basic lands, the combined main deck and
-          sideboard cannot have more than four copies of any card.
-        </p>
-        <h3 class="mt-5">Related sets and formats</h3>
-        <p>
-          <a target="_blank" href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl"
-            rel="noopener"><b>Brawl</b></a>
-          is a format based on Standard—all rotations listed here apply to Brawl as well—but Brawl has its own
-          banlist</a>.
-        </p>
-        <p>
-          Not all sets enter Standard upon release. For example, Masters sets and Commander sets never enter the
-          format.
-        </p>
-        <div class="github my-4">
-          <a v-tippy class="btn" href="https://twitter.com/whatsinstandard"
-            title="See rotations in your Twitter timeline">
-            <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='60' width='60' />
-          </a>
-          <a v-tippy class="btn" href="https://github.com/glacials/whatsinstandard" title="We're open source!">
-            <img class="m-1" src="img/github.png" alt="GitHub logo" height='35' width='35' />
-          </a>
+              </a> of up to 15 additional such cards. Apart from basic lands, the combined main deck and
+              sideboard cannot have more than four copies of any card.
+            </p>
+            <h3 class="mt-5">Related sets and formats</h3>
+            <p>
+              <a target="_blank" href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl"
+                rel="noopener"><b>Brawl</b></a>
+              is a format based on Standard—all rotations listed here apply to Brawl as well—but Brawl has its own
+              banlist</a>.
+            </p>
+            <p>
+              Not all sets enter Standard upon release. For example, Masters sets and Commander sets never enter the
+              format.
+            </p>
+            <div class="github my-4">
+              <a v-tippy class="btn" href="https://twitter.com/whatsinstandard"
+                title="See rotations in your Twitter timeline">
+                <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='60' width='60' />
+              </a>
+              <a v-tippy class="btn" href="https://github.com/glacials/whatsinstandard" title="We're open source!">
+                <img class="m-1" src="img/github.png" alt="GitHub logo" height='35' width='35' />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <script src="/node_modules/jquery/dist/jquery.min.js"></script>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/node_modules/moment/min/moment.min.js"></script>
   <script src="/node_modules/underscore/underscore-min.js"></script>
@@ -205,7 +218,6 @@
   <script src="/node_modules/vue-tippy/dist/vue-tippy.min.js"></script>
 
   <script src="/js/app.js"></script>
-  <script src="/js/service-worker.js"></script>
   <script src="/js/tracking.js"></script>
 
   <script>

@@ -139,7 +139,7 @@
                 format.
               </p>
               <div class="row" v-cloak>
-                <div v-for="ban in bans" class="col-sm-12 col-md-12 col-lg-6">
+                <div v-for="ban in bansFor(undropped(sets), bans)" class="col-sm-12 col-md-12 col-lg-6">
                   <div class="card mb-3">
                     <img :src="ban.cardImageUrl" class="card-img-top" :alt="`${ban.cardName} from ${ban.setCode}`" />
                     <div class="card-body">
@@ -213,7 +213,6 @@
   </div>
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/node_modules/moment/min/moment.min.js"></script>
-  <script src="/node_modules/underscore/underscore-min.js"></script>
   <script src="/node_modules/vue/dist/vue.min.js"></script>
   <script src="/node_modules/vue-tippy/dist/vue-tippy.min.js"></script>
 

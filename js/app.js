@@ -7,7 +7,7 @@ var code = Vue.component('set-image', {
     </template>
   `,
 })
-
+Vue.config.devtools = true
 var app = new Vue({
   computed: {
   },
@@ -37,6 +37,12 @@ var app = new Vue({
   },
 
   methods: {
+    // bansFor returns the bans in the given bans array that apply to the given array of
+    // sets.
+    bansFor: function (sets, bans) {
+      return bans.filter(ban => sets.map(set => set.code).includes(ban.setCode))
+    },
+
     // dropped returns the sets in the given array of sets that have dropped from Standard according to local time,
     // preserving order.
     dropped: function (sets) {
@@ -109,18 +115,20 @@ var app = new Vue({
     recent: setsOrRounds => [setsOrRounds[setsOrRounds.length - 1]],
 
     // rounds splits the given array of sets into a two-dimensional array where each sub-array is a group of sets that
-    // share a exitDate.rough. The outer array is ordered by exitDate.rough ascending. The inner array order is
-    // preserved from the input.
+    // share a exitDate.rough. Orders are preserved.
     rounds: function (sets) {
+      // Note that to preserve order for the outer array, the key of the interim object
+      // must be a string because ES2015 object property order is preserved only for
+      // string keys.
       return Object.values(sets.reduce((rounds, set) => {
         return Object.assign(rounds, { [set.exitDate.rough]: (rounds[set.exitDate.rough] || []).concat(set) })
-      }, {})).sort((a, b) => (a[0].exitDate.rough < b[0].exitDate.rough) ? -1 : 1)
+      }, {}))
     },
 
     // standard returns the sets in the given array that are currently in Standard according to local time, preserving
     // order.
     standard: function (sets) {
-      return _.difference(sets, this.unreleased(sets), this.dropped(sets))
+      return sets.filter(set => !this.unreleased(sets).includes(set) && !this.dropped(sets).includes(set))
     },
 
     // toggleRecentlyDropped shows or hides the recently dropped sets area of the page.

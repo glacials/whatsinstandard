@@ -120,7 +120,7 @@ var app = new Vue({
     // standard returns the sets in the given array that are currently in Standard according to local time, preserving
     // order.
     standard: function (sets) {
-      return _.difference(sets, this.unreleased(sets), this.dropped(sets))
+      return sets.filter(set => !this.unreleased(sets).includes(set) && !this.dropped(sets).includes(set))
     },
 
     // toggleRecentlyDropped shows or hides the recently dropped sets area of the page.

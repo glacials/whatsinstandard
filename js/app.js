@@ -37,6 +37,12 @@ var app = new Vue({
   },
 
   methods: {
+    // bansFor returns the bans in the given bans array that apply to the given array of
+    // sets.
+    bansFor: function (sets, bans) {
+      return bans.filter(ban => sets.map(set => set.code).includes(ban.setCode))
+    },
+
     // dropped returns the sets in the given array of sets that have dropped from Standard according to local time,
     // preserving order.
     dropped: function (sets) {

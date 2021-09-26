@@ -7,7 +7,7 @@ var code = Vue.component('set-image', {
     </template>
   `,
 })
-
+Vue.config.devtools = true
 var app = new Vue({
   computed: {
   },

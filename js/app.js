@@ -115,12 +115,14 @@ var app = new Vue({
     recent: setsOrRounds => [setsOrRounds[setsOrRounds.length - 1]],
 
     // rounds splits the given array of sets into a two-dimensional array where each sub-array is a group of sets that
-    // share a exitDate.rough. The outer array is ordered by exitDate.rough ascending. The inner array order is
-    // preserved from the input.
+    // share a exitDate.rough. Orders are preserved.
     rounds: function (sets) {
+      // Note that to preserve order for the outer array, the key of the interim object
+      // must be a string because ES2015 object property order is preserved only for
+      // string keys.
       return Object.values(sets.reduce((rounds, set) => {
         return Object.assign(rounds, { [set.exitDate.rough]: (rounds[set.exitDate.rough] || []).concat(set) })
-      }, {})).sort((a, b) => (a[0].exitDate.rough < b[0].exitDate.rough) ? -1 : 1)
+      }, {}))
     },
 
     // standard returns the sets in the given array that are currently in Standard according to local time, preserving

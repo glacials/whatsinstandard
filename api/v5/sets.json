@@ -176,6 +176,14 @@
       "enter_date": "2021-09-24T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2023"
+    },
+    {
+      "name": "Innistrad: Crimson Vow",
+      "block": null,
+      "code": "VOW",
+      "enter_date": "2021-11-19T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2023"
     }
   ],
   "bans": [

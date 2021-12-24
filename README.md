@@ -18,9 +18,7 @@ on the App Store' src='./img/appstore.svg' width='134'/></a>
 
 ### Contributing
 
-See [`CONTRIBUTING.md`](CONTRIBUTING).
-
-[CONTRIBUTING]: ./CONTRIBUTING.md
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ### API
 

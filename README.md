@@ -22,9 +22,9 @@ See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
 ### API
 
-See [`api/README.md`][api-readme].
+See [`web/api/README.md`][api-readme].
 
-[api-readme]: api/README.md
+[api-readme]: ./web/api/README.md
 
 ## Attributions
 

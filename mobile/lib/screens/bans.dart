@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:whatsinstandard/screens/hero_card.dart';
+import 'package:whatsinstandard/widgets/navigation_container.dart';
 
 class BannedCard {
   final String name;
@@ -56,10 +57,29 @@ class BansScreen extends StatefulWidget {
 
 class _BansScreenState extends State<BansScreen> {
   List<BannedCard> _bans = [];
+  List<StandardSet> _sets = [];
 
   @override
   void initState() {
     super.initState();
+    _sets = StandardSet.fetch(widget.response);
+    final DateTime now = new DateTime.now();
+    _sets.removeWhere((s) {
+      if (s.exactEnterDate == null) {
+        return true;
+      }
+
+      if (s.exactEnterDate!.isAfter(now)) {
+        return true;
+      }
+
+      if (s.exactExitDate != null && s.exactExitDate!.isBefore(now)) {
+        return true;
+      }
+
+      return false;
+    });
+
     _bans = BannedCard.fetch(widget.response);
   }
 
@@ -68,6 +88,11 @@ class _BansScreenState extends State<BansScreen> {
     List<Widget> cards = [];
 
     for (var i = 0; i < _bans.length; i++) {
+      // Only show bans for standard sets
+      if (!_sets.map((set) => set.code).contains(_bans[i].setCode)) {
+        continue;
+      }
+
       cards.add(GridTile(
         child: InkResponse(
           child: Hero(

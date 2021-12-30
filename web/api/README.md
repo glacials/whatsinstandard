@@ -3,7 +3,7 @@
 Hey, welcome to this super awesome API. It has one endpoint! Here is an example request:
 
 ```sh
-curl whatsinstandard.com/api/v6/standard.json
+curl https://whatsinstandard.com/api/v6/standard.json
 ```
 
 This will return something like:

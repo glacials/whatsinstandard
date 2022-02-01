@@ -334,6 +334,27 @@
       "set_code": "ELD",
       "reason": "Banned for being a unique and powerful bridge between strong ramp enablers and powerful payoffs.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-12-2020-banned-and-restricted-announcement?adf"
+    },
+    {
+      "card_name": "Alrund's Epiphany",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/9/c94fcb53-a7bd-4a80-a536-9fb0eb24261a.jpg?1643112377",
+      "set_code": "KHM",
+      "reason": "Banned for being too strong in blue control decks and reducing format diversity.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/january-25-2022-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Divide by Zero",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/9/1958d96e-ec44-48ab-80b1-5b01a24ac7b8.jpg?1643112390",
+      "set_code": "STX",
+      "reason": "Banned for being too strong in blue control decks and reducing format diversity.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/january-25-2022-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Faceless Haven",
+      "card_image_url": "https://c1.scryfall.com/file/scryfall-cards/large/front/e/3/e3cd82e5-6072-4334-a493-01ca4ad6b4eb.jpg?1643112401",
+      "set_code": "KHM",
+      "reason": "Banned for being too efficient in monocolor aggro decks.",
+      "announcement_url": "https://magic.wizards.com/en/articles/archive/news/january-25-2022-banned-and-restricted-announcement"
     }
   ]
 }

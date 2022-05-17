@@ -261,8 +261,8 @@
       "name": "Dominaria United",
       "codename": null,
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "DMU",
+      "enter_date": "2022-09-09T00:00:00.000",
       "rough_enter_date": "Q3 2022",
       "exit_date": null,
       "rough_exit_date": "Q4 2024"

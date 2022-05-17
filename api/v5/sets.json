@@ -200,6 +200,14 @@
       "enter_date": "2022-04-29T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2023"
+    },
+    {
+      "name": "Dominaria United",
+      "block": null,
+      "code": "DMU",
+      "enter_date": "2022-09-09T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2024"
     }
   ],
   "bans": [

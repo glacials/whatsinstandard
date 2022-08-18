@@ -514,6 +514,101 @@
         "exact": null,
         "rough": "Q4 2024"
       }
+    },
+    {
+      "name": "Phyrexia: All Will Be One",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q1 2023"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2024"
+      }
+    },
+    {
+      "name": "March of the Machine",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q2 2023"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2024"
+      }
+    },
+    {
+      "name": "March of the Machine: The Aftermath",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q3 2023"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2025"
+      }
+    },
+    {
+      "name": "Wilds of Eldraine",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q4 2023"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2025"
+      }
+    },
+    {
+      "name": "The Lost Caverns of Ixalan",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q1 2024"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2025"
+      }
     }
   ],
   "bans": [

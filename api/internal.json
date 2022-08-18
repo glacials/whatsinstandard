@@ -276,6 +276,56 @@
       "rough_enter_date": "Q4 2022",
       "exit_date": null,
       "rough_exit_date": "Q4 2024"
+    },
+    {
+      "name": "Phyrexia: All Will Be One",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q1 2023",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2024"
+    },
+    {
+      "name": "March of the Machine",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q2 2023",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2024"
+    },
+    {
+      "name": "March of the Machine: The Aftermath",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q3 2023",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2025"
+    },
+        {
+      "name": "Wilds of Eldraine",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q4 2023",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2025"
+    },
+    {
+      "name": "The Lost Caverns of Ixalan",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q1 2024",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2025"
     }
   ],
   "bans": [

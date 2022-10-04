@@ -10,7 +10,7 @@ function installArchSpecificPackage(version, require) {
   var arch = platform == 'win' && process.arch == 'ia32' ? 'x86' : process.arch;
   var prefix = (process.platform == 'darwin' && process.arch == 'arm64') ? 'node-bin' : 'node';
 
-  var cp = spawn(platform == 'win' ? 'npm.cmd' : 'npm', ['install', '--no-save', ['node', platform, arch].join('-') + '@' + version], {
+  var cp = spawn(platform == 'win' ? 'npm.cmd' : 'npm', ['install', '--no-save', [prefix, platform, arch].join('-') + '@' + version], {
     stdio: 'inherit',
     shell: true
   });

@@ -281,8 +281,8 @@
       "name": "Phyrexia: All Will Be One",
       "codename": null,
       "block": null,
-      "code": null,
-      "enter_date": "2023-02-03T00:00:00.000",
+      "code": "ONE",
+      "enter_date": "2023-02-10T00:00:00.000",
       "rough_enter_date": "Q1 2023",
       "exit_date": null,
       "rough_exit_date": "Q4 2024"

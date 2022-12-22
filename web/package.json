@@ -38,7 +38,7 @@
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5",
-    "keyrune": "^3.8.4",
+    "keyrune": "^3.11.0",
     "moment": "^2.29.4",
     "node": "^16",
     "npm-font-open-sans": "^1.1.0",

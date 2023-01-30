@@ -259,7 +259,7 @@
     },
     {
       "name": "Dominaria United",
-      "codename": null,
+      "codename": "Judo",
       "block": null,
       "code": "DMU",
       "enter_date": "2022-09-09T00:00:00.000",
@@ -269,7 +269,7 @@
     },
     {
       "name": "The Brothers' War",
-      "codename": null,
+      "codename": "Kayaking",
       "block": null,
       "code": "BRO",
       "enter_date": "2022-11-18T00:00:00.000",
@@ -279,7 +279,7 @@
     },
     {
       "name": "Phyrexia: All Will Be One",
-      "codename": null,
+      "codename": "Lacrosse",
       "block": null,
       "code": "ONE",
       "enter_date": "2023-02-03T00:00:00.000",
@@ -289,10 +289,10 @@
     },
     {
       "name": "March of the Machine",
-      "codename": null,
+      "codename": "Marathon",
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "MOM",
+      "enter_date": "2023-04-14T00:00:00.000",
       "rough_enter_date": "Q2 2023",
       "exit_date": null,
       "rough_exit_date": "Q4 2024"
@@ -309,7 +309,7 @@
     },
         {
       "name": "Wilds of Eldraine",
-      "codename": null,
+      "codename": "Netball",
       "block": null,
       "code": null,
       "enter_date": null,
@@ -319,7 +319,7 @@
     },
     {
       "name": "The Lost Caverns of Ixalan",
-      "codename": null,
+      "codename": "Offroading",
       "block": null,
       "code": null,
       "enter_date": null,

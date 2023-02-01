@@ -11,7 +11,7 @@
   "people": {
     "author": {
       "name": "Ben Carlsson",
-      "email": "qhiiyr@gmail.com"
+      "email": "ben@twos.dev"
     }
   },
   "repository": {
@@ -40,7 +40,7 @@
     "bootstrap": "^5",
     "keyrune": "^3.11.0",
     "moment": "^2.29.4",
-    "node": "^16",
+    "node": "^18",
     "npm-font-open-sans": "^1.1.0",
     "vue": "^2.6.10",
     "vue-tippy": "^2.1.2"

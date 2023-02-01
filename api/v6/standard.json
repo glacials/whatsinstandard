@@ -479,7 +479,7 @@
     },
     {
       "name": "Dominaria United",
-      "codename": null,
+      "codename": "Judo",
       "code": "DMU",
       "symbol": {
         "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=DMU",
@@ -498,7 +498,7 @@
     },
     {
       "name": "The Brothers' War",
-      "codename": null,
+      "codename": "Kayaking",
       "code": "BRO",
       "symbol": {
         "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=BRO",
@@ -517,7 +517,7 @@
     },
     {
       "name": "Phyrexia: All Will Be One",
-      "codename": null,
+      "codename": "Lacrosse",
       "code": "ONE",
       "symbol": {
         "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=ONE",
@@ -536,16 +536,16 @@
     },
     {
       "name": "March of the Machine",
-      "codename": null,
-      "code": null,
+      "codename": "Marathon",
+      "code": "MOM",
       "symbol": {
-        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
-        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
-        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
-        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=MOM",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=MOM",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=MOM",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=MOM"
       },
       "enterDate": {
-        "exact": null,
+        "exact": "2023-04-14T00:00:00.000",
         "rough": "Q2 2023"
       },
       "exitDate": {
@@ -574,7 +574,7 @@
     },
     {
       "name": "Wilds of Eldraine",
-      "codename": null,
+      "codename": "Netball",
       "code": null,
       "symbol": {
         "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
@@ -593,7 +593,7 @@
     },
     {
       "name": "The Lost Caverns of Ixalan",
-      "codename": null,
+      "codename": "Offroading",
       "code": null,
       "symbol": {
         "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",

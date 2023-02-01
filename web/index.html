@@ -54,10 +54,26 @@
                       What just left?
                     </template>
                   </button>
-                  <a href="https://twitter.com/whatsinstandard" class="btn
-                    btn-outline-primary btn-sm my-1 mx-1">
-                    See rotations in your Twitter timeline
+                  <div class="dropdown">
+                  <a  class="btn btn-outline-primary btn-sm my-1 mx-1 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="m-1" src="img/mastodon.svg" alt="Mastodon logo" height='20' width='20' />
+                    <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='20' width='20' />
+                    See rotations in your timeline
                   </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a rel="me" class="dropdown-item" href="https://m.twos.dev/@whatsinstandard">
+                        <img class="m-1" src="img/mastodon.svg" alt="Mastodon logo" height='20' width='20' />
+                        Mastodon
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="https://twitter.com/whatsinstandard">
+                        <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='20' width='20' />
+                        Twitter
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -198,9 +214,13 @@
               format.
             </p>
             <div class="github my-4">
+              <a rel="me" v-tippy class="btn" href="https://m.twos.dev/@whatsinstandard"
+                title="See rotations in your Mastodon timeline">
+                <img class="m-1" src="img/mastodon.svg" alt="Mastodon logo" height='35' width='35' />
+              </a>
               <a v-tippy class="btn" href="https://twitter.com/whatsinstandard"
                 title="See rotations in your Twitter timeline">
-                <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='60' width='60' />
+                <img class="m-1" src="img/twitter.svg" alt="Twitter logo" height='35' width='35' />
               </a>
               <a v-tippy class="btn" href="https://github.com/glacials/whatsinstandard" title="We're open source!">
                 <img class="m-1" src="img/github.png" alt="GitHub logo" height='35' width='35' />

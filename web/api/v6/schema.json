@@ -8,7 +8,7 @@
       "properties": {
         "exact": {
           "anyOf": [{ "type": "null" }, { "type": "string" }],
-          "description": "A day-precise date formatted as RFC3339.",
+          "description": "A day-precise date formatted as ISO 8601.",
           "examples": ["2018-10-05T00:00:00.000", "2016-09-30T00:00:00.000"],
           "title": "Exact date"
         },

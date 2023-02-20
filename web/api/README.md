@@ -140,6 +140,10 @@ API v1 through v4 are past deprecation and no longer available.
 - Set symbols are once again available in the API.
 - The `block` property has been removed.
 
+##### Midversion nonbreaking changes
+
+- **2023-02-19:** The description for the `date.exact` field in the schema definition (manifested as `sets[].enterDate.exact` and `sets[].exitDate.exact`) has updated from promising RFC 3339 to promising ISO 8601. No behavior has changed; this only brings the field's description in line with its behavior. See #255.
+
 #### Version 5
 
 - The root element in the response is now an object, not an array. The root object's

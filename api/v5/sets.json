@@ -232,6 +232,14 @@
       "enter_date": "2023-04-14T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2024"
+    },
+    {
+      "name": "March of the Machine: The Aftermath",
+      "block": null,
+      "code": "MAT",
+      "enter_date": "2023-05-12T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2025"
     }
   ],
   "bans": [

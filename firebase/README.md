@@ -4,7 +4,7 @@ This directory holds the Firebase Function `maybeTweet`, which checks periodical
 
 ## Development
 
-To test locally, you need `firebase-tools `installed.
+To test locally, you need `firebase-tools` installed.
 
 ```sh
 firebase emulators:start
@@ -19,7 +19,7 @@ curl -i http://127.0.0.1:5001/whats-in-standard/us-central1/maybeTweet -d '{}'
 To actually test tweeting, you will need some config variables set. **WARNING: Depending on your Firebase auth, you may have access to production secrets without realizing it. However you will be using a development (read: empty) Firestore database, so testing this will actually send a tweet when the function thinks it hasn't tweeted a past change yet.**
 
 ```sh
-firebase functions:config:set twitter.access_token=CHANGEME twitter.access_token_secret=CHANGEME twitter.api_key=CHANGEME twitter.api_secret=CHANGEME
+firebase functions:config:set twitter.bearer_token=CHANGEME
 firebase functions:config:set mastodon.server.url=CHANGEME mastodon.access_token=CHANGEME
 firebase functions:config:get > functions/.runtimeconfig.json
 ```

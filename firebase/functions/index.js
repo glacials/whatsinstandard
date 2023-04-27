@@ -3,7 +3,7 @@ const fetch = require("node-fetch")
 const assert = require("assert")
 
 const mastodon = require("masto")
-import { Client } from "twitter-api-sdk"
+const twitter = require("twitter-api-sdk")
 
 
 const admin = require("firebase-admin")
@@ -31,7 +31,7 @@ exports.maybeTweet = functions.pubsub
         return
       }
 
-      const twitterClient = new Client(config.twitter.bearer_token)
+      const twitterClient = new twitter.Client(config.twitter.bearer_token)
       const tweet = craftPost(data, MAX_TWEET_LENGTH)
       if (tweet === null) {
         return

@@ -240,6 +240,14 @@
       "enter_date": "2023-05-12T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2024"
+    },
+    {
+      "name": "Wilds of Eldraine",
+      "block": null,
+      "code": "WOE",
+      "enter_date": "2023-09-08T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2025"
     }
   ],
   "bans": [

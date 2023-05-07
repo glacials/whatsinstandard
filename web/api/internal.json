@@ -311,8 +311,8 @@
       "name": "Wilds of Eldraine",
       "codename": "Netball",
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "WOE",
+      "enter_date": "2023-09-08T00:00:00.000",
       "rough_enter_date": "Q4 2023",
       "exit_date": null,
       "rough_exit_date": "Q4 2025"

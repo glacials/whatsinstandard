@@ -47,7 +47,7 @@
               <h1>What's in Standard?</h1>
               <div class="row row-cols-1 row-cols-sm-2">
                 <div class="my-2">for Magic: The Gathering</div>
-                <div class="d-flex justify-content-xs-center justify-content-sm-end my-2">
+                <div class="d-xl-flex text-end justify-content-xs-center justify-content-sm-end my-2">
                   <button class="btn btn-outline-dark btn-sm my-1 mx-1" v-on:click.prevent="toggleRecentlyDropped">
                     <template v-if="showRecentlyDropped">
                       Hide left sets
@@ -87,17 +87,17 @@
               <span class="sr-only"></span>
             </div>
           </div>
-          <div class="row">
-            <div v-if="showRecentlyDropped" class="col mb-4 border border-danger py-3">
-              <div class="row">
-                <span class="text-danger small">
-                  Illegal as of {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
-                </span>
-              </div>
-              <div class="row row-cols-1 row-cols-sm-4">
-                <div v-for="set in last(rounds(dropped(sets)))" class="col my-3" style="min-height: 5rem">
-                  <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
-                    :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
+          <div class="row mx-0 px-0 row-cols-1 row-cols-lg-2">
+            <div v-if="showRecentlyDropped" class="col mb-4 border border-danger py-3
+            mx-2 px-0">
+              <span class="text-danger small mx-2">
+                Illegal as of {{ humanDate(last(rounds(dropped(sets)))[0].exitDate) }}
+              </span>
+              <div class="col list-group px-2">
+                <template v-for="set in last(rounds(dropped(sets)))">
+                  <a class="p-3 list-group-item text-dark d-flex justify-content-between
+                                 align-items-start set-border"
+                    :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}"
                     :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
                     <div v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}">
                       {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
@@ -105,45 +105,49 @@
                     <div class="text-dark" :class="{'lead': isReleased(set), 'text-muted': !isReleased(set)}" v-else>
                       {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
                     </div>
-                    <h1>
-                      <set-image :code="set.code" v-if="isReleased(set)"></set-image>
-                    </h1>
+                    <set-image :code="set.code" v-if="isReleased(set)"></set-image>
                     <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(set.enterDate)">
                       releases {{ dateFrom(set.enterDate) | relative }}
                     </small>
                   </a>
-                </div>
+                </template>
               </div>
             </div>
           </div>
-          <div class="row row-cols-1 row-cols-md-2">
-            <div v-for="round in truncate(rounds(undropped(sets)))" class="col mb-4 border py-3 px-3">
-              <div class="row row-cols-1">
-                <span class="small ">
-                  Legal until {{ humanDate(round[0].exitDate) }}
-                  <a v-if="round[0].code == 'KLD' || round[0].code == 'AKH' || round[0].code == 'XLN'" class="tip"
-                    v-tippy="{html: '#why', interactive: true, theme: 'light'}"></a>
-                </span>
+          <div v-for="round in truncate(rounds(undropped(sets)))"
+            class="row row-cols-1 row-cols-lg-2 mb-4 px-0 py-3 mx-0">
+            <div class="col list-group px-3">
+              <template v-for="set in round">
+                <a class="p-3 list-group-item text-dark d-flex justify-content-between
+                 align-items-start set-border" :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}"
+                  :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
+                  <span v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}">
+                    {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                  </span>
+                  <span class="text-dark" :class="{'lead': isReleased(set),
+                    'text-muted': !isReleased(set)}" v-else>
+                    {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
+                  </span>
+                  <set-image :code="set.code" v-if="isReleased(set)"></set-image>
+                  <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(set.enterDate)">
+                    releases {{ dateFrom(set.enterDate) | relative }}
+                  </small>
+                </a>
+              </template>
+            </div>
+            <div class="col d-none d-lg-flex align-items-center h-100">
+              <div class="px-1 h-100" style="border-width: 1px 1px 1px 0; border-style: solid; border-color: black;">
               </div>
-              <div class="row row-cols-1 row-cols-sm-2">
-                <div v-for="set in round" class="col my-3">
-                  <a class="text-center p-3 mb-4 card text-dark h-100 justify-content-between set-border"
-                    :class="{'bg-light': isReleased(set), 'text-muted': !isReleased(set)}" style="min-height: 5rem"
-                    :href="set.code ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard` : ''">
-                    <div v-if="set.code" :class="{'text-dark': isReleased(set), 'text-muted': !isReleased(set)}">
-                      {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
-                    </div>
-                    <div class="text-dark" :class="{'lead': isReleased(set), 'text-muted': !isReleased(set)}" v-else>
-                      {{ set.unknown ? '???' : set.name || `"${set.codename}"` }}
-                    </div>
-                    <h1>
-                      <set-image :code="set.code" v-if="isReleased(set)"></set-image>
-                    </h1>
-                    <small class="font-italic" v-if="!isReleased(set)" v-tippy :title="humanDate(set.enterDate)">
-                      releases {{ dateFrom(set.enterDate) | relative }}
-                    </small>
-                  </a>
-                </div>
+              <div class="m-3 text-center">
+                Legal until {{ humanDate(round[0].exitDate) }}
+              </div>
+            </div>
+            <div class="row d-block d-lg-none w-100 mx-0 px-2">
+              <div class="py-1 my-3 w-100"
+                style="border-width: 0px 1px 1px 1px; border-style: solid; border-color: black;">
+              </div>
+              <div class="px-0 mx-0 my-3 text-center">
+                Legal until {{ humanDate(round[0].exitDate) }}
               </div>
             </div>
           </div>

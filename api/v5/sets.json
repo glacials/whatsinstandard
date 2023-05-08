@@ -175,7 +175,7 @@
       "code": "MID",
       "enter_date": "2021-09-24T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2023"
+      "rough_exit_date": "Q4 2024"
     },
     {
       "name": "Innistrad: Crimson Vow",
@@ -183,7 +183,7 @@
       "code": "VOW",
       "enter_date": "2021-11-19T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2023"
+      "rough_exit_date": "Q4 2024"
     },
     {
       "name": "Kamigawa: Neon Dynasty",
@@ -191,7 +191,7 @@
       "code": "NEO",
       "enter_date": "2022-02-18T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2023"
+      "rough_exit_date": "Q4 2024"
     },
     {
       "name": "Streets of New Capenna",
@@ -199,7 +199,7 @@
       "code": "SNC",
       "enter_date": "2022-04-29T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2023"
+      "rough_exit_date": "Q4 2024"
     },
     {
       "name": "Dominaria United",
@@ -207,7 +207,7 @@
       "code": "DMU",
       "enter_date": "2022-09-09T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2024"
+      "rough_exit_date": "Q4 2025"
     },
     {
       "name": "The Brothers' War",
@@ -215,7 +215,7 @@
       "code": "BRO",
       "enter_date": "2022-11-18T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2024"
+      "rough_exit_date": "Q4 2025"
     },
     {
       "name": "Phyrexia: All Will Be One",
@@ -223,7 +223,7 @@
       "code": "ONE",
       "enter_date": "2023-02-03T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2024"
+      "rough_exit_date": "Q4 2025"
     },
     {
       "name": "March of the Machine",
@@ -231,7 +231,7 @@
       "code": "MOM",
       "enter_date": "2023-04-14T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2024"
+      "rough_exit_date": "Q4 2025"
     },
     {
       "name": "March of the Machine: The Aftermath",
@@ -239,7 +239,7 @@
       "code": "MAT",
       "enter_date": "2023-05-12T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2024"
+      "rough_exit_date": "Q4 2025"
     },
     {
       "name": "Wilds of Eldraine",
@@ -247,7 +247,7 @@
       "code": "WOE",
       "enter_date": "2023-09-08T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2025"
+      "rough_exit_date": "Q4 2026"
     }
   ],
   "bans": [

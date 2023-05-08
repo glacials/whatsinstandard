@@ -4,7 +4,13 @@ declare type TetherOffset = ((arg0: {
     popper: Rect;
     reference: Rect;
     placement: Placement;
-}) => number) | number;
+}) => number | {
+    mainAxis: number;
+    altAxis: number;
+}) | number | {
+    mainAxis: number;
+    altAxis: number;
+};
 export declare type Options = {
     mainAxis: boolean;
     altAxis: boolean;

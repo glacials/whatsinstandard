@@ -10,7 +10,7 @@ export declare const end: "end";
 export declare type Variation = typeof start | typeof end;
 export declare const clippingParents: "clippingParents";
 export declare const viewport: "viewport";
-export declare type Boundary = HTMLElement | Array<HTMLElement> | typeof clippingParents;
+export declare type Boundary = Element | Array<Element> | typeof clippingParents;
 export declare type RootBoundary = typeof viewport | "document";
 export declare const popper: "popper";
 export declare const reference: "reference";

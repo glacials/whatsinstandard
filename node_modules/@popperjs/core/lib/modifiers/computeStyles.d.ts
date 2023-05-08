@@ -1,5 +1,5 @@
 import type { PositioningStrategy, Offsets, Modifier, Rect } from "../types";
-import { BasePlacement } from "../enums";
+import { BasePlacement, Variation } from "../enums";
 export declare type RoundOffsets = (offsets: Partial<{
     x: number;
     y: number;
@@ -10,10 +10,11 @@ export declare type Options = {
     adaptive: boolean;
     roundOffsets?: boolean | RoundOffsets;
 };
-export declare function mapToStyles({ popper, popperRect, placement, offsets, position, gpuAcceleration, adaptive, roundOffsets }: {
+export declare function mapToStyles({ popper, popperRect, placement, variation, offsets, position, gpuAcceleration, adaptive, roundOffsets, isFixed }: {
     popper: HTMLElement;
     popperRect: Rect;
     placement: BasePlacement;
+    variation: Variation | null | undefined;
     offsets: Partial<{
         x: number;
         y: number;
@@ -23,6 +24,7 @@ export declare function mapToStyles({ popper, popperRect, placement, offsets, po
     gpuAcceleration: boolean;
     adaptive: boolean;
     roundOffsets: boolean | RoundOffsets;
+    isFixed: boolean;
 }): {
     transform: string;
     top: string;

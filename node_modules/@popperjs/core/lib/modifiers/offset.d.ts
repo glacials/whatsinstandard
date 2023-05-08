@@ -1,6 +1,6 @@
 import type { Placement } from "../enums";
 import type { Modifier, Rect, Offsets } from "../types";
-declare type OffsetsFunction = (arg0: {
+export declare type OffsetsFunction = (arg0: {
     popper: Rect;
     reference: Rect;
     placement: Placement;

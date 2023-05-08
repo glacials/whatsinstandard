@@ -2,9 +2,12 @@ var apiURL = '/api/v6/standard.json'
 var code = Vue.component('set-image', {
   props: ['code'],
   template: `
-    <div class="icon ml-2" v-if="code !== undefined && code !== null">
-      <i class="ss" :class="\`ss-\${this.code.toLowerCase()}\`"></i>
-    </template>
+    <!-- Each image has a different width, so to align them vertically we'll use a container -->
+    <span class="text-center" style="width: 2.5em;">
+      <span class="ml-2" style="font-size: 1.5em;" v-if="code !== undefined && code !== null">
+        <i class="ss" :class="\`ss-\${this.code.toLowerCase()}\`"></i>
+      </span>
+    </span>
   `,
 })
 Vue.config.devtools = true

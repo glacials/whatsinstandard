@@ -296,6 +296,10 @@ describe("API", () => {
       it("should adhere to its schema", () => {
         expect(api).to.be.jsonSchema(schema)
       })
+
+      it("should contain the right number of sets in standard", () => {
+        expect(api.sets).to.have.length.within(5, 8)
+      })
     })
   })
 })

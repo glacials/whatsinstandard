@@ -142,7 +142,14 @@ API v1 through v4 are past deprecation and no longer available.
 
 ##### Midversion nonbreaking changes
 
-- **2023-02-19:** The description for the `date.exact` field in the schema definition (manifested as `sets[].enterDate.exact` and `sets[].exitDate.exact`) has updated from promising RFC 3339 to promising ISO 8601. No behavior has changed; this only brings the field's description in line with its behavior. See #255.
+- **2023-02-19:** The description for the `date.exact` field in the schema definition
+  (manifested as `sets[].enterDate.exact` and `sets[].exitDate.exact`) has updated from
+  promising RFC 3339 to promising ISO 8601. No behavior has changed; this only brings
+  the field's description in line with its behavior. See
+  [#255](https://github.com/glacials/whatsinstandard/issues/255).
+- **2023-04-24:** The returned `sets` array now contains exactly the sets in standard,
+  not a superset as before. This is changed behavior, but does not violate any API
+  guarantees (a set is a superset of itself). Due to time zone differences, the sets
 
 #### Version 5
 
@@ -170,8 +177,7 @@ API v1 through v4 are past deprecation and no longer available.
   behavior has changed, only documentation.
 - **2019-02-28:** Banned cards are now included in API.
 
-[blockless-sets]:
-https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12
+[blockless-sets]: https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-2017-06-12
 [timezone-change]: https://github.com/glacials/whatsinstandard/issues/75
 
 #### Version 4
@@ -183,8 +189,7 @@ https://magic.wizards.com/en/articles/archive/making-magic/metamorphosis-2-0-201
   like to fetch set images, you can instead use the `code` field to construct an image
   URL like
   `http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&set=<code>&size=large&rarity=C`.
-- `rough_exit_date` regex has changed from `/(early\/mid|late) 20\d\d/` to `/Q\d
-  20\d\d/` for simplicity.
+- `rough_exit_date` regex has changed from `/(early\/mid|late) 20\d\d/` to `/Q\d 20\d\d/` for simplicity.
 
 #### Version 3
 

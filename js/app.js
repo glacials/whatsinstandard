@@ -28,7 +28,8 @@ var app = new Vue({
     bans: [],
     now: new Date,
     sets: [],
-    showRecentlyDropped: false
+    showRecentlyDropped: false,
+    hideAlert20230507: true,
   },
 
   el: '#vue',
@@ -166,5 +167,14 @@ var app = new Vue({
     unreleased: function (sets) {
       return sets.filter(set => (Date.parse(set.enterDate.exact) || Infinity) > this.now)
     },
+  },
+  mounted() {
+    this.hideAlert20230507 = (localStorage.hideAlert20230507 === '1') || (this.now > Date.parse('2024-01-01T00:00:00Z'))
+  },
+  watch: {
+    hideAlert20230507(v) {
+      // Local storage only stores strings.
+      localStorage.hideAlert20230507 = v ? '1' : '0'
+    }
   }
 })

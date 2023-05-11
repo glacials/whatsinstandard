@@ -114,6 +114,25 @@
               </div>
             </div>
           </div>
+          <div v-if="!hideAlert20230507" class="row justify-content-around px-3 mx-0">
+            <div class="col-md-8 alert alert-info alert-dismissible fade show" role="alert">
+              <h4 class="alert-heading mb-3">New rules</h4>
+              <p>On <a class="alert-link"
+                  href="https://magic.wizards.com/en/news/announcements/revitalizing-standard">2023-05-07</a>
+                <i>Wizards</i> permanently lengthened sets' Standard lifespans by one
+                year, effective immediately.
+              </p>
+              <p>Therefore no sets will drop from Standard
+                in 2023. This increases the average size of Standard from 6 ½ sets to 10
+                ½ sets.
+              </p>
+              <p>
+                All information below has been updated to reflect this change.
+              </p>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+                @click="hideAlert20230507 = true"></button>
+            </div>
+          </div>
           <div v-for="round in truncate(rounds(undropped(sets)))"
             class="row row-cols-1 row-cols-lg-2 mb-4 px-0 py-3 mx-0">
             <div class="col list-group px-3">

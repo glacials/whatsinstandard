@@ -424,14 +424,14 @@
       "card_name": "Invoke Despair",
       "card_image_url": "https://cards.scryfall.io/large/front/3/5/35af9d5c-4449-4549-b549-c3ba4a67dee0.jpg?1685368727",
       "set_code": "NEO",
-      "reason": "Banned due to its power level and negative impact on card diversity in black-based decks.",
+      "reason": "Banned for its power level and negative impact on card diversity in black-based decks.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/may-29-2023-banned-and-restricted-announcement"
     },
     {
       "card_name": "Reckoner Bankbuster",
       "card_image_url": "https://cards.scryfall.io/large/front/2/7/279acd17-6c17-427b-a69d-fc02442ff4a3.jpg?1685368706",
       "set_code": "NEO",
-      "reason": "Banned to promote more diversity and give power back to other types of cards in different colors.",
+      "reason": "Banned for reducing card diversity and to give power back to other types of cards in different colors.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/may-29-2023-banned-and-restricted-announcement"
     }
   ]

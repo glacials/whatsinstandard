@@ -7,6 +7,7 @@ on:
     - cron: "15 * * * *"
 jobs:
   test:
+    name: Test
     uses: ./.github/workflows/test.yaml
   deploy:
     needs: test

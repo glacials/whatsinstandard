@@ -6,7 +6,10 @@ on:
   schedule:
     - cron: "15 * * * *"
 jobs:
+  test:
+    uses: ./.github/workflows/test.yaml
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

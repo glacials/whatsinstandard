@@ -141,6 +141,10 @@ exports.builder = yargs =>
         group: GROUPS.FILTERS,
         requiresArg: true
       },
+      growl: {
+        description: 'Enable Growl notifications',
+        group: GROUPS.OUTPUT
+      },
       ignore: {
         defaultDescription: '(none)',
         description: 'Ignore file(s) or glob pattern(s)',
@@ -329,7 +333,7 @@ exports.builder = yargs =>
       if (argv.compilers) {
         throw createUnsupportedError(
           `--compilers is DEPRECATED and no longer supported.
-          See https://github.com/mochajs/mocha/wiki/compilers-deprecation for migration information.`
+          See https://git.io/vdcSr for migration information.`
         );
       }
 

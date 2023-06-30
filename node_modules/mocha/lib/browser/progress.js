@@ -86,20 +86,6 @@ Progress.prototype.update = function (n) {
  */
 Progress.prototype.draw = function (ctx) {
   try {
-    var darkMatcher = window.matchMedia('(prefers-color-scheme: dark)');
-    var isDarkMode = !!darkMatcher.matches;
-    var lightColors = {
-      outerCircle: '#9f9f9f',
-      innerCircle: '#eee',
-      text: '#000'
-    };
-    var darkColors = {
-      outerCircle: '#888',
-      innerCircle: '#444',
-      text: '#fff'
-    };
-    var colors = isDarkMode ? darkColors : lightColors;
-
     var percent = Math.min(this.percent, 100);
     var size = this._size;
     var half = size / 2;
@@ -114,13 +100,13 @@ Progress.prototype.draw = function (ctx) {
     ctx.clearRect(0, 0, size, size);
 
     // outer circle
-    ctx.strokeStyle = colors.outerCircle;
+    ctx.strokeStyle = '#9f9f9f';
     ctx.beginPath();
     ctx.arc(x, y, rad, 0, angle, false);
     ctx.stroke();
 
     // inner circle
-    ctx.strokeStyle = colors.innerCircle;
+    ctx.strokeStyle = '#eee';
     ctx.beginPath();
     ctx.arc(x, y, rad - 1, 0, angle, true);
     ctx.stroke();
@@ -129,7 +115,6 @@ Progress.prototype.draw = function (ctx) {
     var text = this._text || (percent | 0) + '%';
     var w = ctx.measureText(text).width;
 
-    ctx.fillStyle = colors.text;
     ctx.fillText(text, x - w / 2 + 1, y + fontSize / 2 - 1);
   } catch (ignore) {
     // don't fail if we can't render progress

@@ -1,14 +1,14 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap toast.js
+ * Bootstrap (v5.2.3): toast.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-import BaseComponent from './base-component.js'
-import EventHandler from './dom/event-handler.js'
-import { enableDismissTrigger } from './util/component-functions.js'
-import { defineJQueryPlugin, reflow } from './util/index.js'
+import { defineJQueryPlugin, reflow } from './util/index'
+import EventHandler from './dom/event-handler'
+import BaseComponent from './base-component'
+import { enableDismissTrigger } from './util/component-functions'
 
 /**
  * Constants

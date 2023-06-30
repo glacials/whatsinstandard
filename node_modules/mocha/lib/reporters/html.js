@@ -181,7 +181,7 @@ function HTML(runner, options) {
       if (indexOfMessage === -1) {
         stackString = test.err.stack;
       } else {
-        stackString = test.err.stack.slice(
+        stackString = test.err.stack.substr(
           test.err.message.length + indexOfMessage
         );
       }

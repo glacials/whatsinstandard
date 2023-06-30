@@ -40,9 +40,9 @@ module.exports = function bddInterface(suite) {
 
     context.describe = context.context = function (title, fn) {
       return common.suite.create({
-        title,
-        file,
-        fn
+        title: title,
+        file: file,
+        fn: fn
       });
     };
 
@@ -55,9 +55,9 @@ module.exports = function bddInterface(suite) {
       context.describe.skip =
         function (title, fn) {
           return common.suite.skip({
-            title,
-            file,
-            fn
+            title: title,
+            file: file,
+            fn: fn
           });
         };
 
@@ -67,9 +67,9 @@ module.exports = function bddInterface(suite) {
 
     context.describe.only = function (title, fn) {
       return common.suite.only({
-        title,
-        file,
-        fn
+        title: title,
+        file: file,
+        fn: fn
       });
     };
 

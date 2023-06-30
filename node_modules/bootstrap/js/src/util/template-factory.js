@@ -1,14 +1,14 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap util/template-factory.js
+ * Bootstrap (v5.2.3): util/template-factory.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-import SelectorEngine from '../dom/selector-engine.js'
-import Config from './config.js'
-import { DefaultAllowlist, sanitizeHtml } from './sanitizer.js'
-import { execute, getElement, isElement } from './index.js'
+import { DefaultAllowlist, sanitizeHtml } from './sanitizer'
+import { getElement, isElement } from '../util/index'
+import SelectorEngine from '../dom/selector-engine'
+import Config from './config'
 
 /**
  * Constants
@@ -143,7 +143,7 @@ class TemplateFactory extends Config {
   }
 
   _resolvePossibleFunction(arg) {
-    return execute(arg, [this])
+    return typeof arg === 'function' ? arg(this) : arg
   }
 
   _putElementInTemplate(element, templateElement) {

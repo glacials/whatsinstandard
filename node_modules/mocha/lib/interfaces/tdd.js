@@ -47,9 +47,9 @@ module.exports = function (suite) {
      */
     context.suite = function (title, fn) {
       return common.suite.create({
-        title,
-        file,
-        fn
+        title: title,
+        file: file,
+        fn: fn
       });
     };
 
@@ -58,9 +58,9 @@ module.exports = function (suite) {
      */
     context.suite.skip = function (title, fn) {
       return common.suite.skip({
-        title,
-        file,
-        fn
+        title: title,
+        file: file,
+        fn: fn
       });
     };
 
@@ -69,9 +69,9 @@ module.exports = function (suite) {
      */
     context.suite.only = function (title, fn) {
       return common.suite.only({
-        title,
-        file,
-        fn
+        title: title,
+        file: file,
+        fn: fn
       });
     };
 

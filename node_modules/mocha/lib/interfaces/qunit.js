@@ -49,8 +49,8 @@ module.exports = function qUnitInterface(suite) {
         suites.shift();
       }
       return common.suite.create({
-        title,
-        file,
+        title: title,
+        file: file,
         fn: false
       });
     };
@@ -64,8 +64,8 @@ module.exports = function qUnitInterface(suite) {
         suites.shift();
       }
       return common.suite.only({
-        title,
-        file,
+        title: title,
+        file: file,
         fn: false
       });
     };

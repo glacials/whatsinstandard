@@ -62,8 +62,7 @@ class TracedReferenceBase {
    */
   V8_INLINE v8::Local<v8::Value> Get(v8::Isolate* isolate) const {
     if (IsEmpty()) return Local<Value>();
-    return Local<Value>::New(isolate,
-                             internal::ValueHelper::SlotAsValue<Value>(val_));
+    return Local<Value>::New(isolate, reinterpret_cast<Value*>(val_));
   }
 
   /**
@@ -104,13 +103,10 @@ class TracedReferenceBase {
 
   V8_EXPORT void CheckValue() const;
 
-  V8_INLINE internal::Address address() const { return *val_; }
-
   // val_ points to a GlobalHandles node.
   internal::Address* val_ = nullptr;
 
   friend class internal::BasicTracedReferenceExtractor;
-  friend class internal::HandleHelper;
   template <typename F>
   friend class Local;
   template <typename U>
@@ -121,11 +117,11 @@ class TracedReferenceBase {
 
 /**
  * A traced handle with copy and move semantics. The handle is to be used
- * together as part of GarbageCollected objects (see v8-cppgc.h) or from stack
- * and specifies edges from C++ objects to JavaScript.
+ * together with |v8::EmbedderHeapTracer| or as part of GarbageCollected objects
+ * (see v8-cppgc.h) and specifies edges from C++ objects to JavaScript.
  *
  * The exact semantics are:
- * - Tracing garbage collections using CppHeap.
+ * - Tracing garbage collections use |v8::EmbedderHeapTracer| or cppgc.
  * - Non-tracing garbage collections refer to
  *   |v8::EmbedderRootsHandler::IsRoot()| whether the handle should
  * be treated as root or not.
@@ -139,12 +135,7 @@ class BasicTracedReference : public TracedReferenceBase {
   /**
    * Construct a Local<T> from this handle.
    */
-  Local<T> Get(Isolate* isolate) const {
-#ifdef V8_ENABLE_CONSERVATIVE_STACK_SCANNING
-    if (val_ == nullptr) return Local<T>();
-#endif
-    return Local<T>::New(isolate, *this);
-  }
+  Local<T> Get(Isolate* isolate) const { return Local<T>::New(isolate, *this); }
 
   template <class S>
   V8_INLINE BasicTracedReference<S>& As() const {
@@ -175,6 +166,7 @@ class BasicTracedReference : public TracedReferenceBase {
       Isolate* isolate, T* that, void* slot,
       internal::GlobalHandleStoreMode store_mode);
 
+  friend class EmbedderHeapTracer;
   template <typename F>
   friend class Local;
   friend class Object;
@@ -189,7 +181,13 @@ class BasicTracedReference : public TracedReferenceBase {
 /**
  * A traced handle without destructor that clears the handle. The embedder needs
  * to ensure that the handle is not accessed once the V8 object has been
- * reclaimed. For more details see BasicTracedReference.
+ * reclaimed. This can happen when the handle is not passed through the
+ * EmbedderHeapTracer. For more details see BasicTracedReference.
+ *
+ * The reference assumes the embedder has precise knowledge about references at
+ * all times. In case V8 needs to separately handle on-stack references, the
+ * embedder is required to set the stack start through
+ * |EmbedderHeapTracer::SetStackStart|.
  */
 template <typename T>
 class TracedReference : public BasicTracedReference<T> {
@@ -209,7 +207,7 @@ class TracedReference : public BasicTracedReference<T> {
    */
   template <class S>
   TracedReference(Isolate* isolate, Local<S> that) : BasicTracedReference<T>() {
-    this->val_ = this->New(isolate, *that, &this->val_,
+    this->val_ = this->New(isolate, that.val_, &this->val_,
                            internal::GlobalHandleStoreMode::kInitializingStore);
     static_assert(std::is_base_of<T, S>::value, "type check");
   }
@@ -293,7 +291,7 @@ template <class T>
 internal::Address* BasicTracedReference<T>::New(
     Isolate* isolate, T* that, void* slot,
     internal::GlobalHandleStoreMode store_mode) {
-  if (that == internal::ValueHelper::EmptyValue<T>()) return nullptr;
+  if (that == nullptr) return nullptr;
   internal::Address* p = reinterpret_cast<internal::Address*>(that);
   return internal::GlobalizeTracedReference(
       reinterpret_cast<internal::Isolate*>(isolate), p,
@@ -308,13 +306,21 @@ void TracedReferenceBase::Reset() {
 
 V8_INLINE bool operator==(const TracedReferenceBase& lhs,
                           const TracedReferenceBase& rhs) {
-  return internal::HandleHelper::EqualHandles(lhs, rhs);
+  v8::internal::Address* a = reinterpret_cast<v8::internal::Address*>(lhs.val_);
+  v8::internal::Address* b = reinterpret_cast<v8::internal::Address*>(rhs.val_);
+  if (a == nullptr) return b == nullptr;
+  if (b == nullptr) return false;
+  return *a == *b;
 }
 
 template <typename U>
 V8_INLINE bool operator==(const TracedReferenceBase& lhs,
                           const v8::Local<U>& rhs) {
-  return internal::HandleHelper::EqualHandles(lhs, rhs);
+  v8::internal::Address* a = reinterpret_cast<v8::internal::Address*>(lhs.val_);
+  v8::internal::Address* b = reinterpret_cast<v8::internal::Address*>(*rhs);
+  if (a == nullptr) return b == nullptr;
+  if (b == nullptr) return false;
+  return *a == *b;
 }
 
 template <typename U>
@@ -347,7 +353,7 @@ void TracedReference<T>::Reset(Isolate* isolate, const Local<S>& other) {
   this->Reset();
   if (other.IsEmpty()) return;
   this->SetSlotThreadSafe(
-      this->New(isolate, *other, &this->val_,
+      this->New(isolate, other.val_, &this->val_,
                 internal::GlobalHandleStoreMode::kAssigningStore));
 }
 
@@ -397,7 +403,7 @@ void TracedReferenceBase::SetWrapperClassId(uint16_t class_id) {
   using I = internal::Internals;
   if (IsEmpty()) return;
   internal::Address* obj = reinterpret_cast<internal::Address*>(val_);
-  uint8_t* addr = reinterpret_cast<uint8_t*>(obj) + I::kTracedNodeClassIdOffset;
+  uint8_t* addr = reinterpret_cast<uint8_t*>(obj) + I::kNodeClassIdOffset;
   *reinterpret_cast<uint16_t*>(addr) = class_id;
 }
 
@@ -405,7 +411,7 @@ uint16_t TracedReferenceBase::WrapperClassId() const {
   using I = internal::Internals;
   if (IsEmpty()) return 0;
   internal::Address* obj = reinterpret_cast<internal::Address*>(val_);
-  uint8_t* addr = reinterpret_cast<uint8_t*>(obj) + I::kTracedNodeClassIdOffset;
+  uint8_t* addr = reinterpret_cast<uint8_t*>(obj) + I::kNodeClassIdOffset;
   return *reinterpret_cast<uint16_t*>(addr);
 }
 

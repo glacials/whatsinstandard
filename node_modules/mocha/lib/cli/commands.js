@@ -2,7 +2,7 @@
 
 /**
  * Exports Yargs commands
- * @see https://github.com/yargs/yargs/blob/main/docs/advanced.md
+ * @see https://git.io/fpJ0G
  * @private
  * @module
  */

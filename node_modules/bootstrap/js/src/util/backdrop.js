@@ -1,13 +1,13 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap util/backdrop.js
+ * Bootstrap (v5.2.3): util/backdrop.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-import EventHandler from '../dom/event-handler.js'
-import Config from './config.js'
-import { execute, executeAfterTransition, getElement, reflow } from './index.js'
+import EventHandler from '../dom/event-handler'
+import { execute, executeAfterTransition, getElement, reflow } from './index'
+import Config from './config'
 
 /**
  * Constants

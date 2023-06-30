@@ -1,18 +1,18 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap modal.js
+ * Bootstrap (v5.2.3): modal.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-import BaseComponent from './base-component.js'
-import EventHandler from './dom/event-handler.js'
-import SelectorEngine from './dom/selector-engine.js'
-import Backdrop from './util/backdrop.js'
-import { enableDismissTrigger } from './util/component-functions.js'
-import FocusTrap from './util/focustrap.js'
-import { defineJQueryPlugin, isRTL, isVisible, reflow } from './util/index.js'
-import ScrollBarHelper from './util/scrollbar.js'
+import { defineJQueryPlugin, getElementFromSelector, isRTL, isVisible, reflow } from './util/index'
+import EventHandler from './dom/event-handler'
+import SelectorEngine from './dom/selector-engine'
+import ScrollBarHelper from './util/scrollbar'
+import BaseComponent from './base-component'
+import Backdrop from './util/backdrop'
+import FocusTrap from './util/focustrap'
+import { enableDismissTrigger } from './util/component-functions'
 
 /**
  * Constants
@@ -139,12 +139,12 @@ class Modal extends BaseComponent {
   }
 
   dispose() {
-    EventHandler.off(window, EVENT_KEY)
-    EventHandler.off(this._dialog, EVENT_KEY)
+    for (const htmlElement of [window, this._dialog]) {
+      EventHandler.off(htmlElement, EVENT_KEY)
+    }
 
     this._backdrop.dispose()
     this._focustrap.deactivate()
-
     super.dispose()
   }
 
@@ -208,6 +208,7 @@ class Modal extends BaseComponent {
       }
 
       if (this._config.keyboard) {
+        event.preventDefault()
         this.hide()
         return
       }
@@ -335,7 +336,7 @@ class Modal extends BaseComponent {
  */
 
 EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-  const target = SelectorEngine.getElementFromSelector(this)
+  const target = getElementFromSelector(this)
 
   if (['A', 'AREA'].includes(this.tagName)) {
     event.preventDefault()

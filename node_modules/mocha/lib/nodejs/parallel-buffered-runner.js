@@ -6,6 +6,7 @@
 
 'use strict';
 
+const allSettled = require('@ungap/promise-all-settled').bind(Promise);
 const Runner = require('../runner');
 const {EVENT_RUN_BEGIN, EVENT_RUN_END} = Runner.constants;
 const debug = require('debug')('mocha:parallel:parallel-buffered-runner');
@@ -270,9 +271,8 @@ class ParallelBufferedRunner extends Runner {
    *
    * @param {Function} callback - Called with an exit code corresponding to
    * number of test failures.
-   * @param {Object} [opts] - options
-   * @param {string[]} opts.files - Files to run
-   * @param {Options} opts.options - command-line options
+   * @param {{files: string[], options: Options}} opts - Files to run and
+   * command-line options, respectively.
    */
   run(callback, {files, options = {}} = {}) {
     /**
@@ -321,7 +321,7 @@ class ParallelBufferedRunner extends Runner {
           delete options[opt];
         });
 
-        const results = await Promise.allSettled(
+        const results = await allSettled(
           files.map(this._createFileRunner(pool, options))
         );
 

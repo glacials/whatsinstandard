@@ -2,11 +2,6 @@
 https://github.com/josdejong/workerpool
 
 
-## 2022-04-11, version 6.2.1
-
-- Fix #343: `.terminate()` sometimes throwing an exception.
-
-
 ## 2022-01-15, version 6.2.0
 
 - Implement callbacks `onCreateWorker` and `onTerminateWorker`. Thanks @forty.

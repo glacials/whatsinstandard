@@ -47,8 +47,8 @@
     "moment": "^2.29.4",
     "node": "^20",
     "npm-font-open-sans": "^1.1.0",
-    "tippy.vue": "^3.2.1",
     "vue": "^3.3.4",
+    "vue-tippy": "^6.2.0",
     "webpack": "^5.88.1"
   }
 }

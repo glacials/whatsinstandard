@@ -1,9 +1,9 @@
-import { createApp } from 'vue'
+<script>
 import SetImage from './SetImage.vue'
 
 const apiURL = '/api/v6/standard.json'
 
-const app = createApp({
+export default {
   components: {
     SetImage,
   },
@@ -31,11 +31,6 @@ const app = createApp({
   },
 
   el: '#vue',
-
-  filters: {
-    absolute: date => moment(date).format('YYYY-MM-DD'),
-    year: date => moment(date).format('\\QQ YYYY'),
-  },
 
   methods: {
     // bansFor returns the bans in the given bans array that apply to the given array of
@@ -177,6 +172,5 @@ const app = createApp({
       localStorage.hideAlert20230507 = v ? '1' : '0'
     }
   }
-})
-
-app.mount('#vue')
+}
+</script>

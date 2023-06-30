@@ -60,7 +60,16 @@
       window.__VUE_DEVTOOLS_HOST__ = "localhost";
       window.__VUE_DEVTOOLS_PORT__ = "8098";
     </script>
-    <script src="http://<your-local-ip>:8098"></script>
+    <script src="http://localhost:8098"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.41/vue.esm-browser.prod.js",
+          "vue-router": "https://cdnjs.cloudflare.com/ajax/libs/vue-router/4.1.5/vue-router.esm-browser.min.js"
+        }
+      }
+    </script>
   </head>
 
   <body data-spy="scroll" data-target="#nav" id="sets">
@@ -469,7 +478,6 @@
     <script src="/node_modules/vue/dist/vue.runtime.global.js"></script>
 
     <script type="module" src="/js/app.js"></script>
-    <!-- Bump to invalidate cache -->
     <script src="/js/tracking.js"></script>
 
     <script>

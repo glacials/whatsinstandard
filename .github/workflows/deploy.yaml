@@ -18,7 +18,7 @@ jobs:
         run: |
           cd web
           npm install
-          npm build
+          npm run build
           rsync -Rr ./ ./dist
           find dist -name .gitignore -delete
           cp ./dist/node_modules/vue/dist/vue.runtime.global.prod.js ./dist/node_modules/vue/dist/vue.runtime.global.js

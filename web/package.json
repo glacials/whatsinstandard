@@ -2,7 +2,7 @@
   "name": "whatsinstandard",
   "version": "1.0.1",
   "engines": {
-    "node": "^20"
+    "node": "^18"
   },
   "type": "module",
   "license": "MIT",

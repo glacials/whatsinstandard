@@ -4,7 +4,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "15 * * * *"
+    - cron: '15 * * * *'
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -16,7 +16,6 @@ jobs:
           npm install
           rsync -Rr ./ ./dist
           find dist -name .gitignore -delete
-          cp ./dist/node_modules/vue/dist/vue.runtime.global.prod.js ./dist/node_modules/vue/dist/vue.runtime.global.js
           touch dist/.nojekyll # See https://stackoverflow.com/a/43487798/392225
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4

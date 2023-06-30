@@ -1,13 +1,17 @@
-import { createApp } from 'vue'
-import SetImage from './SetImage.vue'
-
-const apiURL = '/api/v6/standard.json'
-
-const app = createApp({
-  components: {
-    SetImage,
-  },
-
+var apiURL = '/api/v6/standard.json'
+var code = Vue.component('set-image', {
+  props: ['code'],
+  template: `
+    <!-- Each image has a different width, so to align them vertically we'll use a container -->
+    <span class="text-center" style="width: 2.5em;">
+      <span class="ml-2" style="font-size: 1.5em;" v-if="code !== undefined && code !== null">
+        <i class="ss" :class="\`ss-\${this.code.toLowerCase()}\`"></i>
+      </span>
+    </span>
+  `,
+})
+Vue.config.devtools = true
+var app = new Vue({
   computed: {
   },
 
@@ -20,20 +24,19 @@ const app = createApp({
     setInterval(() => this.now = new Date, 1000 * 60)
   },
 
-  data() {
-    return {
-      bans: [],
-      now: new Date,
-      sets: [],
-      showRecentlyDropped: false,
-      hideAlert20230507: true,
-    }
+  data: {
+    bans: [],
+    now: new Date,
+    sets: [],
+    showRecentlyDropped: false,
+    hideAlert20230507: true,
   },
 
   el: '#vue',
 
   filters: {
     absolute: date => moment(date).format('YYYY-MM-DD'),
+    relative: function (date) { return moment(date).from(this.now) },
     year: date => moment(date).format('\\QQ YYYY'),
   },
 
@@ -115,9 +118,6 @@ const app = createApp({
     // recent returns an array containing only the last element of the given array.
     recent: setsOrRounds => [setsOrRounds[setsOrRounds.length - 1]],
 
-    // relative returns a human-friendly relative time string for the given date.
-    relative: function (date) { return moment(date).from(this.now) },
-
     // rounds splits the given array of sets into a two-dimensional array where each sub-array is a group of sets that
     // share a exitDate.rough. Orders are preserved.
     rounds: function (sets) {
@@ -178,5 +178,3 @@ const app = createApp({
     }
   }
 })
-
-app.mount('#vue')

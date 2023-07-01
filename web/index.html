@@ -26,18 +26,8 @@
 
     <link
       rel="stylesheet"
-      href="/node_modules/npm-font-open-sans/open-sans.css"
-      type="text/css"
-    />
-    <link
-      rel="stylesheet"
       href="/node_modules/keyrune/css/keyrune.min.css"
       type="text/css"
-    />
-    <link
-      rel="stylesheet"
-      href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
-      media="screen"
     />
     <script
       src="https://kit.fontawesome.com/2b022a4ed7.js"
@@ -467,20 +457,23 @@
         </div>
       </div>
     </div>
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/node_modules/moment/min/moment.min.js"></script>
     <script type="module">
       import {
         createApp,
         ref,
       } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-      import App from "./js/App.vue";
+
+      import "bootstrap/dist/css/bootstrap.min.css";
+      import "bootstrap";
       import { plugin as VueTippy } from "vue-tippy";
+      import "tippy.js/dist/tippy.css";
+
+      import App from "./js/App.vue";
+
       const apiURL = "/api/v6/standard.json";
       const app = createApp(App);
       app.use(VueTippy, {
         directive: "tippy", // => v-tippy
-        component: "tippy", // => <tippy/>
       });
       app.mount("#vue");
     </script>

@@ -1,4 +1,5 @@
 <script>
+import moment from "moment"
 import SetImage from './SetImage.vue'
 
 const apiURL = '/api/v6/standard.json'

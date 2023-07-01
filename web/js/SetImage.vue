@@ -1,6 +1,4 @@
-<script setup>
-import { useCssModule } from "vue"
-
+<script setup lang="ts">
 import { plugin as VueTippy } from "vue-tippy"
 import "tippy.js/dist/tippy.css"
 
@@ -12,7 +10,7 @@ defineProps({
 })
 </script>
 
-<script>
+<script lang="ts">
 export default {
   components: {
     VueTippy

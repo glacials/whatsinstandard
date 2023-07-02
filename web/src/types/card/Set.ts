@@ -44,6 +44,14 @@ export class Set {
    */
   internalId: string;
   /**
+   * The date the set enters Standard, which is virtually always its release date.
+   */
+  enterDate: BiDate;
+  /**
+   * The date the set exits Standard.
+   */
+  exitDate: BiDate;
+  /**
    * URLs to variations of the set's logo.
    */
   symbol: {
@@ -52,14 +60,6 @@ export class Set {
     rare: string;
     mythicRare: string;
   };
-  /**
-   * The date the set enters Standard, which is virtually always its release date.
-   */
-  enterDate: BiDate;
-  /**
-   * The date the set exits Standard.
-   */
-  exitDate: BiDate;
 
   /**
    * Return the {@link Set Sets} in the given array that have dropped from Standard,

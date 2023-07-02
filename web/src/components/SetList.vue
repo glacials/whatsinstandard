@@ -16,7 +16,9 @@ defineProps<{
     v-cloak
   >
     <div class="col list-group px-3">
-      <set-list-item v-for="set in round.sets" :set="set" />
+      <div class="accordion" :id="`accordion-${round.internalId}`">
+        <set-list-item v-for="set in round.sets" :round="round" :set="set" />
+      </div>
     </div>
     <round-drop-date :exitDate="round.exitDate" />
   </div>

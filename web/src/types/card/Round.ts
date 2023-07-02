@@ -74,6 +74,12 @@ export class Round {
   exitDate: BiDate;
 
   /**
+   * The set's unique ID for this page load. This is used for various constructs that
+   * need to keep track of a different DOM element per set, like Bootstrap accordions.
+   */
+  internalId: string;
+
+  /**
    * The {@link card.Set Sets} contained in this round. All share the same exit date.
    */
   sets: card.Set[];
@@ -84,6 +90,12 @@ export class Round {
   constructor(sets: card.Set[]) {
     this.sets = sets;
     this.exitDate = this.sets[0].exitDate;
+
+    this.internalId =
+      this.sets[0].code ||
+      this.sets[0].name?.split(" ").join("-") ||
+      this.sets[0].codename?.split(" ").join("-") ||
+      Math.random().toString(36).substring(2, 15);
   }
 
   /**

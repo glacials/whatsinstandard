@@ -250,9 +250,16 @@ describe("API", () => {
               expect(reason[0]).to.equal(reason[0].toUpperCase())
             })
 
-            it("should start with 'Banned for'", () => {
-              expect(reason.slice(0, 10)).to.equal("Banned for")
+            it("should start with 'Banned for' or 'Banned to'", () => {
+              expect(reason).to.match(/^Banned (for|to) .*$/)
             })
+
+            // Old bans are grandparented in
+            if (new Date(body.sets.find(set => set.code === ban.set_code).enter_date) > new Date("2023-07-02T00:00:00.000Z")) {
+              it("should start with 'Banned to'", () => {
+                  expect(reason).to.match(/^Banned to .*$/)
+              })
+            }
           })
 
           describe("announcement URL", () => {

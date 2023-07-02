@@ -62,7 +62,9 @@ defineProps<{
     >
       <div class="accordion-body">
         <span class="badge text-bg-dark m-1"
-          >Released {{ set.enterDate.humanize() }}</span
+          ><template v-if="set.isReleased()">Released</template
+          ><template v-else>Releases</template>
+          {{ set.enterDate.humanize() }}</span
         >
         <span class="badge text-bg-dark m-1"
           ><template v-if="set.isDropped()">Dropped</template

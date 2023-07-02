@@ -65,7 +65,9 @@ defineProps<{
           >Released {{ set.enterDate.humanize() }}</span
         >
         <span class="badge text-bg-dark m-1"
-          >Will drop {{ set.exitDate.humanize() }}</span
+          ><template v-if="set.isDropped()">Dropped</template
+          ><template v-else>Will drop</template>
+          {{ set.exitDate.humanize() }}</span
         >
       </div>
       <div class="btn-group w-100">

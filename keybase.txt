@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/glacials
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://whatsinstandard.com
+  * I am glacials (https://keybase.io/glacials) on keybase.
+  * I have a public key with fingerprint 2746 2BDF 37F5 E8A4 18C6  B2DF 4005 740D 036B 29F6
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201b46698d90958ade5492be9306cdae6dd4b4163b74067800a8ad7b5b3afa8c150a",
+      "fingerprint": "27462bdf37f5e8a418c6b2df4005740d036b29f6",
+      "host": "keybase.io",
+      "key_id": "4005740d036b29f6",
+      "kid": "01018c4d546d9aad8c7edb2f933dc00ea310f602991e3319cd793aa219f3bc61daba0a",
+      "uid": "affbcde0cb4f92bc8aadadc606ee5000",
+      "username": "glacials"
+    },
+    "merkle_root": {
+      "ctime": 1568740151,
+      "hash_meta": "9ef0ce8515fbc6492b18b63d214efdbd5e05ecfac004e354ca723b9f79b31534",
+      "seqno": 7527458
+    },
+    "revoke": {
+      "sig_ids": [
+        "fae12ea1587d444f0012f0d1e201ec13141e5741af60778a57fb1cf8221637fa0f"
+      ]
+    },
+    "service": {
+      "hostname": "whatsinstandard.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1568740152,
+  "expire_in": 157680000,
+  "prev": "6f7b4794aa10f1d7e18bfbd96788a00f9bf4106b5c067d1c2c10706f28f32ce0",
+  "seqno": 61,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.3
+Comment: https://keybase.io/crypto
+
+yMP7AnicbVNrbFRFGF0oBVqBGgkBjYBeKLbS1pn7votYoBJjf4Dl0VShLvPcXfdx
+l3tvKwQK1hKJxgqR8CpUCKBoRB5GaCsB2gYQIVRKFChgIamWp0AalBIbcLaBmBh/
+TWZyvvOd75xvDg9O8aX3mZTqDU6JZP/V50RzRZmvtHKouUjCNl0o+RdJEdZ7sChl
+rheIhKnklwCUAcSqrlsmtYClmYgyTbVkzCwF6IQiplOqYhXqCjZUoBsmAEiADKxh
+BXFkEqgBJOVIPBwPMifhhOOeoJUNVZcx5YrBNWYiFZpExzLlKgCaoKFAEVeL66Iw
+ZLvJCiEOI5flhW3xJi6BXnn/g3+sGwhOlWqqTi2EqEkMRrHMLUWhBACGFAi4DmTL
+gkxRoEWoYSkIydDiCiY6pAijXt1lvXSIc0woAwSrXAxPTEGJKNGBzpgGAEgCXebE
+UYwJdDCKSBhFXakiR4oxJxJlAce2vaS5xAsnIVDTTaEbalAMiNxQIMY8JCotxgFh
+pgY10U9P+gxNrCtUhirjFFONAY0RjsQIKlM0lSBDVrDFDQsrUFNUocNl8+O25Dc0
+4bFmCgUOK7cjLNncDQeFba7knyNxxKDMENRMg6qqyoEImgMKmYibEahAFTLhLETC
+JMMwkWZwDAk3ZVkkbXAEuFRakWzmlIdJL3kyp0fzvxtCnhuOux6KU+TQPGLHhLCE
+Y3s2saMCEPK8hOtP2uMtTPRWMBx4xBXA4TgVyyIqypnjhu24sEsg/+ucnCOxBYmw
+wwLhJEIzdLF6ACT7sHJBqXMDq4alIiSShtRgwkmOqSVW1EQAcAtzFQIda0RsLYVE
+JhAYQOeyyRWZMPCvlboIyUNBwSkMjCOvzGFSRXPT3H6+Pum+/ql9k7/Il5725OO/
+NSE340FmwcmFtecGzRp9aN6cQ1Xj93Q2nUpbsW/ekaLOtC7//lWvn7hV1Tm1u/5o
+8Si+enSWr7Er9/6O1uqHl7qCPaXr5WNNxa+Mf+uD4E8TK/MGFBeu/GiL3dx6+/0p
+sQt1/PQT+mHc4M+LfHtwCJ/98Wht56az9NqBJRkpnecvb81etq/nWH6g361I2c3j
+/jjc2d1QPHbvy3Rkh7fLaN40ata4X9tbl93d3nGpqe+r0bRKfL1NLcgafkDmb9aO
+GN9/68OL46bPqA2B2y2pPGv23uHXKkoGDuxYWtlykjht6ws/NT47vzxldS4+2xio
+m5k5peCZ+T9MqKuRzv3x9rY9u15cTDfX9RS9tqxhf2zsIGV+1vPDivxd5bsbT4Lv
+HkwDd1ZbRntD3cbb/RbvmP5Uy6Chu5cukYYc3bi5nLX8WJQ+sWby4vwrNXOH+OkX
+5MbpDPdM1eQ3CtunZTeWTP6kc8CN61c105mamBFdN/ilNQdz1v2uKN8v+Lkt9JW9
+f8qV1sz7l0vbrl7v+PyX1LHwvRp2z15D0o+v/bCj4MKd0jHPHvx6Umxo09ZTz13q
+IVmzprMTWQ7ftHxv/o6rL1QNW/lNx72/Q2szfttibcA375aM+TKxobl75shj+Yue
+lt8ZterwuWk3trfr9QfqqyfUnwFds0uqaLfWsOG86ku9m12zovrPERdTG5d35R6p
+VWLbg/dizdv+Ab7aBZw=
+=tSGX
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/glacials
+
+==================================================================

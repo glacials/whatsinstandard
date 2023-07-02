@@ -16,6 +16,12 @@ export class Set {
     this.symbol = json.symbol;
     this.enterDate = new BiDate(json.enterDate.rough, json.enterDate.exact);
     this.exitDate = new BiDate(json.exitDate.rough, json.exitDate.exact);
+
+    this.internalId =
+      this.code ||
+      this.name?.split(" ").join("-") ||
+      this.codename?.split(" ").join("-") ||
+      Math.random().toString(36).substring(2, 15);
   }
   /**
    * The set's English name.
@@ -32,6 +38,11 @@ export class Set {
    * "KTK" for Khans of Tarkir or "M15" for the 2015 Core Set.
    */
   code?: string;
+  /**
+   * The set's unique ID for this page load. This is used for various constructs that
+   * need to keep track of a different DOM element per set, like Bootstrap accordions.
+   */
+  internalId: string;
   /**
    * URLs to variations of the set's logo.
    */

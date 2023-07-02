@@ -3,7 +3,6 @@ import { ref, watch, watchEffect } from "vue";
 
 import * as card from "../types/card";
 
-import RecentlyDropped from "./RecentlyDropped.vue";
 import SetList from "./SetList.vue";
 
 const apiURL = "/api/v6/standard.json";
@@ -106,7 +105,7 @@ watch(hideAlert20230507, (v) => {
                       height="20"
                       width="20"
                     />
-                    Follow the bot!
+                    Follow the bot
                   </a>
                   <ul class="dropdown-menu">
                     <li>
@@ -150,12 +149,6 @@ watch(hideAlert20230507, (v) => {
           <div class="spinner-border my-5" role="status"></div>
           <div class="visually-hidden">Fetching Standard</div>
         </div>
-        <div class="row mx-0 px-0 row-cols-1 row-cols-lg-2">
-          <recently-dropped
-            :round="last(card.Round.dropped(rounds))"
-            v-if="showRecentlyDropped"
-          />
-        </div>
         <div
           v-if="!hideAlert20230507"
           class="row justify-content-around px-3 mx-0"
@@ -191,6 +184,12 @@ watch(hideAlert20230507, (v) => {
             ></button>
           </div>
         </div>
+        <template v-if="showRecentlyDropped">
+          <set-list
+            v-if="rounds.length > 0"
+            :rounds="[last(card.Round.dropped(rounds))]"
+          />
+        </template>
         <set-list
           v-if="rounds.length > 0"
           :rounds="card.Round.relevant(rounds)"

@@ -65,7 +65,7 @@ watch(hideAlert20230507, (v) => {
         <div class="mt-3 d-flex">
           <img
             id="site-icon"
-            src="icon-original.svg"
+            src="/icon-original.svg"
             alt="What's in Standard? logo"
             class="d-none d-sm-inline"
           />
@@ -94,19 +94,19 @@ watch(hideAlert20230507, (v) => {
                   >
                     <img
                       class="m-1"
-                      src="img/mastodon.svg"
+                      src="../../assets/img/mastodon.svg"
                       alt="Mastodon logo"
                       height="20"
                       width="20"
                     />
                     <img
                       class="m-1"
-                      src="img/twitter.svg"
+                      src="../../assets/img/twitter.svg"
                       alt="Twitter logo"
                       height="20"
                       width="20"
                     />
-                    Follow the bot
+                    Follow the bot!
                   </a>
                   <ul class="dropdown-menu">
                     <li>
@@ -117,7 +117,7 @@ watch(hideAlert20230507, (v) => {
                       >
                         <img
                           class="m-1"
-                          src="img/mastodon.svg"
+                          src="../../assets/img/mastodon.svg"
                           alt="Mastodon logo"
                           height="20"
                           width="20"
@@ -132,7 +132,7 @@ watch(hideAlert20230507, (v) => {
                       >
                         <img
                           class="m-1"
-                          src="img/twitter.svg"
+                          src="../../assets/img/twitter.svg"
                           alt="Twitter logo"
                           height="20"
                           width="20"
@@ -311,7 +311,7 @@ watch(hideAlert20230507, (v) => {
               >
                 <img
                   class="m-1"
-                  src="img/mastodon.svg"
+                  src="../../assets/img/mastodon.svg"
                   alt="Mastodon logo"
                   height="35"
                   width="35"
@@ -325,7 +325,7 @@ watch(hideAlert20230507, (v) => {
               >
                 <img
                   class="m-1"
-                  src="img/twitter.svg"
+                  src="../../assets/img/twitter.svg"
                   alt="Twitter logo"
                   height="35"
                   width="35"
@@ -339,7 +339,7 @@ watch(hideAlert20230507, (v) => {
               >
                 <img
                   class="m-1"
-                  src="img/github.png"
+                  src="../../assets/img/github.png"
                   alt="GitHub logo"
                   height="35"
                   width="35"

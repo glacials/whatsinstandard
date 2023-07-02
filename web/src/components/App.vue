@@ -3,6 +3,7 @@ import { ref, watch, watchEffect } from "vue";
 
 import * as card from "../types/card";
 
+import BannedCard from "./BannedCard.vue";
 import SetList from "./SetList.vue";
 
 const apiURL = "/api/v6/standard.json";
@@ -194,157 +195,131 @@ watch(hideAlert20230507, (v) => {
           v-if="rounds.length > 0"
           :rounds="card.Round.relevant(rounds)"
         />
-        <div class="row">
-          <div class="col-md-6">
-            <h3 class="pt-3" id="bans">Banned cards</h3>
-            <template v-if="bans.length === 0">
-              <i>No cards are banned from Standard right now.</i>
-            </template>
-            <template v-else>
-              <p>
-                Despite being part of legal sets, the following cards are
-                explicitly not allowed in decks for this format.
-              </p>
-              <div class="row" v-cloak>
-                <div
-                  v-for="ban in bansFor(
-                    card.Round.undropped(rounds)
-                      .map((r) => r.sets)
-                      .flat(),
-                    bans
-                  )"
-                  class="col-sm-12 col-md-12 col-lg-6"
-                >
-                  <div class="card mb-3">
-                    <img
-                      :src="ban.cardImageUrl"
-                      class="card-img-top"
-                      :alt="`${ban.cardName} from ${ban.setCode}`"
-                    />
-                    <div class="card-body">
-                      <p class="card-text">{{ ban.reason }}</p>
-                      <a
-                        :href="`https://scryfall.com/search?q=!“${ban.cardName}” set:${ban.setCode}&utm_source=whatsinstandard`"
-                        class="btn btn-outline-primary btn-sm text-uppercase my-1 me-1"
-                        rel="noopener"
-                      >
-                        Scryfall
-                      </a>
-                      <a
-                        :href="ban.announcementUrl"
-                        class="btn btn-outline-secondary btn-sm text-uppercase my-1"
-                      >
-                        Announcement
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </template>
-          </div>
-          <div class="col-md-6">
-            <h2 class="pt-3" id="info">What <em>is</em> Standard?</h2>
+        <div class="col-md-6">
+          <h3 class="pt-3" id="bans">Banned cards</h3>
+          <template v-if="bans.length === 0">
+            <i>No cards are banned from Standard right now.</i>
+          </template>
+          <template v-else>
             <p>
-              <a
-                target="_blank"
-                href="https://magic.wizards.com/en/content/standard-formats-magic-gathering"
-                rel="noopener"
-              >
-                <b>Standard</b>
-              </a>
-              is a tournament format containing ~9&ndash;12 recent
-              <i>Magic: The Gathering</i> sets. Sets generally enter the format
-              when they're released and drop out 2.5&ndash;3 years later in
-              groups of four. This is a rule of thumb; exceptions are frequently
-              made. This site will always have accurate information.
+              Despite being part of legal sets, the following cards are
+              explicitly not allowed in decks for this format.
             </p>
-            <p>
-              A <b>Standard card</b> is a card from a set currently part of the
-              legal pool.
-              <a
-                v-tippy
-                class="tip"
-                title="All versions of a card with the same
+            <div class="row" v-cloak>
+              <banned-card
+                :ban="ban"
+                v-for="ban in bansFor(
+                  card.Round.undropped(rounds)
+                    .map((r) => r.sets)
+                    .flat(),
+                  bans
+                )"
+              />
+            </div>
+          </template>
+        </div>
+        <div class="col-md-6">
+          <h2 class="pt-3" id="info">What <em>is</em> Standard?</h2>
+          <p>
+            <a
+              target="_blank"
+              href="https://magic.wizards.com/en/content/standard-formats-magic-gathering"
+              rel="noopener"
+            >
+              <b>Standard</b>
+            </a>
+            is a tournament format containing ~9&ndash;12 recent
+            <i>Magic: The Gathering</i> sets. Sets generally enter the format
+            when they're released and drop out 2.5&ndash;3 years later in groups
+            of four. This is a rule of thumb; exceptions are frequently made.
+            This site will always have accurate information.
+          </p>
+          <p>
+            A <b>Standard card</b> is a card from a set currently part of the
+            legal pool.
+            <a
+              v-tippy
+              class="tip"
+              title="All versions of a card with the same
                   name are considered the same card. As long as any print is
                   Standard-legal, so are all prints of it from previous sets."
-              >
-              </a>
-            </p>
-            <p>
-              A <b>Standard deck</b> contains 60+ Standard cards and can
-              optionally have a sideboard
-              <a
-                v-tippy
-                class="tip"
-                title="A sideboard is a second pool of cards outside the main deck that cannot be used during games,
+            >
+            </a>
+          </p>
+          <p>
+            A <b>Standard deck</b> contains 60+ Standard cards and can
+            optionally have a sideboard
+            <a
+              v-tippy
+              class="tip"
+              title="A sideboard is a second pool of cards outside the main deck that cannot be used during games,
                   but whose cards can be swapped with or added to the main deck cards between games in a match.
                   Sideboard cards are usually situational, providing counters to specific deck archetypes."
-              >
-              </a>
-              of up to 15 additional such cards. Apart from basic lands, the
-              combined main deck and sideboard cannot have more than four copies
-              of any card.
-            </p>
-            <h3 class="mt-5">Related sets and formats</h3>
-            <p>
-              <a
-                target="_blank"
-                href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl"
-                rel="noopener"
-                ><b>Brawl</b></a
-              >
-              is a format based on Standard—all rotations listed here apply to
-              Brawl as well—but Brawl has its own banlist.
-            </p>
-            <p>
-              Not all sets enter Standard upon release. For example, Masters
-              sets and Commander sets never enter the format.
-            </p>
-            <div class="github my-4">
-              <a
-                rel="me"
-                v-tippy
-                class="btn"
-                href="https://m.twos.dev/@whatsinstandard"
-                title="See rotations in your Mastodon timeline"
-              >
-                <img
-                  class="m-1"
-                  src="../../assets/img/mastodon.svg"
-                  alt="Mastodon logo"
-                  height="35"
-                  width="35"
-                />
-              </a>
-              <a
-                v-tippy
-                class="btn"
-                href="https://twitter.com/whatsinstandard"
-                title="See rotations in your Twitter timeline"
-              >
-                <img
-                  class="m-1"
-                  src="../../assets/img/twitter.svg"
-                  alt="Twitter logo"
-                  height="35"
-                  width="35"
-                />
-              </a>
-              <a
-                v-tippy
-                class="btn"
-                href="https://github.com/glacials/whatsinstandard"
-                title="We're open source!"
-              >
-                <img
-                  class="m-1"
-                  src="../../assets/img/github.png"
-                  alt="GitHub logo"
-                  height="35"
-                  width="35"
-                />
-              </a>
-            </div>
+            >
+            </a>
+            of up to 15 additional such cards. Apart from basic lands, the
+            combined main deck and sideboard cannot have more than four copies
+            of any card.
+          </p>
+          <h3 class="mt-5">Related sets and formats</h3>
+          <p>
+            <a
+              target="_blank"
+              href="https://magic.wizards.com/en/game-info/gameplay/formats/brawl"
+              rel="noopener"
+              ><b>Brawl</b></a
+            >
+            is a format based on Standard—all rotations listed here apply to
+            Brawl as well—but Brawl has its own banlist.
+          </p>
+          <p>
+            Not all sets enter Standard upon release. For example, Masters sets
+            and Commander sets never enter the format.
+          </p>
+          <div class="github my-4">
+            <a
+              rel="me"
+              v-tippy
+              class="btn"
+              href="https://m.twos.dev/@whatsinstandard"
+              title="See rotations in your Mastodon timeline"
+            >
+              <img
+                class="m-1"
+                src="../../assets/img/mastodon.svg"
+                alt="Mastodon logo"
+                height="35"
+                width="35"
+              />
+            </a>
+            <a
+              v-tippy
+              class="btn"
+              href="https://twitter.com/whatsinstandard"
+              title="See rotations in your Twitter timeline"
+            >
+              <img
+                class="m-1"
+                src="../../assets/img/twitter.svg"
+                alt="Twitter logo"
+                height="35"
+                width="35"
+              />
+            </a>
+            <a
+              v-tippy
+              class="btn"
+              href="https://github.com/glacials/whatsinstandard"
+              title="We're open source!"
+            >
+              <img
+                class="m-1"
+                src="../../assets/img/github.png"
+                alt="GitHub logo"
+                height="35"
+                width="35"
+              />
+            </a>
           </div>
         </div>
       </div>

@@ -332,28 +332,28 @@
       "card_name": "The Meathook Massacre",
       "card_image_url": "https://cards.scryfall.io/large/front/0/8/08950015-eee5-4327-888c-82dfd13bb9ad.jpg",
       "set_code": "MID",
-      "reason": "Banned for the color black's play rate among competitive decks being a bit too high.",
+      "reason": "Banned to destabilize black as a prolific foundation for competitive decks.",
       "announcement_url": "https://magic.wizards.com/en/articles/archive/news/october-10-2022-banned-and-restricted-announcement"
     },
     {
       "card_name": "Fable of the Mirror-Breaker // Reflection of Kiki-Jiki",
       "card_image_url": "https://cards.scryfall.io/large/front/2/4/24c0d87b-0049-4beb-b9cb-6f813b7aa7dc.jpg?1685368758",
       "set_code": "NEO",
-      "reason": "Banned for being too efficient in black-red decks.",
+      "reason": "Banned to increase low-mana counterplay options against black-red decks.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/may-29-2023-banned-and-restricted-announcement"
     },
     {
       "card_name": "Invoke Despair",
       "card_image_url": "https://cards.scryfall.io/large/front/3/5/35af9d5c-4449-4549-b549-c3ba4a67dee0.jpg?1685368727",
       "set_code": "NEO",
-      "reason": "Banned for its power level and negative impact on card diversity in black-based decks.",
+      "reason": "Banned to increase diversity in black decks and increase counterplay options against removal.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/may-29-2023-banned-and-restricted-announcement"
     },
     {
       "card_name": "Reckoner Bankbuster",
       "card_image_url": "https://cards.scryfall.io/large/front/2/7/279acd17-6c17-427b-a69d-fc02442ff4a3.jpg?1685368706",
       "set_code": "NEO",
-      "reason": "Banned for reducing card diversity and to give power back to other types of cards in different colors.",
+      "reason": "Banned to increase diversity of card advantage options among the colors.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/may-29-2023-banned-and-restricted-announcement"
     }
   ]

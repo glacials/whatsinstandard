@@ -20,7 +20,7 @@
   },
   "scripts": {
     "autotest": "./node_modules/.bin/supervisor -q -n exit -x ./node_modules/.bin/mocha -- -b",
-    "build": "rm -rf dist && vue tsc && vite build && cp -r api dist",
+    "build": "rm -rf dist && vite build && cp -r api dist",
     "prepare": "./node_modules/node/bin/node api/generate.js",
     "preview": "vite preview",
     "start": "vite",

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, watch, watchEffect } from "vue";
-import VueTippy from "vue-tippy";
 
 import * as card from "../types/card";
 

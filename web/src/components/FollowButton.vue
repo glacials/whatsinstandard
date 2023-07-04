@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import FollowMastodonButton from "./FollowMastodonButton.vue";
+import FollowTwitterButton from "./FollowTwitterButton.vue";
+</script>
+
 <template>
   <div class="d-none d-md-inline dropdown">
     <a
@@ -9,49 +14,8 @@
       <slot />
     </a>
     <ul class="dropdown-menu py-0 w-100">
-      <li>
-        <a
-          class="dropdown-item py-1"
-          href="https://m.twos.dev/@whatsinstandard"
-          rel="me"
-          target="_blank"
-        >
-          <span class="d-flex justify-content-between">
-            <span
-              ><img
-                alt="Mastodon logo"
-                class="me-1"
-                height="18"
-                src="../../assets/img/mastodon.svg"
-                width="18"
-              />
-              Mastodon</span
-            >
-            <span>↗</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a
-          class="dropdown-item py-1"
-          href="https://twitter.com/whatsinstandard"
-          target="_blank"
-        >
-          <span class="d-flex justify-content-between">
-            <span
-              ><img
-                alt="Twitter logo"
-                class="me-1"
-                height="18"
-                src="../../assets/img/twitter.svg"
-                width="18"
-              />
-              Twitter</span
-            >
-            <span>↗</span>
-          </span>
-        </a>
-      </li>
+      <li><follow-mastodon-button class="dropdown-item py-1" /></li>
+      <li><follow-twitter-button class="dropdown-item py-1" /></li>
     </ul>
   </div>
   <button
@@ -73,45 +37,10 @@
   >
     <div class="offcanvas-header">See Standard updates in your timeline.</div>
     <div class="offcanvas-body">
-      <a
+      <follow-mastodon-button
         class="btn btn-lg btn-outline-dark d-block my-1"
-        href="https://m.twos.dev/@whatsinstandard"
-        rel="me"
-        target="_blank"
-      >
-        <span class="d-flex justify-content-between">
-          <span
-            ><img
-              alt="Mastodon logo"
-              class="me-1"
-              height="18"
-              src="../../assets/img/mastodon.svg"
-              width="18"
-            />
-            Mastodon</span
-          >
-          <span>↗</span>
-        </span>
-      </a>
-      <a
-        class="btn btn-lg btn-outline-dark d-block my-1"
-        href="https://twitter.com/whatsinstandard"
-        target="_blank"
-      >
-        <span class="d-flex justify-content-between">
-          <span
-            ><img
-              alt="Twitter logo"
-              class="me-1"
-              height="18"
-              src="../../assets/img/twitter.svg"
-              width="18"
-            />
-            Twitter</span
-          >
-          <span>↗</span>
-        </span>
-      </a>
+      />
+      <follow-twitter-button class="btn btn-lg btn-outline-dark d-block my-1" />
     </div>
   </div>
 </template>

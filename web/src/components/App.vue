@@ -4,6 +4,7 @@ import { ref, watch, watchEffect } from "vue";
 import * as card from "../types/card";
 
 import BannedCard from "./BannedCard.vue";
+import FollowButton from "./FollowButton.vue";
 import SetList from "./SetList.vue";
 
 const apiURL = "/api/v6/standard.json";
@@ -31,16 +32,8 @@ function last<T>(a: Array<T>) {
   return a[a.length - 1];
 }
 
-/**
- * Show or hide the recently dropped sets area of the page.
- */
-function toggleRecentlyDropped() {
-  showRecentlyDropped.value = !showRecentlyDropped.value;
-}
-
 const bans = ref<card.Ban[]>([]);
 const rounds = ref<card.Round[]>([]);
-const showRecentlyDropped = ref(false);
 const hideAlert20230507 = ref(
   localStorage.hideAlert20230507 === "1" ||
     Date.now() > Date.parse("2024-01-01T00:00:00Z")
@@ -74,74 +67,35 @@ watch(hideAlert20230507, (v) => {
             <div class="row row-cols-1 row-cols-sm-2">
               <div class="my-2">for Magic: The Gathering</div>
               <div
-                class="d-xl-flex text-end justify-content-xs-center justify-content-sm-end my-2"
+                class="d-grid d-md-block d-xl-flex justify-content-sm-end justify-content-xs-center my-2 text-end"
               >
-                <button
-                  class="btn btn-outline-dark btn-sm my-1 mx-1"
-                  v-on:click.prevent="toggleRecentlyDropped"
+                <follow-button>
+                  <img
+                    alt="Mastodon logo"
+                    class="me-1"
+                    height="18"
+                    src="../../assets/img/mastodon.svg"
+                    width="18"
+                  />
+                  <img
+                    alt="Twitter logo"
+                    class="me-1"
+                    height="18"
+                    src="../../assets/img/twitter.svg"
+                    width="18"
+                  />
+                  Follow the bot
+                </follow-button>
+                <a
+                  aria-controls="recentlyDroppedCollapse"
+                  aria-expanded="false"
+                  class="btn btn-outline-dark btn-sm mx-1 my-1"
+                  data-bs-toggle="collapse"
+                  href="#recentlyDroppedCollapse"
+                  role="button"
                 >
-                  <template v-if="showRecentlyDropped">
-                    Hide left sets
-                  </template>
-                  <template v-else> What just left?</template>
-                </button>
-                <div class="dropdown">
-                  <a
-                    class="btn btn-outline-dark btn-sm my-1 mx-1 dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <img
-                      class="m-1"
-                      src="../../assets/img/mastodon.svg"
-                      alt="Mastodon logo"
-                      height="20"
-                      width="20"
-                    />
-                    <img
-                      class="m-1"
-                      src="../../assets/img/twitter.svg"
-                      alt="Twitter logo"
-                      height="20"
-                      width="20"
-                    />
-                    Follow the bot
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a
-                        rel="me"
-                        class="dropdown-item"
-                        href="https://m.twos.dev/@whatsinstandard"
-                      >
-                        <img
-                          class="m-1"
-                          src="../../assets/img/mastodon.svg"
-                          alt="Mastodon logo"
-                          height="20"
-                          width="20"
-                        />
-                        Mastodon
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="https://twitter.com/whatsinstandard"
-                      >
-                        <img
-                          class="m-1"
-                          src="../../assets/img/twitter.svg"
-                          alt="Twitter logo"
-                          height="20"
-                          width="20"
-                        />
-                        Twitter
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                  Toggle recently dropped
+                </a>
               </div>
             </div>
           </div>
@@ -185,12 +139,15 @@ watch(hideAlert20230507, (v) => {
             ></button>
           </div>
         </div>
-        <template v-if="showRecentlyDropped">
-          <set-list
-            v-if="rounds.length > 0"
-            :rounds="[last(card.Round.dropped(rounds))]"
-          />
-        </template>
+        <div class="col collapse" id="recentlyDroppedCollapse">
+          <div class="row">
+            <set-list
+              :rounds="[last(card.Round.dropped(rounds))]"
+              v-cloak
+              v-if="rounds.length > 0"
+            />
+          </div>
+        </div>
         <set-list
           v-if="rounds.length > 0"
           :rounds="card.Round.relevant(rounds)"

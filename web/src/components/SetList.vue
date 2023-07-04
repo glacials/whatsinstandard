@@ -11,13 +11,13 @@ defineProps<{
 
 <template>
   <div
-    v-for="round in rounds"
     class="row row-cols-1 row-cols-lg-2 mb-4 px-0 py-3 mx-0"
     v-cloak
+    v-for="round in rounds"
   >
     <div class="col list-group px-3">
       <div class="accordion" :id="`accordion-${round.internalId}`">
-        <set-list-item v-for="set in round.sets" :round="round" :set="set" />
+        <set-list-item :round="round" :set="set" v-for="set in round.sets" />
       </div>
     </div>
     <round-drop-date :exitDate="round.exitDate" />

@@ -61,7 +61,7 @@ defineProps<{
   >
     <div class="btn-group w-100">
       <a
-        class="btn btn-outline-dark btn-sm text-uppercase rounded-0"
+        class="btn btn-outline-dark btn-sm rounded-0 text-uppercase"
         :href="
           set.code
             ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`
@@ -73,7 +73,7 @@ defineProps<{
         Scryfall ↗
       </a>
       <a
-        class="btn btn-outline-dark btn-sm text-uppercase rounded-0"
+        class="btn btn-outline-dark btn-sm rounded-0 text-uppercase"
         :href="`https://mtg.fandom.com/wiki/${set.name}?utm_source=whatsinstandard`"
         rel="noopener"
         target="_blank"
@@ -82,7 +82,7 @@ defineProps<{
       >
       <!-- Uncomment once we have access to set number according to MTG Salvation
         <a
-          class="btn btn-outline-dark btn-sm text-uppercase rounded-0"
+          class="btn btn-outline-dark btn-sm rounded-0 text-uppercase"
           :href="`https://www.mtgsalvation.com/cards?filter-set=${set.number}&utm_source=whatsinstandard`"
           rel="noopener"
           target="_blank"

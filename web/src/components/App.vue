@@ -110,7 +110,7 @@ watch(hideAlert20230507, (v) => {
           v-cloak
         >
           <div
-            class="col-md-8 alert alert-info alert-dismissible fade show"
+            class="col-lg-8 col-xl-7 alert alert-info alert-dismissible fade show"
             role="alert"
           >
             <h4 class="alert-heading mb-3">New rules</h4>

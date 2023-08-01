@@ -40,9 +40,10 @@ class Blocks extends StatelessWidget {
                           .map((set) => PlatformListTile(
                                 leading: SetIcon(set),
                                 title: PlatformText(set.name),
-                                subtitle: PlatformText(set.isReleased()
-                                    ? ""
-                                    : "Releases ${set.friendlyEnterDate(context)}"),
+                                subtitle: set.isReleased()
+                                    ? null
+                                    : PlatformText(
+                                        "Releases ${set.friendlyEnterDate(context)}"),
                               ))
                           .toList()),
                   title: "Until ${block.roughExitDate}",

@@ -20,7 +20,7 @@ class SetIcon extends StatelessWidget {
             height: 40,
             width: 40,
             placeholderBuilder: (BuildContext context) => Icon(
-                  IconData(0xe684, fontFamily: 'Keyune'),
+                  Icons.question_mark,
                   color: Colors.grey,
                 ));
       } catch (_) {

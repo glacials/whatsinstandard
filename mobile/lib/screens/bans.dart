@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:http/http.dart' as http;
@@ -106,13 +108,24 @@ class _BansScreenState extends State<BansScreen> {
             onTap: () {
               showPlatformModalSheet(
                 context: context,
-                cupertino: CupertinoModalSheetData(semanticsDismissible: true),
-                builder: (context) => PageView(
-                  children: _bans
-                      .map((card) =>
-                          HeroCardScreen(key: Key(card.name), bannedCard: card))
-                      .toList(),
-                  controller: PageController(initialPage: i),
+                builder: (context) => PlatformScaffold(
+                  appBar: PlatformAppBar(
+                    leading: PlatformTextButton(
+                      child: Icon(CupertinoIcons.chevron_down),
+                      onPressed: () => Navigator.pop(context),
+                      padding: EdgeInsets.only(bottom: 0),
+                    ),
+                    title: PlatformText("Banned Card Details"),
+                  ),
+                  body: PageView(
+                    children: _bans
+                        .map((card) => HeroCardScreen(
+                            key: Key(card.name), bannedCard: card))
+                        .toList(),
+                    controller:
+                        PageController(initialPage: i, viewportFraction: 0.9),
+                    padEnds: true,
+                  ),
                 ),
               );
             },

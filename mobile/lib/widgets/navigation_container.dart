@@ -167,24 +167,26 @@ class _NavigationContainerState extends State<NavigationContainer> {
         body: SafeArea(
           child: Row(children: [
             Expanded(
-                flex: 1,
-                child: Column(children: [
-                  Padding(
-                      child: PlatformText('Standard Sets',
-                          style: TextStyle(fontSize: 20)),
-                      padding: EdgeInsets.only(bottom: 20, top: 10)),
-                  Expanded(flex: 1, child: _setsScreen)
-                ])),
-            Expanded(
-                flex: 1,
-                child: Column(children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 20, top: 10),
-                    child: PlatformText('Banned Cards',
+              child: Column(children: [
+                Padding(
+                    child: PlatformText('Standard Sets',
                         style: TextStyle(fontSize: 20)),
-                  ),
-                  Expanded(flex: 1, child: _bansScreen)
-                ]))
+                    padding: EdgeInsets.only(bottom: 20, top: 10)),
+                Expanded(flex: 1, child: _setsScreen)
+              ]),
+              flex: 1,
+            ),
+            Expanded(
+              child: Column(children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20, top: 10),
+                  child: PlatformText('Banned Cards',
+                      style: TextStyle(fontSize: 20)),
+                ),
+                Expanded(flex: 1, child: _bansScreen)
+              ]),
+              flex: 1,
+            )
           ]),
         ),
       ),

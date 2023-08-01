@@ -13,16 +13,18 @@ class _InfoScreenState extends State<InfoScreen> {
       appBar: PlatformAppBar(
         title: Text('What is Standard?'),
       ),
-      body: Text.rich(
-        TextSpan(
-          text: 'What ',
-          children: <TextSpan>[
-            TextSpan(
-              text: 'is',
-              style: TextStyle(fontStyle: FontStyle.italic),
-            ),
-            TextSpan(text: ' Standard?')
-          ],
+      body: SafeArea(
+        child: Text.rich(
+          TextSpan(
+            text: 'What ',
+            children: <TextSpan>[
+              TextSpan(
+                text: 'is',
+                style: TextStyle(fontStyle: FontStyle.italic),
+              ),
+              TextSpan(text: ' Standard?')
+            ],
+          ),
         ),
       ),
     );

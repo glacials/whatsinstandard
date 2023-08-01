@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:http/http.dart' as http;
 
-import 'package:whatsinstandard/screens/hero_card.dart';
+import 'package:whatsinstandard/screens/banned_card.dart';
 import 'package:whatsinstandard/widgets/navigation_container.dart';
 
 class BannedCard {
@@ -101,10 +101,7 @@ class _BansScreenState extends State<BansScreen> {
       cards.add(Material(
         child: GridTile(
           child: InkResponse(
-            child: Hero(
-              child: Image.network(_bans[i].imageUrl),
-              tag: _bans[i].name,
-            ),
+            child: Image.network(_bans[i].imageUrl),
             onTap: () {
               showPlatformModalSheet(
                 context: context,
@@ -119,8 +116,11 @@ class _BansScreenState extends State<BansScreen> {
                   ),
                   body: PageView(
                     children: _bans
-                        .map((card) => HeroCardScreen(
-                            key: Key(card.name), bannedCard: card))
+                        .map((card) => BannedCardScreen(
+                            key: Key(card.name),
+                            bannedCard: card,
+                            set: _sets
+                                .firstWhere((set) => set.code == card.setCode)))
                         .toList(),
                     controller:
                         PageController(initialPage: i, viewportFraction: 0.9),

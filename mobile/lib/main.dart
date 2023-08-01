@@ -24,9 +24,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.pink,
       ),
       darkTheme: ThemeData(
-        accentColor: Colors.pink[300],
-        brightness: Brightness.dark,
-        primarySwatch: Colors.pink,
+        colorScheme:
+            ColorScheme.fromSwatch(primarySwatch: Colors.pink).copyWith(
+          secondary: Colors.pink[300],
+          brightness: Brightness.dark,
+        ),
       ),
       debugShowCheckedModeBanner: false,
       routes: {

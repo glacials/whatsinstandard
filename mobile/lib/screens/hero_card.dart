@@ -67,9 +67,7 @@ class HeroCardScreen extends StatelessWidget {
           ),
           Hero(
             child: Padding(
-              child: Image.network(
-                bannedCard.imageUrl,
-              ),
+              child: Image.network(bannedCard.imageUrl, fit: BoxFit.fitHeight),
               padding: EdgeInsets.all(10),
             ),
             tag: bannedCard.name,

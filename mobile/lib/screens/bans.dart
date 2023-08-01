@@ -120,20 +120,12 @@ class _BansScreenState extends State<BansScreen> {
       ));
     }
 
-    cards.add(Padding(padding: EdgeInsets.only(bottom: 150)));
-
     return GridView.count(
       childAspectRatio: .71,
       children: cards,
       crossAxisCount: 2,
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
-      padding: EdgeInsets.only(
-        bottom: 10,
-        left: 10,
-        right: 10,
-        top: 10,
-      ),
     );
   }
 }

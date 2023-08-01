@@ -33,25 +33,23 @@ class Blocks extends StatelessWidget {
 
     List<Block> blocks = Block.fromSets(sets);
 
-    return Padding(
-        child: ListView(
-          children: blocks
-              .map((block) => BlockBox(
-                    title: "Until ${block.roughExitDate}",
-                    child: Column(
-                        children: block.sets
-                            .map((set) => PlatformListTile(
-                                  leading: Image.network(
-                                    set.symbol.toString(),
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  title: PlatformText(set.name),
-                                ))
-                            .toList()),
-                  ))
-              .toList(),
-        ),
-        padding: EdgeInsets.only(top: 25));
+    return ListView(
+      children: blocks
+          .map((block) => BlockBox(
+                title: "Until ${block.roughExitDate}",
+                child: Column(
+                    children: block.sets
+                        .map((set) => PlatformListTile(
+                              leading: Image.network(
+                                set.symbol.toString(),
+                                height: 40,
+                                width: 40,
+                              ),
+                              title: PlatformText(set.name),
+                            ))
+                        .toList()),
+              ))
+          .toList(),
+    );
   }
 }

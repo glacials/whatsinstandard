@@ -118,9 +118,7 @@ class _NavigationContainerState extends State<NavigationContainer> {
       _setsScreen = Blocks(sets: this._sets);
     }
 
-    final Widget _bansScreen = Padding(
-        child: BansScreen(response: widget.response),
-        padding: EdgeInsets.only(top: 100));
+    final Widget _bansScreen = BansScreen(response: widget.response);
 
     return ResponsiveContainer(
       phone: PlatformScaffold(
@@ -151,25 +149,13 @@ class _NavigationContainerState extends State<NavigationContainer> {
           Expanded(
               flex: 1,
               child: Column(children: [
-                Padding(
-                  padding: EdgeInsets.all(10),
-                ),
                 PlatformText('Standard Sets', style: TextStyle(fontSize: 20)),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                ),
                 Expanded(flex: 1, child: _setsScreen)
               ])),
           Expanded(
               flex: 1,
               child: Column(children: [
-                Padding(
-                  padding: EdgeInsets.all(10),
-                ),
                 PlatformText('Banned Cards', style: TextStyle(fontSize: 25)),
-                Padding(
-                  padding: EdgeInsets.all(10),
-                ),
                 Expanded(flex: 1, child: _bansScreen)
               ]))
         ]),

@@ -80,7 +80,9 @@ class _BansScreenState extends State<BansScreen> {
       return false;
     });
 
-    _bans = BannedCard.fetch(widget.response);
+    _bans = BannedCard.fetch(widget.response)
+        .where((ban) => _sets.map((set) => set.code).contains(ban.setCode))
+        .toList();
   }
 
   @override

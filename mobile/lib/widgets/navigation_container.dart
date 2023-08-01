@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:http/http.dart' as http;
+import 'package:relative_time/relative_time.dart';
 import '../screens/bans.dart';
 import 'responsive_container.dart';
 
@@ -13,6 +14,7 @@ class StandardSet {
   final String? code;
   final Uri symbol;
   final DateTime? exactEnterDate;
+  final String roughEnterDate;
   final DateTime? exactExitDate;
   final String roughExitDate;
 
@@ -22,6 +24,7 @@ class StandardSet {
       required this.code,
       required this.symbol,
       required this.exactEnterDate,
+      required this.roughEnterDate,
       required this.exactExitDate,
       required this.roughExitDate});
 
@@ -34,6 +37,7 @@ class StandardSet {
       exactEnterDate: json['enterDate']['exact'] != null
           ? DateTime.parse(json['enterDate']['exact'])
           : null,
+      roughEnterDate: json['enterDate']['rough'],
       exactExitDate: json['exitDate']['exact'] != null
           ? DateTime.parse(json['exitDate']['exact'])
           : null,
@@ -55,6 +59,18 @@ class StandardSet {
       // If that response was not OK, throw an error.
       throw Exception('Failed to load sets');
     }
+  }
+
+  String friendlyEnterDate(BuildContext context) {
+    if (this.exactEnterDate == null) {
+      return this.roughEnterDate;
+    }
+    return RelativeTime(context).format(this.exactEnterDate!);
+  }
+
+  bool isReleased() {
+    return this.exactEnterDate != null &&
+        DateTime.now().isAfter(this.exactEnterDate!);
   }
 }
 
@@ -121,15 +137,18 @@ class _NavigationContainerState extends State<NavigationContainer> {
     final Widget _bansScreen = BansScreen(response: widget.response);
 
     return ResponsiveContainer(
-      phone: PlatformScaffold(
+      narrow: PlatformScaffold(
         appBar: PlatformAppBar(
           title: _currentScreenIndex == 0
               ? PlatformText('Standard Sets')
               : PlatformText('Banned Cards'),
         ),
-        body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
+        body: SafeArea(
+          child: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
+        ),
         bottomNavBar: PlatformNavBar(
           currentIndex: _currentScreenIndex,
+          height: 60,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.category),
@@ -143,22 +162,31 @@ class _NavigationContainerState extends State<NavigationContainer> {
           itemChanged: _onBottomBarTap,
         ),
       ),
-      tablet: PlatformScaffold(
+      wide: PlatformScaffold(
         appBar: PlatformAppBar(title: PlatformText("What's in Standard?")),
-        body: Row(children: [
-          Expanded(
-              flex: 1,
-              child: Column(children: [
-                PlatformText('Standard Sets', style: TextStyle(fontSize: 20)),
-                Expanded(flex: 1, child: _setsScreen)
-              ])),
-          Expanded(
-              flex: 1,
-              child: Column(children: [
-                PlatformText('Banned Cards', style: TextStyle(fontSize: 25)),
-                Expanded(flex: 1, child: _bansScreen)
-              ]))
-        ]),
+        body: SafeArea(
+          child: Row(children: [
+            Expanded(
+                flex: 1,
+                child: Column(children: [
+                  Padding(
+                      child: PlatformText('Standard Sets',
+                          style: TextStyle(fontSize: 20)),
+                      padding: EdgeInsets.only(bottom: 20, top: 10)),
+                  Expanded(flex: 1, child: _setsScreen)
+                ])),
+            Expanded(
+                flex: 1,
+                child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20, top: 10),
+                    child: PlatformText('Banned Cards',
+                        style: TextStyle(fontSize: 20)),
+                  ),
+                  Expanded(flex: 1, child: _bansScreen)
+                ]))
+          ]),
+        ),
       ),
     );
   }

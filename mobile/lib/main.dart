@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:http/http.dart' as http;
+import 'package:relative_time/relative_time.dart';
 
 import 'package:whatsinstandard/widgets/navigation_container.dart';
 
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         builder: (context) => PlatformApp(
           debugShowCheckedModeBanner: false,
           localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+            RelativeTimeLocalizations.delegate,
             DefaultMaterialLocalizations.delegate,
             DefaultWidgetsLocalizations.delegate,
             DefaultCupertinoLocalizations.delegate,
@@ -58,16 +60,18 @@ class MyApp extends StatelessWidget {
                     appBar: PlatformAppBar(
                       title: Text('Standard Sets'),
                     ),
-                    body: Center(
-                        child: Column(
-                      children: [
-                        CircularProgressIndicator(),
-                        Padding(padding: EdgeInsets.all(19)),
-                        Text('Fetching current Standard info'),
-                        Padding(padding: EdgeInsets.all(19)),
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    )),
+                    body: SafeArea(
+                      child: Center(
+                          child: Column(
+                        children: [
+                          CircularProgressIndicator(),
+                          Padding(padding: EdgeInsets.all(19)),
+                          Text('Fetching current Standard info'),
+                          Padding(padding: EdgeInsets.all(19)),
+                        ],
+                        mainAxisAlignment: MainAxisAlignment.center,
+                      )),
+                    ),
                     bottomNavBar: PlatformNavBar(
                       currentIndex: 0,
                       items: const <BottomNavigationBarItem>[

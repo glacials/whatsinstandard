@@ -21,7 +21,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_platform_widgets: ^3.3.5
+  flutter_svg: ^2.0.7
   http: ^0.13.3
+  relative_time: ^4.0.1
   url_launcher: ^6.0.8
 
 dev_dependencies:

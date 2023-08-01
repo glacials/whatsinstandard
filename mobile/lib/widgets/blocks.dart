@@ -1,5 +1,9 @@
+import 'dart:developer';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:whatsinstandard/widgets/set_icon.dart';
 
 import 'block_box.dart';
 import 'navigation_container.dart';
@@ -11,45 +15,38 @@ class Blocks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (this.sets.isEmpty) {
-      return Text("loading");
-    }
     final DateTime now = new DateTime.now();
-    this.sets.removeWhere((s) {
-      if (s.exactEnterDate == null) {
-        return true;
-      }
 
-      if (s.exactEnterDate!.isAfter(now)) {
-        return true;
-      }
-
-      if (s.exactExitDate != null && s.exactExitDate!.isBefore(now)) {
-        return true;
-      }
-
-      return false;
+    if (this.sets.isEmpty) {
+      return PlatformCircularProgressIndicator();
+    }
+    var undropped = sets.where(
+        (set) => set.exactExitDate == null || set.exactExitDate!.isAfter(now));
+    var upcoming = undropped
+        .where((set) =>
+            set.exactEnterDate == null || set.exactEnterDate!.isAfter(now))
+        .take(4);
+    var standard = undropped.where((s) {
+      return s.exactEnterDate != null && now.isAfter(s.exactEnterDate!);
     });
 
-    List<Block> blocks = Block.fromSets(sets);
+    List<Block> blocks = Block.fromSets(standard.toList() + upcoming.toList());
 
     return ListView(
-      children: blocks
-          .map((block) => BlockBox(
-                title: "Until ${block.roughExitDate}",
-                child: Column(
-                    children: block.sets
-                        .map((set) => PlatformListTile(
-                              leading: Image.network(
-                                set.symbol.toString(),
-                                height: 40,
-                                width: 40,
-                              ),
-                              title: PlatformText(set.name),
-                            ))
-                        .toList()),
-              ))
-          .toList(),
-    );
+        children: blocks
+            .map((block) => BlockBox(
+                  child: Column(
+                      children: block.sets
+                          .map((set) => PlatformListTile(
+                                leading: SetIcon(set),
+                                title: PlatformText(set.name),
+                                subtitle: PlatformText(set.isReleased()
+                                    ? ""
+                                    : "Releases ${set.friendlyEnterDate(context)}"),
+                              ))
+                          .toList()),
+                  title: "Until ${block.roughExitDate}",
+                ))
+            .toList());
   }
 }

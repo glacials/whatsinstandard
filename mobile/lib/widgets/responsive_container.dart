@@ -1,19 +1,19 @@
 import 'package:flutter/widgets.dart';
 
 class ResponsiveContainer extends StatelessWidget {
-  final Widget phone;
-  final Widget tablet;
+  final Widget narrow;
+  final Widget wide;
 
-  const ResponsiveContainer({required this.phone, required this.tablet});
+  const ResponsiveContainer({required this.narrow, required this.wide});
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
       if (constraints.maxWidth > 800) {
-        return this.tablet;
+        return this.wide;
       }
-      return this.phone;
+      return this.narrow;
     });
   }
 }

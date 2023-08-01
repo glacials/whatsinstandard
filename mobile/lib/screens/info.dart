@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 class InfoScreen extends StatefulWidget {
   @override
@@ -8,22 +9,22 @@ class InfoScreen extends StatefulWidget {
 class _InfoScreenState extends State<InfoScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            title: Text('What is Standard?'),
-        ),
-        body: Text.rich(
+    return PlatformScaffold(
+      appBar: PlatformAppBar(
+        title: Text('What is Standard?'),
+      ),
+      body: Text.rich(
+        TextSpan(
+          text: 'What ',
+          children: <TextSpan>[
             TextSpan(
-                text: 'What ',
-                children: <TextSpan>[
-                  TextSpan(
-                      text: 'is',
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                  ),
-                  TextSpan(text: ' Standard?')
-                ],
+              text: 'is',
+              style: TextStyle(fontStyle: FontStyle.italic),
             ),
+            TextSpan(text: ' Standard?')
+          ],
         ),
+      ),
     );
   }
 }

@@ -18,61 +18,64 @@ class HeroCardScreen extends StatelessWidget {
             child: Icon(Icons.expand_more),
             onPressed: () => Navigator.pop(context),
           ),
-          title: PlatformText("Banned Cards")),
-      body: ListView(
-        children: [
-          Column(
-            children: [
-              PlatformListTile(
-                leading: Icon(
-                  Icons.block,
-                  color: Colors.grey,
-                ),
-                title: PlatformText(bannedCard.name),
-                trailing: PlatformText(bannedCard.setCode),
-              ),
-              Padding(
-                  child: Align(
-                      alignment: Alignment.topLeft,
-                      child: PlatformText(bannedCard.reason)),
-                  padding: EdgeInsets.only(left: 23, right: 23)),
-              ButtonBar(
-                alignment: MainAxisAlignment.start,
-                children: [
-                  PlatformTextButton(
-                    child: PlatformText('Scryfall'),
-                    onPressed: () async {
-                      Uri uri = Uri.https(
-                          'scryfall.com', '/search', {"q": bannedCard.name});
-                      if (await canLaunch(uri.toString())) {
-                        await launch(uri.toString());
-                      } else {
-                        throw 'Could not launch ban announcement URL';
-                      }
-                    },
+          title: PlatformText("Banned Card")),
+      body: SafeArea(
+        child: ListView(
+          children: [
+            Column(
+              children: [
+                PlatformListTile(
+                  leading: Icon(
+                    Icons.block,
+                    color: Colors.grey,
                   ),
-                  PlatformTextButton(
-                      child: PlatformText('Announcement'),
+                  title: PlatformText(bannedCard.name),
+                  trailing: PlatformText(bannedCard.setCode),
+                ),
+                Padding(
+                    child: Align(
+                        alignment: Alignment.topLeft,
+                        child: PlatformText(bannedCard.reason)),
+                    padding: EdgeInsets.only(left: 23, right: 23)),
+                ButtonBar(
+                  alignment: MainAxisAlignment.start,
+                  children: [
+                    PlatformTextButton(
+                      child: PlatformText('Scryfall'),
                       onPressed: () async {
-                        String url = bannedCard.announcementUrl;
-                        if (await canLaunch(url)) {
-                          await launch(url);
+                        Uri uri = Uri.https(
+                            'scryfall.com', '/search', {"q": bannedCard.name});
+                        if (await canLaunch(uri.toString())) {
+                          await launch(uri.toString());
                         } else {
                           throw 'Could not launch ban announcement URL';
                         }
-                      }),
-                ],
-              ),
-            ],
-          ),
-          Hero(
-            child: Padding(
-              child: Image.network(bannedCard.imageUrl, fit: BoxFit.fitHeight),
-              padding: EdgeInsets.all(10),
+                      },
+                    ),
+                    PlatformTextButton(
+                        child: PlatformText('Announcement'),
+                        onPressed: () async {
+                          String url = bannedCard.announcementUrl;
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch ban announcement URL';
+                          }
+                        }),
+                  ],
+                ),
+              ],
             ),
-            tag: bannedCard.name,
-          ),
-        ],
+            Hero(
+              child: Padding(
+                child:
+                    Image.network(bannedCard.imageUrl, fit: BoxFit.fitHeight),
+                padding: EdgeInsets.all(10),
+              ),
+              tag: bannedCard.name,
+            ),
+          ],
+        ),
       ),
     );
   }

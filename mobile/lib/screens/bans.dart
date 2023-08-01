@@ -106,6 +106,7 @@ class _BansScreenState extends State<BansScreen> {
             onTap: () {
               showPlatformModalSheet(
                 context: context,
+                cupertino: CupertinoModalSheetData(semanticsDismissible: true),
                 builder: (context) => PageView(
                   children: _bans
                       .map((card) =>
@@ -120,12 +121,14 @@ class _BansScreenState extends State<BansScreen> {
       ));
     }
 
-    return GridView.count(
-      childAspectRatio: .71,
-      children: cards,
-      crossAxisCount: 2,
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-    );
+    return Padding(
+        child: GridView.count(
+          childAspectRatio: .71,
+          children: cards,
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
+        padding: EdgeInsets.all(10));
   }
 }

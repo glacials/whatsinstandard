@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:whatsinstandard/screens/hero_card.dart';
@@ -95,16 +96,16 @@ class _BansScreenState extends State<BansScreen> {
         continue;
       }
 
-      cards.add(GridTile(
-        child: InkResponse(
-          child: Hero(
-            child: Image.network(_bans[i].imageUrl),
-            tag: _bans[i].name,
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
+      cards.add(Material(
+        child: GridTile(
+          child: InkResponse(
+            child: Hero(
+              child: Image.network(_bans[i].imageUrl),
+              tag: _bans[i].name,
+            ),
+            onTap: () {
+              showPlatformModalSheet(
+                context: context,
                 builder: (context) => PageView(
                   children: _bans
                       .map((card) =>
@@ -112,9 +113,9 @@ class _BansScreenState extends State<BansScreen> {
                       .toList(),
                   controller: PageController(initialPage: i),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ));
     }
@@ -127,7 +128,12 @@ class _BansScreenState extends State<BansScreen> {
       crossAxisCount: 2,
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
-      padding: EdgeInsets.all(10),
+      padding: EdgeInsets.only(
+        bottom: 10,
+        left: 10,
+        right: 10,
+        top: 10,
+      ),
     );
   }
 }

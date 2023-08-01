@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:http/http.dart' as http;
 import '../screens/bans.dart';
 import 'responsive_container.dart';
@@ -112,22 +113,24 @@ class _NavigationContainerState extends State<NavigationContainer> {
   Widget build(BuildContext context) {
     Widget _setsScreen;
     if (this._sets.isEmpty) {
-      _setsScreen = Text("loading");
+      _setsScreen = PlatformCircularProgressIndicator();
     } else {
       _setsScreen = Blocks(sets: this._sets);
     }
 
-    final Widget _bansScreen = BansScreen(response: widget.response);
+    final Widget _bansScreen = Padding(
+        child: BansScreen(response: widget.response),
+        padding: EdgeInsets.only(top: 100));
 
     return ResponsiveContainer(
-      phone: Scaffold(
-        appBar: AppBar(
+      phone: PlatformScaffold(
+        appBar: PlatformAppBar(
           title: _currentScreenIndex == 0
-              ? Text('Standard Sets')
-              : Text('Banned Cards'),
+              ? PlatformText('Standard Sets')
+              : PlatformText('Banned Cards'),
         ),
         body: _currentScreenIndex == 0 ? _setsScreen : _bansScreen,
-        bottomNavigationBar: BottomNavigationBar(
+        bottomNavBar: PlatformNavBar(
           currentIndex: _currentScreenIndex,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -139,12 +142,11 @@ class _NavigationContainerState extends State<NavigationContainer> {
               label: 'Banned Cards',
             ),
           ],
-          onTap: _onBottomBarTap,
-          enableFeedback: true,
+          itemChanged: _onBottomBarTap,
         ),
       ),
-      tablet: Scaffold(
-        appBar: AppBar(title: Text("What's in Standard?")),
+      tablet: PlatformScaffold(
+        appBar: PlatformAppBar(title: PlatformText("What's in Standard?")),
         body: Row(children: [
           Expanded(
               flex: 1,
@@ -152,7 +154,7 @@ class _NavigationContainerState extends State<NavigationContainer> {
                 Padding(
                   padding: EdgeInsets.all(10),
                 ),
-                Text('Standard Sets', style: TextStyle(fontSize: 25)),
+                PlatformText('Standard Sets', style: TextStyle(fontSize: 20)),
                 Padding(
                   padding: EdgeInsets.all(10),
                 ),
@@ -164,7 +166,7 @@ class _NavigationContainerState extends State<NavigationContainer> {
                 Padding(
                   padding: EdgeInsets.all(10),
                 ),
-                Text('Banned Cards', style: TextStyle(fontSize: 25)),
+                PlatformText('Banned Cards', style: TextStyle(fontSize: 25)),
                 Padding(
                   padding: EdgeInsets.all(10),
                 ),

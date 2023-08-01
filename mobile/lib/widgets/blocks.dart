@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
 import 'block_box.dart';
 import 'navigation_container.dart';
@@ -32,23 +33,25 @@ class Blocks extends StatelessWidget {
 
     List<Block> blocks = Block.fromSets(sets);
 
-    return ListView(
-        children: blocks
-            .map((block) => BlockBox(
-                  title: "Until ${block.roughExitDate}",
-                  child: Column(
-                      children: block.sets
-                          .map((set) => Card(
-                                  child: ListTile(
-                                leading: Image.network(
-                                  set.symbol.toString(),
-                                  height: 40,
-                                  width: 40,
-                                ),
-                                title: Text(set.name),
-                              )))
-                          .toList()),
-                ))
-            .toList());
+    return Padding(
+        child: ListView(
+          children: blocks
+              .map((block) => BlockBox(
+                    title: "Until ${block.roughExitDate}",
+                    child: Column(
+                        children: block.sets
+                            .map((set) => PlatformListTile(
+                                  leading: Image.network(
+                                    set.symbol.toString(),
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  title: PlatformText(set.name),
+                                ))
+                            .toList()),
+                  ))
+              .toList(),
+        ),
+        padding: EdgeInsets.only(top: 25));
   }
 }

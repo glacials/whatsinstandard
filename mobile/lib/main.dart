@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:whatsinstandard/widgets/navigation_container.dart';
@@ -18,76 +20,75 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "What's in Standard?",
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      darkTheme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSwatch(primarySwatch: Colors.pink).copyWith(
-          secondary: Colors.pink[300],
-          brightness: Brightness.dark,
+    return PlatformProvider(
+      builder: (context) => PlatformTheme(
+        materialLightTheme: ThemeData(
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.pink)
+              .copyWith(
+                  brightness: Brightness.light, secondary: Colors.pink[300]),
+          primarySwatch: Colors.pink,
         ),
-      ),
-      debugShowCheckedModeBanner: false,
-      routes: {
-        MyApp.home: (context) {
-          return FutureBuilder<http.Response>(
-            future: http
-                .get(Uri.https('whatsinstandard.com', '/api/v6/standard.json')),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return NavigationContainer(response: snapshot.data!);
-              } else if (snapshot.hasError) {
-                return Text("${snapshot.error}");
-              }
+        materialDarkTheme: ThemeData(
+          colorScheme:
+              ColorScheme.fromSwatch(primarySwatch: Colors.pink).copyWith(
+            brightness: Brightness.dark,
+            secondary: Colors.pink[300],
+          ),
+        ),
+        builder: (context) => PlatformApp(
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: <LocalizationsDelegate<dynamic>>[
+            DefaultMaterialLocalizations.delegate,
+            DefaultWidgetsLocalizations.delegate,
+            DefaultCupertinoLocalizations.delegate,
+          ],
+          routes: {
+            MyApp.home: (context) {
+              return FutureBuilder<http.Response>(
+                future: http.get(
+                    Uri.https('whatsinstandard.com', '/api/v6/standard.json')),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return NavigationContainer(response: snapshot.data!);
+                  } else if (snapshot.hasError) {
+                    return Text("${snapshot.error}");
+                  }
 
-              return Scaffold(
-                appBar: AppBar(
-                  title: Text('Standard Sets'),
-                ),
-                body: Center(
-                    child: Column(
-                  children: [
-                    CircularProgressIndicator(),
-                    Padding(padding: EdgeInsets.all(19)),
-                    Text('Fetching current Standard info'),
-                    Padding(padding: EdgeInsets.all(19)),
-                  ],
-                  mainAxisAlignment: MainAxisAlignment.center,
-                )),
-                bottomNavigationBar: BottomAppBar(
-                  child: BottomNavigationBar(
-                    currentIndex: 0,
-                    items: const <BottomNavigationBarItem>[
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.category),
-                        label: 'Standard Sets',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.content_cut),
-                        label: 'Banned Cards',
-                      ),
-                    ],
-                  ),
-                  clipBehavior: Clip.antiAlias,
-                  notchMargin: 6,
-                  shape: CircularNotchedRectangle(),
-                ),
-                floatingActionButton: FloatingActionButton(
-                  child: Icon(Icons.date_range),
-                  onPressed: () {
-                    // Do nothing, this button is only here while loading
-                  },
-                ),
-                floatingActionButtonLocation:
-                    FloatingActionButtonLocation.centerDocked,
+                  return PlatformScaffold(
+                    appBar: PlatformAppBar(
+                      title: Text('Standard Sets'),
+                    ),
+                    body: Center(
+                        child: Column(
+                      children: [
+                        CircularProgressIndicator(),
+                        Padding(padding: EdgeInsets.all(19)),
+                        Text('Fetching current Standard info'),
+                        Padding(padding: EdgeInsets.all(19)),
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    )),
+                    bottomNavBar: PlatformNavBar(
+                      currentIndex: 0,
+                      items: const <BottomNavigationBarItem>[
+                        BottomNavigationBarItem(
+                          icon: Icon(Icons.category),
+                          label: 'Standard Sets',
+                        ),
+                        BottomNavigationBarItem(
+                          icon: Icon(Icons.content_cut),
+                          label: 'Banned Cards',
+                        ),
+                      ],
+                    ),
+                  );
+                },
               );
             },
-          );
-        },
-      },
+          },
+          title: "What's in Standard?",
+        ),
+      ),
     );
   }
 }

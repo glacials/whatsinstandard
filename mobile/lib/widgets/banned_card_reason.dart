@@ -27,6 +27,7 @@ class BannedCardReason extends StatelessWidget {
               child: Icon(
                 Icons.block,
                 color: Colors.grey,
+                size: 15,
               ),
             ),
             PlatformText(set.name)

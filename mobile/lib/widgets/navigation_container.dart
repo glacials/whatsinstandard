@@ -163,32 +163,28 @@ class _NavigationContainerState extends State<NavigationContainer> {
         ),
       ),
       wide: PlatformScaffold(
-        appBar: PlatformAppBar(title: PlatformText("What's in Standard?")),
-        body: SafeArea(
-          child: Row(children: [
-            Expanded(
-              child: Column(children: [
-                Padding(
-                    child: PlatformText('Standard Sets',
-                        style: TextStyle(fontSize: 20)),
-                    padding: EdgeInsets.only(bottom: 20, top: 10)),
-                Expanded(flex: 1, child: _setsScreen)
-              ]),
-              flex: 1,
-            ),
-            Expanded(
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20, top: 10),
-                  child: PlatformText('Banned Cards',
-                      style: TextStyle(fontSize: 20)),
-                ),
-                Expanded(flex: 1, child: _bansScreen)
-              ]),
-              flex: 1,
-            )
-          ]),
-        ),
+        body: Row(children: [
+          Expanded(
+            child: Column(children: [
+              PlatformAppBar(title: PlatformText("What's in Standard?")),
+              Expanded(
+                  flex: 1,
+                  child: SafeArea(
+                    child: _setsScreen,
+                    right: false,
+                  ))
+            ]),
+            flex: 1,
+          ),
+          Expanded(
+            child: Column(children: [
+              PlatformAppBar(title: PlatformText("Banned Cards")),
+              Expanded(
+                  flex: 1, child: SafeArea(child: _bansScreen, left: false))
+            ]),
+            flex: 1,
+          )
+        ]),
       ),
     );
   }

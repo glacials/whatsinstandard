@@ -238,7 +238,7 @@ watch(hideAlert20230507, (v) => {
               rel="me"
               v-tippy
               class="btn"
-              href="https://m.twos.dev/@whatsinstandard"
+              href="https://mas.to/@whatsinstandard"
               title="See rotations in your Mastodon timeline"
             >
               <img

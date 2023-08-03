@@ -1,7 +1,7 @@
 <template>
   <a
     class="btn btn-lg btn-outline-dark d-block my-1"
-    href="https://m.twos.dev/@whatsinstandard"
+    href="https://mas.to/@whatsinstandard"
     rel="me"
     target="_blank"
   >

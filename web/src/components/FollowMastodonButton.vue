@@ -1,10 +1,5 @@
 <template>
-  <a
-    class="btn btn-lg btn-outline-dark d-block my-1"
-    href="https://mas.to/@whatsinstandard"
-    rel="me"
-    target="_blank"
-  >
+  <a href="https://mas.to/@whatsinstandard" rel="me" target="_blank">
     <span class="d-flex justify-content-between">
       <span
         ><img

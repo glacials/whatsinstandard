@@ -11,11 +11,11 @@ defineProps<{
 
 <template>
   <div
-    class="p-3 list-group-item text-dark d-flex justify-content-between align-items-start set-border"
+    class="align-items-start collapsed d-flex justify-content-between list-group-item p-3"
     :class="{
+      'list-group-item-danger': set.isDropped(),
       'list-group-item-light': set.isReleased() && !set.isDropped(),
       'text-muted': !set.isReleased(),
-      'list-group-item-danger': set.isDropped(),
     }"
     :aria-controls="`accordion-collapse-${set.internalId}`"
     aria-expanded="true"
@@ -47,17 +47,17 @@ defineProps<{
     />
     <small
       class="font-italic"
+      :title="set.enterDate.humanize()"
       v-if="!set.isReleased()"
       v-tippy
-      :title="set.enterDate.humanize()"
     >
       releases {{ set.enterDate.relative() }}
     </small>
   </div>
   <div
-    :id="`accordion-collapse-${set.internalId}`"
     class="accordion-collapse collapse hide border border-light"
     :data-bs-parent="`#accordion-${round.internalId}`"
+    :id="`accordion-collapse-${set.internalId}`"
   >
     <div class="btn-group w-100">
       <a

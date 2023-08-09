@@ -326,6 +326,46 @@
       "rough_enter_date": "Q4 2023",
       "exit_date": null,
       "rough_exit_date": "Q4 2026"
+    },
+    {
+      "name": "Murders at Karlov Manner",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q1 2024",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2026"
+    },
+    {
+      "name": "Outlaws of Thunder Junction",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q2 2024",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2026"
+    },
+    {
+      "name": "Bloomburrow",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q3 2024",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": "Duskmourn: House of Horror",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q4 2024",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2027"
     }
   ],
   "bans": [

@@ -555,7 +555,7 @@
     },
     {
       "name": "March of the Machine: The Aftermath",
-      "codename": null,
+      "codename": "Marathon Epilogue",
       "code": "MAT",
       "symbol": {
         "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=MAT",
@@ -584,7 +584,7 @@
       },
       "enterDate": {
         "exact": "2023-09-08T00:00:00.000",
-        "rough": "Q4 2023"
+        "rough": "Q3 2023"
       },
       "exitDate": {
         "exact": null,
@@ -603,11 +603,87 @@
       },
       "enterDate": {
         "exact": null,
+        "rough": "Q4 2023"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2026"
+      }
+    },
+    {
+      "name": "Murders at Karlov Manner",
+      "codename": "Polo",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
         "rough": "Q1 2024"
       },
       "exitDate": {
         "exact": null,
         "rough": "Q4 2026"
+      }
+    },
+    {
+      "name": "Outlaws of Thunder Junction",
+      "codename": "Quilting",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q2 2024"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2026"
+      }
+    },
+    {
+      "name": "Bloomburrow",
+      "codename": "Rugby",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q3 2024"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2027"
+      }
+    },
+    {
+      "name": "Duskmourn: House of Horror",
+      "codename": "Swimming",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q4 2024"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2027"
       }
     }
   ],

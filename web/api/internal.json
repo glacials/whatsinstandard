@@ -321,8 +321,8 @@
       "name": "The Lost Caverns of Ixalan",
       "codename": "Offroading",
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "LCI",
+      "enter_date": "2023-11-17T00:00:00.000",
       "rough_enter_date": "Q4 2023",
       "exit_date": null,
       "rough_exit_date": "Q4 2026"

@@ -685,6 +685,120 @@
         "exact": null,
         "rough": "Q4 2027"
       }
+    },
+    {
+      "name": null,
+      "codename": "Tennis",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q1 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2027"
+      }
+    },
+    {
+      "name": null,
+      "codename": "Ultimate",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q2 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2027"
+      }
+    },
+    {
+      "name": null,
+      "codename": "Volleyball",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q3 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2028"
+      }
+    },
+    {
+      "name": null,
+      "codename": "Wrestling",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q4 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2028"
+      }
+    },
+    {
+      "name": null,
+      "codename": "Yachting",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q1 2026"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2028"
+      }
+    },
+    {
+      "name": null,
+      "codename": "Ziplining",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q2 2026"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2028"
+      }
     }
   ],
   "bans": [

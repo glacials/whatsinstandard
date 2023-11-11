@@ -366,6 +366,66 @@
       "rough_enter_date": "Q4 2024",
       "exit_date": null,
       "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": null,
+      "codename": "Tennis",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q1 2025",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": null,
+      "codename": "Ultimate",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q2 2025",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": null,
+      "codename": "Volleyball",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q3 2025",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2028"
+    },
+    {
+      "name": null,
+      "codename": "Wrestling",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q4 2025",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2028"
+    },
+    {
+      "name": null,
+      "codename": "Yachting",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q1 2026",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2028"
+    },
+    {
+      "name": null,
+      "codename": "Ziplining",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q2 2026",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2028"
     }
   ],
   "bans": [

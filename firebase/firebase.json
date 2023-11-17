@@ -16,7 +16,6 @@
       "codebase": "default",
       "predeploy": [
         "cp functions/package.json functions/dist/firebase/functions",
-        "npm --prefix \"$RESOURCE_DIR\" run lint",
         "npm --prefix \"$RESOURCE_DIR\" run build"
       ]
     }

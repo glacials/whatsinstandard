@@ -49,7 +49,7 @@ even for the website itself.
 
 #### Editing the page
 
-To change the layout of the page, use 
+To change the layout of the page, use
 
 #### Running tests
 

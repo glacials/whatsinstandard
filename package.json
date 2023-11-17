@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "firebase-functions": "^4.4.1",
+    "masto": "^5.11.3"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.5"
+  }
+}

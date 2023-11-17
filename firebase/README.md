@@ -35,8 +35,12 @@ call.
 
 ### Deploying
 
+Edit `.firebaserc` to point `projects.default` to `whats-in-standard` if needed.
+
 ```sh
 firebase deploy
 ```
+
+Then revert `.firebaserc`.
 
 [@whatsinstandard]: https://twitter.com/whatsinstandard

@@ -3,10 +3,24 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "functions": {
-    "ignore": [".runtimeconfig.json"],
-    "source": "functions"
-  },
+  "functions": [
+    {
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "**/*.map"
+      ],
+      "source": "./functions/dist/firebase/functions",
+      "codebase": "default",
+      "predeploy": [
+        "cp functions/package.json functions/dist/firebase/functions",
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
   "emulators": {
     "firestore": {
       "port": "8080"

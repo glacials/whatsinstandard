@@ -9,18 +9,25 @@ defineProps<{
 }>();
 </script>
 
+<style>
+.set-list-item:hover {
+  opacity: 0.75;
+}
+</style>
+
 <template>
   <div
-    class="align-items-start collapsed d-flex justify-content-between list-group-item p-3"
+    :aria-controls="`accordion-collapse-${set.internalId}`"
+    aria-expanded="true"
+    class="align-items-start collapsed d-flex justify-content-between list-group-item p-3 set-list-item"
     :class="{
       'list-group-item-danger': set.isDropped(),
       'list-group-item-light': set.isReleased() && !set.isDropped(),
       'text-muted': !set.isReleased(),
     }"
-    :aria-controls="`accordion-collapse-${set.internalId}`"
-    aria-expanded="true"
     :data-bs-target="`#accordion-collapse-${set.internalId}`"
     data-bs-toggle="collapse"
+    style="cursor: default"
   >
     <span
       v-if="set.code"

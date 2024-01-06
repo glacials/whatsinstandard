@@ -69,6 +69,7 @@ defineProps<{
         "
         rel="noopener"
         target="_blank"
+        v-if="set.code !== null"
       >
         Scryfall ↗
       </a>

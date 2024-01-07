@@ -256,6 +256,14 @@
       "enter_date": "2023-11-17T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2026"
+    },
+    {
+      "name": "Murders at Karlov Manor",
+      "block": null,
+      "code": "MKM",
+      "enter_date": "2024-02-09T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2026"
     }
   ],
   "bans": [

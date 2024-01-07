@@ -5,6 +5,7 @@ import * as card from "../types/card";
 
 import BannedCard from "./BannedCard.vue";
 import FollowButton from "./FollowButton.vue";
+import FormatChangeLog from "./FormatChangeLog.vue";
 import SetList from "./SetList.vue";
 
 const apiURL = "/api/v6/standard.json";
@@ -89,7 +90,7 @@ watch(hideAlert20230507, (v) => {
                 <a
                   aria-controls="recentlyDroppedCollapse"
                   aria-expanded="false"
-                  class="btn btn-outline-dark btn-sm mx-1 my-1"
+                  class="btn btn-outline-secondary btn-sm mx-1 my-1"
                   data-bs-toggle="collapse"
                   href="#recentlyDroppedCollapse"
                   role="button"
@@ -104,41 +105,6 @@ watch(hideAlert20230507, (v) => {
           <div class="spinner-border my-5" role="status"></div>
           <div class="visually-hidden">Fetching Standard</div>
         </div>
-        <div
-          v-if="!hideAlert20230507"
-          class="row justify-content-around px-3 mx-0"
-          v-cloak
-        >
-          <div
-            class="col-lg-8 col-xl-7 alert alert-info alert-dismissible fade show"
-            role="alert"
-          >
-            <h4 class="alert-heading mb-3">New rules</h4>
-            <p>
-              On
-              <a
-                class="alert-link"
-                href="https://magic.wizards.com/en/news/announcements/revitalizing-standard"
-                >2023-05-07</a
-              >, <i>Wizards</i> permanently lengthened sets' Standard lifespans
-              by one year, effective immediately.
-            </p>
-            <p>
-              Therefore no sets will drop from Standard in 2023. This increases
-              the average size of Standard from 6 ½ sets to 10 ½ sets.
-            </p>
-            <p>
-              All information below has been updated to reflect this change.
-            </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-              @click="hideAlert20230507 = true"
-            ></button>
-          </div>
-        </div>
         <div class="col collapse" id="recentlyDroppedCollapse">
           <div class="row">
             <set-list
@@ -149,8 +115,8 @@ watch(hideAlert20230507, (v) => {
           </div>
         </div>
         <set-list
-          v-if="rounds.length > 0"
           :rounds="card.Round.relevant(rounds)"
+          v-if="rounds.length > 0"
         />
         <div class="col-md-6">
           <h3 class="pt-3" id="bans">Banned cards</h3>
@@ -233,6 +199,7 @@ watch(hideAlert20230507, (v) => {
             Not all sets enter Standard upon release. For example, Masters sets
             and Commander sets never enter the format.
           </p>
+          <format-change-log />
           <div class="github my-4">
             <a
               rel="me"

@@ -2,7 +2,7 @@
   "bugs": "https://github.com/glacials/whatsinstandard/issues",
   "dependencies": {
     "@popperjs/core": "^2.9.2",
-    "bootstrap": "^5",
+    "bootstrap": "^5.3",
     "keyrune": "^3.13.1",
     "node": "^20",
     "npm-font-open-sans": "^1.1.0",
@@ -22,6 +22,7 @@
     "mocha": "^10.2.0",
     "prettier": "^2.8.8",
     "requirejs": "^2.3.6",
+    "sass": "^1.69.7",
     "supervisor": "^0.12.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
@@ -31,7 +32,7 @@
     "webpack-cli": "^5.1.4"
   },
   "engines": {
-    "node": "^18"
+    "node": "^20"
   },
   "license": "MIT",
   "homepage": "https://github.com/glacials/whatsinstandard",

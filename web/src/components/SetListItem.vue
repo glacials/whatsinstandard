@@ -19,7 +19,7 @@ defineProps<{
   <div
     :aria-controls="`accordion-collapse-${set.internalId}`"
     aria-expanded="true"
-    class="align-items-start collapsed d-flex justify-content-between list-group-item p-3 set-list-item"
+    class="align-items-start border-0 border-bottom collapsed d-flex justify-content-between list-group-item p-3 set-list-item"
     :class="{
       'list-group-item-danger': set.isDropped(),
       'list-group-item-light': set.isReleased() && !set.isDropped(),
@@ -30,16 +30,14 @@ defineProps<{
     style="cursor: default"
   >
     <span
-      v-if="set.code"
       :class="{
-        'text-dark': set.isReleased(),
         'text-muted': !set.isReleased(),
       }"
+      v-if="set.code"
     >
       {{ set.name || set.codename || "???" }}
     </span>
     <span
-      class="text-dark"
       :class="{
         lead: set.isReleased(),
         'text-muted': !set.isReleased(),
@@ -62,13 +60,13 @@ defineProps<{
     </small>
   </div>
   <div
-    class="accordion-collapse collapse hide border border-light"
+    class="accordion-collapse collapse hide"
     :data-bs-parent="`#accordion-${round.internalId}`"
     :id="`accordion-collapse-${set.internalId}`"
   >
     <div class="btn-group w-100">
       <a
-        class="btn btn-outline-dark btn-sm rounded-0 text-uppercase"
+        class="border border-left-0 border-right-0 border-top-0 btn btn-outline-secondary btn-sm rounded-0 text-uppercase"
         :href="
           set.code
             ? `https://www.scryfall.com/sets/${set.code.toLowerCase()}?utm_source=whatsinstandard`
@@ -81,7 +79,7 @@ defineProps<{
         Scryfall ↗
       </a>
       <a
-        class="btn btn-outline-dark btn-sm rounded-0 text-uppercase"
+        class="border border-right-0 border-top-0 btn btn-outline-secondary btn-sm rounded-0 text-uppercase"
         :href="`https://mtg.fandom.com/wiki/${set.name}?utm_source=whatsinstandard`"
         rel="noopener"
         target="_blank"
@@ -90,7 +88,7 @@ defineProps<{
       >
       <!-- Uncomment once we have access to set number according to MTG Salvation
         <a
-          class="btn btn-outline-dark btn-sm rounded-0 text-uppercase"
+          class="btn btn-outline-secondary btn-sm rounded-0 text-uppercase"
           :href="`https://www.mtgsalvation.com/cards?filter-set=${set.number}&utm_source=whatsinstandard`"
           rel="noopener"
           target="_blank"

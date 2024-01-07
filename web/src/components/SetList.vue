@@ -17,7 +17,7 @@ defineProps<{
   >
     <div class="col list-group px-3">
       <div
-        class="accordion accordion-flush"
+        class="accordion accordion-flush border border-bottom-0"
         :id="`accordion-${round.internalId}`"
       >
         <set-list-item :round="round" :set="set" v-for="set in round.sets" />

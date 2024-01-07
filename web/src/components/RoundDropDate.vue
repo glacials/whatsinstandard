@@ -13,12 +13,12 @@ defineProps<{
       style="
         border-width: 1px 1px 1px 0;
         border-style: solid;
-        border-color: black;
+        border-color: gray;
       "
     ></div>
     <div
-      v-if="exitDate.hasPassed()"
       class="m-3 text-center text-bg-danger px-1"
+      v-if="exitDate.hasPassed()"
     >
       Illegal since {{ exitDate.humanize() }}
     </div>
@@ -45,7 +45,7 @@ defineProps<{
         style="
           border-width: 0px 1px 1px 1px;
           border-style: solid;
-          border-color: black;
+          border-color: gray;
         "
       ></div>
       <div class="px-0 mx-0 my-3 text-center">

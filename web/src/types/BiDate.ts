@@ -102,8 +102,9 @@ export class BiDate {
     if (this.rough.match(/Q\d \d{4}/)) {
       const quarter = this.rough.split(" ")[0][1];
       const year = parseInt(this.rough.split(" ")[1]);
+      const month = (Number(quarter) - 1) * 3;
 
-      return new Date(year, 12 - 12 / Number(quarter) + 1, 15);
+      return new Date(year, month, 15);
     } else {
       return new Date(this.rough);
     }

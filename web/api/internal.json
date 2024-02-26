@@ -351,8 +351,8 @@
       "name": "Bloomburrow",
       "codename": "Rugby",
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "BLB",
+      "enter_date": "2024-08-02T00:00:00.000",
       "rough_enter_date": "Q3 2024",
       "exit_date": null,
       "rough_exit_date": "Q4 2027"

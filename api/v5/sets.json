@@ -264,6 +264,14 @@
       "enter_date": "2024-02-09T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2026"
+    },
+    {
+      "name": "Outlaws of Thunder Junction",
+      "block": null,
+      "code": "OTJ",
+      "enter_date": "2024-04-19T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2026"
     }
   ],
   "bans": [

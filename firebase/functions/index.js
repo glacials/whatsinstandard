@@ -1,10 +1,4 @@
-import * as functions from "firebase-functions";
+const { onSchedule } = require("firebase-functions/v2/scheduler");
+const { detectRotations } = require("./detect_rotations.js");
 
-import { detectRotations } from "./detect_rotations.js";
-
-// Work around Firebase Functions.
-const exports = {};
-
-exports.detectRotations = functions.pubsub
-  .schedule("every 5 minutes")
-  .onRun(detectRotations);
+exports.detectRotations = onSchedule("every 5 minutes", detectRotations);

@@ -1,14 +1,16 @@
-import * as functions from "firebase-functions";
-import admin from "firebase-admin";
-import { initializeApp } from "firebase-admin/app";
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+const { initializeApp } = require("firebase-admin/app");
 
-initializeApp();
+if (!admin.apps.length) {
+  initializeApp();
+}
 
 const db = admin.firestore();
 const twitterCollection = db.collection("twitterbot/last-known/sets");
 const mastodonCollection = db.collection("mastodonbot/last-known/sets");
 
-import { diff, standardSets, toot, tweet } from "./lib.js";
+const { diff, standardSets, toot, tweet } = require("./lib.js");
 
 /**
  * Detects set rotations and,
@@ -17,7 +19,7 @@ import { diff, standardSets, toot, tweet } from "./lib.js";
  *
  * @param {functions.EventContext} context - The event context.
  */
-export async function detectRotations(context) {
+exports.detectRotations = async function (context) {
   const config = functions.config();
   const apiSets = await standardSets();
 
@@ -46,4 +48,4 @@ export async function detectRotations(context) {
     }
     await toot(config, setDifferences);
   });
-}
+};

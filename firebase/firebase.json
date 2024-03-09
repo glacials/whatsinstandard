@@ -10,9 +10,7 @@
         ".git",
         "firebase-debug.log",
         "firebase-debug.*.log"
-      ],
-      "source": "./functions",
-      "codebase": "default"
+      ]
     }
   ],
   "emulators": {

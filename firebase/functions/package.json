@@ -21,6 +21,5 @@
     "firebase": "^10.8.1",
     "firebase-functions-test": "^3.1.1"
   },
-  "private": true,
-  "type": "module"
+  "private": true
 }

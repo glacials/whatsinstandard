@@ -1,6 +1,3 @@
-import * as card from ".";
-import { BiDate } from "../BiDate";
-
 /**
  * A group of {@link card.Set Sets} that share an exit date.
  */
@@ -9,43 +6,42 @@ export class Round {
    * Return the {@link Round Rounds} in the given array that have dropped from Standard,
    * according to local time. Order is preserved.
    *
-   * @param rounds - An array of {@link Round Rounds}.
-   * @returns All {@link Round Rounds} from the given array that have dropped from
-   * Standard.
+   * @param {Round[]} rounds - The array of rounds to filter.
+   * @returns {Round[]} - The filtered array of rounds containing only the dropped rounds.
    */
-  static dropped(rounds: Round[]): Round[] {
-    return rounds.filter((round: Round) => round.isDropped());
+  static dropped(rounds) {
+    return rounds.filter((round) => round.isDropped());
   }
 
   /**
    * Group the given {@link card.Set Sets} into {@link Round Rounds}. Order is
    * preserved.
    *
-   * @param sets - An array of sets.
-   * @returns An array of rounds composed of the given sets.
+   * @param {card.Set[]} sets - The array of sets to be converted.
+   * @returns {Round[]} An array of rounds.
    */
-  static ify(sets: card.Set[]): Round[] {
+  static ify(sets) {
     // Note that to preserve order for the outer array, the key of the interim object
     // must be a string because ES2015 object property order is preserved only for
     // string keys.
     return Object.values(
-      sets.reduce((rounds: { [x: string]: any }, set: card.Set) => {
+      sets.reduce((rounds, set) => {
         return Object.assign(rounds, {
           [set.exitDate.rough]: (rounds[set.exitDate.rough] || []).concat(set),
         });
       }, {})
-    ).map((sets: card.Set[]) => new Round(sets));
+    ).map((sets) => new Round(sets));
   }
 
   /**
    * Filter an array of {@link Round Rounds} to only include rounds with sets that are
    * either in Standard or are next in line to enter Standard.
    *
-   * @param rounds - An array of {@link Round Rounds}.
-   * @returns An array of the given {@link Round Rounds}, minus all unreleased rounds
+   * @param {Round[]} rounds - An array of {@link Round Rounds}.
+   * @returns {Round[]} An array of the given {@link Round Rounds}, minus all unreleased rounds
    * except the soonest.
    */
-  static relevant(rounds: Round[]) {
+  static relevant(rounds) {
     return rounds
       .filter((round) => !round.isDropped())
       .filter((round) => round.isFullyReleased())
@@ -57,37 +53,42 @@ export class Round {
    * Standard (including sets that haven't entered it yet), according to local time.
    * Order is preserved.
    *
-   * @param rounds - An array of {@link Round Rounds}.
-   * @returns All {@link Round Rounds} from the given array that have not dropped from
-   * Standard.
+   * @param {Round[]} rounds - The array of rounds to filter.
+   * @returns {Round[]} - The array of rounds without the dropped rounds.
    */
-  static undropped(rounds: Round[]): Round[] {
-    return rounds.filter((round: Round) => !round.isDropped());
+  static undropped(rounds) {
+    return rounds.filter((round) => !round.isDropped());
   }
 
   /**
    * Return the exit date of the round. Guaranteed to be equivalent for all sets in the
    * round.
    *
-   * @returns The exit date of the round.
+   * @returns {BiDate}
    */
-  exitDate: BiDate;
+  exitDate;
 
   /**
    * The set's unique ID for this page load. This is used for various constructs that
    * need to keep track of a different DOM element per set, like Bootstrap accordions.
+   *
+   * @returns {string}
    */
-  internalId: string;
+  internalId;
 
   /**
    * The {@link card.Set Sets} contained in this round. All share the same exit date.
+   *
+   * @returns {card.Set[]}
    */
-  sets: card.Set[];
+  sets;
 
   /**
    * Create a new {@link Round} from the given {@link card.Set Sets}.
+   *
+   * @param {card.Set[]} sets - The sets to be included in the round.
    */
-  constructor(sets: card.Set[]) {
+  constructor(sets) {
     this.sets = sets;
     this.exitDate = this.sets[0].exitDate;
 
@@ -103,6 +104,8 @@ export class Round {
    *
    * A round with an unknown exact drop date is considered not dropped. A round that has
    * not yet entered Standard is considered not dropped.
+   *
+   * @returns {boolean} - True if the round has dropped from Standard; false otherwise.
    */
   isDropped() {
     if (this.exitDate.exact === undefined) {
@@ -118,9 +121,9 @@ export class Round {
    * A round is fully released if and only if all its {@link card.Set Sets} are
    * released.
    *
-   * @returns True if the round has been completely released; false otherwise.
+   * @returns {boolean} - True if the round has been completely released; false otherwise.
    */
   isFullyReleased() {
-    return this.sets.every((set: card.Set) => set.isReleased());
+    return this.sets.every((set) => set.isReleased());
   }
 }

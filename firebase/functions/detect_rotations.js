@@ -1,15 +1,23 @@
 import * as functions from "firebase-functions";
-import * as admin from "firebase-admin";
-const db = admin.firestore();
+import admin from "firebase-admin";
+import { initializeApp } from "firebase-admin/app";
 
+initializeApp();
+
+const db = admin.firestore();
 const twitterCollection = db.collection("twitterbot/last-known/sets");
 const mastodonCollection = db.collection("mastodonbot/last-known/sets");
 
-import { diff, standardSets, toot, tweet } from "./lib";
+import { diff, standardSets, toot, tweet } from "./lib.js";
 
-admin.initializeApp();
-
-export async function detectRotations(context: any) {
+/**
+ * Detects set rotations and,
+ * if there are any,
+ * tweets and toots about them.
+ *
+ * @param {functions.EventContext} context - The event context.
+ */
+export async function detectRotations(context) {
   const config = functions.config();
   const apiSets = await standardSets();
 

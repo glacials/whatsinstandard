@@ -6,18 +6,23 @@ import { error } from "firebase-functions/logger";
 import * as mastodon from "masto";
 import { Client as TwitterClient } from "twitter-api-sdk";
 
-import * as card from "../../web/src/types/card";
+import { Set } from "./whatsinstandard/card/Set.js";
 
 const MAX_TOOT_LENGTH = 500;
 const MAX_TWEET_LENGTH = 280;
 
-export async function tweet(
-  config: Record<string, any>,
-  setDifferences: {
-    addedSets: Set<card.Set>;
-    removedSets: Set<card.Set>;
-  }
-) {
+/**
+ * Tweets any new or removed sets.
+ * If there are none,
+ * no tweet is sent.
+ *
+ * @param {Record<string, any>} config - The configuration object.
+ * @param {Object} setDifferences - The set differences object.
+ * @param {Set<card.Set>} setDifferences.addedSets - The added sets.
+ * @param {Set<card.Set>} setDifferences.removedSets - The removed sets.
+ * @returns {Promise<void>} - A promise that resolves when the tweet is sent.
+ */
+export async function tweet(config, setDifferences) {
   const twitterClient = new TwitterClient(config.twitter.bearer_token);
   const tweet = craftPost(setDifferences, MAX_TWEET_LENGTH);
   if (tweet === null) {
@@ -29,12 +34,16 @@ export async function tweet(
   functions.logger.info(`Twitter response: ${response}`);
 }
 
-export async function toot(
-  config: Record<string, any>,
-  setDifferences: { addedSets: Set<card.Set>; removedSets: Set<card.Set> }
-) {
+/**
+ * Toots a message on Mastodon.
+ *
+ * @param {Record<string, any>} config - The configuration object.
+ * @param {{ addedSets: Set<card.Set>; removedSets: Set<card.Set> }} setDifferences - The set differences object.
+ * @returns {Promise<void>} - A promise that resolves when the toot is sent.
+ */
+export async function toot(config, setDifferences) {
   const mastodonClient = await mastodon.login({
-    url: config.mastodon.server_url,
+    url: config.mastodon.server.url,
     accessToken: config.mastodon.access_token,
   });
 
@@ -52,22 +61,17 @@ export async function toot(
 }
 
 /**
- * Uses the given collection to see if we need to post about the current set state.
- * This can differ if, for example, one platform failed to post in an earlier invocation but one succeeded.
- *
- * WARNING: When you spin up a new platform its collection will be empty,
- * so this will return ALL sets in addedSets.
- * This will result in a giant unwanted post on invocation even if there was not a rotation recently.
- *
- * @param collection The collection to check against.
- * @param apiSets The sets to check against the collection.
- * @returns A diff object containing the added, removed, and unchanged sets.
+ * Calculates the difference between the sets in the Firestore collection and the provided API sets.
+ * @param {admin.firestore.CollectionReference<admin.firestore.DocumentData>} collection - The Firestore collection reference.
+ * @param {card.Set[]} apiSets - The API sets to compare with the Firestore collection.
+ * @returns {Promise<{ addedSets: Set<card.Set>, removedSets: Set<card.Set>, unchangedSets: Set<card.Set> }>} - An object containing the added sets, removed sets, and unchanged sets.
  */
-export async function diff(
-  collection: admin.firestore.CollectionReference<admin.firestore.DocumentData>,
-  apiSets: card.Set[]
-) {
-  const setsByName: Map<string, card.Set> = new Map<string, card.Set>();
+export async function diff(collection, apiSets) {
+  /**
+   * Map containing sets by name.
+   * @type {Map<string, card.Set>}
+   */
+  const setsByName = new Map();
   apiSets.forEach((set) => set.name && setsByName.set(set.name, set));
 
   const apiSetNames = new Set(apiSets.map((set) => set.name));
@@ -89,16 +93,18 @@ export async function diff(
   const unchangedSetNames = intersection(apiSetNames, knownSetNames);
 
   const addedSets = new Set(
-    Array.from(addedSetNames).map((name) => setsByName.get(name)!)
+    Array.from(addedSetNames).map((name) => setsByName.get(name))
   );
   const removedSets = new Set(
-    Array.from(removedSetNames).map((name) => setsByName.get(name)!)
+    Array.from(removedSetNames).map((name) => setsByName.get(name))
   );
   const unchangedSets = new Set(
-    Array.from(unchangedSetNames).map((name) => setsByName.get(name)!)
+    Array.from(unchangedSetNames).map((name) => setsByName.get(name))
   );
 
-  addedSets.forEach((set) => collection.add(new card.Set(set)));
+  addedSets.forEach((set) =>
+    collection.add(Object.assign({}, new card.Set(set)))
+  );
   // TODO: When API has internal IDs, look up by those instead of name.
   removedSets.forEach(
     (set) =>
@@ -106,11 +112,7 @@ export async function diff(
         collection
           .where("name", "==", set.name)
           .get()
-          .then((snapshot) =>
-            snapshot.forEach((doc: { ref: { delete: () => any } }) =>
-              doc.ref.delete()
-            )
-          )
+          .then((snapshot) => snapshot.forEach((doc) => doc.ref.delete()))
       )
   );
   // This is here just to stop you from thinking I forgot about unchangedSets. We don't
@@ -132,12 +134,15 @@ export async function diff(
   };
 }
 
+/**
+ * Fetches the standard sets from the API.
+ * @returns {Promise<card.Set[]>} - A promise that resolves to an array of standard sets.
+ */
 export async function standardSets() {
   const response = await fetch(
     "https://whatsinstandard.com/api/v6/standard.json"
   );
-  const body: { deprecated: boolean; sets: any[]; bans: any[] } =
-    await response.json();
+  const body = await response.json();
   if (body.deprecated) {
     error("What's in Standard? API v6 is deprecated!");
   }
@@ -157,10 +162,15 @@ export async function standardSets() {
     });
 }
 
-export function craftPost(
-  data: { addedSets: Set<card.Set>; removedSets: Set<card.Set> },
-  characterLimit: number
-) {
+/**
+ * Crafts a post based on the added and removed sets.
+ * @param {Object} data - The set differences object.
+ * @param {Set<card.Set>} data.addedSets - The added sets.
+ * @param {Set<card.Set>} data.removedSets - The removed sets.
+ * @param {number} characterLimit - The character limit for the post.
+ * @returns {string|null} - The crafted post or null if it exceeds the character limit.
+ */
+export function craftPost(data, characterLimit) {
   let longPost = `Standard has changed!\n\n`;
   longPost += `${Array.from(data.addedSets)
     .map((set) => `+ ${set.name} was added`)
@@ -194,7 +204,7 @@ export function craftPost(
   return null;
 }
 
-const difference = (setA: Set<any>, setB: Set<any>) =>
+const difference = (setA, setB) =>
   new Set([...setA].filter((x) => !setB.has(x)));
-const intersection = (setA: Set<any>, setB: Set<any>) =>
+const intersection = (setA, setB) =>
   new Set([...setA].filter((x) => setB.has(x)));

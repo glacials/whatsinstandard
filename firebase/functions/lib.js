@@ -6,7 +6,7 @@ const { error } = require("firebase-functions/logger");
 const mastodon = require("masto");
 const twitter = require("twitter-api-sdk");
 
-import("./whatsinstandard/card/Set.js");
+import("./whatsinstandard/card/CardSet.js");
 
 const MAX_TOOT_LENGTH = 500;
 const MAX_TWEET_LENGTH = 280;
@@ -18,8 +18,8 @@ const MAX_TWEET_LENGTH = 280;
  *
  * @param {Record<string, any>} config - The configuration object.
  * @param {Object} setDifferences - The set differences object.
- * @param {Set<card.Set>} setDifferences.addedSets - The added sets.
- * @param {Set<card.Set>} setDifferences.removedSets - The removed sets.
+ * @param {Set<CardSet>} setDifferences.addedSets - The added sets.
+ * @param {Set<CardSet>} setDifferences.removedSets - The removed sets.
  * @returns {Promise<void>} - A promise that resolves when the tweet is sent.
  */
 exports.tweet = async function (config, setDifferences) {
@@ -38,8 +38,8 @@ exports.tweet = async function (config, setDifferences) {
  * Toots a message on Mastodon.
  *
  * @param {Record<string, any>} config - The configuration object.
- * @param {{ addedSets: Set<card.Set>; removedSets: Set<card.Set> }} setDifferences - The set differences object.
- * @returns {Promise<void>} - A promise that resolves when the toot is sent.
+ * @param {{ addedSets: Set<CardSet>; removedSets: Set<CardSet> }} setDifferences - The set differences object.
+ * @returns {Promise<void>} A promise that resolves when the toot is sent.
  */
 exports.toot = async function (config, setDifferences) {
   const mastodonClient = await mastodon.login({
@@ -63,13 +63,13 @@ exports.toot = async function (config, setDifferences) {
 /**
  * Calculates the difference between the sets in the Firestore collection and the provided API sets.
  * @param {admin.firestore.CollectionReference<admin.firestore.DocumentData>} collection - The Firestore collection reference.
- * @param {card.Set[]} apiSets - The API sets to compare with the Firestore collection.
- * @returns {Promise<{ addedSets: Set<card.Set>, removedSets: Set<card.Set>, unchangedSets: Set<card.Set> }>} - An object containing the added sets, removed sets, and unchanged sets.
+ * @param {CardSet[]} apiSets - The API sets to compare with the Firestore collection.
+ * @returns {Promise<{ addedSets: Set<CardSet>, removedSets: Set<CardSet>, unchangedSets: Set<CardSet> }>} - An object containing the added sets, removed sets, and unchanged sets.
  */
 exports.diff = async function (collection, apiSets) {
   /**
    * Map containing sets by name.
-   * @type {Map<string, card.Set>}
+   * @type {Map<string, CardSet>}
    */
   const setsByName = new Map();
   apiSets.forEach((set) => set.name && setsByName.set(set.name, set));
@@ -84,7 +84,7 @@ exports.diff = async function (collection, apiSets) {
       throw `Document ${doc.id} in collection ${collection.path} is missing a name`;
     }
 
-    setsByName.set(document.name, new card.Set(document));
+    setsByName.set(document.name, new Set(document));
     knownSetNames.add(document.name);
   }
 
@@ -102,13 +102,11 @@ exports.diff = async function (collection, apiSets) {
     Array.from(unchangedSetNames).map((name) => setsByName.get(name))
   );
 
-  addedSets.forEach((set) =>
-    collection.add(Object.assign({}, new card.Set(set)))
-  );
+  addedSets.forEach((set) => collection.add(Object.assign({}, new Set(set))));
   // TODO: When API has internal IDs, look up by those instead of name.
   removedSets.forEach(
     (set) =>
-      new card.Set(
+      new Set(
         collection
           .where("name", "==", set.name)
           .get()
@@ -136,7 +134,8 @@ exports.diff = async function (collection, apiSets) {
 
 /**
  * Fetches the standard sets from the API.
- * @returns {Promise<card.Set[]>} - A promise that resolves to an array of standard sets.
+ *
+ * @returns {Promise<CardSet[]>} - All sets currently in Standard.
  */
 exports.standardSets = async function () {
   const response = await fetch(
@@ -147,7 +146,7 @@ exports.standardSets = async function () {
     error("What's in Standard? API v6 is deprecated!");
   }
   return body.sets
-    .map((json) => new card.Set(json))
+    .map((json) => new Set(json))
     .filter((set) => {
       if (!set.enterDate.exact) {
         return false;
@@ -165,8 +164,8 @@ exports.standardSets = async function () {
 /**
  * Crafts a post based on the added and removed sets.
  * @param {Object} data - The set differences object.
- * @param {Set<card.Set>} data.addedSets - The added sets.
- * @param {Set<card.Set>} data.removedSets - The removed sets.
+ * @param {Set<CardSet>} data.addedSets - The added sets.
+ * @param {Set<CardSet>} data.removedSets - The removed sets.
  * @param {number} characterLimit - The character limit for the post.
  * @returns {string|null} - The crafted post or null if it exceeds the character limit.
  */

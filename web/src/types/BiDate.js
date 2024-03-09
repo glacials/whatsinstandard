@@ -29,7 +29,7 @@ export class BiDate {
   /**
    * Return whether the date has exact precision.
    *
-   * @returns {boolean} Whether the date has exact precision.
+   * @returns {boolean} - Whether the date has exact precision.
    */
   isExact() {
     return this.exact !== undefined && this.exact !== null;
@@ -50,7 +50,7 @@ export class BiDate {
    *
    * If the set date has no exact property, the rough exit date is used.
    *
-   * @returns {string} A human-friendly string expressing the BiDate.
+   * @returns {string} - A human-friendly string expressing the BiDate.
    */
   humanize() {
     if (this.isExact()) {
@@ -69,7 +69,7 @@ export class BiDate {
    * Return the date as a human-friendly relative string, like "in 2 days" or
    * "yesterday".
    *
-   * @returns {string} A human-friendly relative string in English.
+   * @returns {string} - A human-friendly relative string in English.
    */
   relative() {
     const DIVISIONS = [
@@ -87,7 +87,7 @@ export class BiDate {
      * Formats the given date as a relative time ago.
      *
      * @param {Date} date - The date to format.
-     * @returns {string} The formatted relative time ago string.
+     * @returns {string} - The formatted relative time ago string.
      */
     function formatTimeAgo(date) {
       let duration = (date.valueOf() - new Date().valueOf()) / 1000;
@@ -104,12 +104,6 @@ export class BiDate {
     return formatTimeAgo(this.toDate());
   }
 
-  // toDate returns a best-guess Date object for the BiDate.
-  //
-  // If the BiDate has no exact property, the Date is created from the rough property.
-  // Because of this you should not display the returned date directly to users, but use
-  // it for low-resolution calculations, long-term relative times, and other rough
-  // display methods.
   /**
    * Return a best-guess Date object for the BiDate.
    *
@@ -118,7 +112,7 @@ export class BiDate {
    * it for low-resolution calculations, long-term relative times, and other rough
    * display methods.
    *
-   * @returns {Date} A best-guess Date object for the BiDate.
+   * @returns {Date} - A best-guess Date object for the BiDate.
    */
   toDate() {
     if (this.isExact()) {

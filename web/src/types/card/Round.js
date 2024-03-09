@@ -1,5 +1,7 @@
+import { CardSet } from "./CardSet";
+
 /**
- * A group of {@link card.Set Sets} that share an exit date.
+ * A group of {@link CardSet CardSets} that share an exit date.
  */
 export class Round {
   /**
@@ -14,10 +16,10 @@ export class Round {
   }
 
   /**
-   * Group the given {@link card.Set Sets} into {@link Round Rounds}. Order is
-   * preserved.
+   * Group the given {@link CardSet CardSets} into {@link Round Rounds}.
+   * Order is preserved.
    *
-   * @param {card.Set[]} sets - The array of sets to be converted.
+   * @param {CardSet[]} sets - The array of sets to be converted.
    * @returns {Round[]} An array of rounds.
    */
   static ify(sets) {
@@ -64,7 +66,7 @@ export class Round {
    * Return the exit date of the round. Guaranteed to be equivalent for all sets in the
    * round.
    *
-   * @returns {BiDate}
+   * @type {BiDate}
    */
   exitDate;
 
@@ -72,21 +74,21 @@ export class Round {
    * The set's unique ID for this page load. This is used for various constructs that
    * need to keep track of a different DOM element per set, like Bootstrap accordions.
    *
-   * @returns {string}
+   * @type {string}
    */
   internalId;
 
   /**
-   * The {@link card.Set Sets} contained in this round. All share the same exit date.
+   * The {@link CardSet CardSets} contained in this round. All share the same exit date.
    *
-   * @returns {card.Set[]}
+   * @type {CardSet[]}
    */
   sets;
 
   /**
-   * Create a new {@link Round} from the given {@link card.Set Sets}.
+   * Create a new {@link Round} from the given {@link CardSet CardSets}.
    *
-   * @param {card.Set[]} sets - The sets to be included in the round.
+   * @param {CardSet[]} sets - The sets to be included in the round.
    */
   constructor(sets) {
     this.sets = sets;
@@ -118,7 +120,7 @@ export class Round {
    * Return true if the {@link Round} has been released, or false otherwise. Uses local
    * time.
    *
-   * A round is fully released if and only if all its {@link card.Set Sets} are
+   * A round is fully released if and only if all its {@link CardSet CardSets} are
    * released.
    *
    * @returns {boolean} - True if the round has been completely released; false otherwise.

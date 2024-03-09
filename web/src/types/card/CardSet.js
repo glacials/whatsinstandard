@@ -1,49 +1,20 @@
 import { BiDate } from "../BiDate.js";
-
-class Symbol {
-  /**
-   * The URL to a common-quality symbol for the set.
-   *
-   * @returns {string} The URL to the image.
-   */
-  common;
-
-  /**
-   * The URL to an uncommon-quality symbol for the set.
-   *
-   * @returns {string} The URL to the image.
-   */
-  uncommon;
-
-  /**
-   * The URL to a rare-quality symbol for the set.
-   *
-   * @returns {string} The URL to the image.
-   */
-  rare;
-
-  /**
-   * The URL to a mythic-quality symbol for the set.
-   *
-   * @returns {string} The URL to the image.
-   */
-  mythicRare;
-}
+import { Symbol } from "./Symbol.js";
 
 /**
  * A Magic: The Gathering set.
  */
-export class Set {
+export class CardSet {
   /**
    * Create a new Set.
    *
-   * @param json - A JSON object from the What's in Standard? API v6 representing a Set.
+   * @param {Object} json A JSON object from the What's in Standard? API v6 representing a Set.
    */
   constructor(json) {
     this.name = json.name;
     this.codename = json.codename;
     this.code = json.code;
-    this.symbol = json.symbol;
+    this.symbol = new Symbol(json.symbol);
     this.enterDate = new BiDate(json.enterDate.rough, json.enterDate.exact);
     this.exitDate = new BiDate(json.exitDate.rough, json.exitDate.exact);
 
@@ -101,11 +72,11 @@ export class Set {
   symbol;
 
   /**
-   * Return the {@link Set Sets} in the given array that have dropped from Standard,
+   * Return the {@link CardSet Sets} in the given array that have dropped from Standard,
    * according to local time. Order is preserved.
    *
-   * @param sets - The array of {@link Set Sets} to be filtered.
-   * @returns {Set[]} All {@link Set Sets} from the given array that have dropped from Standard.
+   * @param sets - The array of {@link CardSet Sets} to be filtered.
+   * @returns {CardSet[]} All {@link CardSet Sets} from the given array that have dropped from Standard.
    */
   static dropped(sets) {
     return sets.filter((set) => {
@@ -117,11 +88,11 @@ export class Set {
   }
 
   /**
-   * Return the {@link Set Sets} in the given array that are currently in Standard,
+   * Return the {@link CardSet Sets} in the given array that are currently in Standard,
    * using local time. Order is preserved.
    *
-   * @param {Set[]} sets - The array of {@link Set Sets} to filter.
-   * @returns {Set[]} All {@link Set Sets} from the given array that are currently in Standard.
+   * @param {CardSet[]} sets - The array of {@link CardSet Sets} to filter.
+   * @returns {CardSet[]} All {@link CardSet Sets} from the given array that are currently in Standard.
    */
   static standard(sets) {
     return sets.filter(
@@ -132,12 +103,12 @@ export class Set {
   }
 
   /**
-   * Return the {@link Set Sets} in the given array of sets that have not dropped from
+   * Return the {@link CardSet Sets} in the given array of sets that have not dropped from
    * Standard (including sets that haven't even entered it yet), according to local
    * time. Order is preserved.
    *
-   * @param {Set[]} sets - The array of {@link Set Sets} to be filtered.
-   * @returns {Set[]} All {@link Set Sets} from the given array that have not dropped from
+   * @param {CardSet[]} sets - The array of {@link CardSet Sets} to be filtered.
+   * @returns {CardSet[]} All {@link CardSet Sets} from the given array that have not dropped from
    * Standard.
    */
   static undropped(sets) {
@@ -145,11 +116,11 @@ export class Set {
   }
 
   /**
-   * Return the {@link Set Sets} in the given array of sets that have not yet entered
+   * Return the {@link CardSet Sets} in the given array of sets that have not yet entered
    * Standard, according to local time. Order is preserved.
    *
-   * @param {Set[]} sets - The array of {@link Set Sets} to be filtered.
-   * @returns {Set[]} All {@link Set Sets} from the given array that have not yet entered
+   * @param {CardSet[]} sets - The array of {@link CardSet Sets} to be filtered.
+   * @returns {CardSet[]} All {@link CardSet Sets} from the given array that have not yet entered
    * Standard.
    */
   static unreleased(sets) {

@@ -4,7 +4,7 @@ import { Symbol } from "./Symbol.js";
 /**
  * A Magic: The Gathering set.
  */
-export class CardSet {
+export default class CardSet {
   /**
    * Create a new Set.
    *

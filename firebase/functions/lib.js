@@ -1,12 +1,12 @@
-const fetch = require("node-fetch");
-const admin = require("firebase-admin");
-const functions = require("firebase-functions");
-const { error } = require("firebase-functions/logger");
+import fetch from "node-fetch";
+import admin from "firebase-admin";
+import functions from "firebase-functions";
+import { error } from "firebase-functions/logger";
 
-const mastodon = require("masto");
-const twitter = require("twitter-api-sdk");
+import { mastodon } from "masto";
+import twitter from "twitter-api-sdk";
 
-import("./whatsinstandard/card/CardSet.js");
+import CardSet from "./whatsinstandard/card/CardSet.js";
 
 const MAX_TOOT_LENGTH = 500;
 const MAX_TWEET_LENGTH = 280;
@@ -22,7 +22,7 @@ const MAX_TWEET_LENGTH = 280;
  * @param {Set<CardSet>} setDifferences.removedSets - The removed sets.
  * @returns {Promise<void>} - A promise that resolves when the tweet is sent.
  */
-exports.tweet = async function (config, setDifferences) {
+export async function tweet(config, setDifferences) {
   const twitterClient = new twitter.TwitterClient(config.twitter.bearer_token);
   const tweet = craftPost(setDifferences, MAX_TWEET_LENGTH);
   if (tweet === null) {
@@ -32,7 +32,7 @@ exports.tweet = async function (config, setDifferences) {
   functions.logger.info(`Tweeting: ${tweet}`);
   const response = twitterClient.tweets.createTweet({ text: tweet });
   functions.logger.info(`Twitter response: ${response}`);
-};
+}
 
 /**
  * Toots a message on Mastodon.
@@ -41,7 +41,7 @@ exports.tweet = async function (config, setDifferences) {
  * @param {{ addedSets: Set<CardSet>; removedSets: Set<CardSet> }} setDifferences - The set differences object.
  * @returns {Promise<void>} A promise that resolves when the toot is sent.
  */
-exports.toot = async function (config, setDifferences) {
+export async function toot(config, setDifferences) {
   const mastodonClient = await mastodon.login({
     url: config.mastodon.server.url,
     accessToken: config.mastodon.access_token,
@@ -58,7 +58,7 @@ exports.toot = async function (config, setDifferences) {
     visibility: "public",
   });
   functions.logger.info(`Mastodon response: ${response}`);
-};
+}
 
 /**
  * Calculates the difference between the sets in the Firestore collection and the provided API sets.
@@ -66,7 +66,7 @@ exports.toot = async function (config, setDifferences) {
  * @param {CardSet[]} apiSets - The API sets to compare with the Firestore collection.
  * @returns {Promise<{ addedSets: Set<CardSet>, removedSets: Set<CardSet>, unchangedSets: Set<CardSet> }>} - An object containing the added sets, removed sets, and unchanged sets.
  */
-exports.diff = async function (collection, apiSets) {
+export async function diff(collection, apiSets) {
   /**
    * Map containing sets by name.
    * @type {Map<string, CardSet>}
@@ -130,23 +130,26 @@ exports.diff = async function (collection, apiSets) {
     removedSets: removedSets,
     unchangedSets: unchangedSets,
   };
-};
+}
 
 /**
  * Fetches the standard sets from the API.
  *
  * @returns {Promise<CardSet[]>} - All sets currently in Standard.
  */
-exports.standardSets = async function () {
+export async function standardSets() {
   const response = await fetch(
     "https://whatsinstandard.com/api/v6/standard.json"
   );
   const body = await response.json();
+  console.log("Checking deprecation");
   if (body.deprecated) {
     error("What's in Standard? API v6 is deprecated!");
   }
+  console.log(`Retrieved sets: ${body.sets}`);
+  console.log(`CardSet is ${CardSet}`);
   return body.sets
-    .map((json) => new Set(json))
+    .map((json) => new CardSet(json))
     .filter((set) => {
       if (!set.enterDate.exact) {
         return false;
@@ -159,7 +162,7 @@ exports.standardSets = async function () {
         Date.parse(set.exitDate.exact) > Date.now()
       );
     });
-};
+}
 
 /**
  * Crafts a post based on the added and removed sets.
@@ -169,7 +172,7 @@ exports.standardSets = async function () {
  * @param {number} characterLimit - The character limit for the post.
  * @returns {string|null} - The crafted post or null if it exceeds the character limit.
  */
-exports.craftPost = function (data, characterLimit) {
+export function craftPost(data, characterLimit) {
   let longPost = `Standard has changed!\n\n`;
   longPost += `${Array.from(data.addedSets)
     .map((set) => `+ ${set.name} was added`)
@@ -201,7 +204,7 @@ exports.craftPost = function (data, characterLimit) {
   );
 
   return null;
-};
+}
 
 const difference = (setA, setB) =>
   new Set([...setA].filter((x) => !setB.has(x)));

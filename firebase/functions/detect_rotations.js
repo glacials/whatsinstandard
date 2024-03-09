@@ -1,6 +1,6 @@
-const functions = require("firebase-functions");
-const admin = require("firebase-admin");
-const { initializeApp } = require("firebase-admin/app");
+import * as functions from "firebase-functions";
+import admin from "firebase-admin";
+import { initializeApp } from "firebase-admin/app";
 
 if (!admin.apps.length) {
   initializeApp();
@@ -10,7 +10,7 @@ const db = admin.firestore();
 const twitterCollection = db.collection("twitterbot/last-known/sets");
 const mastodonCollection = db.collection("mastodonbot/last-known/sets");
 
-const { diff, standardSets, toot, tweet } = require("./lib.js");
+import { diff, standardSets, toot, tweet } from "./lib.js";
 
 /**
  * Detects set rotations and,
@@ -19,10 +19,13 @@ const { diff, standardSets, toot, tweet } = require("./lib.js");
  *
  * @param {functions.EventContext} context - The event context.
  */
-exports.detectRotations = async function (context) {
+export async function detectRotations(context) {
   const config = functions.config();
+
+  console.log("Getting standard sets");
   const apiSets = await standardSets();
 
+  console.log("Doing Twitter");
   await diff(twitterCollection, apiSets).then(async (setDifferences) => {
     if (
       setDifferences.addedSets.size == 0 &&
@@ -36,6 +39,7 @@ exports.detectRotations = async function (context) {
     await tweet(config, setDifferences);
   });
 
+  console.log("Doing Mastodon");
   await diff(mastodonCollection, apiSets).then(async (setDifferences) => {
     if (
       setDifferences.addedSets.size == 0 &&
@@ -48,4 +52,4 @@ exports.detectRotations = async function (context) {
     }
     await toot(config, setDifferences);
   });
-};
+}

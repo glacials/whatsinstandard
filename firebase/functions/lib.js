@@ -3,8 +3,8 @@ import admin from "firebase-admin";
 import functions from "firebase-functions";
 import { error } from "firebase-functions/logger";
 
-import { mastodon } from "masto";
-import twitter from "twitter-api-sdk";
+import { login as mastodonLogin } from "masto";
+import { Client as TwitterClient } from "twitter-api-sdk";
 
 import CardSet from "./whatsinstandard/card/CardSet.js";
 
@@ -16,14 +16,13 @@ const MAX_TWEET_LENGTH = 280;
  * If there are none,
  * no tweet is sent.
  *
- * @param {Record<string, any>} config - The configuration object.
  * @param {Object} setDifferences - The set differences object.
  * @param {Set<CardSet>} setDifferences.addedSets - The added sets.
  * @param {Set<CardSet>} setDifferences.removedSets - The removed sets.
  * @returns {Promise<void>} - A promise that resolves when the tweet is sent.
  */
-export async function tweet(config, setDifferences) {
-  const twitterClient = new twitter.TwitterClient(config.twitter.bearer_token);
+export async function tweet(setDifferences) {
+  const twitterClient = new TwitterClient(process.env.TWITTER_BEARER_TOKEN);
   const tweet = craftPost(setDifferences, MAX_TWEET_LENGTH);
   if (tweet === null) {
     return;
@@ -31,20 +30,21 @@ export async function tweet(config, setDifferences) {
 
   functions.logger.info(`Tweeting: ${tweet}`);
   const response = twitterClient.tweets.createTweet({ text: tweet });
-  functions.logger.info(`Twitter response: ${response}`);
+  functions.logger.info(`Twitter response:`);
+  functions.logger.info(response);
 }
 
 /**
  * Toots a message on Mastodon.
  *
- * @param {Record<string, any>} config - The configuration object.
  * @param {{ addedSets: Set<CardSet>; removedSets: Set<CardSet> }} setDifferences - The set differences object.
  * @returns {Promise<void>} A promise that resolves when the toot is sent.
  */
-export async function toot(config, setDifferences) {
-  const mastodonClient = await mastodon.login({
-    url: config.mastodon.server.url,
-    accessToken: config.mastodon.access_token,
+export async function toot(setDifferences) {
+  console.log(`MASTODON_ACCESS_TOKEN=${process.env.MASTODON_ACCESS_TOKEN}`)
+  const mastodonClient = await mastodonLogin({
+    url: process.env.MASTODON_SERVER_URL,
+    accessToken: process.env.MASTODON_ACCESS_TOKEN,
   });
 
   const toot = craftPost(setDifferences, MAX_TOOT_LENGTH);
@@ -57,7 +57,8 @@ export async function toot(config, setDifferences) {
     status: toot,
     visibility: "public",
   });
-  functions.logger.info(`Mastodon response: ${response}`);
+  functions.logger.info(`Mastodon response:`);
+  functions.logger.info(response);
 }
 
 /**
@@ -75,17 +76,32 @@ export async function diff(collection, apiSets) {
   apiSets.forEach((set) => set.name && setsByName.set(set.name, set));
 
   const apiSetNames = new Set(apiSets.map((set) => set.name));
-
+  /**
+   * The set of set names seen from either the API or Firestore.
+   * @type {Set<string>}
+   */
   const knownSetNames = new Set();
-  for (const doc of (await collection.get()).docs) {
-    const document = doc.data();
-
-    if (!document || !document.name) {
-      throw `Document ${doc.id} in collection ${collection.path} is missing a name`;
+  let initOnly = false;
+  const docs = (await collection.get()).docs;
+  if (docs.length <= 1) {
+    initOnly = true;
+    for (let doc; doc !== undefined; doc = docs.pop()) {
+      doc.ref.delete();
     }
+  } else {
+    for (const doc of docs) {
+      try {
+        const document = doc.data();
+        if (!document || !document.name) {
+          throw `Document ${doc.id} in collection ${collection.path} is missing a name`;
+        }
 
-    setsByName.set(document.name, new Set(document));
-    knownSetNames.add(document.name);
+        setsByName.set(document.name, new CardSet(document));
+        knownSetNames.add(document.name);
+      } catch (error) {
+        functions.logger.error(error);
+      }
+    }
   }
 
   const addedSetNames = difference(apiSetNames, knownSetNames);
@@ -102,7 +118,7 @@ export async function diff(collection, apiSets) {
     Array.from(unchangedSetNames).map((name) => setsByName.get(name))
   );
 
-  addedSets.forEach((set) => collection.add(Object.assign({}, new Set(set))));
+  addedSets.forEach((set) => collection.add(JSON.parse(set.toJSON())));
   // TODO: When API has internal IDs, look up by those instead of name.
   removedSets.forEach(
     (set) =>
@@ -125,6 +141,13 @@ export async function diff(collection, apiSets) {
     `Unchanged sets: ${Array.from(unchangedSetNames).join(", ")}`
   );
 
+
+  if (initOnly) {
+    addedSets.clear();
+    functions.logger.info(`Too many added sets; assuming a new environment. Skipping posts.`);
+  }
+
+
   return {
     addedSets: addedSets,
     removedSets: removedSets,
@@ -142,12 +165,9 @@ export async function standardSets() {
     "https://whatsinstandard.com/api/v6/standard.json"
   );
   const body = await response.json();
-  console.log("Checking deprecation");
   if (body.deprecated) {
     error("What's in Standard? API v6 is deprecated!");
   }
-  console.log(`Retrieved sets: ${body.sets}`);
-  console.log(`CardSet is ${CardSet}`);
   return body.sets
     .map((json) => new CardSet(json))
     .filter((set) => {
@@ -206,7 +226,25 @@ export function craftPost(data, characterLimit) {
   return null;
 }
 
+/**
+ * Calculate the difference between two sets.
+ * The input sets are not modified.
+ *
+ * @template T
+ * @param {Set<T>} setA - The set to subtract from.
+ * @param {Set<T>} setB - The set to subtract.
+ * @returns {Set<T>} - The set of elements in setA but not in setB.
+ */
 const difference = (setA, setB) =>
   new Set([...setA].filter((x) => !setB.has(x)));
+/**
+ * Return the intersection of two sets.
+ * The input sets are not modified.
+ *
+ * @template T
+ * @param {Set<T>} setA - The first set.
+ * @param {Set<T>} setB - The second set.
+ * @returns {Set<T>} - A new Set containing the intersection of setA and setB.
+ */
 const intersection = (setA, setB) =>
   new Set([...setA].filter((x) => setB.has(x)));

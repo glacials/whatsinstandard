@@ -11,30 +11,35 @@ To test locally, you need `firebase-tools` installed.
 
 ```sh
 npm install -g firebase-tools
-firebase emulators:start
+firebase functions:shell
 ```
 
-Hit the function from a different terminal:
+To actually test tweeting and tooting,
+you will need to set these secrets in Google Cloud Secret Manager:
+
+```plain
+MASTODON_ACCESS_TOKEN
+TWITTER_BEARER_TOKEN
+```
+
+Now, visit the Firebase console and add the following structure to Firestore manually:
+
+```plain
+twitterbot      (collection)
+  last-known    (document)
+    sets        (collection)
+      deleteme  (document)
+mastodonbot     (collection)
+  last-known    (document)
+    sets        (collection)
+      deleteme  (document)
+```
+
+In the new Firebase shell:
 
 ```sh
-curl -i http://127.0.0.1:5001/whats-in-standard/us-central1/toot -d '{}'
+detectRotations()
 ```
-
-To actually test tweeting, you will need some config variables set.
-
-**WARNING: If you are hooked up to a Firebase project already,
-you may be using production without realizing it.
-However you will be using a development (read: empty) Firestore database,
-so testing this will actually send a tweet when the function thinks it hasn't tweeted a past change yet.**
-
-```sh
-firebase functions:config:set twitter.bearer_token=CHANGEME
-firebase functions:config:set mastodon.server.url=CHANGEME mastodon.access_token=CHANGEME
-firebase functions:config:get > functions/.runtimeconfig.json
-```
-
-To see the database state, you can use the Firebase emualator UI. It should
-boot with the emulators, and give you a link to access it.
 
 ### Architecture
 
@@ -44,11 +49,9 @@ call.
 
 ### Deploying
 
-Edit `.firebaserc` to point `projects.default` to `whats-in-standard` if needed.
-
 ```sh
 npm --prefix functions run build
-firebase use whats-in-standard # Or your project name
+firebase use whats-in-standard # Or your production project name
 firebase deploy
 firebase use whats-in-standard-beta # Or your non-production project name
 ```

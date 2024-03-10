@@ -20,12 +20,8 @@ import { diff, standardSets, toot, tweet } from "./lib.js";
  * @param {functions.EventContext} context - The event context.
  */
 export async function detectRotations(context) {
-  const config = functions.config();
-
-  console.log("Getting standard sets");
   const apiSets = await standardSets();
 
-  console.log("Doing Twitter");
   await diff(twitterCollection, apiSets).then(async (setDifferences) => {
     if (
       setDifferences.addedSets.size == 0 &&
@@ -36,10 +32,9 @@ export async function detectRotations(context) {
       );
       return;
     }
-    await tweet(config, setDifferences);
+    await tweet(setDifferences);
   });
 
-  console.log("Doing Mastodon");
   await diff(mastodonCollection, apiSets).then(async (setDifferences) => {
     if (
       setDifferences.addedSets.size == 0 &&
@@ -50,6 +45,6 @@ export async function detectRotations(context) {
       );
       return;
     }
-    await toot(config, setDifferences);
+    await toot(setDifferences);
   });
 }

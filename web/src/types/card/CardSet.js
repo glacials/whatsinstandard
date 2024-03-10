@@ -136,6 +136,7 @@ export default class CardSet {
   isDropped() {
     return this.exitDate.hasPassed();
   }
+
   /**
    * Return whether set has been released according to local time.
    *
@@ -143,5 +144,22 @@ export default class CardSet {
    */
   isReleased() {
     return this.enterDate.hasPassed();
+  }
+
+  /**
+   * Return the card set as a JSON string.
+   *
+   * @returns {string} The card set as a JSON object.
+   */
+  toJSON() {
+  return JSON.stringify({
+      name: this.name,
+      codename: this.codename,
+      code: this.code,
+      symbol: Object.assign({}, this.symbol),
+      enterDate: Object.assign({}, this.enterDate),
+      exitDate: Object.assign({}, this.exitDate),
+      internalId: this.internalId,
+    })
   }
 }

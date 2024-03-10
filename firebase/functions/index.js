@@ -1,4 +1,5 @@
 import { onSchedule } from "firebase-functions/v2/scheduler";
-import { detectRotations } from "./detect_rotations.js";
+import { detectRotations as run } from "./detect_rotations.js";
 
-export default onSchedule("every 5 minutes", detectRotations);
+const detectRotations = onSchedule(`every 1 minutes`, run);
+export { detectRotations };

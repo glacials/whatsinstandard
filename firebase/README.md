@@ -11,7 +11,6 @@ To test locally, you need `firebase-tools` installed.
 
 ```sh
 npm install -g firebase-tools
-firebase functions:shell
 ```
 
 To actually test tweeting and tooting,
@@ -35,7 +34,14 @@ mastodonbot     (collection)
       deleteme  (document)
 ```
 
-In the new Firebase shell:
+Open a Firebase shell:
+
+```sh
+firebase use whats-in-standard-beta # Or your non-production project name
+firebase functions:shell # Note that changes to .env require rerunning this
+```
+
+and invoke the function:
 
 ```sh
 detectRotations()
@@ -50,10 +56,14 @@ call.
 ### Deploying
 
 ```sh
-npm --prefix functions run build
-firebase use whats-in-standard # Or your production project name
+mv functions/.env ~/.env.firebase.tmp
+
+# Make sure the following command prints "Now using project whats-in-standard"
+firebase use whats-in-standard
+
 firebase deploy
-firebase use whats-in-standard-beta # Or your non-production project name
+firebase use whats-in-standard-beta
+mv ~/.env.firebase.tmp functions/.env
 ```
 
 Then revert `.firebaserc`.

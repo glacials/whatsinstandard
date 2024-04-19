@@ -4,7 +4,7 @@ import functions from "firebase-functions";
 import { error } from "firebase-functions/logger";
 
 import { login as mastodonLogin } from "masto";
-import { Client as TwitterClient } from "twitter-api-sdk";
+import { TwitterApi } from "twitter-api-v2";
 
 import CardSet from "./whatsinstandard/card/CardSet.js";
 
@@ -12,7 +12,7 @@ const MAX_TOOT_LENGTH = 500;
 const MAX_TWEET_LENGTH = 280;
 
 /**
- * Tweets any new or removed sets.
+ * Tweets a post on Twitter containing added or removed sets.
  * If there are none,
  * no tweet is sent.
  *
@@ -22,26 +22,39 @@ const MAX_TWEET_LENGTH = 280;
  * @returns {Promise<void>} - A promise that resolves when the tweet is sent.
  */
 export async function tweet(setDifferences) {
-  const twitterClient = new TwitterClient(process.env.TWITTER_BEARER_TOKEN);
+  const twitterClient = new TwitterApi({
+    appKey: process.env.TWITTER_API_KEY,
+    appSecret: process.env.TWITTER_API_KEY_SECRET,
+    accessToken: process.env.TWITTER_ACCESS_TOKEN,
+    accessSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
+  }).readWrite;
   const tweet = craftPost(setDifferences, MAX_TWEET_LENGTH);
   if (tweet === null) {
     return;
   }
 
   functions.logger.info(`Tweeting: ${tweet}`);
-  const response = twitterClient.tweets.createTweet({ text: tweet });
-  functions.logger.info(`Twitter response:`);
-  functions.logger.info(response);
+  try {
+    const response = await twitterClient.v2.tweet({ text: tweet });
+    functions.logger.info(`Twitter response:`);
+    functions.logger.info(response);
+  } catch (error) {
+    functions.logger.error(error);
+  }
 }
 
 /**
- * Toots a message on Mastodon.
+ * Toots a post on Mastodon containing added or removed sets.
+ * If there are none,
+ * no toot is sent.
  *
- * @param {{ addedSets: Set<CardSet>; removedSets: Set<CardSet> }} setDifferences - The set differences object.
- * @returns {Promise<void>} A promise that resolves when the toot is sent.
+ * @param {Object} setDifferences - The set differences object.
+ * @param {Set<CardSet>} setDifferences.addedSets - The added sets.
+ * @param {Set<CardSet>} setDifferences.removedSets - The removed sets.
+ * @returns {Promise<void>} - A promise that resolves when the toot is sent.
  */
 export async function toot(setDifferences) {
-  console.log(`MASTODON_ACCESS_TOKEN=${process.env.MASTODON_ACCESS_TOKEN}`)
+  console.log(`MASTODON_ACCESS_TOKEN=${process.env.MASTODON_ACCESS_TOKEN}`);
   const mastodonClient = await mastodonLogin({
     url: process.env.MASTODON_SERVER_URL,
     accessToken: process.env.MASTODON_ACCESS_TOKEN,
@@ -141,12 +154,12 @@ export async function diff(collection, apiSets) {
     `Unchanged sets: ${Array.from(unchangedSetNames).join(", ")}`
   );
 
-
   if (initOnly) {
     addedSets.clear();
-    functions.logger.info(`Too many added sets; assuming a new environment. Skipping posts.`);
+    functions.logger.info(
+      `Too many added sets; assuming a new environment. Skipping posts.`
+    );
   }
-
 
   return {
     addedSets: addedSets,

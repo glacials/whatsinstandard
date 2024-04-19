@@ -1,7 +1,7 @@
 /**
  * A {@link Ban} is a card that is or was banned in Standard.
  */
-export class Ban {
+export default class Ban {
   /**
    * Create a new {@link Ban} from the given JSON.
    */

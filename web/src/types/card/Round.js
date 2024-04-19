@@ -1,9 +1,9 @@
-import { CardSet } from "./CardSet";
+import CardSet from "./CardSet";
 
 /**
  * A group of {@link CardSet CardSets} that share an exit date.
  */
-export class Round {
+export default class Round {
   /**
    * Return the {@link Round Rounds} in the given array that have dropped from Standard,
    * according to local time. Order is preserved.

@@ -1,5 +1,5 @@
 import { BiDate } from "../BiDate.js";
-import { Symbol } from "./Symbol.js";
+import Symbol from "./Symbol.js";
 
 /**
  * A Magic: The Gathering set.
@@ -152,7 +152,7 @@ export default class CardSet {
    * @returns {string} The card set as a JSON object.
    */
   toJSON() {
-  return JSON.stringify({
+    return JSON.stringify({
       name: this.name,
       codename: this.codename,
       code: this.code,
@@ -160,6 +160,6 @@ export default class CardSet {
       enterDate: Object.assign({}, this.enterDate),
       exitDate: Object.assign({}, this.exitDate),
       internalId: this.internalId,
-    })
+    });
   }
 }

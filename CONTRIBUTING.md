@@ -1,6 +1,6 @@
 # Contributing
 
-_What's in Standard?_ has three code bases.
+_What's in Standard?_ has three code bases, all in this repository.
 
 - API and website (see below)
 - Mobile apps (see [`./mobile`](./mobile))
@@ -27,9 +27,7 @@ npm install
 npm start
 ```
 
-Then open [localhost:8080][localhost] in your browser!
-
-[localhost]: http://localhost:8080
+Then open the printed local URL in your browser.
 
 ### Common tasks
 

@@ -70,7 +70,7 @@ describe("API", () => {
         expect(body.sets).to.have.length.above(8);
       });
 
-      body.sets.forEach((set: any) => {
+      body.sets.forEach((set) => {
         describe(set.name, () => {
           describe("name", () => {
             const name = set.name;
@@ -201,7 +201,7 @@ describe("API", () => {
         });
       });
 
-      body.bans.forEach((ban: any) => {
+      body.bans.forEach((ban) => {
         describe(ban.card_name, () => {
           describe("card name", () => {
             const cardName = ban.card_name;
@@ -235,7 +235,7 @@ describe("API", () => {
             const setCode = ban.set_code;
 
             it("should be in the sets array", () => {
-              const validCodes = new Set(body.sets.map((set: any) => set.code));
+              const validCodes = new Set(body.sets.map((set) => set.code));
 
               expect(setCode).to.be.oneOf([...validCodes]);
             });
@@ -264,9 +264,7 @@ describe("API", () => {
             // Old bans are grandparented in
             if (
               new Date(
-                body.sets.find(
-                  (set: any) => set.code === ban.set_code
-                ).enter_date
+                body.sets.find((set) => set.code === ban.set_code).enter_date
               ) > new Date("2023-07-02T00:00:00.000Z")
             ) {
               it("should start with 'Banned to'", () => {

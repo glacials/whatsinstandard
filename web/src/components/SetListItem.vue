@@ -5,7 +5,7 @@ import SetImage from "./SetImage.vue";
 
 defineProps<{
   round: card.Round;
-  set: card.Set;
+  set: card.CardSet;
 }>();
 </script>
 
@@ -35,7 +35,7 @@ defineProps<{
       }"
       v-if="set.code"
     >
-      {{ set.name || set.codename || "???" }}
+      {{ set.name || `"${set.codename}"` || "???" }}
     </span>
     <span
       :class="{
@@ -44,10 +44,10 @@ defineProps<{
       }"
       v-else
     >
-      {{ set.name || set.codename || "???" }}
+      {{ set.name || `"${set.codename}"` || "???" }}
     </span>
     <set-image
-      :code="set.code"
+      :code="set.code || ''"
       v-if="set.isReleased() && set.code !== undefined"
     />
     <small
@@ -64,7 +64,7 @@ defineProps<{
     :data-bs-parent="`#accordion-${round.internalId}`"
     :id="`accordion-collapse-${set.internalId}`"
   >
-    <div class="btn-group w-100">
+    <div class="btn-group w-100" v-if="set.code !== null || set.name !== null">
       <a
         class="border border-left-0 border-right-0 border-top-0 btn btn-outline-secondary btn-sm rounded-0 text-uppercase"
         :href="

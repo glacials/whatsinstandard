@@ -416,7 +416,7 @@
         "rough": "Q3 2021"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2024-08-02T00:00:00.000",
         "rough": "Q4 2024"
       }
     },
@@ -435,7 +435,7 @@
         "rough": "Q4 2021"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2024-08-02T00:00:00.000",
         "rough": "Q4 2024"
       }
     },
@@ -454,7 +454,7 @@
         "rough": "Q1 2022"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2024-08-02T00:00:00.000",
         "rough": "Q4 2024"
       }
     },
@@ -473,7 +473,7 @@
         "rough": "Q2 2022"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2024-08-02T00:00:00.000",
         "rough": "Q4 2024"
       }
     },

@@ -174,7 +174,7 @@
       "block": null,
       "code": "MID",
       "enter_date": "2021-09-24T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2024-08-02T00:00:00.000",
       "rough_exit_date": "Q4 2024"
     },
     {
@@ -182,7 +182,7 @@
       "block": null,
       "code": "VOW",
       "enter_date": "2021-11-19T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2024-08-02T00:00:00.000",
       "rough_exit_date": "Q4 2024"
     },
     {
@@ -190,7 +190,7 @@
       "block": null,
       "code": "NEO",
       "enter_date": "2022-02-18T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2024-08-02T00:00:00.000",
       "rough_exit_date": "Q4 2024"
     },
     {
@@ -198,7 +198,7 @@
       "block": null,
       "code": "SNC",
       "enter_date": "2022-04-29T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2024-08-02T00:00:00.000",
       "rough_exit_date": "Q4 2024"
     },
     {

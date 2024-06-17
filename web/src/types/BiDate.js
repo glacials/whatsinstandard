@@ -62,6 +62,12 @@ export class BiDate {
       });
     }
 
+    if (this.rough.match(/Q[12] \d{4}/)) {
+      return this.rough.replace(/Q\d/, "early");
+    } else if (this.rough.match(/Q[34] \d{4}/)) {
+      return this.rough.replace(/Q\d/, "late");
+    }
+
     return this.rough;
   }
 

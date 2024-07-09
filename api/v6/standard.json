@@ -670,16 +670,16 @@
     {
       "name": "Duskmourn: House of Horror",
       "codename": "Swimming",
-      "code": null,
+      "code": "DSK",
       "symbol": {
-        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
-        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
-        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
-        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=DSK",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=DSK",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=DSK",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=DSK"
       },
       "enterDate": {
-        "exact": null,
-        "rough": "Q4 2024"
+        "exact": "2024-09-27T00:00:00.000",
+        "rough": "Q3 2024"
       },
       "exitDate": {
         "exact": null,

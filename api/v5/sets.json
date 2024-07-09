@@ -280,6 +280,14 @@
       "enter_date": "2024-08-02T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": "Duskmourn: House of Horror",
+      "block": null,
+      "code": "DSK",
+      "enter_date": "2024-09-27T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2027"
     }
   ],
   "bans": [

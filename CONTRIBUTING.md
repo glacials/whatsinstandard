@@ -39,7 +39,7 @@ If you're looking to add, remove, or edit a set, you'll want to change
 [`api/internal.json`][api-internal] then run
 
 ```sh
-npm prepare
+npm run prepare
 ```
 
 to regenerate each API version. This file is the source of truth for set information,

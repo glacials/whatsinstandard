@@ -368,11 +368,21 @@
       "rough_exit_date": "Q4 2027"
     },
     {
-      "name": null,
+      "name": "Magic: the Gathering Foundations",
+      "codename": null,
+      "block": null,
+      "code": "FDN",
+      "enter_date": "2024-11-15T00:00:00.000",
+      "rough_enter_date": "Q4 2024",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2029"
+    },
+    {
+      "name": "\"Death Race\"",
       "codename": "Tennis",
       "block": null,
       "code": null,
-      "enter_date": null,
+      "enter_date": "2025-02-07T00:00:00.000",
       "rough_enter_date": "Q1 2025",
       "exit_date": null,
       "rough_exit_date": "Q4 2027"

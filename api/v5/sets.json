@@ -288,6 +288,14 @@
       "enter_date": "2024-09-27T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": "Magic: the Gathering Foundations",
+      "block": null,
+      "code": "FDN",
+      "enter_date": "2024-11-15T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2029"
     }
   ],
   "bans": [

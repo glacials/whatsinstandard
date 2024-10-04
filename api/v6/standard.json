@@ -687,7 +687,26 @@
       }
     },
     {
-      "name": null,
+      "name": "Magic: the Gathering Foundations",
+      "codename": null,
+      "code": "FDN",
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=FDN",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=FDN",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=FDN",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=FDN"
+      },
+      "enterDate": {
+        "exact": "2024-11-15T00:00:00.000",
+        "rough": "Q4 2024"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q4 2029"
+      }
+    },
+    {
+      "name": "\"Death Race\"",
       "codename": "Tennis",
       "code": null,
       "symbol": {
@@ -697,7 +716,7 @@
         "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
       },
       "enterDate": {
-        "exact": null,
+        "exact": "2025-02-07T00:00:00.000",
         "rough": "Q1 2025"
       },
       "exitDate": {

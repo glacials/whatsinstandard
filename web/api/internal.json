@@ -543,6 +543,13 @@
       "set_code": "NEO",
       "reason": "Banned to increase diversity of card advantage options among the colors.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/may-29-2023-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Leyline of Resonance",
+      "card_image_url": "https://cards.scryfall.io/large/front/9/2/92c5f0e3-345a-40a8-9cda-565a62156692.jpg?1729596723",
+      "set_code": "DSK",
+      "reason": "Banned in MTG Arena Standard Best-of-One Constructed formats for creating non-interactive win conditions within two turns.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/mtg-arena-banned-and-restricted-announcement-october-22-2024"
     }
   ]
 }

@@ -47,7 +47,7 @@ export default class Round {
     return rounds
       .filter((round) => !round.isDropped())
       .filter((round) => round.isFullyReleased())
-      .concat(rounds.filter((round) => !round.isFullyReleased())[0]);
+      .concat(rounds.filter((round) => !round.isFullyReleased()).slice(0, 2));
   }
 
   /**

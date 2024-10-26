@@ -315,7 +315,7 @@
       "enter_date": "2023-09-08T00:00:00.000",
       "rough_enter_date": "Q3 2023",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "The Lost Caverns of Ixalan",
@@ -325,7 +325,7 @@
       "enter_date": "2023-11-17T00:00:00.000",
       "rough_enter_date": "Q4 2023",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Murders at Karlov Manor",
@@ -335,7 +335,7 @@
       "enter_date": "2024-02-09T00:00:00.000",
       "rough_enter_date": "Q1 2024",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Outlaws of Thunder Junction",
@@ -345,7 +345,7 @@
       "enter_date": "2024-04-19T00:00:00.000",
       "rough_enter_date": "Q2 2024",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Bloomburrow",
@@ -355,7 +355,7 @@
       "enter_date": "2024-08-02T00:00:00.000",
       "rough_enter_date": "Q3 2024",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Duskmourn: House of Horror",
@@ -365,7 +365,7 @@
       "enter_date": "2024-09-27T00:00:00.000",
       "rough_enter_date": "Q3 2024",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Magic: the Gathering Foundations",
@@ -375,17 +375,17 @@
       "enter_date": "2024-11-15T00:00:00.000",
       "rough_enter_date": "Q4 2024",
       "exit_date": null,
-      "rough_exit_date": "Q4 2029"
+      "rough_exit_date": "Q1 2030"
     },
     {
       "name": "Aetherdrift",
       "codename": "Tennis",
       "block": null,
       "code": "DFT",
-      "enter_date": "2025-02-07T00:00:00.000",
+      "enter_date": "2025-02-14T00:00:00.000",
       "rough_enter_date": "Q1 2025",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2028"
     },
     {
       "name": "Tarkir: Dragonstorm",
@@ -395,7 +395,17 @@
       "enter_date": "2025-04-11T00:00:00.000",
       "rough_enter_date": "Q2 2025",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2028"
+    },
+    {
+      "name": "Universes Beyond: Final Fantasy",
+      "codename": null,
+      "block": null,
+      "code": "FIN",
+      "enter_date": "2025-06-13T00:00:00.000",
+      "rough_enter_date": "Q2 2025",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2028"
     },
     {
       "name": "Edge of Eternities",
@@ -405,7 +415,27 @@
       "enter_date": "2025-08-01T00:00:00.000",
       "rough_enter_date": "Q3 2025",
       "exit_date": null,
-      "rough_exit_date": "Q4 2028"
+      "rough_exit_date": "Q1 2028"
+    },
+    {
+      "name": "Universes Beyond: Marvel's Spider-Man",
+      "codename": null,
+      "block": null,
+      "code": "SPM",
+      "enter_date": null,
+      "rough_enter_date": "Q4 2025",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2028"
+    },
+    {
+      "name": null,
+      "codename": "UUB",
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q4 2025",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2028"
     },
     {
       "name": null,
@@ -413,9 +443,9 @@
       "block": null,
       "code": null,
       "enter_date": null,
-      "rough_enter_date": "Q4 2025",
+      "rough_enter_date": "Q1 2026",
       "exit_date": null,
-      "rough_exit_date": "Q4 2028"
+      "rough_exit_date": "Q1 2029"
     },
     {
       "name": null,
@@ -423,9 +453,9 @@
       "block": null,
       "code": null,
       "enter_date": null,
-      "rough_enter_date": "Q1 2026",
+      "rough_enter_date": "Q2 2026",
       "exit_date": null,
-      "rough_exit_date": "Q4 2028"
+      "rough_exit_date": "Q1 2029"
     },
     {
       "name": null,
@@ -435,7 +465,7 @@
       "enter_date": null,
       "rough_enter_date": "Q2 2026",
       "exit_date": null,
-      "rough_exit_date": "Q4 2028"
+      "rough_exit_date": "Q1 2029"
     }
   ],
   "bans": [

@@ -304,6 +304,22 @@
       "enter_date": "2025-02-07T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": "Tarkir: Dragonstorm",
+      "block": null,
+      "code": "TDM",
+      "enter_date": "2025-04-11T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2027"
+    },
+    {
+      "name": "Edge of Eternities",
+      "block": null,
+      "code": "EOE",
+      "enter_date": "2025-08-01T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q4 2028"
     }
   ],
   "bans": [

@@ -247,7 +247,7 @@
       "code": "WOE",
       "enter_date": "2023-09-08T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "The Lost Caverns of Ixalan",
@@ -255,7 +255,7 @@
       "code": "LCI",
       "enter_date": "2023-11-17T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Murders at Karlov Manor",
@@ -263,7 +263,7 @@
       "code": "MKM",
       "enter_date": "2024-02-09T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Outlaws of Thunder Junction",
@@ -271,7 +271,7 @@
       "code": "OTJ",
       "enter_date": "2024-04-19T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2026"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Bloomburrow",
@@ -279,7 +279,7 @@
       "code": "BLB",
       "enter_date": "2024-08-02T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Duskmourn: House of Horror",
@@ -287,7 +287,7 @@
       "code": "DSK",
       "enter_date": "2024-09-27T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2027"
     },
     {
       "name": "Magic: the Gathering Foundations",
@@ -295,15 +295,15 @@
       "code": "FDN",
       "enter_date": "2024-11-15T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2029"
+      "rough_exit_date": "Q1 2030"
     },
     {
       "name": "Aetherdrift",
       "block": null,
       "code": "DFT",
-      "enter_date": "2025-02-07T00:00:00.000",
+      "enter_date": "2025-02-14T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2028"
     },
     {
       "name": "Tarkir: Dragonstorm",
@@ -311,7 +311,15 @@
       "code": "TDM",
       "enter_date": "2025-04-11T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2027"
+      "rough_exit_date": "Q1 2028"
+    },
+    {
+      "name": "Universes Beyond: Final Fantasy",
+      "block": null,
+      "code": "FIN",
+      "enter_date": "2025-06-13T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2028"
     },
     {
       "name": "Edge of Eternities",
@@ -319,7 +327,15 @@
       "code": "EOE",
       "enter_date": "2025-08-01T00:00:00.000",
       "exit_date": null,
-      "rough_exit_date": "Q4 2028"
+      "rough_exit_date": "Q1 2028"
+    },
+    {
+      "name": "Universes Beyond: Marvel's Spider-Man",
+      "block": null,
+      "code": "SPM",
+      "enter_date": null,
+      "exit_date": null,
+      "rough_exit_date": "Q1 2028"
     }
   ],
   "bans": [

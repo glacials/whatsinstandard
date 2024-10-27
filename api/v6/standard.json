@@ -588,7 +588,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2026"
+        "rough": "Q1 2027"
       }
     },
     {
@@ -607,7 +607,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2026"
+        "rough": "Q1 2027"
       }
     },
     {
@@ -626,7 +626,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2026"
+        "rough": "Q1 2027"
       }
     },
     {
@@ -645,7 +645,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2026"
+        "rough": "Q1 2027"
       }
     },
     {
@@ -664,7 +664,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2027"
+        "rough": "Q1 2027"
       }
     },
     {
@@ -683,7 +683,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2027"
+        "rough": "Q1 2027"
       }
     },
     {
@@ -702,7 +702,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2029"
+        "rough": "Q1 2030"
       }
     },
     {
@@ -716,12 +716,12 @@
         "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=DFT"
       },
       "enterDate": {
-        "exact": "2025-02-07T00:00:00.000",
+        "exact": "2025-02-14T00:00:00.000",
         "rough": "Q1 2025"
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2027"
+        "rough": "Q1 2028"
       }
     },
     {
@@ -740,7 +740,26 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2027"
+        "rough": "Q1 2028"
+      }
+    },
+    {
+      "name": "Universes Beyond: Final Fantasy",
+      "codename": null,
+      "code": "FIN",
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=FIN",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=FIN",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=FIN",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=FIN"
+      },
+      "enterDate": {
+        "exact": "2025-06-13T00:00:00.000",
+        "rough": "Q2 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2028"
       }
     },
     {
@@ -759,7 +778,45 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2028"
+        "rough": "Q1 2028"
+      }
+    },
+    {
+      "name": "Universes Beyond: Marvel's Spider-Man",
+      "codename": null,
+      "code": "SPM",
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=SPM",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=SPM",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=SPM",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=SPM"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q4 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2028"
+      }
+    },
+    {
+      "name": null,
+      "codename": "UUB",
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q4 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2028"
       }
     },
     {
@@ -774,11 +831,11 @@
       },
       "enterDate": {
         "exact": null,
-        "rough": "Q4 2025"
+        "rough": "Q1 2026"
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2028"
+        "rough": "Q1 2029"
       }
     },
     {
@@ -793,11 +850,11 @@
       },
       "enterDate": {
         "exact": null,
-        "rough": "Q1 2026"
+        "rough": "Q2 2026"
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2028"
+        "rough": "Q1 2029"
       }
     },
     {
@@ -816,7 +873,7 @@
       },
       "exitDate": {
         "exact": null,
-        "rough": "Q4 2028"
+        "rough": "Q1 2029"
       }
     }
   ],

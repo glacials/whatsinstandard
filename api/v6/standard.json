@@ -649,6 +649,25 @@
       }
     },
     {
+      "name": "The Big Score",
+      "codename": "Quilting Epilogue",
+      "code": "BIG",
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=BIG",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=BIG",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=BIG",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=BIG"
+      },
+      "enterDate": {
+        "exact": "2024-04-19T00:00:00.000",
+        "rough": "Q2 2024"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2027"
+      }
+    },
+    {
       "name": "Bloomburrow",
       "codename": "Rugby",
       "code": "BLB",

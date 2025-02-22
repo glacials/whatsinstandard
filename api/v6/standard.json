@@ -763,7 +763,7 @@
       }
     },
     {
-      "name": "Universes Beyond: Final Fantasy",
+      "name": "Magic: The Gathering—FINAL FANTASY",
       "codename": null,
       "code": "FIN",
       "symbol": {
@@ -801,7 +801,7 @@
       }
     },
     {
-      "name": "Universes Beyond: Marvel's Spider-Man",
+      "name": "Marvel’s Spider-Man",
       "codename": null,
       "code": "SPM",
       "symbol": {
@@ -820,17 +820,17 @@
       }
     },
     {
-      "name": null,
-      "codename": "UUB",
-      "code": null,
+      "name": "Avatar: The Last Airbender",
+      "codename": null,
+      "code": "TLA",
       "symbol": {
-        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
-        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
-        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
-        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=TLA",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=TLA",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=TLA",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=TLA"
       },
       "enterDate": {
-        "exact": null,
+        "exact": "2025-11-21T00:00:00.000",
         "rough": "Q4 2025"
       },
       "exitDate": {

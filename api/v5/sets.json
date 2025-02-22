@@ -322,7 +322,7 @@
       "rough_exit_date": "Q1 2028"
     },
     {
-      "name": "Universes Beyond: Final Fantasy",
+      "name": "Magic: The Gathering—FINAL FANTASY",
       "block": null,
       "code": "FIN",
       "enter_date": "2025-06-13T00:00:00.000",
@@ -338,10 +338,18 @@
       "rough_exit_date": "Q1 2028"
     },
     {
-      "name": "Universes Beyond: Marvel's Spider-Man",
+      "name": "Marvel’s Spider-Man",
       "block": null,
       "code": "SPM",
       "enter_date": null,
+      "exit_date": null,
+      "rough_exit_date": "Q1 2028"
+    },
+    {
+      "name": "Avatar: The Last Airbender",
+      "block": null,
+      "code": "TLA",
+      "enter_date": "2025-11-21T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q1 2028"
     }

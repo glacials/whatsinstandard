@@ -431,8 +431,8 @@
       "name": "Marvel’s Spider-Man",
       "codename": null,
       "block": null,
-      "code": "SPM",
-      "enter_date": null,
+      "code": "SPM", 
+      "enter_date": "2025-09-26T00:00:00.000",
       "rough_enter_date": "Q4 2025",
       "exit_date": null,
       "rough_exit_date": "Q1 2028"

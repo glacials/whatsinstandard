@@ -12,7 +12,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "firebase-admin": "^11.11.1",
+    "firebase-admin": "^12.1.0",
     "firebase-functions": "^4.9.0",
     "masto": "^5.11.4",
     "twitter-api-v2": "^1.16.1"

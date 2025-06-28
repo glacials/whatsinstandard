@@ -492,7 +492,7 @@
         "rough": "Q3 2022"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2025-08-01T00:00:00.000",
         "rough": "Q4 2025"
       }
     },
@@ -511,7 +511,7 @@
         "rough": "Q4 2022"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2025-08-01T00:00:00.000",
         "rough": "Q4 2025"
       }
     },
@@ -530,7 +530,7 @@
         "rough": "Q1 2023"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2025-08-01T00:00:00.000",
         "rough": "Q4 2025"
       }
     },
@@ -549,7 +549,7 @@
         "rough": "Q2 2023"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2025-08-01T00:00:00.000",
         "rough": "Q4 2025"
       }
     },
@@ -568,7 +568,7 @@
         "rough": "Q2 2023"
       },
       "exitDate": {
-        "exact": null,
+        "exact": "2025-08-01T00:00:00.000",
         "rough": "Q4 2025"
       }
     },
@@ -707,7 +707,7 @@
     },
     {
       "name": "Magic: The Gathering Foundations",
-      "codename": null,
+      "codename": "Farmer",
       "code": "FDN",
       "symbol": {
         "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=FDN",
@@ -801,7 +801,7 @@
       }
     },
     {
-      "name": "Marvel’s Spider-Man",
+      "name": "Marvel's Spider-Man",
       "codename": null,
       "code": "SPM",
       "symbol": {
@@ -839,7 +839,7 @@
       }
     },
     {
-      "name": null,
+      "name": "Lorwyn Eclipsed",
       "codename": "Wrestling",
       "code": null,
       "symbol": {
@@ -849,7 +849,7 @@
         "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
       },
       "enterDate": {
-        "exact": null,
+        "exact": "2026-01-23T00:00:00.000",
         "rough": "Q1 2026"
       },
       "exitDate": {
@@ -858,7 +858,7 @@
       }
     },
     {
-      "name": null,
+      "name": "Secrets of Strixhaven",
       "codename": "Yachting",
       "code": null,
       "symbol": {

@@ -206,7 +206,7 @@
       "block": null,
       "code": "DMU",
       "enter_date": "2022-09-09T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2025-08-01T00:00:00.000",
       "rough_exit_date": "Q4 2025"
     },
     {
@@ -214,7 +214,7 @@
       "block": null,
       "code": "BRO",
       "enter_date": "2022-11-18T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2025-08-01T00:00:00.000",
       "rough_exit_date": "Q4 2025"
     },
     {
@@ -222,7 +222,7 @@
       "block": null,
       "code": "ONE",
       "enter_date": "2023-02-03T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2025-08-01T00:00:00.000",
       "rough_exit_date": "Q4 2025"
     },
     {
@@ -230,7 +230,7 @@
       "block": null,
       "code": "MOM",
       "enter_date": "2023-04-14T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2025-08-01T00:00:00.000",
       "rough_exit_date": "Q4 2025"
     },
     {
@@ -238,7 +238,7 @@
       "block": null,
       "code": "MAT",
       "enter_date": "2023-05-12T00:00:00.000",
-      "exit_date": null,
+      "exit_date": "2025-08-01T00:00:00.000",
       "rough_exit_date": "Q4 2025"
     },
     {
@@ -338,7 +338,7 @@
       "rough_exit_date": "Q1 2028"
     },
     {
-      "name": "Marvel’s Spider-Man",
+      "name": "Marvel's Spider-Man",
       "block": null,
       "code": "SPM",
       "enter_date": "2025-09-26T00:00:00.000",

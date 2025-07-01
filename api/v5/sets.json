@@ -459,6 +459,55 @@
       "set_code": "NEO",
       "reason": "Banned to increase diversity of card advantage options among the colors.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/may-29-2023-banned-and-restricted-announcement"
+    },
+    {
+      "card_name": "Hopeless Nightmare",
+      "card_image_url": "https://cards.scryfall.io/large/front/2/c/2c2ee817-9ca9-4f09-bc71-7994c19a9470.jpg",
+      "set_code": "WOE",
+      "reason": "Banned to remove the unfun play patterns it creates in self-bounce decks.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
+    },
+    {
+      "card_name": "Monstrous Rage",
+      "card_image_url": "https://cards.scryfall.io/large/front/e/e/eef5a0ae-5907-42c9-a097-3f973737e392.jpg",
+      "set_code": "WOE",
+      "reason": "Banned to reduce the amount of early pressure created by red aggro decks.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
+    },
+    {
+      "card_name": "Up the Beanstalk",
+      "card_image_url": "https://cards.scryfall.io/large/front/2/d/2d5e991f-23b2-4db0-a452-7755125b1fd2.jpg",
+      "set_code": "WOE",
+      "reason": "Banned to remove a significatly higher power card from current and future Standard metagame environments.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
+    },
+    {
+      "card_name": "Abuelo's Awakening",
+      "card_image_url": "https://cards.scryfall.io/large/front/f/9/f93b725e-2b9c-4830-ac54-b2562afe09bb.jpg",
+      "set_code": "LCI",
+      "reason": "Banned to prevent players cheating Omniscience into play as early as turn four.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
+    },
+    {
+      "card_name": "This Town Ain't Big Enough",
+      "card_image_url": "https://cards.scryfall.io/large/front/b/b/bb206e27-da4d-4abe-9d8c-6d18c5f2f52a.jpg",
+      "set_code": "OTJ",
+      "reason": "Banned to remove the unfun play patterns it creates when paired with Stormchaser's Talent.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
+    },
+    {
+      "card_name": "Heartfire Hero",
+      "card_image_url": "https://cards.scryfall.io/large/front/4/8/48ace959-66b2-40c8-9bff-fd7ed9c99a82.jpg",
+      "set_code": "BLB",
+      "reason": "Banned to reduce the amount of early pressure created by red aggro decks and for its resiliency to many kinds of removal due to its dies trigger.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
+    },
+    {
+      "card_name": "Cori-Steel Cutter",
+      "card_image_url": "https://cards.scryfall.io/large/front/4/9/490eb213-9ae2-4b45-abec-6f1dfc83792a.jpg",
+      "set_code": "TDM",
+      "reason": "Banned to remove a significatly higher power card from current and future Standard metagame environments.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     }
   ]
 }

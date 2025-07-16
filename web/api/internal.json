@@ -602,7 +602,7 @@
       "card_name": "Up the Beanstalk",
       "card_image_url": "https://cards.scryfall.io/large/front/2/d/2d5e991f-23b2-4db0-a452-7755125b1fd2.jpg",
       "set_code": "WOE",
-      "reason": "Banned to remove a significatly higher power card from current and future Standard metagame environments.",
+      "reason": "Banned to remove a significantly higher power card from current and future Standard metagame environments.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     },
     {
@@ -623,14 +623,14 @@
       "card_name": "Heartfire Hero",
       "card_image_url": "https://cards.scryfall.io/large/front/4/8/48ace959-66b2-40c8-9bff-fd7ed9c99a82.jpg",
       "set_code": "BLB",
-      "reason": "Banned to reduce the amount of early pressure created by red aggro decks and for its resiliency to many kinds of removal due to its dies trigger.",
+      "reason": "Banned to reduce the amount of early pressure created by red aggro decks and for its resiliency to many kinds of removal due to its death trigger.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     },
     {
       "card_name": "Cori-Steel Cutter",
       "card_image_url": "https://cards.scryfall.io/large/front/4/9/490eb213-9ae2-4b45-abec-6f1dfc83792a.jpg",
       "set_code": "TDM",
-      "reason": "Banned to remove a significatly higher power card from current and future Standard metagame environments.",
+      "reason": "Banned to remove a significantly higher power card from current and future Standard metagame environments.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     }
   ]

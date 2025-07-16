@@ -206,40 +206,40 @@
       "block": null,
       "code": "DMU",
       "enter_date": "2022-09-09T00:00:00.000",
-      "exit_date": "2025-08-01T00:00:00.000",
-      "rough_exit_date": "Q4 2025"
+      "exit_date": "2025-07-29T00:00:00.000",
+      "rough_exit_date": "Q3 2025"
     },
     {
       "name": "The Brothers' War",
       "block": null,
       "code": "BRO",
       "enter_date": "2022-11-18T00:00:00.000",
-      "exit_date": "2025-08-01T00:00:00.000",
-      "rough_exit_date": "Q4 2025"
+      "exit_date": "2025-07-29T00:00:00.000",
+      "rough_exit_date": "Q3 2025"
     },
     {
       "name": "Phyrexia: All Will Be One",
       "block": null,
       "code": "ONE",
       "enter_date": "2023-02-03T00:00:00.000",
-      "exit_date": "2025-08-01T00:00:00.000",
-      "rough_exit_date": "Q4 2025"
+      "exit_date": "2025-07-29T00:00:00.000",
+      "rough_exit_date": "Q3 2025"
     },
     {
       "name": "March of the Machine",
       "block": null,
       "code": "MOM",
       "enter_date": "2023-04-14T00:00:00.000",
-      "exit_date": "2025-08-01T00:00:00.000",
-      "rough_exit_date": "Q4 2025"
+      "exit_date": "2025-07-29T00:00:00.000",
+      "rough_exit_date": "Q3 2025"
     },
     {
       "name": "March of the Machine: The Aftermath",
       "block": null,
       "code": "MAT",
       "enter_date": "2023-05-12T00:00:00.000",
-      "exit_date": "2025-08-01T00:00:00.000",
-      "rough_exit_date": "Q4 2025"
+      "exit_date": "2025-07-29T00:00:00.000",
+      "rough_exit_date": "Q3 2025"
     },
     {
       "name": "Wilds of Eldraine",

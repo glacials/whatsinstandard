@@ -264,7 +264,7 @@
       "code": "DMU",
       "enter_date": "2022-09-09T00:00:00.000",
       "rough_enter_date": "Q3 2022",
-      "exit_date": "2025-07-29T00:00:00.000",
+      "exit_date": "2025-07-25T00:00:00.000",
       "rough_exit_date": "Q3 2025"
     },
     {
@@ -274,7 +274,7 @@
       "code": "BRO",
       "enter_date": "2022-11-18T00:00:00.000",
       "rough_enter_date": "Q4 2022",
-      "exit_date": "2025-07-29T00:00:00.000",
+      "exit_date": "2025-07-25T00:00:00.000",
       "rough_exit_date": "Q3 2025"
     },
     {
@@ -284,7 +284,7 @@
       "code": "ONE",
       "enter_date": "2023-02-03T00:00:00.000",
       "rough_enter_date": "Q1 2023",
-      "exit_date": "2025-07-29T00:00:00.000",
+      "exit_date": "2025-07-25T00:00:00.000",
       "rough_exit_date": "Q3 2025"
     },
     {
@@ -294,7 +294,7 @@
       "code": "MOM",
       "enter_date": "2023-04-14T00:00:00.000",
       "rough_enter_date": "Q2 2023",
-      "exit_date": "2025-07-29T00:00:00.000",
+      "exit_date": "2025-07-25T00:00:00.000",
       "rough_exit_date": "Q3 2025"
     },
     {
@@ -304,7 +304,7 @@
       "code": "MAT",
       "enter_date": "2023-05-12T00:00:00.000",
       "rough_enter_date": "Q2 2023",
-      "exit_date": "2025-07-29T00:00:00.000",
+      "exit_date": "2025-07-25T00:00:00.000",
       "rough_exit_date": "Q3 2025"
     },
     {

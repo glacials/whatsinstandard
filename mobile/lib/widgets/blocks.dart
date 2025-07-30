@@ -41,7 +41,7 @@ class Blocks extends StatelessWidget {
                                 subtitle: set.isReleased()
                                     ? null
                                     : PlatformText(
-                                        "Releases ${set.friendlyEnterDate(context)}"),
+                                        "enters ${set.friendlyEnterDate(context)}"),
                               ))
                           .toList()),
                   title: "Until ${block.roughExitDate}",

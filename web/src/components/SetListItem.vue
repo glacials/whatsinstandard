@@ -56,7 +56,7 @@ defineProps<{
       v-if="!set.isReleased()"
       v-tippy
     >
-      releases {{ set.enterDate.relative() }}
+      enters {{ set.enterDate.relative() }}
     </small>
   </div>
   <div

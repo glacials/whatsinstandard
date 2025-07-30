@@ -38,7 +38,7 @@ class Blocks extends StatelessWidget {
                           .map((set) => PlatformListTile(
                                 leading: SetIcon(set),
                                 title: PlatformText(set.name),
-                                subtitle: set.isReleased()
+                                subtitle: set.hasEntered()
                                     ? null
                                     : PlatformText(
                                         "enters ${set.friendlyEnterDate(context)}"),

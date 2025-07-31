@@ -126,6 +126,6 @@ export default class Round {
    * @returns {boolean} - True if the round has been completely released; false otherwise.
    */
   isFullyReleased() {
-    return this.sets.every((set) => set.isReleased());
+    return this.sets.every((set) => set.hasEntered());
   }
 }

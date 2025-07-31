@@ -124,7 +124,7 @@ export default class CardSet {
    * Standard.
    */
   static unreleased(sets) {
-    return sets.filter((set) => !set.isReleased());
+    return sets.filter((set) => !set.hasEntered());
   }
 
   /**
@@ -142,7 +142,7 @@ export default class CardSet {
    *
    * @returns {boolean} True if the set has been released; false otherwise.
    */
-  isReleased() {
+  hasEntered() {
     return this.enterDate.hasPassed();
   }
 

@@ -22,8 +22,8 @@ defineProps<{
     class="align-items-start border-0 border-bottom collapsed d-flex justify-content-between list-group-item p-3 set-list-item"
     :class="{
       'list-group-item-danger': set.isDropped(),
-      'list-group-item-light': set.isReleased() && !set.isDropped(),
-      'text-muted': !set.isReleased(),
+      'list-group-item-light': set.hasEntered() && !set.isDropped(),
+      'text-muted': !set.hasEntered(),
     }"
     :data-bs-target="`#accordion-collapse-${set.internalId}`"
     data-bs-toggle="collapse"
@@ -31,7 +31,7 @@ defineProps<{
   >
     <span
       :class="{
-        'text-muted': !set.isReleased(),
+        'text-muted': !set.hasEntered(),
       }"
       v-if="set.code"
     >
@@ -39,8 +39,8 @@ defineProps<{
     </span>
     <span
       :class="{
-        lead: set.isReleased(),
-        'text-muted': !set.isReleased(),
+        lead: set.hasEntered(),
+        'text-muted': !set.hasEntered(),
       }"
       v-else
     >
@@ -48,15 +48,15 @@ defineProps<{
     </span>
     <set-image
       :code="set.code || ''"
-      v-if="set.isReleased() && set.code !== undefined"
+      v-if="set.hasEntered() && set.code !== undefined"
     />
     <small
       class="font-italic"
       :title="set.enterDate.humanize()"
-      v-if="!set.isReleased()"
+      v-if="!set.hasEntered()"
       v-tippy
     >
-      releases {{ set.enterDate.relative() }}
+      enters {{ set.enterDate.relative() }}
     </small>
   </div>
   <div

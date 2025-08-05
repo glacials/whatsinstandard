@@ -42,12 +42,6 @@ a.tip {
   }
 }
 
-[data-bs-theme="dark"] a.tip {
-  color: white !important;
-}
-
-
-
 a.tip:hover {
   text-decoration: none;
 }

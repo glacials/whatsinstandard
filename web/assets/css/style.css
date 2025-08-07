@@ -36,6 +36,12 @@ a.tip {
   color: #333;
 }
 
+@media (prefers-color-scheme: dark) {
+  a.tip {
+    color: white !important;
+  }
+}
+
 a.tip:hover {
   text-decoration: none;
 }

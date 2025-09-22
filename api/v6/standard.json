@@ -820,6 +820,25 @@
       }
     },
     {
+      "name": "Through the Omenpaths",
+      "codename": null,
+      "code": "OM1",
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=OM1",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=OM1",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=OM1",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=OM1"
+      },
+      "enterDate": {
+        "exact": "2025-09-23T00:00:00.000",
+        "rough": "Q4 2025"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2028"
+      }
+    },
+    {
       "name": "Avatar: The Last Airbender",
       "codename": null,
       "code": "TLA",

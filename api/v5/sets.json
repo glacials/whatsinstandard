@@ -346,6 +346,14 @@
       "rough_exit_date": "Q1 2028"
     },
     {
+      "name": "Through the Omenpaths",
+      "block": null,
+      "code": "OM1",
+      "enter_date": "2025-09-23T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2028"
+    },
+    {
       "name": "Avatar: The Last Airbender",
       "block": null,
       "code": "TLA",

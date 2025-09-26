@@ -468,22 +468,62 @@
       "rough_exit_date": "Q1 2029"
     },
     {
+      "name": null,
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "Q1 2026",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2029"
+    },
+    {
       "name": "Secrets of Strixhaven",
       "codename": "Yachting",
       "block": null,
       "code": null,
       "enter_date": null,
-      "rough_enter_date": "Q2 2026",
+      "rough_enter_date": "April 2026",
       "exit_date": null,
       "rough_exit_date": "Q1 2029"
     },
     {
-      "name": null,
+      "name": "Magic: The Gathering® | Marvel Super Heroes",
       "codename": "Ziplining",
       "block": null,
       "code": null,
       "enter_date": null,
-      "rough_enter_date": "Q2 2026",
+      "rough_enter_date": "June 2026",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2029"
+    },
+    {
+      "name": "Magic: The Gathering® | The Hobbit™",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "August 2026",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2029"
+    },
+    {
+      "name": "Reality Fracture",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "October 2026",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2029"
+    },
+    {
+      "name": "Magic: The Gathering® | Star Trek™",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": null,
+      "rough_enter_date": "November 2026",
       "exit_date": null,
       "rough_exit_date": "Q1 2029"
     }

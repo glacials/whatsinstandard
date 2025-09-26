@@ -877,6 +877,25 @@
       }
     },
     {
+      "name": null,
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "Q1 2026"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2029"
+      }
+    },
+    {
       "name": "Secrets of Strixhaven",
       "codename": "Yachting",
       "code": null,
@@ -888,7 +907,7 @@
       },
       "enterDate": {
         "exact": null,
-        "rough": "Q2 2026"
+        "rough": "April 2026"
       },
       "exitDate": {
         "exact": null,
@@ -896,7 +915,7 @@
       }
     },
     {
-      "name": null,
+      "name": "Magic: The Gathering® | Marvel Super Heroes",
       "codename": "Ziplining",
       "code": null,
       "symbol": {
@@ -907,7 +926,64 @@
       },
       "enterDate": {
         "exact": null,
-        "rough": "Q2 2026"
+        "rough": "June 2026"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2029"
+      }
+    },
+    {
+      "name": "Magic: The Gathering® | The Hobbit™",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "August 2026"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2029"
+      }
+    },
+    {
+      "name": "Reality Fracture",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "October 2026"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2029"
+      }
+    },
+    {
+      "name": "Magic: The Gathering® | Star Trek™",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": null,
+        "rough": "November 2026"
       },
       "exitDate": {
         "exact": null,

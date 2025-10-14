@@ -360,6 +360,14 @@
       "enter_date": "2025-11-14T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q1 2028"
+    },
+    {
+      "name": "Magic: The Gathering® | Teenage Mutant Ninja Turtles",
+      "block": null,
+      "code": "TMT",
+      "enter_date": "2026-03-06T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2029"
     }
   ],
   "bans": [

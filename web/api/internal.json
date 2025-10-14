@@ -468,11 +468,11 @@
       "rough_exit_date": "Q1 2029"
     },
     {
-      "name": null,
+      "name": "Magic: The Gathering® | Teenage Mutant Ninja Turtles",
       "codename": null,
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "TMT",
+      "enter_date": "2026-03-06T00:00:00.000",
       "rough_enter_date": "Q1 2026",
       "exit_date": null,
       "rough_exit_date": "Q1 2029"

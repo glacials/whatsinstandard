@@ -1133,6 +1133,13 @@
       "announcementUrl": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     },
     {
+      "cardName": "Proft's Eidetic Memory",
+      "cardImageUrl": "https://cards.scryfall.io/large/front/a/f/af5b29b3-974c-4200-8df8-b072c11e1600.jpg",
+      "setCode": "MKM",
+      "reason": "Banned to remove a higher power card from current and future Standard metagame environments.",
+      "announcementUrl": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
+    },
+    {
       "cardName": "Heartfire Hero",
       "cardImageUrl": "https://cards.scryfall.io/large/front/4/8/48ace959-66b2-40c8-9bff-fd7ed9c99a82.jpg",
       "setCode": "BLB",
@@ -1140,11 +1147,25 @@
       "announcementUrl": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     },
     {
+      "cardName": "Screaming Nemesis",
+      "cardImageUrl": "https://cards.scryfall.io/large/front/c/e/ce35e6fb-ff54-44c4-a216-7ddd37f46882.jpg",
+      "setCode": "DSK",
+      "reason": "Banned to power down red aggro decks and allow more deck diversity.",
+      "announcementUrl": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
+    },
+    {
       "cardName": "Cori-Steel Cutter",
       "cardImageUrl": "https://cards.scryfall.io/large/front/4/9/490eb213-9ae2-4b45-abec-6f1dfc83792a.jpg",
       "setCode": "TDM",
       "reason": "Banned to remove a significantly higher power card from current and future Standard metagame environments.",
       "announcementUrl": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
+    },
+    {
+      "cardName": "Vivi Ornitier",
+      "cardImageUrl": "https://cards.scryfall.io/large/front/e/c/ecc1027a-8c07-44a0-bdde-fa2844cff694.jpg",
+      "setCode": "FIN",
+      "reason": "Banned to break up the combo with Agatha's Soul Cauldron.",
+      "announcementUrl": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
     }
   ]
 }

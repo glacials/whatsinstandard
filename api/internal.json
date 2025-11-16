@@ -670,6 +670,13 @@
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     },
     {
+      "card_name": "Proft's Eidetic Memory",
+      "card_image_url": "https://cards.scryfall.io/large/front/a/f/af5b29b3-974c-4200-8df8-b072c11e1600.jpg",
+      "set_code": "MKM",
+      "reason": "Banned to remove a higher power card from current and future Standard metagame environments.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
+    },
+    {
       "card_name": "Heartfire Hero",
       "card_image_url": "https://cards.scryfall.io/large/front/4/8/48ace959-66b2-40c8-9bff-fd7ed9c99a82.jpg",
       "set_code": "BLB",
@@ -677,11 +684,25 @@
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
     },
     {
+      "card_name": "Screaming Nemesis",
+      "card_image_url": "https://cards.scryfall.io/large/front/c/e/ce35e6fb-ff54-44c4-a216-7ddd37f46882.jpg",
+      "set_code": "DSK",
+      "reason": "Banned to power down red aggro decks and allow more deck diversity.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
+    },
+    {
       "card_name": "Cori-Steel Cutter",
       "card_image_url": "https://cards.scryfall.io/large/front/4/9/490eb213-9ae2-4b45-abec-6f1dfc83792a.jpg",
       "set_code": "TDM",
       "reason": "Banned to remove a significantly higher power card from current and future Standard metagame environments.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-june-30-2025"
-    }
+    },
+    {
+      "card_name": "Vivi Ornitier",
+      "card_image_url": "https://cards.scryfall.io/large/front/e/c/ecc1027a-8c07-44a0-bdde-fa2844cff694.jpg",
+      "set_code": "FIN",
+      "reason": "Banned to break up the combo with Agatha's Soul Cauldron.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
+    }   
   ]
 }

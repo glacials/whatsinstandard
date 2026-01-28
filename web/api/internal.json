@@ -481,8 +481,8 @@
       "name": "Secrets of Strixhaven",
       "codename": "Yachting",
       "block": null,
-      "code": null,
-      "enter_date": null,
+      "code": "SOS",
+      "enter_date": "2026-04-17T00:00:00.000",
       "rough_enter_date": "April 2026",
       "exit_date": null,
       "rough_exit_date": "Q1 2029"

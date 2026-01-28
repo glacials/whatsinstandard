@@ -376,6 +376,14 @@
       "enter_date": "2026-03-06T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q1 2029"
+    },
+    {
+      "name": "Secrets of Strixhaven",
+      "block": null,
+      "code": "SOS",
+      "enter_date": "2026-04-17T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2029"
     }
   ],
   "bans": [

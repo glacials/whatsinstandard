@@ -491,7 +491,7 @@
       "name": "Magic: The Gathering® | Marvel Super Heroes",
       "codename": "Ziplining",
       "block": null,
-      "code": null,
+      "code": "MSH",
       "enter_date": "2026-06-19T00:00:00.000",
       "rough_enter_date": "June 2026",
       "exit_date": null,
@@ -501,7 +501,7 @@
       "name": "Magic: The Gathering® | The Hobbit™",
       "codename": null,
       "block": null,
-      "code": null,
+      "code": "HOB",
       "enter_date": "2026-08-07T00:00:00.000",
       "rough_enter_date": "August 2026",
       "exit_date": null,
@@ -511,7 +511,7 @@
       "name": "Reality Fracture",
       "codename": null,
       "block": null,
-      "code": null,
+      "code": "FRA",
       "enter_date": "2026-09-25T00:00:00.000",
       "rough_enter_date": "September 2026",
       "exit_date": null,
@@ -703,6 +703,6 @@
       "set_code": "FIN",
       "reason": "Banned to break up the combo with Agatha's Soul Cauldron.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
-    }   
+    }
   ]
 }

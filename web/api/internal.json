@@ -526,6 +526,66 @@
       "rough_enter_date": "November 2026",
       "exit_date": null,
       "rough_exit_date": "Q1 2029"
+    },
+    {
+      "name": "Nauctis: The Sunken Realm",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": "2027-01-29T00:00:00.000",
+      "rough_enter_date": "January 2027",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
+    },
+    {
+      "name": "UUB1",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": "2027-04-02T00:00:00.000",
+      "rough_enter_date": "January 2027",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
+    },
+    {
+      "name": "Kamigawa: Titanbreach",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": "2027-05-28T00:00:00.000",
+      "rough_enter_date": "May 2027",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
+    },
+    {
+      "name": "UUB2",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": "2027-07-31T00:00:00.000",
+      "rough_enter_date": "July 2027",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
+    },
+    {
+      "name": "Zhalfir",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": "2027-09-24T00:00:00.000",
+      "rough_enter_date": "September 2027",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
+    },
+    {
+      "name": "UUB3",
+      "codename": null,
+      "block": null,
+      "code": null,
+      "enter_date": "2027-11-12T00:00:00.000",
+      "rough_enter_date": "November 2027",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
     }
   ],
   "bans": [

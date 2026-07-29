@@ -989,6 +989,120 @@
         "exact": null,
         "rough": "Q1 2029"
       }
+    },
+    {
+      "name": "Nauctis: The Sunken Realm",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": "2027-01-29T00:00:00.000",
+        "rough": "January 2027"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2030"
+      }
+    },
+    {
+      "name": "UUB1",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": "2027-04-02T00:00:00.000",
+        "rough": "January 2027"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2030"
+      }
+    },
+    {
+      "name": "Kamigawa: Titanbreach",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": "2027-05-28T00:00:00.000",
+        "rough": "May 2027"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2030"
+      }
+    },
+    {
+      "name": "UUB2",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": "2027-07-31T00:00:00.000",
+        "rough": "July 2027"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2030"
+      }
+    },
+    {
+      "name": "Zhalfir",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": "2027-09-24T00:00:00.000",
+        "rough": "September 2027"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2030"
+      }
+    },
+    {
+      "name": "UUB3",
+      "codename": null,
+      "code": null,
+      "symbol": {
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+      },
+      "enterDate": {
+        "exact": "2027-11-12T00:00:00.000",
+        "rough": "November 2027"
+      },
+      "exitDate": {
+        "exact": null,
+        "rough": "Q1 2030"
+      }
     }
   ],
   "bans": [

@@ -585,6 +585,27 @@
       "set_code": "FIN",
       "reason": "Banned to break up the combo with Agatha's Soul Cauldron.",
       "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-november-10-2025"
+    },
+    {
+      "card_name": "Badgermole Cub",
+      "card_image_url": "https://cards.scryfall.io/display/front/3/4/340c5799-4964-44dd-8c48-8f3f3aba5211.webp?1786399172",
+      "set_code": "TLA",
+      "reason": "Banned to reduce early mana advantage from a must-answer threat.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-august-10-2026"
+    },
+    {
+      "card_name": "Stormchaser's Talent",
+      "card_image_url": "https://cards.scryfall.io/display/front/a/3/a36e682d-b43d-4e08-bf5b-70d7e924dbe5.webp?1786399178",
+      "set_code": "BLB",
+      "reason": "Banned to remove the combination of an early threat with a late game engine from a single card and help counterplay against this blue-red archetype.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-august-10-2026"
+    },
+    {
+      "card_name": "Gran-Gran",
+      "card_image_url": "https://cards.scryfall.io/display/front/f/a/fa434b41-e5f7-4989-865a-95db67b05cb1.webp?1786399175",
+      "set_code": "TLA",
+      "reason": "Banned to increase counterplay against the Jeskai lessons deck and to pre-emptively prevent lessons from taking the next top spot.",
+      "announcement_url": "https://magic.wizards.com/en/news/announcements/banned-and-restricted-august-10-2026"
     }
   ]
 }

@@ -80,7 +80,9 @@ defineProps<{
       </a>
       <a
         class="border border-right-0 border-top-0 btn btn-outline-secondary btn-sm rounded-0 text-uppercase"
-        :href="`https://mtg.wiki/page/${set.name}?utm_source=whatsinstandard`"
+        :href="`https://mtg.wiki/page/${set.name
+          .replace('Magic: The Gathering® | ', '')
+          .replaceAll('™', '')}?utm_source=whatsinstandard`"
         rel="noopener"
         target="_blank"
         v-if="set.name !== null"

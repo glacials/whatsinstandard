@@ -1010,18 +1010,18 @@
       }
     },
     {
-      "name": "UUB1",
+      "name": "Magic: The Gathering® | Marvel: Darkhold Destiny",
       "codename": null,
-      "code": null,
+      "code": "MDD",
       "symbol": {
-        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=null",
-        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=null",
-        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=null",
-        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=null"
+        "common": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=C&set=MDD",
+        "uncommon": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=U&set=MDD",
+        "rare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=R&set=MDD",
+        "mythicRare": "http://gatherer.wizards.com/Handlers/Image.ashx?type=symbol&size=large&rarity=M&set=MDD"
       },
       "enterDate": {
         "exact": "2027-04-02T00:00:00.000",
-        "rough": "January 2027"
+        "rough": "April 2027"
       },
       "exitDate": {
         "exact": null,

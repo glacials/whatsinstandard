@@ -408,6 +408,14 @@
       "enter_date": "2026-09-25T00:00:00.000",
       "exit_date": null,
       "rough_exit_date": "Q1 2029"
+    },
+    {
+      "name": "Magic: The Gathering® | Marvel: Darkhold Destiny",
+      "block": null,
+      "code": "MDD",
+      "enter_date": "2027-04-02T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
     }
   ],
   "bans": [

@@ -1,6 +1,6 @@
 # Contributing
 
-_What's in Standard?_ has three code bases.
+_What's in Standard?_ has three code bases, all in this repository.
 
 - API and website (see below)
 - Mobile apps (see [`./mobile`](./mobile))
@@ -8,9 +8,11 @@ _What's in Standard?_ has three code bases.
 
 ## API and website
 
-The API and the website are served by the same server. The API is a set of static files
-generated at deploy-time by various generator scripts in `api/`. The website is a Vue
-JavaScript app that consumes the API.
+The website is a Vue JavaScript app that consumes the API.
+They are served by the same server.
+
+The API is powered by the raw data in `api/internal.json`,
+which is converted into the various API formats at build time by `api/generate.js`.
 
 ### Dependencies
 
@@ -27,9 +29,7 @@ npm install
 npm start
 ```
 
-Then open [localhost:8080][localhost] in your browser!
-
-[localhost]: http://localhost:8080
+Then open the printed local URL in your browser.
 
 ### Common tasks
 
@@ -39,7 +39,7 @@ If you're looking to add, remove, or edit a set, you'll want to change
 [`api/internal.json`][api-internal] then run
 
 ```sh
-npm install
+npm run prepare
 ```
 
 to regenerate each API version. This file is the source of truth for set information,

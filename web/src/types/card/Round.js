@@ -1,9 +1,9 @@
-import { CardSet } from "./CardSet";
+import CardSet from "./CardSet.js";
 
 /**
  * A group of {@link CardSet CardSets} that share an exit date.
  */
-export class Round {
+export default class Round {
   /**
    * Return the {@link Round Rounds} in the given array that have dropped from Standard,
    * according to local time. Order is preserved.
@@ -17,22 +17,22 @@ export class Round {
 
   /**
    * Group the given {@link CardSet CardSets} into {@link Round Rounds}.
-   * Order is preserved.
+   * Rounds are ordered by exit date; set order within each round is preserved.
    *
    * @param {CardSet[]} sets - The array of sets to be converted.
    * @returns {Round[]} An array of rounds.
    */
   static ify(sets) {
-    // Note that to preserve order for the outer array, the key of the interim object
-    // must be a string because ES2015 object property order is preserved only for
-    // string keys.
+    // Release order can differ from rotation order (for example, Foundations).
     return Object.values(
       sets.reduce((rounds, set) => {
         return Object.assign(rounds, {
           [set.exitDate.rough]: (rounds[set.exitDate.rough] || []).concat(set),
         });
       }, {})
-    ).map((sets) => new Round(sets));
+    )
+      .map((sets) => new Round(sets))
+      .sort((a, b) => a.exitDate.toDate() - b.exitDate.toDate());
   }
 
   /**
@@ -41,13 +41,13 @@ export class Round {
    *
    * @param {Round[]} rounds - An array of {@link Round Rounds}.
    * @returns {Round[]} An array of the given {@link Round Rounds}, minus all unreleased rounds
-   * except the soonest.
+   * except the first two. Order is preserved.
    */
   static relevant(rounds) {
+    let unreleasedRounds = 0;
     return rounds
       .filter((round) => !round.isDropped())
-      .filter((round) => round.isFullyReleased())
-      .concat(rounds.filter((round) => !round.isFullyReleased())[0]);
+      .filter((round) => round.isFullyReleased() || ++unreleasedRounds <= 2);
   }
 
   /**
@@ -126,6 +126,6 @@ export class Round {
    * @returns {boolean} - True if the round has been completely released; false otherwise.
    */
   isFullyReleased() {
-    return this.sets.every((set) => set.isReleased());
+    return this.sets.every((set) => set.hasEntered());
   }
 }

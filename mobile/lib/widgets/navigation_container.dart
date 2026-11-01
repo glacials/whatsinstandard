@@ -68,7 +68,7 @@ class StandardSet {
     return RelativeTime(context).format(this.exactEnterDate!);
   }
 
-  bool isReleased() {
+  bool hasEntered() {
     return this.exactEnterDate != null &&
         DateTime.now().isAfter(this.exactEnterDate!);
   }

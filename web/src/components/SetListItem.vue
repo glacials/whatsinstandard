@@ -5,7 +5,7 @@ import SetImage from "./SetImage.vue";
 
 defineProps<{
   round: card.Round;
-  set: card.Set;
+  set: card.CardSet;
 }>();
 </script>
 
@@ -22,8 +22,8 @@ defineProps<{
     class="align-items-start border-0 border-bottom collapsed d-flex justify-content-between list-group-item p-3 set-list-item"
     :class="{
       'list-group-item-danger': set.isDropped(),
-      'list-group-item-light': set.isReleased() && !set.isDropped(),
-      'text-muted': !set.isReleased(),
+      'list-group-item-light': set.hasEntered() && !set.isDropped(),
+      'text-muted': !set.hasEntered(),
     }"
     :data-bs-target="`#accordion-collapse-${set.internalId}`"
     data-bs-toggle="collapse"
@@ -31,32 +31,32 @@ defineProps<{
   >
     <span
       :class="{
-        'text-muted': !set.isReleased(),
+        'text-muted': !set.hasEntered(),
       }"
       v-if="set.code"
     >
-      {{ set.name || set.codename || "???" }}
+      {{ set.name || `"${set.codename}"` || "???" }}
     </span>
     <span
       :class="{
-        lead: set.isReleased(),
-        'text-muted': !set.isReleased(),
+        lead: set.hasEntered(),
+        'text-muted': !set.hasEntered(),
       }"
       v-else
     >
-      {{ set.name || set.codename || "???" }}
+      {{ set.name || `"${set.codename}"` || "???" }}
     </span>
     <set-image
-      :code="set.code"
-      v-if="set.isReleased() && set.code !== undefined"
+      :code="set.code || ''"
+      v-if="set.hasEntered() && set.code !== undefined"
     />
     <small
       class="font-italic"
       :title="set.enterDate.humanize()"
-      v-if="!set.isReleased()"
+      v-if="!set.hasEntered()"
       v-tippy
     >
-      releases {{ set.enterDate.relative() }}
+      enters {{ set.enterDate.relative() }}
     </small>
   </div>
   <div
@@ -64,7 +64,7 @@ defineProps<{
     :data-bs-parent="`#accordion-${round.internalId}`"
     :id="`accordion-collapse-${set.internalId}`"
   >
-    <div class="btn-group w-100">
+    <div class="btn-group w-100" v-if="set.code !== null || set.name !== null">
       <a
         class="border border-left-0 border-right-0 border-top-0 btn btn-outline-secondary btn-sm rounded-0 text-uppercase"
         :href="
@@ -80,7 +80,9 @@ defineProps<{
       </a>
       <a
         class="border border-right-0 border-top-0 btn btn-outline-secondary btn-sm rounded-0 text-uppercase"
-        :href="`https://mtg.fandom.com/wiki/${set.name}?utm_source=whatsinstandard`"
+        :href="`https://mtg.wiki/page/${set.name
+          .replace('Magic: The Gathering® | ', '')
+          .replaceAll('™', '')}?utm_source=whatsinstandard`"
         rel="noopener"
         target="_blank"
         v-if="set.name !== null"

@@ -17,9 +17,9 @@ const apiURL = "/api/v6/standard.json";
  * @param bans The bans to filter.
  * @returns The bans that apply to the given sets.
  */
-function bansFor(sets: card.Set[], bans: card.Ban[]) {
+function bansFor(sets: card.CardSet[], bans: card.Ban[]) {
   return bans.filter((ban: card.Ban) =>
-    sets.map((set: card.Set) => set.code).includes(ban.setCode)
+    sets.map((set: card.CardSet) => set.code).includes(ban.setCode)
   );
 }
 
@@ -42,7 +42,9 @@ const hideAlert20230507 = ref(
 
 watchEffect(async () => {
   const body = await (await fetch(apiURL)).json();
-  rounds.value = card.Round.ify(body.sets.map((set: any) => new card.Set(set)));
+  rounds.value = card.Round.ify(
+    body.sets.map((set: any) => new card.CardSet(set))
+  );
   bans.value = body.bans.map((ban: any) => new card.Ban(ban));
 });
 

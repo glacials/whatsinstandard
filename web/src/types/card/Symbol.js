@@ -1,7 +1,7 @@
 /**
  * A set symbol icon.
  */
-export class Symbol {
+export default class Symbol {
   /**
    * Create a new Symbol.
    *

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "firebase-functions": "^4.4.1",
+    "firebase-functions": "^4.9.0",
     "masto": "^5.11.3"
   },
   "devDependencies": {

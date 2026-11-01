@@ -1,3 +1,5 @@
-export { Ban } from "./Ban.js";
-export { Round } from "./Round.js";
-export { Set } from "./Set.js";
+import Ban from "./Ban.js";
+import Round from "./Round.js";
+import CardSet from "./CardSet.js";
+
+export { Ban, Round, CardSet };

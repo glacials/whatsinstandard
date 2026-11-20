@@ -410,6 +410,22 @@
       "rough_exit_date": "Q1 2029"
     },
     {
+      "name": "Magic: The Gathering® | Star Trek™",
+      "block": null,
+      "code": "TRK",
+      "enter_date": "2026-11-13T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2029"
+    },
+    {
+      "name": "Nauctis: The Sunken Realm",
+      "block": null,
+      "code": "NAU",
+      "enter_date": "2027-01-29T00:00:00.000",
+      "exit_date": null,
+      "rough_exit_date": "Q1 2030"
+    },
+    {
       "name": "Magic: The Gathering® | Marvel: Darkhold Destiny",
       "block": null,
       "code": "MDD",
